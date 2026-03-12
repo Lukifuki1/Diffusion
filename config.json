@@ -1,0 +1,15 @@
+{
+  "preferredModels": {
+    "photos": "Flux Dev",
+    "video": "Wan2GP"
+  },
+  "inferenceSettings": {
+    "defaultWidth": 1024,
+    "defaultHeight": 1024,
+    "steps": 30,
+    "cfgScale": 7.5
+  },
+  "chatInterface": true,
+  "backgroundGeneration": true,
+  "sharedModelDirectory": "./models"
+}
