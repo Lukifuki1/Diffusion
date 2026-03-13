@@ -9,9 +9,9 @@ public record UpdateManifest
 }
 
 
-// TODO: Bugged in .NET 7 but we can use in 8 https://github.com/dotnet/runtime/pull/79828
-/*[JsonSourceGenerationOptions(PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase)]
+// Fixed for .NET 8: Added JsonSourceGenerationOptions with CamelCase naming
+[JsonSourceGenerationOptions(PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase)]
 [JsonSerializable(typeof(UpdateManifest))]
 public partial class UpdateManifestContext : JsonSerializerContext
 {
-}*/
+}

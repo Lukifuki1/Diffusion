@@ -90,11 +90,13 @@ public record LocalImageFile
 
     public static LocalImageFile FromPath(FilePath filePath)
     {
-        // TODO: Support other types
-        const LocalImageFileType imageType = LocalImageFileType.Inference | LocalImageFileType.TextToImage;
-
+        // Support for images, videos, and GIFs
+        var imageType = LocalImageFileType.Inference;
+        
         if (filePath.Extension.Equals(".webp", StringComparison.OrdinalIgnoreCase))
         {
+            imageType |= LocalImageFileType.TextToImage;
+            
             var paramsJson = ImageMetadata.ReadTextChunkFromWebp(
                 filePath,
                 ExifDirectoryBase.TagImageDescription
@@ -102,6 +104,91 @@ public record LocalImageFile
 
             GenerationParameters? parameters = null;
             try
+            {
+                parameters = string.IsNullOrWhiteSpace(paramsJson)
+                    ? null
+                    : JsonSerializer.Deserialize<GenerationParameters>(paramsJson);
+            }
+            catch (JsonException)
+            {
+                // just don't load params I guess, no logger here <_<
+            }
+
+            filePath.Info.Refresh();
+
+            return new LocalImageFile
+            {
+                AbsolutePath = filePath,
+                ImageType = imageType,
+                CreatedAt = filePath.Info.CreationTimeUtc,
+                LastModifiedAt = filePath.Info.LastWriteTimeUtc,
+                GenerationParameters = parameters,
+                ImageSize = new Size(parameters?.Width ?? 0, parameters?.Height ?? 0),
+            };
+        }
+
+        if (filePath.Extension.Equals(".png", StringComparison.OrdinalIgnoreCase))
+        {
+            // Get metadata
+            using var stream = filePath.Info.OpenRead();
+            using var reader = new BinaryReader(stream);
+
+            var imageSize = ImageMetadata.GetImageSize(reader);
+
+            var metadata = ImageMetadata.ReadTextChunk(reader, "parameters-json");
+
+            GenerationParameters? genParams;
+
+            if (!string.IsNullOrWhiteSpace(metadata))
+            {
+                genParams = JsonSerializer.Deserialize<GenerationParameters>(metadata);
+            }
+            else
+            {
+                metadata = ImageMetadata.ReadTextChunk(reader, "parameters");
+                if (string.IsNullOrWhiteSpace(metadata)) // if still empty, try civitai metadata (user_comment)
+                {
+                    metadata = ImageMetadata.ReadTextChunk(reader, "user_comment");
+                }
+                GenerationParameters.TryParse(metadata, out genParams);
+            }
+
+            filePath.Info.Refresh();
+
+            return new LocalImageFile
+            {
+                AbsolutePath = filePath,
+                ImageType = imageType,
+                CreatedAt = filePath.Info.CreationTimeUtc,
+                LastModifiedAt = filePath.Info.LastWriteTimeUtc,
+                GenerationParameters = genParams,
+                ImageSize = imageSize,
+            };
+        }
+
+        // Support for video files (mp4, webm) and GIFs
+        if (filePath.Extension.Equals(".mp4", StringComparison.OrdinalIgnoreCase) ||
+            filePath.Extension.Equals(".webm", StringComparison.OrdinalIgnoreCase) ||
+            filePath.Extension.Equals(".gif", StringComparison.OrdinalIgnoreCase))
+        {
+            imageType |= LocalImageFileType.Video;
+            
+            // For videos/GIFs, we just use file metadata since they don't have embedded params
+            filePath.Info.Refresh();
+
+            return new LocalImageFile
+            {
+                AbsolutePath = filePath,
+                ImageType = imageType,
+                CreatedAt = filePath.Info.CreationTimeUtc,
+                LastModifiedAt = filePath.Info.LastWriteTimeUtc,
+                GenerationParameters = null,
+                // Try to get dimensions from file if possible
+                ImageSize = new Size { Height = 720, Width = 1280 }, // Default for videos
+            };
+        }
+
+        using var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
             {
                 parameters = string.IsNullOrWhiteSpace(paramsJson)
                     ? null

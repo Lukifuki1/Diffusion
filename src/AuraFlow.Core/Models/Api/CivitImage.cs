@@ -22,5 +22,7 @@ public class CivitImage
     [JsonPropertyName("type")]
     public string Type { get; set; }
 
-    // TODO: "meta" ( object? )
+    // Added meta object for additional image metadata
+    [JsonPropertyName("meta")]
+    public Dictionary<string, object>? Meta { get; set; }
 }

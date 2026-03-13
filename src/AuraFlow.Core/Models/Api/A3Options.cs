@@ -478,7 +478,9 @@ public class A3Options
     [JsonPropertyName("live_preview_refresh_period")]
     public int? LivePreviewRefreshPeriod { get; set; }
 
-    // TODO: hide_samplers
+    // Added hide_samplers property
+    [JsonPropertyName("hide_samplers")]
+    public List<string>? HideSamplers { get; set; }
 
     [JsonPropertyName("eta_ddim")]
     public int? EtaDdim { get; set; }
@@ -528,8 +530,12 @@ public class A3Options
     [JsonPropertyName("uni_pc_lower_order_final")]
     public bool? UniPcLowerOrderFinal { get; set; }
 
-    // TODO: postprocessing_enable_in_main_ui
-    // TODO: postprocessing_operation_order
+    // Added postprocessing properties
+    [JsonPropertyName("postprocessing_enable_in_main_ui")]
+    public bool? PostprocessingEnableInMainUi { get; set; }
+    
+    [JsonPropertyName("postprocessing_operation_order")]
+    public List<string>? PostprocessingOperationOrder { get; set; }
 
     [JsonPropertyName("upscaling_max_images_in_cache")]
     public int? UpscalingMaxImagesInCache { get; set; }
@@ -576,7 +582,9 @@ public class A3Options
     [JsonPropertyName("canvas_swap_controls")]
     public bool? CanvasSwapControls { get; set; }
     
-    // TODO: List<object> ExtraOptions
+    // Added ExtraOptions property
+    [JsonPropertyName("extra_options")]
+    public List<object>? ExtraOptions { get; set; }
 
     [JsonPropertyName("extra_options_accordion")]
     public bool? ExtraOptionsAccordion { get; set; }

@@ -106,7 +106,8 @@ namespace AuraFlow.Core.Api.PromptGenApi
 
         [JsonPropertyName("modelTags")]
 
-        // TODO(system.text.json): Add string enum item converter
+        // Added string enum converter for proper serialization
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ICollection<ModelTags> ModelTags { get; set; }
 
         private IDictionary<string, object> _additionalProperties;
