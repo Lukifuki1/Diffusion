@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Stability Matrix will be documented in this file.
+All notable changes to DiffusionHub Enterprise will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning 2.0](https://semver.org/spec/v2.0.0.html).
@@ -55,7 +55,7 @@ Shoutout to our incredible Pioneer crew for keeping the momentum going! Thank yo
 - Fixed [#1450](https://github.com/LykosAI/StabilityMatrix/issues/1450) - Older SD.Next not launching due to forced `--uv` argument
 - Fixed duplicate custom node installations when installing workflows from the Workflow Browser - thanks again to @NeuralFault!
 #### 🌟 Visionaries
-To our incredible Visionaries: **Waterclouds**, **JungleDragon**, **bluepopsicle**, **Bob S**, and **whudunit**! Your generosity drives this project forward and helps us turn ideas into reality. Thank you for being such a vital part of Stability Matrix!
+To our incredible Visionaries: **Waterclouds**, **JungleDragon**, **bluepopsicle**, **Bob S**, and **whudunit**! Your generosity drives this project forward and helps us turn ideas into reality. Thank you for being such a vital part of DiffusionHub Enterprise!
 #### 🚀 Pioneers
 A massive thank you to our Pioneer crew! Your support keeps the lights on and the updates flowing. Shoutout to: **Szir777**, **Noah M**, **[USA]TechDude**, **Thom**, **SeraphOfSalem**, **Desert Viber**, **Adam**, **Droolguy**, **ACTUALLY_the_Real_Willem_Dafoe**, **takyamtom**, **robek**, **Phil R**, **Tundra Everquill**, **TheTekknician**, and a warm welcome to our new Pioneers, **Benjamin M** and **Ghislain G**!
 
@@ -102,7 +102,7 @@ A huge thank you to our incredible Pioneers for keeping the project on track! Yo
 - Fixed missing dependencies for ComfyUI API nodes
 ### Supporters
 #### 🌟 Visionaries
-Huge thanks to our incredible Visionaries: **Waterclouds**, **JungleDragon**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit**! You’re the reason Stability Matrix keeps pushing forward. Your support lights the path and keeps the dream alive.
+Huge thanks to our incredible Visionaries: **Waterclouds**, **JungleDragon**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit**! You’re the reason DiffusionHub Enterprise keeps pushing forward. Your support lights the path and keeps the dream alive.
 #### 🚀 Pioneers
 Shoutout to our amazing Pioneer crew: **Szir777**, **Tigon**, **Noah M**, **USATechDude**, **Thom**, **SeraphOfSalem**, **Desert Viber**, **Tundra Everquill**, **Adam**, **Droolguy**, **Philip R.**, **ACTUALLY_the_Real_Willem_Dafoe**, and **takyamtom**! You help keep the gears turning and the magic flowing.
 
@@ -114,7 +114,7 @@ Shoutout to our amazing Pioneer crew: **Szir777**, **Tigon**, **Noah M**, **USAT
 - Updated Nunchaku installer to install v1.0.1
 - Updated Windows ROCm ComfyUI installs to use recommended environment variables by default
 ### Fixed
-- Fixed [#1372](https://github.com/LykosAI/StabilityMatrix/issues/1372), [#1399](https://github.com/LykosAI/StabilityMatrix/issues/1399) - LiteAsyncException upon starting Stability Matrix v2.15.0
+- Fixed [#1372](https://github.com/LykosAI/StabilityMatrix/issues/1372), [#1399](https://github.com/LykosAI/StabilityMatrix/issues/1399) - LiteAsyncException upon starting DiffusionHub Enterprise v2.15.0
 - Fixed [#1391](https://github.com/LykosAI/StabilityMatrix/issues/1391) - "Failed to parse" error when upgrading pip packages with extra index url
 - Fixed [#1401](https://github.com/LykosAI/StabilityMatrix/issues/1401) - "Python <version> was not found and/or failed to install" errors when path contains special characters
 - Fixed [#1403](https://github.com/LykosAI/StabilityMatrix/issues/1403) - Checkpoint Manager filters not being saved correctly
@@ -194,7 +194,7 @@ A huge round of applause for our fantastic Pioneers! Your steady support helps u
 - Fixed [#1365](https://github.com/LykosAI/StabilityMatrix/issues/1365) - Output folder list not updating when Refresh button clicked
 ### Supporters
 #### 🌟 Visionaries
-To our incredible Visionaries, the architects of our ambition: Your profound support is the powerhouse behind this massive v2.15.0 release. You don't just light the path; you fuel the entire journey, allowing us to build bigger, move faster, and turn bold ideas into reality. Our deepest gratitude to: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, **whudunit**, and **TheTekknician**! We are immensely grateful for your trust and partnership in shaping the future of Stability Matrix. Thank you for everything!
+To our incredible Visionaries, the architects of our ambition: Your profound support is the powerhouse behind this massive v2.15.0 release. You don't just light the path; you fuel the entire journey, allowing us to build bigger, move faster, and turn bold ideas into reality. Our deepest gratitude to: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, **whudunit**, and **TheTekknician**! We are immensely grateful for your trust and partnership in shaping the future of DiffusionHub Enterprise. Thank you for everything!
 #### 🚀 Pioneers
 A heartfelt salute to our trailblazing Pioneers! Your consistent support helps us navigate the development landscape, ensuring we stay on the right track and can explore new frontiers. A huge thanks to: **tankfox**, **Mr. Unknown**, **Szir777**, **Tigon**, **Noah M**, **USATechDude**, **Thom**, **SeraphOfSalem**, and a special welcome to our newest Pioneers - **Desert Viber**, **Tundra Everquill**, **Adam**, and **Droolguy**! Thank you for being the vanguard of our community!
  
@@ -226,7 +226,7 @@ A heartfelt salute to our trailblazing Pioneers! Your consistent support helps u
 - Fixed [#1361](https://github.com/LykosAI/StabilityMatrix/issues/1361) - numpy and other Forge startup
 ### Supporters
 #### 🌟 Visionaries
-A huge thank-you to our incredible Visionary-tier supporters: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, **whudunit**, and **Akiro_Senkai**! Your continued support lights the way for Stability Matrix and helps us keep building features like these. We couldn’t do it without you.
+A huge thank-you to our incredible Visionary-tier supporters: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, **whudunit**, and **Akiro_Senkai**! Your continued support lights the way for DiffusionHub Enterprise and helps us keep building features like these. We couldn’t do it without you.
 
 ## v2.15.0-pre.1
 ### Added
@@ -267,7 +267,7 @@ A huge thank-you to our incredible Visionary-tier supporters: **Waterclouds**, *
 - Fixed [#1357](https://github.com/LykosAI/StabilityMatrix/issues/1357) - Case insensitivity causing duplicate key exceptions on non-Windows systems
 ### Supporters
 #### 🌟 Visionaries
-To our brilliant Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit** — your support is the spark that keeps Stability Matrix blazing forward. Thanks to you, we can explore bolder features, tackle complex challenges, and keep making the impossible feel effortless. Thank you all so very much! 🚀
+To our brilliant Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit** — your support is the spark that keeps DiffusionHub Enterprise blazing forward. Thanks to you, we can explore bolder features, tackle complex challenges, and keep making the impossible feel effortless. Thank you all so very much! 🚀
 
 ## v2.15.0-dev.2
 ### Added
@@ -294,7 +294,7 @@ To our brilliant Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepop
 - Fixed missing base model types in the Checkpoint Manager & Civitai Model Browser
 ### Supporters
 #### 🌟 Visionaries
-A huge thank you to our amazing Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and our newest Visionary, **whudunit**! 🚀 Your generous support enables Stability Matrix to grow faster and tackle ambitious new ideas. You're truly making all the magic happen!
+A huge thank you to our amazing Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and our newest Visionary, **whudunit**! 🚀 Your generous support enables DiffusionHub Enterprise to grow faster and tackle ambitious new ideas. You're truly making all the magic happen!
 
 ## v2.15.0-dev.1
 ### Added
@@ -307,7 +307,7 @@ A huge thank you to our amazing Visionary-tier Patrons: **Waterclouds**, **Corey
 - New installs of all other packages will now use Python 3.10.17, unless otherwise specified in the Advanced Options during installation
 ### Supporters
 #### 🌟 Visionaries
-A massive thank you to our esteemed Visionary-tier Patrons: **Waterclouds**, **bluepopsicle**, **Bob S**, **Ibixat**, and **Corey T**! Your exceptional commitment propels Stability Matrix to new heights and allows us to push the boundaries of innovation. We're incredibly grateful for your foundational support! 🚀
+A massive thank you to our esteemed Visionary-tier Patrons: **Waterclouds**, **bluepopsicle**, **Bob S**, **Ibixat**, and **Corey T**! Your exceptional commitment propels DiffusionHub Enterprise to new heights and allows us to push the boundaries of innovation. We're incredibly grateful for your foundational support! 🚀
 
 ## v2.14.3
 ### Added
@@ -330,7 +330,7 @@ A massive thank you to our esteemed Visionary-tier Patrons: **Waterclouds**, **b
 - Fixed missing base model types in the Checkpoint Manager & Civitai Model Browser
 ### Supporters
 #### 🌟 Visionaries
-Big heartfelt thanks to our stellar Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit**! 🌟 Your extraordinary generosity continues to fuel Stability Matrix’s journey toward innovation and excellence. We appreciate you immensely!
+Big heartfelt thanks to our stellar Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit**! 🌟 Your extraordinary generosity continues to fuel DiffusionHub Enterprise’s journey toward innovation and excellence. We appreciate you immensely!
 #### 🚀 Pioneers
 Massive thanks to our fantastic Pioneer-tier Patrons: **tankfox**, **Mr. Unknown**, **Szir777**, **Tigon**, **Noah M**, **USATechDude**, **Thom**, and **SeraphOfSalem**! Your unwavering support keeps our community thriving and inspires us to push even further. You’re all awesome!
 
@@ -345,7 +345,7 @@ Massive thanks to our fantastic Pioneer-tier Patrons: **tankfox**, **Mr. Unknown
 - Fixed missing shared folder links for SwarmUI's diffusion_models and clip folders
 ### Supporters
 #### 🌟 Visionaries
-Our deepest gratitude to the brilliant Visionary-tier Patrons: **Waterclouds**, **bluepopsicle**, **Bob S**, **Ibixat**, and **Corey T**! Your incredible backing is instrumental in shaping the future of Stability Matrix and empowering us to deliver cutting-edge features. Thank you for believing in our vision! 🙏
+Our deepest gratitude to the brilliant Visionary-tier Patrons: **Waterclouds**, **bluepopsicle**, **Bob S**, **Ibixat**, and **Corey T**! Your incredible backing is instrumental in shaping the future of DiffusionHub Enterprise and empowering us to deliver cutting-edge features. Thank you for believing in our vision! 🙏
 #### 🚀 Pioneers
 A huge shout-out to our fantastic Pioneer-tier Patrons: **Mr. Unknown**, **tankfox**, **Szir777**, **Noah M**, **USATechDude**, **Thom**, **TheTekknician**, and **SeraphOfSalem**! Your consistent support and active engagement are vital to our community's growth and our ongoing development efforts. You truly make a difference! ✨
 
@@ -364,7 +364,7 @@ A huge shout-out to our fantastic Pioneer-tier Patrons: **Mr. Unknown**, **tankf
 - Fixed Python Packages dialog errors and potentially other issues due to concurrent OnLoaded events
 ### Supporters
 #### 🌟 Visionaries
-Big cheers to our incredible Visionary-tier Patrons: **bluepopsicle**, **Bob S**, **Ibixat**, **Waterclouds**, and **Corey T**! 🚀 Your amazing support lets us dream bigger and reach further every single month. Thanks for being the driving force behind Stability Matrix - we genuinely couldn't do it without you!
+Big cheers to our incredible Visionary-tier Patrons: **bluepopsicle**, **Bob S**, **Ibixat**, **Waterclouds**, and **Corey T**! 🚀 Your amazing support lets us dream bigger and reach further every single month. Thanks for being the driving force behind DiffusionHub Enterprise - we genuinely couldn't do it without you!
 #### 🚀 Pioneers
 Huge thanks to our fantastic Pioneer-tier Patrons: **tankfox**, **Mr. Unknown**, **Szir777**, **Tigon**, and **Noah M**! Special shoutout and welcome back to **TheTekknician**, and a warm welcome aboard to our newest Pioneers: **USATechDude**, **SeraphOfSalem**, and **Thom**! ✨ Your continued support keeps our community vibrant and pushes us to keep creating. You all rock!
 
@@ -451,7 +451,7 @@ Huge thanks to our fantastic Pioneer-tier Patrons: **tankfox**, **Mr. Unknown**,
 - Fixed some crashes when using Accelerated Model Discovery
 ### Supporters
 #### Visionaries
-Our heartfelt gratitude goes out to our amazing Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Akiro_Senkai**, and **Ibixat**! Your exceptional support is fundamental to the ongoing development and success of Stability Matrix. We are immensely grateful for your partnership and belief in the project! 🙏
+Our heartfelt gratitude goes out to our amazing Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Akiro_Senkai**, and **Ibixat**! Your exceptional support is fundamental to the ongoing development and success of DiffusionHub Enterprise. We are immensely grateful for your partnership and belief in the project! 🙏
 #### Pioneers
 We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **tankfox**, **Mr. Unknown**, **Szir777**, **Tigon**, **NowFallenAngel**, **Al Gorithm**, and welcome to our newest Pioneer, **Noah M.**! Your consistent support and enthusiasm keep the momentum going. Thank you all for being such an important part of our community! ✨
 
@@ -478,7 +478,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - (pre.2 re-release) Reduced memory usage from `ShowDisabledTooltipExtension`
 ### Supporters
 #### Visionaries
-- Big shout-out to our Visionary-tier patrons: Waterclouds, Corey T, bluepopsicle, and Bob S! Your steadfast support keeps Stability Matrix moving forward, and we couldn’t do it without you. 🚀 Thank you!
+- Big shout-out to our Visionary-tier patrons: Waterclouds, Corey T, bluepopsicle, and Bob S! Your steadfast support keeps DiffusionHub Enterprise moving forward, and we couldn’t do it without you. 🚀 Thank you!
 
 ## v2.14.0-pre.1
 ### Added
@@ -515,7 +515,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed large white boxes appearing when tooltips are visible on macOS/Linux
 ### Supporters
 #### Visionaries
-- A special shout-out to our fantastic Visionary-tier Patreon supporters: Waterclouds, Corey T, and our newest Visionaries, bluepopsicle and Bob S! Your continued generosity powers the future of Stability Matrix—thank you so much!
+- A special shout-out to our fantastic Visionary-tier Patreon supporters: Waterclouds, Corey T, and our newest Visionaries, bluepopsicle and Bob S! Your continued generosity powers the future of DiffusionHub Enterprise—thank you so much!
 
 ## v2.14.0-dev.3
 ### Added
@@ -592,7 +592,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed [#1080](https://github.com/LykosAI/StabilityMatrix/issues/1080) - Some models not displayed in Checkpoint Manager
 ### Supporters
 #### Visionaries
-- Many thanks to our incredible Visionary-tier Patreon supporters, **Waterclouds** and **TheTekknician**! Your support helps us continue to improve Stability Matrix!
+- Many thanks to our incredible Visionary-tier Patreon supporters, **Waterclouds** and **TheTekknician**! Your support helps us continue to improve DiffusionHub Enterprise!
 
 ## v2.13.4
 ### Added
@@ -1120,7 +1120,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed TaskCanceledException when Inference prompts finish before the delayed progress handler (250ms)
 ### Supporters
 #### Visionaries
-- Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve Stability Matrix!
+- Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve DiffusionHub Enterprise!
 #### Pioneers
 - Thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support is greatly appreciated!
 
@@ -1136,7 +1136,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed [#683](https://github.com/LykosAI/StabilityMatrix/issues/683) - Model indexing causing LiteDB errors after upgrading from older versions due to updated enum values
 ### Supporters
 #### Visionaries
-- Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve Stability Matrix!
+- Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve DiffusionHub Enterprise!
 #### Pioneers
 - Thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support is greatly appreciated!
 
@@ -1148,7 +1148,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed [#700](https://github.com/LykosAI/StabilityMatrix/issues/700) - `cannot import 'packaging'` error for Forge
 ### Supporters
 #### Visionaries
-- Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve Stability Matrix!
+- Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve DiffusionHub Enterprise!
 #### Pioneers
 - Thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support is greatly appreciated!
 
@@ -1165,9 +1165,9 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed tkinter python libraries not working on macOS with 'Can't find a usable init.tcl' error
 ### Supporters
 #### Visionaries
-- Shoutout to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support is appreciated and helps us continue to make Stability Matrix better for everyone!
+- Shoutout to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support is appreciated and helps us continue to make DiffusionHub Enterprise better for everyone!
 #### Pioneers
-- A big thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support helps us continue to improve Stability Matrix!
+- A big thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support helps us continue to improve DiffusionHub Enterprise!
 
 ## v2.11.0
 ### Added
@@ -1224,9 +1224,9 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 
 ### Supporters
 #### Visionaries
-- Shoutout to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support is appreciated and helps us continue to make Stability Matrix better for everyone!
+- Shoutout to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support is appreciated and helps us continue to make DiffusionHub Enterprise better for everyone!
 #### Pioneers
-- A big thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support helps us continue to improve Stability Matrix!
+- A big thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support helps us continue to improve DiffusionHub Enterprise!
 
 ## v2.11.0-pre.2
 ### Added
@@ -1251,7 +1251,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed some more missing progress texts during various activities
 ### Supporters
 #### Visionaries
-- A heartfelt thank you to our Visionary-tier Patreon supporters, **Scopp Mcdee** and **Waterclouds**! Your generous contributions enable us to keep enhancing Stability Matrix!
+- A heartfelt thank you to our Visionary-tier Patreon supporters, **Scopp Mcdee** and **Waterclouds**! Your generous contributions enable us to keep enhancing DiffusionHub Enterprise!
 
 ## v2.11.0-pre.1
 ### Added
@@ -1278,7 +1278,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed [#630](https://github.com/LykosAI/StabilityMatrix/issues/630) - InvokeAI update hangs forever waiting for input
 ### Supporters
 #### Visionaries
-- Many thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support helps us continue to improve Stability Matrix!
+- Many thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support helps us continue to improve DiffusionHub Enterprise!
 
 ## v2.11.0-dev.3
 ### Added
@@ -1369,7 +1369,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Inference ControlNet module now supports over 42 preprocessors, a new button next to the preprocessors dropdown allows previewing the output of the selected preprocessor on the image.
 - Added resolution selection for Inference ControlNet module, this controls preprocessor resolution too.
 - Added Layer Diffuse sampler addon to Inference, allows generating foreground with transparency with SD1.5 and SDXL.
-- Added support for deep links from the new Stability Matrix Chrome extension
+- Added support for deep links from the new DiffusionHub Enterprise Chrome extension
 - Added OpenArt.AI workflow browser for ComfyUI workflows
 - Added more metadata to the image dialog info flyout
 - Added Output Sharing toggle in Advanced Options during install flow
@@ -1426,7 +1426,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 
 ## v2.10.0-dev.3
 ### Added
-- Added support for deep links from the new Stability Matrix Chrome extension
+- Added support for deep links from the new DiffusionHub Enterprise Chrome extension
 ### Changed
 - Due to changes on the CivitAI API, you can no longer select a specific page in the CivitAI Model Browser
 - Due to the above API changes, new pages are now loaded via "infinite scrolling"
@@ -1878,7 +1878,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Model Browser now split into "CivitAI" and "Hugging Face" tabs
 #### Inference
 - Selected images (i.e. Image2Image, Upscale, ControlNet) will now save their source paths saved and restored on load. If the image is moved or deleted, the selection will show as missing and can be reselected
-- Project files (.smproj) have been updated to v3, existing projects will be upgraded on load and will no longer be compatible with older versions of Stability Matrix
+- Project files (.smproj) have been updated to v3, existing projects will be upgraded on load and will no longer be compatible with older versions of DiffusionHub Enterprise
 ### Fixed
 - Fixed Outputs page reverting back to Shared Output Folder every time the page is reloaded
 - Potentially fixed updates sometimes clearing settings or launching in the wrong directory
@@ -1912,7 +1912,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ### Changed
 #### Inference
 - Selected images (i.e. Image2Image, Upscale, ControlNet) will now save their source paths saved and restored on load. If the image is moved or deleted, the selection will show as missing and can be reselected
-- Project files (.smproj) have been updated to v3, existing projects will be upgraded on load and will no longer be compatible with older versions of Stability Matrix
+- Project files (.smproj) have been updated to v3, existing projects will be upgraded on load and will no longer be compatible with older versions of DiffusionHub Enterprise
 ### Fixed
 - Fixed Refiner model enabled state not saving to Inference project files
  
@@ -2309,7 +2309,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ## v2.0.3
 
 ### Added
-- (Windows) New settings option to add Stability Matrix to the start menu
+- (Windows) New settings option to add DiffusionHub Enterprise to the start menu
 - (Windows) Improved background "Mica" effect on Windows 11, should be smoother with less banding artifacts
 
 ### Fixed
