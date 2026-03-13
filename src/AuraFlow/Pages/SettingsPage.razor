@@ -1,0 +1,56 @@
+@page "/settings"
+@using AuraFlow.Services
+
+<h2>⚙️ Nastavitve</h2>
+
+<div class="card">
+    <div class="card-body">
+        <form @onsubmit="SaveSettingsAsync">
+            <div class="form-group mb-3">
+                <label for="defaultModel">Privzeti Model:</label>
+                <select id="defaultModel" class="form-select" @bind="settings.DefaultModel">
+                    <option value="Flux Dev">Flux Dev</option>
+                    <option value="SDXL Turbo">SDXL Turbo</option>
+                    <option value="Realistic Vision">Realistic Vision</option>
+                </select>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="maxConcurrent">Max Hkratnih Generacij:</label>
+                <input type="number" id="maxConcurrent" class="form-control" @bind="settings.MaxConcurrentGenerations" min="1" max="10" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="timeout">Timeout (sekunde):</label>
+                <input type="number" id="timeout" class="form-control" @bind="settings.TimeoutSeconds" min="30" max="600" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">💾 Shrani Nastavitve</button>
+        </form>
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-success mt-3">@message</div>
+}
+
+@code {
+    private SettingsManager settings;
+    private string message = "";
+
+    protected override void OnInitialized()
+    {
+        settings = new SettingsManager();
+    }
+
+    private async Task SaveSettingsAsync()
+    {
+        await settings.SaveAsync();
+        message = "Nastavitve so bile shranjene!";
+        
+        // Clear message after 3 seconds
+        await Task.Delay(3000);
+        message = "";
+    }
+}
