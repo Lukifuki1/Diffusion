@@ -1,4 +1,4 @@
-# DiffusionHub Enterprise - ChatGPT Style Generator ✨
+# AuraFlow Studio - ChatGPT Style Generator
 
 **Popolnoma preprost vmesnik za generiranje slik in videov**
 
@@ -27,46 +27,18 @@
 
 ```
 Diffusion/
-├── StabilityMatrix.Core/      # Glavna logika (Inference, ComfyClient)
-├── StabilityMatrix.ChatInterface/  # NOVO: Chat vmesnik (.NET)
-│   ├── Models/                # Modeli za komunikacijo
-│   ├── Services/              # Storitve za generiranje
-│   ├── Interfaces/            # API interfejsi
-│   └── Options/               # Konfiguracija
-├── StabilityMatrix.Native/    # Native interop
-├── StabilityMatrix.Native.Abstractions/  # Abstrakcije
-├── openwebui-plugin/          # Custom OpenWebUI plugin
-├── docker-compose.yml         # Docker konfiguracija
-├── config.json                # Konfiguracija modelov in nastavitev
-└── README.md                  # Ta datoteka
+├── AuraFlow.Core/      # Glavna logika (Inference, FlowEngine)
+├── AuraFlow.Native/    # Native interop
+├── AuraFlow.Native.Abstractions/  # Abstrakcije
+├── config.json         # Konfiguracija modelov in nastavitev
+└── README.md           # Ta datoteka
 ```
 
 ## 🚀 Hitri začetek
 
-### 1. Zaženi z Docker Compose
-
-```bash
-# Pojdi v mapo projekta
-cd /workspace/project/Diffusion
-
-# Zaženi vse storitve
-./start.sh
-
-# Ali ročno:
-docker-compose up -d
-```
-
-### 2. Odpreš vmesnik
-
-Odpravi brskalnik in pojdi na: **http://localhost:3000**
-
-### 3. Generiraj sliko/video
-
-1. Vpiši prompt (npr. "kocje na sončni plaži, 4K")
-2. Izberi model (Flux Dev za slike, Wan2GP za video)
-3. Klikni "Generate"
-4. Počakaj na zaključek generiranja
-5. Rezultat se prikaže v chat oknu
+1. **Za fotografije**: Install → Stable Diffusion WebUI Forge ali FlowEngine
+2. **Za video**: Install → Wan2GP ali CogVideo
+3. **Skupni modeli**: Vsi paketi delijo isto mapo `./models`
 
 ## ⚙️ Konfiguracija (config.json)
 
@@ -96,19 +68,17 @@ Odpravi brskalnik in pojdi na: **http://localhost:3000**
 
 ### Preprost način (ChatGPT style):
 
-```
-1. Odpreš OpenWebUI v brskalniku (http://localhost:3000)
+1. Odpreš AuraFlow Studio Inference UI
 2. Vpišeš prompt: "kocje na sončni plaži, 4K"
 3. Izbereš model: Flux Dev
 4. Klikneš Generate
 5. Počakaš - generiranje v ozadju z napredkom
 6. Rezultat se prikaže v istem oknu
-```
 
-### Napreden način (ComfyUI):
+### Napreden način (FlowEngine):
 
 ```
-1. Odpreš ComfyUI preko DiffusionHub Enterprise
+1. Odpreš FlowEngine
 2. Naloži workflow za SDXL/Flux/Wan2GP
 3. Vpiši prompt in nastavitve
 4. Generate z napredkom v realnem času
@@ -127,18 +97,17 @@ Odpravi brskalnik in pojdi na: **http://localhost:3000**
 - **CogVideo** - Generiranje videa iz besedila
 - **SVD** - Stable Video Diffusion
 
-## 🔧 Build in testiranje
+# Build in testiranje
 
 ```bash
 # Restore dependencies
 dotnet restore
 
-# Build ChatInterface projekt
-cd /workspace/project/Diffusion
-dotnet build StabilityMatrix.ChatInterface/StabilityMatrix.ChatInterface.csproj
+# Build
+dotnet build AuraFlow.Core/AuraFlow.Core.csproj
 
-# Test (če so testi dodani)
-dotnet test StabilityMatrix.Tests
+# Test
+dotnet test AuraFlow.UnitTests
 ```
 
 ## 🧪 API Endpoints
@@ -162,85 +131,6 @@ Generiraj sliko ali video iz prompta.
 }
 ```
 
-**Response:**
-```json
-{
-  "taskId": "uuid",
-  "success": true,
-  "url": "/output/image.png"
-}
-```
-
-### GET /api/v1/progress/{taskId}
-Dobi napredek generiranja v realnem času.
-
-### POST /api/v1/cancel/{taskId}
-Prekini tekoče generiranje.
-
-## 📊 Validacijski kriteriji
-
-✅ **Enostavnost** - Uporabnik vnese prompt in klikne Generate  
-✅ **Hitrost** - Slika se generira v < 30 sekundah za Flux  
-✅ **Zanesljivost** - Generiranje ne crasha, pravilno obdeluje napake  
-✅ **Feedback** - Uporabnik vidi napredek in rezultat  
-✅ **Fleksibilnost** - Podpora za različne modele (slike in video)  
-
-## 🎯 Merila za uspeh
-
-1. **Čas do prve generacije**: Manj kot 5 minut od namestitve do prve slike
-2. **Uporabniška izkušnja**: Minimalno število klikov (3: prompt, model, generate)
-3. **Stabilnost**: 99% uspešnih generacij brez crash-ov
-4. **Dokumentacija**: Jasna navodila za namestitev in uporabo
-
-## 🛠️ Docker komande
-
-```bash
-# Zaženi vse storitve
-docker-compose up -d
-
-# Ustavi vse storitve
-docker-compose down
-
-# Ogled logov
-docker-compose logs -f openwebui
-docker-compose logs -f stabilitymatrix-backend
-
-# Ponovni build
-docker-compose build --no-cache
-```
-
-## 📝 Opombe
-
-- **OpenWebUI** se uporablja kot frontend chat vmesnik
-- **StabilityMatrix.ChatInterface** je .NET backend service z REST API in WebSocket
-- **ComfyUI** služi za dejansko generiranje slik in videov
-- **WebSocket** omogoča real-time napredek generiranja
-- **REST API** omogoča sinhrono komunikacijo
-- **Batch generiranje** podpira do 3 hkratnih generacij
-
-## 📁 Datoteke, ki so bile ustvarjene
-
-### Nova knjižnica StabilityMatrix.ChatInterface:
-- `StabilityMatrix.ChatInterface.csproj` - Projektna datoteka
-- `Models/ChatMessage.cs` - Model za chat sporočila
-- `Models/GenerationRequest.cs` - Zahteva za generiranje
-- `Models/GenerationResponse.cs` - Odgovor z rezultatom
-- `Models/GenerationProgress.cs` - Napredek generiranja
-- `Services/ChatInterfaceClient.cs` - Client za API komunikacijo
-- `Services/GenerationService.cs` - Storitev za generiranje
-- `Interfaces/IChatInterfaceApi.cs` - API interfejs (Refit)
-- `Options/ChatInterfaceSettings.cs` - Nastavitve
-
-### Docker in plugin:
-- `docker-compose.yml` - Docker konfiguracija z dvema storitvama
-- `Dockerfile` - Build datoteka za .NET service
-- `openwebui-plugin/src/plugin.js` - Custom OpenWebUI plugin
-- `start.sh` - Skripta za enostaven zagon
-
-## 👥 Avtorji
-
-Ustvarjeno kot del projekta DiffusionHub Enterprise.
-
-## 📄 Licenca
-
-MIT License
+- [AuraFlow Studio GitHub](https://github.com/LykosAI/AuraFlow)
+- [FlowEngine](https://github.com/comfyanonymous/ComfyUI)
+- [Wan2GP](https://github.com/deepbeepmeep/Wan2GP)

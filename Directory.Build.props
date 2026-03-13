@@ -10,6 +10,12 @@
     </PropertyGroup>
     
     <PropertyGroup>
+        <!-- Project branding -->
+        <ProductName>AuraFlow Studio</ProductName>
+        <Company>AuraFlow</Company>
+    </PropertyGroup>
+    
+    <PropertyGroup>
         <AvaloniaVersion>11.3.7</AvaloniaVersion>
     </PropertyGroup>
     
