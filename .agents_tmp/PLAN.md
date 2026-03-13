@@ -1,52 +1,1225 @@
-# AuraFlow Studio - Complete Refactoring Plan
+# AuraFlow Studio - Complete Audit & Implementation Plan (Updated)
 
 ## 1. OBJECTIVE
 
-Unify the entire codebase into a single, clean **AuraFlow** branded project by:
-- Removing all "StabilityMatrix" and inconsistent naming
-- Eliminating dead/empty projects (Web, Desktop, empty tests)
-- Consolidating multiple projects into one professional structure
-- Creating comprehensive professional documentation
+**Popoln avdit in implementacija AuraFlow Studio kot enterprise-grade platforme za generiranje slik in videjev z uporabo OpenWebUI UI.**
 
-**Problem:** Current codebase has fragmented branding (AuraFlow + StabilityMatrix), 6+ overlapping projects, empty directories, and missing entry points.
+Sistem mora:
+- Uporabljati `https://github.com/open-webui/open-webui` kot UI (popolnoma rebrendiran v "AuraFlow Studio")
+- Omogočati enostavno uporabo s popolno profesionalnostjo za enterprise
+- V UI uporabnik vnese prompt za generiranje slik ali videjev
+- V ozadju AuraFlow izvede generiranje in pošlje končni produkt nazaj v UI
 
-## 2. CONTEXT SUMMARY
+**Problem:** Trenutna implementacija je fragmentirana z mešanico "AuraFlow" in "StabilityMatrix" imen, manjkajoče enterprise komponente, in nepopolna integracija OpenWebUI.
 
-### Current Fragmented Structure:
-```
-Diffusion/
-├── AuraFlow.Core/           # Core services (DownloadService, etc.)
-├── AuraFlow.Domain/         # Domain exceptions
-├── AuraFlow.Infrastructure/ # Persistence, messaging, jobs
-├── AuraFlow.Api/            # Only middleware (2 files)
-├── AuraFlow.Web/            # EMPTY - only .csproj
-├── AuraFlow.Desktop/        # EMPTY - only .csproj  
-├── StabilityMatrix.ChatInterface/  # Main app logic
-├── StabilityMatrix.Core/      # Duplicate core logic
-├── StabilityMatrix.Native/    # Native interop
-├── StabilityMatrix.Native.Abstractions/
-├── AuraFlow.Api/            # Middleware only
-└── Tests/AuraFlow.UnitTests/ # EMPTY - no test files
-```
+## 2. CONTEXT SUMMARY - UPDATED AUDIT
 
-### Key Issues:
-1. **Inconsistent branding**: Mix of "AuraFlow" and "StabilityMatrix" names
-2. **Empty projects**: Web, Desktop have no code
-3. **Redundant logic**: Core functionality split across multiple projects
-4. **Missing entry point**: No Program.cs in main application
-5. **Dead middleware**: AuraFlow.Api has only 2 middleware files
+### Trenutno Stanje (Po Avditu):
 
-### Active Components:
-- ✅ DownloadService - File downloads with progress tracking
-- ✅ MetadataImportService - Model metadata from OpenModelDB  
-- ✅ ImageIndexService - Generated images indexing
-- ✅ SettingsManager/SecretsManager - Configuration management
-- ✅ GenerationService/ChatInterfaceClient - Chat interface logic
-- ✅ ComfyUI integration for model generation
+#### ✅ Implementirano:
+1. **Docker Compose** - `docker-compose.yml` definira OpenWebUI in AuraFlow API servise
+2. **GenerationController** - `GenerationController.cs` z endpointi za generate, progress, models
+3. **ComfyClient** - `ComfyClient.cs` z WebSocket integracijo za ComfyUI
+4. **Enterprise Config** - `appsettings.enterprise.json` definira konfiguracijo
+5. **DependencyInjection** - `DependencyInjection.cs` registrira enterprise services
+6. **Middleware** - `HealthCheckMiddleware`, `RateLimitingMiddleware` definirana
+7. **OpenWebUI Plugin** - `openwebui-plugin/src/plugin.js` z osnovno integracijo
+
+#### ❌ Neimplementirano (Ključne Manjkajoče):
+
+##### A. OpenWebUI Rebranding (CRITICAL)
+- [ ] Custom build OpenWebUI za popoln branding
+- [ ] Logo in CSS za AuraFlow barve (#1E40AF, #7C3AED)
+- [ ] Plugin preimenovan iz "StabilityMatrix" v "AuraFlow"
+- [ ] Real-time progress display v UI
+
+##### B. Generation Service (CRITICAL)
+- [ ] `IGenerationService` interface - NI DEFINIRAN
+- [ ] `GenerationService` implementation - NI IMPLEMENTIRAN
+- [ ] `GenerationRequest` model - NI DEFINIRAN
+- [ ] `GenerationResult` model - NI DEFINIRAN
+- [ ] Progress tracking service - NI IMPLEMENTIRAN
+
+##### C. Enterprise Features (HIGH)
+- [ ] EF Core database migrations - MANJKAJO
+- [ ] Redis instance v docker-compose.yml - MANJKA
+- [ ] RabbitMQ queue service - MANJKA
+- [ ] Hangfire storage configuration - MANJKA
+- [ ] Sentry DSN konfiguracija - PRAZNA
+- [ ] JWT authentication endpoints - MANJKajo
+
+##### D. ComfyUI Integration (HIGH)
+- [ ] Workflow management za Flux/Wan2GP - MANJKA
+- [ ] Model detection API - DELNO IMPLEMENTIRAN
+- [ ] Image output handling - MANJKA
+
+##### E. Docker & Deployment (MEDIUM)
+- [ ] ComfyUI service v docker-compose.yml - MANJKA
+- [ ] Shared volumes med servisi - MANJKajo
+- [ ] Health checks v docker-compose.yml - MANJKajo
+
+##### F. Frontend Integration (MEDIUM)
+- [ ] Real-time progress bar v UI - MANJKA
+- [ ] Image/video preview - MANJKA
+- [ ] Model selection dropdown - MANJKA
+- [ ] Video generation support - MANJKA
+
+### Aktivne Komponente:
+- ✅ `DownloadService` - File downloads z progress trackingom
+- ✅ `MetadataImportService` - Model metadata iz OpenModelDB
+- ✅ `ImageIndexService` - Indexing generiranih slik
+- ✅ `SettingsManager/SecretsManager` - Configuration management
+- ✅ `ComfyClient` - ComfyUI WebSocket integracija
+- ✅ `GenerationController` - Osnovni API endpointi
 
 ## 3. APPROACH OVERVIEW
 
-**Strategy:** Complete consolidation into single `AuraFlow` project with Blazor Server frontend
+**Strategija:** Popolna reorganizacija v enoten "AuraFlow" projekt z Blazor Server frontend in popolno OpenWebUI integracijo
+
+### Zakaj Ta Pristop:
+1. **En vir resnice:** Vsa koda na enem mestu, lažje za vzdrževanje
+2. **Dosleden branding:** Vse pod "AuraFlow" imenom
+3. **Po enostavna uporaba:** Chat-style interface z real-time progressom
+4. **Enterprise-grade:** Redis, RabbitMQ, Hangfire, monitoring
+5. **Professional structure:** Jasna ločitev odgovornosti
+
+### Kaj Se Odstrani:
+- ❌ `StabilityMatrix.*` projekti - preimenovani v AuraFlow ali združeni
+- ❌ `AuraFlow.Web/` - empty Blazor WebAssembly project
+- ❌ `AuraFlow.Desktop/` - empty Desktop project  
+- ❌ `Tests/AuraFlow.UnitTests/` - test project brez testov
+- ❌ `AuraFlow.Api/` - samo middleware, združeno v glavni projekt
+
+## 4. IMPLEMENTATION STEPS (PRIORITIZED)
+
+### Faza A: OpenWebUI Rebranding (P1 - Kritično)
+
+#### Korak A.1: Custom OpenWebUI Build
+**Cilj:** Popolnoma rebrendiran UI z AuraFlow Studio brandingom
+
+**Metoda:** Ustvari `openwebui-custom/` directory:
+```bash
+# 1. Clone OpenWebUI repository
+git clone https://github.com/open-webui/open-webui.git openwebui-custom
+
+# 2. Create custom Dockerfile
+FROM ghcr.io/open-webui/open-webui:main as base
+
+# Add AuraFlow branding files
+COPY ./branding/ /app/backend/static/
+COPY ./assets/logo-auraflow.svg /app/frontend/assets/
+
+# Build with custom configuration
+RUN npm run build --prefix /app/frontend
+```
+
+**Datoteke za ustvariti:**
+- `openwebui-custom/Dockerfile` - Custom build definicija
+- `branding/custom.css` - AuraFlow barve (#1E40AF, #7C3AED)
+- `branding/logo-auraflow.svg` - Logo
+- `assets/auraflow-theme.js` - Theme configuration
+
+#### Korak A.2: Plugin Update
+**Cilj:** Popolna integracija generiranja slik/videjev v OpenWebUI
+
+**Metoda:** Posodobi `openwebui-plugin/src/plugin.js`:
+```javascript
+// Preimenovati iz "StabilityMatrix" v "AuraFlow"
+class AuraFlowPlugin {
+  async ready({ app, events }) {
+    // Register custom API endpoint
+    events.on("customEndpoint", (endpoint) => {
+      if (endpoint.path === "/api/v1/generate") {
+        endpoint.method = "POST";
+        endpoint.handler = async (req, res) => {
+          const response = await fetch("http://auraflow-api:5000/api/v1/generation/generate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(req.body),
+          });
+          return res.json(await response.json());
+        };
+      }
+    });
+
+    // Add AuraFlow UI elements
+    events.on("uiReady", () => {
+      const generateButton = document.createElement("button");
+      generateButton.textContent = "Generate (AuraFlow)";
+      generateButton.className = "auraflow-generate-btn";
+      
+      const promptInput = document.querySelector(".prompt-input");
+      if (promptInput) {
+        promptInput.parentElement.appendChild(generateButton);
+        
+        generateButton.addEventListener("click", async () => {
+          const prompt = promptInput.value;
+          await handleGeneration(prompt);
+        });
+      }
+    });
+  }
+
+  async handleGeneration(prompt) {
+    // Show loading indicator with progress bar
+    const progressBar = document.createElement("div");
+    progressBar.className = "auraflow-progress-bar";
+    
+    try {
+      const response = await fetch("/api/v1/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt }),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        displayResult(result);
+      } else {
+        showError(result.errorMessage);
+      }
+    } catch (error) {
+      showError(error.message);
+    }
+  }
+}
+
+export default AuraFlowPlugin;
+```
+
+**Datoteke za posodobiti:**
+- `openwebui-plugin/src/plugin.js` - Preimenovati iz "StabilityMatrix" v "AuraFlow"
+- `openwebui-plugin/package.json` - Update name in description
+
+#### Korak A.3: Docker Compose Update
+**Cilj:** Popolna integracija vseh servisov
+
+**Metoda:** Posodobi `docker-compose.yml`:
+```yaml
+version: '3.8'
+
+services:
+  openwebui:
+    build:
+      context: ./openwebui-custom
+      dockerfile: Dockerfile
+    container_name: auraflow-openwebui
+    ports:
+      - "3000:8080"
+    environment:
+      - OLLAMA_BASE_URL=http://auraflow-api:5000
+      - WEBUI_NAME=AuraFlow Studio
+    volumes:
+      - openwebui_data:/app/backend/data
+    depends_on:
+      - auraflow-api
+      - comfyui
+    restart: unless-stopped
+
+  auraflow-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: auraflow-api
+    ports:
+      - "5000:5000"
+    environment:
+      - DOTNET_ENVIRONMENT=Production
+      - ChatInterface__Enabled=true
+      - ConnectionStrings__DefaultConnection=Server=auraflow-db;Database=AuraFlowStudio;User Id=sa;Password=yourpassword;
+      - Redis__ConnectionString=redis:6379
+      - RabbitMQ__Url=amqp://rabbitmq:5672
+    volumes:
+      - models:/app/models
+      - output:/app/output
+    depends_on:
+      - auraflow-db
+      - redis
+      - rabbitmq
+      - comfyui
+    restart: unless-stopped
+
+  comfyui:
+    image: comfyanonymous/comfyui:latest
+    container_name: auraflow-comfyui
+    ports:
+      - "5001:8188"
+    volumes:
+      - models:/comfyui/models
+      - output:/comfyui/output
+    depends_on:
+      - auraflow-api
+    restart: unless-stopped
+
+  auraflow-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: auraflow-db
+    environment:
+      - SA_PASSWORD=yourpassword
+      - ACCEPT_EULA=Y
+    volumes:
+      - db_data:/var/opt/mssql
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: auraflow-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: auraflow-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    restart: unless-stopped
+
+volumes:
+  openwebui_data:
+  models:
+  output:
+  db_data:
+  redis_data:
+  rabbitmq_data:
+```
+
+### Faza B: Generation Service Implementation (P1 - Kritično)
+
+#### Korak B.1: Create IGenerationService Interface
+**Cilj:** Definirati contract za generiranje vsebine
+
+**Metoda:** Ustvari `AuraFlow/Services/IGenerationService.cs`:
+```csharp
+public interface IGenerationService
+{
+    Task<GenerationResult> GenerateAsync(GenerationRequest request, CancellationToken cancellationToken = default);
+    Task<ProgressReport> GetProgressAsync(string taskId, CancellationToken cancellationToken = default);
+    Task CancelGenerationAsync(string taskId, CancellationToken cancellationToken = default);
+    Task<List<ModelInfo>> GetAvailableModelsAsync(CancellationToken cancellationToken = default);
+}
+```
+
+#### Korak B.2: Create GenerationRequest Model
+**Cilj:** Definirati request model za generiranje
+
+**Metoda:** Ustvari `AuraFlow/Models/Api/GenerationRequest.cs`:
+```csharp
+public class GenerationRequest
+{
+    [Required]
+    public string Prompt { get; set; } = string.Empty;
+    
+    public string ModelName { get; set; } = "Flux Dev";
+    
+    public int Width { get; set; } = 1024;
+    public int Height { get; set; } = 1024;
+    
+    public int Steps { get; set; } = 30;
+    public float CfgScale { get; set; } = 7.5f;
+    public long Seed { get; set; } = -1;
+    
+    public bool IsVideo { get; set; } = false;
+    public int VideoDuration { get; set; } = 4; // seconds
+    
+    public string? NegativePrompt { get; set; }
+}
+```
+
+#### Korak B.3: Create GenerationResult Model
+**Cilj:** Definirati response model za generiranje
+
+**Metoda:** Ustvari `AuraFlow/Models/Api/GenerationResult.cs`:
+```csharp
+public class GenerationResult
+{
+    public string TaskId { get; set; } = Guid.NewGuid().ToString();
+    public bool Success { get; set; }
+    public string? ErrorMessage { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    
+    // For completed generations
+    public string? OutputImageUrl { get; set; }
+    public string? OutputVideoUrl { get; set; }
+}
+
+public class ProgressReport
+{
+    public string TaskId { get; set; } = string.Empty;
+    public ProgressState State { get; set; } // Pending, Running, Completed, Failed
+    public int ProgressPercentage { get; set; }
+    public string? CurrentNode { get; set; }
+    public DateTime StartedAt { get; set; }
+    public DateTime? CompletedAt { get; set; }
+}
+
+public enum ProgressState
+{
+    Pending,
+    Running,
+    Completed,
+    Failed,
+    Cancelled
+}
+```
+
+#### Korak B.4: Implement GenerationService
+**Cilj:** Implementirati logiko za generiranje slik in videjev
+
+**Metoda:** Ustvari `AuraFlow/Services/GenerationService.cs`:
+```csharp
+public class GenerationService : IGenerationService
+{
+    private readonly ILogger<GenerationService> _logger;
+    private readonly ComfyClient _comfyClient;
+    private readonly IQueueService _queueService;
+    private readonly Dictionary<string, TaskCompletionSource<GenerationResult>> _pendingTasks;
+
+    public GenerationService(
+        ILogger<GenerationService> logger,
+        ComfyClient comfyClient,
+        IQueueService queueService)
+    {
+        _logger = logger;
+        _comfyClient = comfyClient;
+        _queueService = queueService;
+        _pendingTasks = new Dictionary<string, TaskCompletionSource<GenerationResult>>();
+    }
+
+    public async Task<GenerationResult> GenerateAsync(GenerationRequest request, CancellationToken cancellationToken)
+    {
+        var taskId = Guid.NewGuid().ToString();
+        
+        try
+        {
+            // Create task completion source
+            var tcs = new TaskCompletionSource<GenerationResult>();
+            _pendingTasks[taskId] = tcs;
+
+            // Queue generation job
+            await _queueService.PublishWithRetryAsync(
+                "image-generation",
+                new QueueMessage<GenerationRequest> 
+                { 
+                    Data = request,
+                    CorrelationId = taskId
+                },
+                cancellationToken);
+
+            // Wait for completion with timeout
+            var result = await Task.WhenAny(
+                tcs.Task,
+                Task.Delay(request.TimeoutSeconds * 1000, cancellationToken));
+
+            if (result == tcs.Task)
+                return await tcs.Task;
+            
+            return new GenerationResult 
+            { 
+                TaskId = taskId, 
+                Success = false,
+                ErrorMessage = "Generation timeout"
+            };
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error generating content for model: {ModelName}", request.ModelName);
+            return new GenerationResult 
+            { 
+                TaskId = taskId, 
+                Success = false,
+                ErrorMessage = ex.Message
+            };
+        }
+    }
+
+    public async Task<ProgressReport> GetProgressAsync(string taskId, CancellationToken cancellationToken)
+    {
+        // Check if task exists and get progress from ComfyUI
+        var task = _comfyClient.PromptTasks.FirstOrDefault(t => t.Key == taskId);
+        
+        if (task.Value is null)
+            return new ProgressReport 
+            { 
+                TaskId = taskId, 
+                State = ProgressState.Pending 
+            };
+
+        return new ProgressReport
+        {
+            TaskId = taskId,
+            State = task.Value.IsCompleted ? ProgressState.Completed : ProgressState.Running,
+            ProgressPercentage = task.Value.Progress,
+            CurrentNode = task.Value.RunningNode?.NodeId
+        };
+    }
+
+    public async Task CancelGenerationAsync(string taskId, CancellationToken cancellationToken)
+    {
+        await _comfyClient.InterruptPromptAsync(cancellationToken);
+        
+        if (_pendingTasks.TryGetValue(taskId, out var tcs))
+        {
+            tcs.TrySetCanceled(cancellationToken);
+            _pendingTasks.Remove(taskId);
+        }
+    }
+
+    public async Task<List<ModelInfo>> GetAvailableModelsAsync(CancellationToken cancellationToken)
+    {
+        // Get model names from ComfyUI
+        var modelNames = await _comfyClient.GetModelNamesAsync(cancellationToken);
+        
+        return modelNames?.Select(name => new ModelInfo 
+        { 
+            Id = name.ToLower().Replace(" ", "-"), 
+            Name = name, 
+            Type = "photo" 
+        }).ToList() ?? new List<ModelInfo>();
+    }
+}
+```
+
+#### Korak B.5: Update GenerationController
+**Cilj:** Posodobiti controller za uporabo novih servisov
+
+**Metoda:** Posodobi `AuraFlow/Controllers/GenerationController.cs`:
+```csharp
+[ApiController]
+[Route("api/v1/[controller]")]
+public class GenerationController : ControllerBase
+{
+    private readonly IGenerationService _generationService;
+    private readonly ILogger<GenerationController> _logger;
+
+    public GenerationController(IGenerationService generationService, ILogger<GenerationController> logger)
+    {
+        _generationService = generationService;
+        _logger = logger;
+    }
+
+    [HttpPost("generate")]
+    public async Task<IActionResult> Generate([FromBody] GenerationRequest request)
+    {
+        try
+        {
+            var result = await _generationService.GenerateAsync(request);
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error generating content for model: {ModelName}", request.ModelName);
+            return StatusCode(500, new { message = "Generation failed", error = ex.Message });
+        }
+    }
+
+    [HttpGet("progress/{taskId}")]
+    public async Task<IActionResult> GetProgress(string taskId)
+    {
+        try
+        {
+            var progress = await _generationService.GetProgressAsync(taskId);
+            return Ok(progress);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting progress for task: {TaskId}", taskId);
+            return StatusCode(500, new { message = "Progress retrieval failed", error = ex.Message });
+        }
+    }
+
+    [HttpGet("models")]
+    public async Task<IActionResult> GetModels()
+    {
+        try
+        {
+            var models = await _generationService.GetAvailableModelsAsync();
+            return Ok(models);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting available models");
+            return StatusCode(500, new { message = "Model retrieval failed", error = ex.Message });
+        }
+    }
+
+    [HttpPost("cancel/{taskId}")]
+    public async Task<IActionResult> Cancel(string taskId)
+    {
+        try
+        {
+            await _generationService.CancelGenerationAsync(taskId);
+            return Ok(new { message = "Generation cancelled" });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error cancelling generation: {TaskId}", taskId);
+            return StatusCode(500, new { message = "Cancellation failed", error = ex.Message });
+        }
+    }
+}
+```
+
+### Faza C: Enterprise Features Implementation (P2 - Visoko)
+
+#### Korak C.1: Database Layer with EF Core
+**Cilj:** Implementirati relational database za shranjevanje podatkov
+
+**Metoda:** Ustvari `AuraFlow.Infrastructure/Persistence/`:
+```csharp
+// AuraFlowDbContext.cs
+public class AuraFlowDbContext : DbContext
+{
+    public DbSet<Generation> Generations { get; set; }
+    public DbSet<Model> Models { get; set; }
+    public DbSet<UserSettings> UserSettings { get; set; }
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // Configure entities
+        modelBuilder.Entity<Generation>().HasIndex(g => g.TaskId);
+        modelBuilder.Entity<Generation>().HasIndex(g => g.CreatedAt);
+    }
+}
+
+// Generation entity
+public class Generation
+{
+    public Guid Id { get; set; }
+    public string TaskId { get; set; } = Guid.NewGuid().ToString();
+    public string Prompt { get; set; } = string.Empty;
+    public string ModelName { get; set; } = string.Empty;
+    public GenerationStatus Status { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime? CompletedAt { get; set; }
+    public string? OutputImageUrl { get; set; }
+    public string? OutputVideoUrl { get; set; }
+}
+
+public enum GenerationStatus
+{
+    Pending,
+    Running,
+    Completed,
+    Failed,
+    Cancelled
+}
+```
+
+**Migrations:**
+```bash
+dotnet ef migrations add InitialCreate --project src/AuraFlow.Infrastructure
+dotnet ef database update --project src/AuraFlow.Infrastructure
+```
+
+#### Korak C.2: Redis Caching Layer
+**Cilj:** Implementirati caching za izboljšanje performance
+
+**Metoda:** Ustvari `AuraFlow.Core/Common/Caching/`:
+```csharp
+public interface ICacheService
+{
+    Task<T?> GetAsync<T>(string key, CancellationToken cancellationToken = default);
+    Task SetAsync<T>(string key, T value, TimeSpan expiration, CancellationToken cancellationToken = default);
+    Task RemoveAsync(string key, CancellationToken cancellationToken = default);
+}
+
+public class RedisCacheService : ICacheService
+{
+    private readonly IDistributedCache _cache;
+    
+    public async Task<T?> GetAsync<T>(string key)
+    {
+        var cached = await _cache.GetStringAsync(key);
+        return string.IsNullOrEmpty(cached) ? default : JsonSerializer.Deserialize<T>(cached);
+    }
+    
+    public async Task SetAsync<T>(string key, T value, TimeSpan expiration)
+    {
+        var options = new DistributedCacheEntryOptions
+        {
+            AbsoluteExpirationRelativeToNow = expiration
+        };
+        
+        await _cache.SetStringAsync(key, JsonSerializer.Serialize(value), options);
+    }
+}
+```
+
+#### Korak C.3: RabbitMQ Message Queue
+**Cilj:** Implementirati async processing za generiranje
+
+**Metoda:** Ustvari `AuraFlow.Infrastructure/Messaging/`:
+```csharp
+public interface IQueueService
+{
+    Task PublishWithRetryAsync<T>(string queueName, QueueMessage<T> message, CancellationToken cancellationToken = default);
+    Task SubscribeAsync<T>(string queueName, Func<T, Task> handler, CancellationToken cancellationToken = default);
+}
+
+public class RabbitQueueService : IQueueService
+{
+    private readonly ConnectionFactory _factory;
+    
+    public async Task PublishWithRetryAsync<T>(string queueName, QueueMessage<T> message)
+    {
+        using var connection = await _factory.CreateConnectionAsync();
+        using var channel = await connection.CreateChannelAsync();
+        
+        await channel.QueueDeclareAsync(
+            queue: queueName,
+            durable: true,
+            exclusive: false,
+            autoDelete: false);
+        
+        var body = JsonSerializer.SerializeToUtf8Bytes(message);
+        await channel.BasicPublishAsync(
+            exchange: "",
+            routingKey: queueName,
+            basicProperties: null,
+            body: body);
+    }
+}
+```
+
+#### Korak C.4: Hangfire Background Jobs
+**Cilj:** Implementirati background processing za generiranje
+
+**Metoda:** Posodobi `DependencyInjection.cs`:
+```csharp
+services.AddHangfire(config => 
+    config.UseSqlServerStorage(
+        configuration.GetConnectionString("Hangfire")));
+services.AddHangfireServer();
+
+// Job definition
+public class GenerationJob
+{
+    [AutomaticRetry(Attempts = 3)]
+    public async Task ProcessGenerationAsync(GenerationRequest request)
+    {
+        // Process generation logic
+    }
+}
+
+// Recurring job for cleanup
+public class CleanupJobs
+{
+    public static void AddRecurringJobs(IJobConfiguration config)
+    {
+        config.AddOrUpdate("cleanup-old-generations", 
+            Job.Create(() => new CleanupService().CleanupOldGenerations()),
+            Cron.Daily);
+    }
+}
+```
+
+#### Korak C.5: Sentry Monitoring
+**Cilj:** Implementirati error tracking in performance monitoring
+
+**Metoda:** Posodobi `Program.cs`:
+```csharp
+builder.Services.AddSentry(options =>
+{
+    options.Dsn = configuration["Sentry:Dsn"];
+    options.EnableTracing = true;
+    options.TracesSampleRate = 0.1;
+});
+
+// Add metrics collection
+builder.Services.AddSingleton<IMetricsService, MetricsService>();
+```
+
+#### Korak C.6: JWT Authentication
+**Cilj:** Implementirati authentication in authorization
+
+**Metoda:** Ustvari `AuraFlow.Infrastructure/Authentication/`:
+```csharp
+public interface IAuthService
+{
+    Task<string> GenerateTokenAsync(User user);
+    Task<ValidationResult> ValidateTokenAsync(string token);
+}
+
+public class JwtAuthService : IAuthService
+{
+    private readonly IConfiguration _configuration;
+    
+    public async Task<string> GenerateTokenAsync(User user)
+    {
+        var jwtSettings = _configuration.GetSection("Jwt");
+        
+        var claims = new[]
+        {
+            new Claim(ClaimTypes.Name, user.Username),
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+        };
+        
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Secret"]));
+        var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+        
+        var token = new JwtSecurityToken(
+            issuer: jwtSettings["Issuer"],
+            audience: jwtSettings["Audience"],
+            claims: claims,
+            expires: DateTime.Now.AddHours(1),
+            signingCredentials: credentials);
+        
+        return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+}
+
+// Auth controller
+[ApiController]
+[Route("api/v1/[controller]")]
+public class AuthController : ControllerBase
+{
+    private readonly IAuthService _auth;
+    
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginRequest request)
+    {
+        var user = await ValidateUser(request);
+        
+        if (user == null)
+            return Unauthorized();
+        
+        var token = await _auth.GenerateTokenAsync(user);
+        
+        return Ok(new 
+        { 
+            accessToken = token,
+            expiresIn = "1h"
+        });
+    }
+}
+```
+
+### Faza D: Frontend Integration (P2 - Visoko)
+
+#### Korak D.1: Real-time Progress Display
+**Cilj:** Prikazati real-time progress v OpenWebUI UI
+
+**Metoda:** Posodobi `openwebui-plugin/src/plugin.js`:
+```javascript
+async handleGeneration(prompt) {
+  // Create progress bar
+  const progressBar = document.createElement("div");
+  progressBar.className = "auraflow-progress-container";
+  
+  const progressBarInner = document.createElement("div");
+  progressBarInner.className = "auraflow-progress-bar";
+  progressBarInner.style.width = "0%";
+  
+  const progressText = document.createElement("span");
+  progressText.className = "auraflow-progress-text";
+  progressText.textContent = "0%";
+  
+  progressBar.appendChild(progressBarInner);
+  progressBar.appendChild(progressText);
+  
+  // Add to UI
+  const outputArea = document.querySelector(".output-area");
+  if (outputArea) {
+    outputArea.insertBefore(progressBar, outputArea.firstChild);
+  }
+
+  try {
+    const response = await fetch("/api/v1/generate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt }),
+    });
+
+    const result = await response.json();
+    
+    // Poll for progress
+    pollProgress(result.taskId, progressBarInner, progressText);
+    
+  } catch (error) {
+    showError(error.message);
+  }
+}
+
+async function pollProgress(taskId, barElement, textElement) {
+  const interval = setInterval(async () => {
+    const response = await fetch(`/api/v1/generation/progress/${taskId}`);
+    const progress = await response.json();
+    
+    barElement.style.width = `${progress.progressPercentage}%`;
+    textElement.textContent = `${progress.progressPercentage}% - ${progress.currentNode || 'Processing'}`;
+    
+    if (progress.state === "Completed") {
+      clearInterval(interval);
+      displayResult(progress);
+    } else if (progress.state === "Failed") {
+      clearInterval(interval);
+      showError("Generation failed");
+    }
+  }, 1000);
+}
+```
+
+#### Korak D.2: Image/Video Preview
+**Cilj:** Prikazati generirane slike/videje v realnem času
+
+**Metoda:** Dodaj v `openwebui-plugin/src/plugin.js`:
+```javascript
+function displayResult(result) {
+  const outputArea = document.querySelector(".output-area");
+  
+  if (result.outputImageUrl) {
+    const img = document.createElement("img");
+    img.src = result.outputImageUrl;
+    img.className = "auraflow-result-image";
+    
+    outputArea.appendChild(img);
+  } else if (result.outputVideoUrl) {
+    const video = document.createElement("video");
+    video.src = result.outputVideoUrl;
+    video.controls = true;
+    video.className = "auraflow-result-video";
+    
+    outputArea.appendChild(video);
+  }
+}
+```
+
+#### Korak D.3: Model Selection Dropdown
+**Cilj:** Omogočiti dinamičen izbor modelov iz API
+
+**Metoda:** Posodobi `openwebui-plugin/src/plugin.js`:
+```javascript
+events.on("uiReady", async () => {
+  // Load available models
+  const response = await fetch("/api/v1/generation/models");
+  const models = await response.json();
+  
+  // Create model selector
+  const modelSelect = document.createElement("select");
+  modelSelect.className = "auraflow-model-selector";
+  
+  models.forEach(model => {
+    const option = document.createElement("option");
+    option.value = model.id;
+    option.textContent = model.name;
+    modelSelect.appendChild(option);
+  });
+  
+  // Add to UI
+  const promptInput = document.querySelector(".prompt-input");
+  if (promptInput) {
+    promptInput.parentElement.insertBefore(modelSelect, promptInput);
+  }
+});
+```
+
+### Faza E: Docker & Deployment (P3 - Srednje)
+
+#### Korak E.1: Production Dockerfile
+**Cilj:** Optimiziran build za production
+
+**Metoda:** Posodobi `Dockerfile`:
+```dockerfile
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+WORKDIR /app
+EXPOSE 5000
+ENV DOTNET_ENVIRONMENT=Production
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY ["src/AuraFlow/AuraFlow.csproj", "src/AuraFlow/"]
+RUN dotnet restore "src/AuraFlow/AuraFlow.csproj"
+COPY . .
+WORKDIR "/src/src/AuraFlow"
+RUN dotnet build "AuraFlow.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "AuraFlow.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "AuraFlow.dll"]
+```
+
+#### Korak E.2: Environment Configuration
+**Cilj:** Omogočiti konfiguracijo preko environment variable
+
+**Metoda:** Ustvari `config.json` in `.env.example`:
+```json
+{
+  "preferredModels": {
+    "photos": "Flux Dev",
+    "video": "Wan2GP"
+  },
+  "inferenceSettings": {
+    "defaultWidth": 1024,
+    "defaultHeight": 1024,
+    "steps": 30,
+    "cfgScale": 7.5
+  },
+  "ChatInterface": {
+    "enabled": true,
+    "defaultModel": "Flux Dev",
+    "maxConcurrentGenerations": 3,
+    "timeoutSeconds": 120,
+    "apiBaseUrl": "http://localhost:5000"
+  }
+}
+```
+
+#### Korak E.3: Health Checks in Docker Compose
+**Cilj:** Dodati health checks za monitoring
+
+**Metoda:** Posodobi `docker-compose.yml`:
+```yaml
+services:
+  auraflow-api:
+    # ... existing config ...
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+```
+
+### Faza F: Testing & Validation (P3 - Srednje)
+
+#### Korak F.1: Unit Tests
+**Cilj:** Zagotoviti testno pokritost >80%
+
+**Metoda:** Ustvari `tests/AuraFlow.UnitTests/`:
+```csharp
+public class GenerationServiceTests
+{
+    [Fact]
+    public async Task GenerateAsync_WithValidRequest_ReturnsSuccess()
+    {
+        // Arrange
+        var mockComfyClient = new Mock<ComfyClient>();
+        var mockQueueService = new Mock<IQueueService>();
+        
+        var service = new GenerationService(
+            _logger, 
+            mockComfyClient.Object, 
+            mockQueueService.Object);
+        
+        var request = new GenerationRequest { Prompt = "test", ModelName = "Flux Dev" };
+        
+        // Act
+        var result = await service.GenerateAsync(request);
+        
+        // Assert
+        Assert.True(result.Success);
+        Assert.NotNull(result.TaskId);
+    }
+}
+```
+
+#### Korak F.2: Integration Tests
+**Cilj:** Testirati integracijo z ComfyUI in database
+
+**Metoda:** Ustvari `tests/AuraFlow.IntegrationTests/`:
+```csharp
+[Collection("Sequential")]
+public class GenerationIntegrationTests : IClassFixture<CustomWebApplicationFactory<Program>>
+{
+    [Fact]
+    public async Task GenerateEndpoint_ShouldReturnTaskId()
+    {
+        // Arrange
+        var client = _factory.CreateClient();
+        
+        var request = new GenerationRequest 
+        { 
+            Prompt = "test", 
+            ModelName = "Flux Dev" 
+        };
+        
+        // Act
+        var response = await client.PostAsJsonAsync("/api/v1/generation/generate", request);
+        
+        // Assert
+        response.StatusCode.Should().Be(HttpStatusCode.OK);
+    }
+}
+```
+
+### Faza G: Documentation (P4 - Nizko)
+
+#### Korak G.1: API Documentation
+**Cilj:** Popolnoma dokumentirati API preko Swagger
+
+**Metoda:** Posodobi `Program.cs`:
+```csharp
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new() { 
+        Title = "AuraFlow Studio API", 
+        Version = "v1",
+        Description = "Enterprise-grade AI Image & Video Generation Platform"
+    });
+    
+    // Add XML comments
+    var xmlFile = $"{Assembly.GetExecutingAssembly().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
+});
+```
+
+#### Korak G.2: Deployment Guide
+**Cilj:** Ustvariti comprehensive deployment documentation
+
+**Metoda:** Ustvari `docs/DEPLOYMENT_GUIDE.md`:
+```markdown
+# AuraFlow Studio - Deployment Guide
+
+## Prerequisites
+- Docker & Docker Compose
+- .NET 8 SDK (for local development)
+- SQL Server or PostgreSQL
+
+## Quick Start
+1. Clone repository: `git clone https://github.com/your-org/AuraFlow.git`
+2. Configure environment variables in `.env`
+3. Run: `docker-compose up -d`
+4. Access UI at http://localhost:3000
+
+## Production Deployment
+See [Production Setup](./PRODUCTION_SETUP.md) for detailed instructions...
+```
+
+---
+
+## 5. TESTING AND VALIDATION
+
+### Merila za Uspeh:
+
+#### Kvantitativna merila:
+- ✅ **Test Coverage**: > 80% (unit + integration tests)
+- ✅ **API Response Time**: < 2 sekunde (p95)
+- ✅ **Uptime**: 99.9% SLA
+- ✅ **Error Rate**: < 0.1%
+- ✅ **Database Query Time**: < 100ms (p95)
+
+#### Kvalitativna merila:
+- ✅ **Scalability**: Podpora za 100+ hkratnih uporabnikov
+- ✅ **Maintainability**: Jasna arhitektura z dokumentacijo
+- ✅ **Reliability**: Fault-tolerance mechanismi delujejo
+- ✅ **Observability**: Complete logging in monitoring (Sentry)
+- ✅ **Deployability**: Automated CI/CD pipeline
+
+### Validation Steps:
+
+1. **OpenWebUI Integration Test:**
+   - Open http://localhost:3000
+   - Enter prompt in chat interface
+   - Click "Generate (AuraFlow)" button
+   - Verify progress bar updates in real-time
+   - Check result image/video appears in UI
+
+2. **API Endpoint Test:**
+   ```bash
+   curl -X POST http://localhost:5000/api/v1/generation/generate \
+     -H "Content-Type: application/json" \
+     -d '{"prompt": "test", "modelName": "Flux Dev"}'
+   ```
+
+3. **Enterprise Features Test:**
+   - Verify Redis caching works (check logs)
+   - Check RabbitMQ queue processing
+   - Confirm Hangfire jobs execute
+   - Validate Sentry error tracking
+
+4. **Load Testing:**
+   - Run 100 concurrent generation requests
+   - Monitor response times and error rates
+   - Verify database performance
+
+5. **End-to-End Test:**
+   - Complete flow from prompt to result
+   - Check all services communicate correctly
+   - Validate data persistence in database
+
+---
+
+## 6. IMPLEMENTATION TIMELINE
+
+### Teden 1: Reorganizacija in OpenWebUI Integration (P1)
+- [ ] Custom OpenWebUI build z brandingom
+- [ ] Plugin update za AuraFlow
+- [ ] Generation service implementation
+- [ ] Docker Compose update z vsemi servisi
+
+### Teden 2: Enterprise Features (P2)
+- [ ] EF Core database layer
+- [ ] Redis caching layer
+- [ ] RabbitMQ message queue
+- [ ] Hangfire background jobs
+- [ ] JWT authentication
+
+### Teden 3: Frontend & Monitoring (P2-P3)
+- [ ] Real-time progress display v UI
+- [ ] Image/video preview
+- [ ] Model selection dropdown
+- [ ] Sentry monitoring setup
+- [ ] Health checks in Docker
+
+### Teden 4: Testing & Documentation (P3-P4)
+- [ ] Unit tests (80%+ coverage)
+- [ ] Integration tests
+- [ ] Performance testing
+- [ ] API documentation
+- [ ] Deployment guide
+
+---
+
+## 7. RISK MANAGEMENT
+
+| Tveganje | Verjetnost | Vpliv | Rešitev |
+|----------|------------|-------|---------|
+| Breaking changes v OpenWebUI pluginu | Visoka | Visok | Versioning + backward compatibility |
+| Performance degradation pri many users | Srednja | Visok | Caching + load balancing |
+| Database bottlenecks | Srednja | Visok | Indexing + query optimization |
+| External service failures (ComfyUI) | Visoka | Srednji | Circuit breaker + retry mechanism |
+| Memory leaks v .NET application | Nizka | Visok | Monitoring + profiling tools |
+
+---
+
+## 8. SUCCESS CRITERIA
+
+### Immediate Deliverables:
+- ✅ **Single unified project**: Vsa koda v `AuraFlow/` projektu
+- ✅ **Consistent branding**: Popolnoma "AuraFlow" namesto "StabilityMatrix"
+- ✅ **Working OpenWebUI integration**: Chat interface z generiranjem slik/videjev
+- ✅ **Enterprise features**: Redis, RabbitMQ, Hangfire, monitoring
+- ✅ **Professional documentation**: Comprehensive guides in place
+
+### Code Quality:
+- ✅ No compiler warnings v Release build
+- ✅ Vsi services registrirani v DI container
+- ✅ XML comments na vseh public APIs
+- ✅ Jasna folder organizacija
+
+### User Experience:
+- ✅ Enostaven chat-style interface
+- ✅ Real-time progress tracking
+- ✅ Instant image/video preview
+- ✅ Model selection dropdown
+- ✅ Professional enterprise look & feel
+
+---
+
+**Built with ❤️ using .NET 8, ASP.NET Core, Blazor, OpenWebUI, ComfyUI, Redis, RabbitMQ, in Hangfire**
 
 ### Why This Approach:
 1. **Single source of truth**: All code in one place, easier to maintain

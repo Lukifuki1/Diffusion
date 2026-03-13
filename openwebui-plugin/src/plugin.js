@@ -1,14 +1,14 @@
-// OpenWebUI Plugin for Stability Matrix Chat Interface
-class StabilityMatrixPlugin {
+// OpenWebUI Plugin for AuraFlow Studio Chat Interface
+class AuraFlowPlugin {
   async ready({ app, events }) {
-    console.log("Stability Matrix Plugin loaded");
+    console.log("AuraFlow Plugin loaded");
 
     // Register custom API endpoint
     events.on("customEndpoint", (endpoint) => {
       if (endpoint.path === "/api/v1/generate") {
         endpoint.method = "POST";
         endpoint.handler = async (req, res) => {
-          const response = await fetch("http://stabilitymatrix-backend:5000/api/v1/generate", {
+          const response = await fetch("http://auraflow-api:5000/api/v1/generation/generate", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(req.body),
@@ -21,8 +21,8 @@ class StabilityMatrixPlugin {
     // Add UI elements to chat interface
     events.on("uiReady", () => {
       const generateButton = document.createElement("button");
-      generateButton.textContent = "Generate";
-      generateButton.className = "stability-matrix-generate-btn";
+      generateButton.textContent = "Generate (AuraFlow)";
+      generateButton.className = "auraflow-generate-btn";
       
       const promptInput = document.querySelector(".prompt-input");
       if (promptInput) {
@@ -37,12 +37,10 @@ class StabilityMatrixPlugin {
   }
 
   async handleGeneration(prompt) {
-    // Show loading indicator
-    const loadingIndicator = document.createElement("div");
-    loadingIndicator.className = "loading-indicator";
-    loadingIndicator.textContent = "Generating...";
+    // Show loading indicator with progress bar
+    const progressBar = document.createElement("div");
+    progressBar.className = "auraflow-progress-bar";
     
-    // Send request to backend
     try {
       const response = await fetch("/api/v1/generate", {
         method: "POST",
@@ -53,7 +51,6 @@ class StabilityMatrixPlugin {
       const result = await response.json();
       
       if (result.success) {
-        // Display result
         displayResult(result);
       } else {
         showError(result.errorMessage);
@@ -64,4 +61,4 @@ class StabilityMatrixPlugin {
   }
 }
 
-export default StabilityMatrixPlugin;
+export default AuraFlowPlugin;

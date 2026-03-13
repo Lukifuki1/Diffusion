@@ -1,0 +1,90 @@
+/* AuraFlow Studio Custom CSS */
+
+/* Primary colors - AuraFlow branding */
+:root {
+  --auraflow-primary: #1E40AF;      /* Deep Blue */
+  --auraflow-secondary: #7C3AED;    /* Purple */
+  --auraflow-accent: #F59E0B;       /* Amber accent */
+  --auraflow-bg-dark: #0F172A;      /* Dark background */
+  --auraflow-text-light: #F8FAFC;   /* Light text */
+}
+
+/* Override OpenWebUI default colors with AuraFlow branding */
+body, .app-container {
+  background-color: var(--auraflow-bg-dark) !important;
+  color: var(--auraflow-text-light) !important;
+}
+
+/* Header styling */
+.header, nav {
+  background: linear-gradient(135deg, var(--auraflow-primary), var(--auraflow-secondary)) !important;
+  box-shadow: 0 4px 20px rgba(30, 64, 175, 0.3) !important;
+}
+
+/* Logo replacement */
+.logo-container img {
+  max-height: 40px;
+}
+
+/* Button styling */
+.btn-primary, .generate-btn, button.primary {
+  background: linear-gradient(135deg, var(--auraflow-primary), var(--auraflow-secondary)) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover, .generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4) !important;
+}
+
+/* Input fields */
+.prompt-input, input[type="text"], textarea {
+  border: 2px solid var(--auraflow-primary) !important;
+  background-color: rgba(30, 64, 175, 0.1) !important;
+  color: var(--auraflow-text-light) !important;
+}
+
+.prompt-input:focus, input[type="text"]:focus, textarea:focus {
+  border-color: var(--auraflow-secondary) !important;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.3) !important;
+}
+
+/* Progress bar */
+.progress-bar, .loading-indicator {
+  background: linear-gradient(90deg, var(--auraflow-primary), var(--auraflow-secondary)) !important;
+}
+
+/* Generation button specific styling */
+.auraflow-generate-btn {
+  background: linear-gradient(135deg, var(--auraflow-primary), var(--auraflow-secondary)) !important;
+  padding: 12px 24px !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  margin-top: 10px !important;
+}
+
+/* Status indicators */
+.status-indicator {
+  background-color: var(--auraflow-accent) !important;
+}
+
+/* Sidebar navigation */
+.sidebar, nav ul {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  border-right: 2px solid var(--auraflow-primary) !important;
+}
+
+/* Chat messages */
+.chat-message {
+  background-color: rgba(30, 64, 175, 0.1) !important;
+  border-left: 3px solid var(--auraflow-secondary) !important;
+}
+
+/* Model cards */
+.model-card {
+  border: 2px solid var(--auraflow-primary) !important;
+  background-color: rgba(124, 58, 237, 0.1) !important;
+}
