@@ -1,0 +1,59 @@
+@page "/history"
+@using AuraFlow.Services
+@inject IImageIndexService ImageIndexService
+
+<h2>📜 Generacijska Zgodovina</h2>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Prompt</th>
+                    <th>Model</th>
+                    <th>Tip</th>
+                    <th>Dejanja</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in generationHistory)
+                {
+                    <tr>
+                        <td>@item.Timestamp.ToString("yyyy-MM-dd HH:mm")</td>
+                        <td>@item.Prompt.Substring(0, Math.Min(item.Prompt.Length, 50))...</td>
+                        <td>@item.Model</td>
+                        <td>@item.Type</td>
+                        <td>
+                            <a href="@item.Url" class="btn btn-sm btn-primary">Poglej</a>
+                            <a href="@item.Url" download class="btn btn-sm btn-success">⬇️</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @if (generationHistory.Count == 0)
+        {
+            <p class="text-muted">Še ni nobenih generacij.</p>
+        }
+    </div>
+</div>
+
+@code {
+    private List<GenerationRecord> generationHistory = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        generationHistory = await ImageIndexService.GetRecentGenerationsAsync(50);
+    }
+}
+
+public class GenerationRecord
+{
+    public DateTime Timestamp { get; set; }
+    public string Prompt { get; set; } = "";
+    public string Model { get; set; } = "";
+    public string Type { get; set; } = "";
+    public string Url { get; set; } = "";
+}

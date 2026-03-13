@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the dependency injection container
 builder.Services.AddControllers();
+builder.Services.AddBlazorServer(); // Enable Blazor Server
+builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -16,6 +18,8 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddScoped<IDownloadService, DownloadService>();
 builder.Services.AddSingleton<ISecretsManager>(new SecretsManager());
 builder.Services.AddSingleton<ISettingsManager>(new SettingsManager());
+builder.Services.AddScoped<IImageIndexService, ImageIndexService>();
+builder.Services.AddScoped<IGenerationService, GenerationService>();
 
 // Register infrastructure services
 builder.Services.AddInfrastructureServices(builder.Configuration);
@@ -49,8 +53,12 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 
-// Map controllers
+// Map controllers and pages
 app.MapControllers();
+app.MapRazorPages();
+
+// Blazor Server endpoint
+app.MapBlazorHub();
 
 // Health check endpoint
 app.MapGet("/health", () => Results.Ok(new { status = "healthy", timestamp = DateTime.UtcNow }));
