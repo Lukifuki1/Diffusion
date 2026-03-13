@@ -1,0 +1,48 @@
+@page "/"
+@using AuraFlow.Services
+
+<h1 class="mb-4">🎨 Dobrodošli v AuraFlow Studio</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">⚡ Hitri Začetek</h5>
+                <p class="card-text">
+                    AuraFlow Studio je napredna platforma za generiranje slik in videov z uporabo AI modelov.
+                </p>
+                <a href="/chat" class="btn btn-primary">🚀 Začni Zdaj</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">✨ Funkcionalnosti</h5>
+                <ul class="list-unstyled">
+                    <li>✅ Generiranje slik z več modeli (Flux, SDXL, Realistic Vision)</li>
+                    <li>✅ Generiranje videov (Wan2GP)</li>
+                    <li>✅ Real-time napredek generiranja</li>
+                    <li>✅ Batch processing do 3 hkratnih nalog</li>
+                    <li>✅ Zgodovina vseh generacij</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">📊 Status Sistema</h5>
+                <p class="card-text">
+                    @statusMessage
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string statusMessage = "Sistem je pripravljen za uporabo.";
+}

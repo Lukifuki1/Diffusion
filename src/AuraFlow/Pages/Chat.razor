@@ -1,0 +1,132 @@
+@page "/chat"
+@using AuraFlow.Services
+@inject IGenerationService GenerationService
+@inject NavigationManager Navigation
+
+<h2>🎨 AI Image & Video Generator</h2>
+
+<div class="card">
+    <div class="card-body">
+        <div class="form-group mb-3">
+            <label for="promptInput">Prompt:</label>
+            <textarea id="promptInput" class="form-control" rows="3" @bind="prompt" placeholder="Vpiši opis slike ali videa..."></textarea>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="modelSelect">Model:</label>
+                <select id="modelSelect" class="form-select" @bind="selectedModel">
+                    <option value="">Izberi model...</option>
+                    <option value="Flux Dev">Flux Dev</option>
+                    <option value="SDXL Turbo">SDXL Turbo</option>
+                    <option value="Realistic Vision">Realistic Vision</option>
+                    <option value="Wan2GP">Wan2GP (Video)</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="typeSelect">Tip:</label>
+                <select id="typeSelect" class="form-select" @bind="generationType">
+                    <option value="Image">Slika</option>
+                    <option value="Video">Video</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" @onclick="GenerateAsync" disabled="@isGenerating">
+            @(isGenerating ? "⏳ Generiranje..." : "🚀 Generate")
+        </button>
+    </div>
+</div>
+
+@if (isGenerating)
+{
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5>Napredek generiranja:</h5>
+            <progress id="progressBar" value="@currentProgress" max="100"></progress>
+            <p>@currentStatus</p>
+        </div>
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(resultUrl))
+{
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5>Rezultat:</h5>
+            @if (generationType == "Image")
+            {
+                <img src="@resultUrl" alt="Generated Image" class="img-fluid" />
+            }
+            else
+            {
+                <video src="@resultUrl" controls class="img-fluid"></video>
+            }
+            <a href="@resultUrl" download class="btn btn-success mt-2">⬇️ Prenesi</a>
+        </div>
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger mt-3">@errorMessage</div>
+}
+
+@code {
+    private string prompt = "";
+    private string selectedModel = "Flux Dev";
+    private string generationType = "Image";
+    private bool isGenerating;
+    private int currentProgress = 0;
+    private string currentStatus = "";
+    private string resultUrl = "";
+    private string errorMessage = "";
+
+    private async Task GenerateAsync()
+    {
+        try
+        {
+            isGenerating = true;
+            errorMessage = "";
+            resultUrl = "";
+            currentProgress = 0;
+            currentStatus = "Začeto...";
+
+            var request = new GenerationRequest
+            {
+                Prompt = prompt,
+                Model = selectedModel,
+                Type = generationType,
+                Width = 1024,
+                Height = 1024,
+                Steps = 30,
+                GuidanceScale = 7.5f
+            };
+
+            var response = await GenerationService.GenerateAsync(request);
+            
+            // Monitor progress via WebSocket or polling
+            while (response.IsComplete == false)
+            {
+                await Task.Delay(1000);
+                currentProgress = response.Progress;
+                currentStatus = $"Napredek: {currentProgress}%";
+                
+                if (!string.IsNullOrEmpty(response.PreviewUrl))
+                {
+                    resultUrl = response.PreviewUrl;
+                }
+            }
+
+            resultUrl = response.ResultUrl;
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Napaka: {ex.Message}";
+        }
+        finally
+        {
+            isGenerating = false;
+        }
+    }
+}
