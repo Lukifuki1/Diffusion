@@ -1,15 +1,27 @@
 feature/blazor-chat-interface-v2
 namespace AuraFlow.Services;
 
+using AuraFlow.Core.Api;
+using AuraFlow.Core.Inference;
+using AuraFlow.Models.Api;
+using AuraFlow.Infrastructure.Engines.Comfy;
+
 public class GenerationService : IGenerationService, IDisposable
 {
     private readonly ILogger<GenerationService> _logger;
+    private readonly IComfyApi _comfyApi;
+    private readonly IComfyWorkflowGenerator _workflowGenerator;
     private readonly Dictionary<string, CancellationTokenSource> _activeGenerations = new();
     private bool _disposed;
 
-    public GenerationService(ILogger<GenerationService> logger)
+    public GenerationService(
+        ILogger<GenerationService> logger,
+        IComfyApi comfyApi,
+        IComfyWorkflowGenerator workflowGenerator)
     {
         _logger = logger;
+        _comfyApi = comfyApi;
+        _workflowGenerator = workflowGenerator;
     }
 
     public async Task<GenerationResponse> GenerateAsync(GenerationRequest request, CancellationToken cancellationToken = default)
@@ -24,22 +36,24 @@ public class GenerationService : IGenerationService, IDisposable
                 Progress = 0
             };
 
-            // Simulate generation process (in real implementation, this would call ComfyUI)
-            await Task.Run(async () =>
+            // Generate ComfyUI workflow
+            var workflowJson = await _workflowGenerator.GenerateWorkflowAsync(request, cancellationToken);
+            
+            // Submit prompt to ComfyUI
+            var promptRequest = new Core.Models.Api.Comfy.ComfyPromptRequest
             {
-                for (int i = 0; i <= 100; i += 10)
-                {
-                    response.Progress = i;
-                    await Task.Delay(500, cancellationToken);
-                    
-                    if (i == 100)
-                    {
-                        response.IsComplete = true;
-                        response.ResultUrl = $"/output/{response.TaskId}.{request.Type.ToLower()}";
-                    }
-                }
-            }, cancellationToken);
+                ClientId = Guid.NewGuid().ToString(),
+                Prompt = JsonSerializer.Deserialize<Dictionary<string, ComfyNode>>(workflowJson, new JsonSerializerOptions 
+                { 
+                    PropertyNamingPolicy = JsonNamingPolicies.SnakeCaseLower 
+                })!
+            };
 
+            var promptResponse = await _comfyApi.PostPrompt(promptRequest, cancellationToken);
+            
+            // Start monitoring progress via WebSocket (placeholder)
+            response.TaskId = promptResponse.PromptId;
+            
             return response;
         }
         catch (Exception ex)
@@ -55,6 +69,17 @@ public class GenerationService : IGenerationService, IDisposable
         {
             cts.Cancel();
             _activeGenerations.Remove(taskId);
+            
+            // Also interrupt via ComfyUI API
+            try
+            {
+                await _comfyApi.PostInterrupt(cancellationToken);
+            }
+            catch
+            {
+                // Ignore interruption errors
+            }
+            
             return true;
         }
         return false;
