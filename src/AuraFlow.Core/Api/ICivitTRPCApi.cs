@@ -1,5 +1,5 @@
 ﻿using Refit;
-using AuraFlow.Core.Models.Api.CivitTRPC;
+using AuraFlow.Core.Models.Api.CivitApi;
 
 namespace AuraFlow.Core.Api;
 
@@ -8,7 +8,7 @@ namespace AuraFlow.Core.Api;
     "Referer: https://civitai.com",
     "Origin: https://civitai.com"
 )]
-public interface ICivitTRPCApi
+public interface ICivitApiApi
 {
     [QueryUriFormat(UriFormat.UriEscaped)]
     [Get("/api/trpc/userProfile.get")]

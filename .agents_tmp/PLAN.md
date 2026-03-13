@@ -535,90 +535,537 @@ AuraFlow.Studio/
 
 ---
 
-# 5. TESTING AND VALIDATION (Enterprise)
+# 9. DODATNE DADELAVE ZA POPOLNOMA STABILNO DELOVANJE
 
-## Enterprise Validacijski kriteriji
+## Trenutni status projekta - Odkrite težave:
 
-✅ **Scalability**: Podpora za 100+ hkratnih generacij  
-✅ **Reliability**: 99.9% uptime SLA  
-✅ **Performance**: < 2 sekunde response time za API  
-✅ **Security**: OWASP Top 10 compliance  
-✅ **Maintainability**: 80%+ test coverage  
-✅ **Documentation**: Complete API in deployment docs  
+### 🔴 Kritične pomanjkljivosti:
 
-## Merila za enterprise uspeh
+1. **Več različnih struktur hkrati:**
+   - `AuraFlow.*` (6 projektov)
+   - `DiffusionHub.*` (4 projekti)
+   - `StabilityMatrix.*` (3 projekti)
+   - **Težava**: Zmeda pri buildu in deploymentu
 
-1. **Time to Market**: Manj kot 4 tedne za popolno reorganizacijo
-2. **Team Collaboration**: Podpora za več razvojnih ekip hkrati
-3. **Deployment Flexibility**: Docker, Kubernetes, Cloud support
-4. **Backward Compatibility**: API versioning z minimal breaking changes
-5. **Monitoring**: Real-time dashboard za generacije in performance
+2. **Tuji brandi še vedno vidni v kodi:**
+   - `StabilityMatrix.Core` namespace (ComfyClient, Lykos modeli)
+   - `Lykos.*` razredi (17 datotek)
+   - `Comfy*.*` razredi (4 datoteke)
+   - `CivitTRPC.*` namespace (8 datotek)
+   - **Težava**: Razkriva tuje projekte namesto lastne IP
 
-## Dodatni enterprise testi
+3. **Tri solution datoteke:**
+   - `AuraFlow.sln`
+   - `DiffusionHub.sln`
+   - `StabilityMatrix.sln`
+   - **Težava**: Nejasnost katera je glavna
 
-- Load testing (JMeter/Gatling) za 1000+ requestov/minuto
-- Stress testing za long-running generacije
-- Chaos engineering za fault tolerance
-- Security penetration testing
-- User acceptance testing z realnimi uporabniki
+4. **Dva testna projekta:**
+   - `AuraFlow.UnitTests`
+   - `DiffusionHub.UnitTests`
+   - **Težava**: Podvojitev testov in zmeda
+
+### 🟡 Pomembne manjkajoče komponente:
+
+1. **CI/CD Pipeline** (manjka `.github/workflows/`)
+2. **Dokumentacija** (manjka `docs/` mapa)
+3. **Monitoring & Logging** (samo osnovno NLog, manja Sentry)
+4. **Health Check Endpoints** (manjkajo v API-ju)
+5. **Rate Limiting** (manjka v API-ju)
+6. **Authentication & Authorization** (delna implementacija)
+7. **Database Migrations** (manjka EF Core migrations)
+8. **Configuration Management** (manjka environment-specific configs)
+
+### 🟢 Dodatne izboljšave za enterprise stabilnost:
+
+1. **Caching Layer** (manjka Redis/MemoryCache)
+2. **Message Queue** (manjka RabbitMQ/Azure Service Bus)
+3. **Background Jobs** (manjka Hangfire/Quartz.NET)
+4. **API Versioning** (manjka version management)
+5. **Error Handling** (manjka global exception handler)
+6. **Retry Mechanism** (delno implementiran, manja polizacija)
+7. **Graceful Shutdown** (manjka za background processes)
+8. **Resource Cleanup** (manjka disposal pattern)
 
 ---
 
-# 7. BRANDING CHECKLIST - Skriti tuje brande
+## Faza F: Popolna reorganizacija in konsolidacija
 
-## Obvezne spremembe za popolnoma zasebno blagovno znamko:
+### Cilj: Enotna struktura z vsemi komponentami
 
-### ✅ Imena in namespacei
+**Metoda:**
+1. Izbrati eno glavno strukturo (AuraFlow)
+2. Migrirati vse druge projekte vanjo
+3. Skriti vse tuje brande
+4. Dodati manjkajoče komponente
+
+### Podkorak F.1: Konsolidacija struktur
+- **Glavna solution**: `AuraFlow.Studio.sln`
+- **Odstraniti**: `DiffusionHub.*`, `StabilityMatrix.*` projekte
+- **Migrirati**: Vse datoteke v enotno strukturo
+
+### Podkorak F.2: Popoln branding
+```bash
+# Zamenjati vse reference
+find . -type f -name "*.cs" -exec sed -i 's/StabilityMatrix/AuraFlow/g' {} \;
+find . -type f -name "*.cs" -exec sed -i 's/Lykos/AuraCloud/g' {} \;
+find . -type f -name "*.cs" -exec sed -i 's/Comfy/FlowEngine/g' {} \;
+find . -type f -name "*.cs" -exec sed -i 's/CivitTRPC/AuraMarketplace/g' {} \;
+```
+
+### Podkorak F.3: Nova struktura projektov
+```bash
+AuraFlow.Studio/
+├── src/
+│   ├── AuraFlow.Domain/              # Domain layer (čisti modeli)
+│   │   ├── Entities/
+│   │   ├── Interfaces/
+│   │   ├── Enums/
+│   │   └── ValueObjects/
+│   ├── AuraFlow.Core/                # Core business logic
+│   │   ├── Services/
+│   │   ├── Models/
+│   │   ├── Common/
+│   │   └── Extensions/
+│   ├── AuraFlow.Infrastructure/      # Infrastructure layer
+│   │   ├── Persistence/              # EF Core + LiteDB
+│   │   ├── Engines/                  # FlowEngine (ComfyUI)
+│   │   ├── Cloud/                    # AuraCloud (Lykos API)
+│   │   ├── Marketplace/              # AuraMarketplace (CivitTRPC)
+│   │   ├── Caching/                  # Redis + MemoryCache
+│   │   ├── Messaging/                # RabbitMQ/Azure Service Bus
+│   │   └── BackgroundJobs/           # Hangfire
+│   ├── AuraFlow.Api/                 # REST API layer
+│   │   ├── Controllers/              # v1, v2 controllers
+│   │   ├── Middleware/               # Error handling, logging
+│   │   ├── Filters/                  # Validation, rate limiting
+│   │   └── Extensions/               # DI setup
+│   ├── AuraFlow.Web/                 # Web frontend (Blazor)
+│   │   ├── Components/
+│   │   ├── Services/
+│   │   └── Shared/
+│   ├── AuraFlow.Desktop/             # Desktop aplikacija (Avalonia)
+│   │   ├── Views/
+│   │   ├── ViewModels/
+│   │   ├── Models/
+│   │   └── Services/
+│   └── AuraFlow.ChatInterface/       # Chat vmesnik
+│       ├── Clients/
+│       ├── Models/
+│       └── Services/
+├── tests/
+│   ├── AuraFlow.UnitTests/           # Unit tests (80%+ coverage)
+│   │   ├── Domain/
+│   │   ├── Core/
+│   │   └── Infrastructure/
+│   ├── AuraFlow.IntegrationTests/    # Integration tests
+│   │   ├── Api/
+│   │   ├── Database/
+│   │   └── Engines/
+│   └── AuraFlow.EndToEndTests/       # E2E tests
+├── docker/
+│   ├── Dockerfile                    # Multi-stage build
+│   ├── docker-compose.yml            # Local development
+│   ├── docker-compose.prod.yml       # Production setup
+│   └── k8s/                          # Kubernetes manifests
+├── docs/
+│   ├── architecture/                 # Arhitekturna dokumentacija
+│   ├── api/                          # API reference (Swagger)
+│   ├── deployment/                   # Deployment guide
+│   ├── contributing/                 # Contributing guidelines
+│   └── changelog/                    # Changelog
+├── scripts/
+│   ├── build.ps1                     # Build script (Windows)
+│   ├── build.sh                      # Build script (Linux/Mac)
+│   ├── deploy.sh                     # Deployment script
+│   └── migrations/                   # Database migrations
+└── .github/
+    └── workflows/                    # CI/CD pipelines
+        ├── ci.yml                    # Continuous Integration
+        ├── cd-release.yml            # Release deployment
+        ├── docker-build.yml          # Docker build
+        ├── performance-test.yml      # Performance testing
+        └── code-coverage.yml         # Coverage reporting
+```
+
+---
+
+## Faza G: Enterprise komponente
+
+### Cilj: Dodati vse manjkajoče enterprise komponente
+
+**Metoda:** Implementacija robustnih sistemov za stabilnost in skalabilnost
+
+### Podkorak G.1: CI/CD Pipeline (`.github/workflows/ci.yml`)
+```yaml
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '9.0.x'
+    
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Build
+      run: dotnet build --configuration Release --verbosity minimal
+    
+    - name: Test
+      run: dotnet test --configuration Release --verbosity normal --collect:"XPlat Code Coverage"
+    
+    - name: Upload coverage
+      uses: codecov/codecov-action@v3
+
+  integration-test:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+    
+    - name: Start Docker containers
+      run: docker-compose up -d
+    
+    - name: Run integration tests
+      run: dotnet test tests/AuraFlow.IntegrationTests --configuration Release
+
+  deploy-staging:
+    needs: [build, integration-test]
+    if: github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Deploy to staging
+      run: ./scripts/deploy.sh staging
+```
+
+### Podkorak G.2: Database layer (EF Core)
+- **Ustvari**: `AuraFlow.Infrastructure/Persistence/`
+- **Implementiraj**: 
+  - `ApplicationDbContext.cs` - Main database context
+  - `EntityConfigurations/` - EF Core entity configurations
+  - `Migrations/` - Database migrations
+  - `Repositories/` - Generic repository pattern
+
+### Podkorak G.3: Caching layer (Redis + MemoryCache)
+- **Ustvari**: `AuraFlow.Infrastructure/Caching/`
+- **Implementiraj**:
+  - `ICacheService.cs` - Cache interface
+  - `MemoryCacheService.cs` - In-memory caching
+  - `RedisCacheService.cs` - Distributed caching
+  - `CacheKeys.cs` - Cache key constants
+
+### Podkorak G.4: Message Queue (RabbitMQ)
+- **Ustvari**: `AuraFlow.Infrastructure/Messaging/`
+- **Implementiraj**:
+  - `IMessagePublisher.cs` - Message publisher interface
+  - `MessagePublisher.cs` - RabbitMQ implementation
+  - `BackgroundJobService.cs` - Background job processor
+  - `EventHandlers/` - Event handlers for messages
+
+### Podkorak G.5: Background Jobs (Hangfire)
+- **Ustvari**: `AuraFlow.Infrastructure/BackgroundJobs/`
+- **Implementiraj**:
+  - `JobDefinitions.cs` - Job definitions
+  - `JobProcessors.cs` - Job processors
+  - `RecurringJobs.cs` - Scheduled jobs
+
+### Podkorak G.6: API Middleware
+- **Ustvari**: `AuraFlow.Api/Middleware/`
+- **Implementiraj**:
+  - `ExceptionHandlingMiddleware.cs` - Global exception handler
+  - `RequestIdMiddleware.cs` - Request ID tracking
+  - `LoggingMiddleware.cs` - Request logging
+  - `RateLimitingMiddleware.cs` - Rate limiting
+
+### Podkorak G.7: Authentication & Authorization
+- **Ustvari**: `AuraFlow.Infrastructure/Authentication/`
+- **Implementiraj**:
+  - `JwtAuthService.cs` - JWT token generation/validation
+  - `OAuthService.cs` - OAuth providers (Google, GitHub)
+  - `PermissionService.cs` - Permission checking
+  - `RoleService.cs` - Role management
+
+### Podkorak G.8: Monitoring & Logging
+- **Ustvari**: `AuraFlow.Infrastructure/Monitoring/`
+- **Implementiraj**:
+  - `SentryLoggerProvider.cs` - Sentry integration
+  - `ApplicationInsightsTelemetry.cs` - Telemetry tracking
+  - `HealthCheckService.cs` - Health check endpoints
+  - `MetricsCollector.cs` - Performance metrics
+
+### Podkorak G.9: Configuration Management
+- **Ustvari**: `AuraFlow.Api/Configuration/`
+- **Implementiraj**:
+  - `AppSettings.cs` - Application settings
+  - `DatabaseSettings.cs` - Database configuration
+  - `RedisSettings.cs` - Redis configuration
+  - `RabbitMQSettings.cs` - Message queue configuration
+  - `EnvironmentConfig.cs` - Environment-specific configs
+
+---
+
+## Faza H: Robustnost in odpornost
+
+### Cilj: Zagotoviti stabilno delovanje v vseh scenarijih
+
+**Metoda:** Implementacija fault-tolerance mechanismov
+
+### Podkorak H.1: Retry Mechanism (Polly)
+- **Ustvari**: `AuraFlow.Core/Common/RetryPolicies.cs`
+- **Implementiraj**:
+  - `ExponentialBackoffPolicy` - Exponential backoff za API calls
+  - `FixedDelayPolicy` - Fixed delay za database operations
+  - `CircuitBreakerPolicy` - Circuit breaker za external services
+
+### Podkorak H.2: Graceful Shutdown
+- **Ustvari**: `AuraFlow.Api/Middleware/GracefulShutdown.cs`
+- **Implementiraj**:
+  - `IHostedService` implementation for cleanup
+  - `CancellationToken` propagation
+  - `BackgroundJob` cancellation
+
+### Podkorak H.3: Resource Cleanup
+- **Ustvari**: `AuraFlow.Core/Common/ResourcePool.cs`
+- **Implementiraj**:
+  - `IDisposable` pattern za vse resources
+  - `ObjectPool<T>` za pooling expensive objects
+  - `MemoryLeakDetector` za detection memory leaks
+
+### Podkorak H.4: Bulk Operations
+- **Ustvari**: `AuraFlow.Core/Services/BulkOperationService.cs`
+- **Implementiraj**:
+  - Batch processing za generacije
+  - Parallel execution z throttling
+  - Progress tracking za bulk operations
+
+### Podkorak H.5: Data Validation
+- **Ustvari**: `AuraFlow.Core/Common/Validators/`
+- **Implementiraj**:
+  - FluentValidation za API inputs
+  - Custom validators za domain rules
+  - Data sanitization za user inputs
+
+---
+
+## Faza I: Testing coverage
+
+### Cilj: Zagotoviti visoko testno pokritost
+
+**Metoda:** Implementacija comprehensive testing strategy
+
+### Podkorak I.1: Unit Tests (80%+ coverage)
+- **Ustvari**: `tests/AuraFlow.UnitTests/`
+- **Implementiraj**:
+  - Domain entity tests
+  - Service layer tests
+  - Repository tests
+  - Validator tests
+  - Coverage reporting
+
+### Podkorak I.2: Integration Tests
+- **Ustvari**: `tests/AuraFlow.IntegrationTests/`
+- **Implementiraj**:
+  - API endpoint tests (WebApiFact)
+  - Database integration tests
+  - External service mocks
+  - End-to-end workflow tests
+
+### Podkorak I.3: Performance Tests
+- **Ustvari**: `tests/AuraFlow.PerformanceTests/`
+- **Implementiraj**:
+  - Load testing z k6/JMeter
+  - Stress testing za peak loads
+  - Memory profiling
+  - Response time benchmarks
+
+---
+
+# 10. FINAL CHECKLIST ZA POPOLNO STABILNOST
+
+## ✅ Arhitektura in struktura
+- [ ] Ena glavna solution datoteka (`AuraFlow.Studio.sln`)
+- [ ] Vsi projekti v enotni strukturi (AuraFlow.*)
+- [ ] Odstranjeni vsi `DiffusionHub.*` in `StabilityMatrix.*` projekti
+- [ ] Jasna ločitev odgovornosti med layerji
+
+## ✅ Branding in imenovanje
 - [ ] Vsi `StabilityMatrix.*` → `AuraFlow.*`
 - [ ] Vsi `Lykos.*` → `AuraCloud.*`
 - [ ] Vsi `Comfy*.*` → `FlowEngine.*`
-- [ ] Vsi `Flux*` → `AuraImageX1*`
-- [ ] Vsi `SDXL*` → `AuraImageQuick*`
-- [ ] Vsi `Wan2GP*` → `AuraVideoPro*`
-- [ ] Vsi `CogVideo*` → `AuraVideoLite*`
+- [ ] Vsi `CivitTRPC.*` → `AuraMarketplace.*`
+- [ ] Vsi modeli z novimi imeni (AuraImageX1, AuraVideoPro, itd.)
 
-### ✅ Datoteke in mape
-- [ ] `StabilityMatrix.Core/` → `AuraFlow.Core/`
-- [ ] `StabilityMatrix.Native/` → `AuraFlow.Native/`
-- [ ] `Lykos/` mapo → `AuraCloud/`
-- [ ] `ComfyUI/` reference → `FlowEngine/`
+## ✅ Enterprise komponente
+- [ ] CI/CD pipeline (`/.github/workflows/`)
+- [ ] Database migrations (EF Core)
+- [ ] Caching layer (Redis + MemoryCache)
+- [ ] Message queue (RabbitMQ)
+- [ ] Background jobs (Hangfire)
+- [ ] Monitoring & logging (Sentry + NLog)
+- [ ] Health check endpoints
+- [ ] Rate limiting
+- [ ] Authentication & authorization
 
-### ✅ Solution in project files
-- [ ] `StabilityMatrix.sln` → `AuraFlow.Studio.sln`
-- [ ] Vsi `.csproj` datoteke z novimi imeni
-- [ ] Posodobljeni `Directory.Build.props`
-- [ ] Posodobljeni `Directory.Packages.props`
+## ✅ Robustnost
+- [ ] Retry mechanism (Polly)
+- [ ] Circuit breaker pattern
+- [ ] Graceful shutdown
+- [ ] Resource cleanup
+- [ ] Bulk operations
+- [ ] Data validation
+- [ ] Error handling
 
-### ✅ Dokumentacija
-- [ ] README.md z novim imenom in brandingom
-- [ ] LICENSE file z novo blagovno znamko
-- [ ] CONTRIBUTING.md z novimi smernicami
-- [ ] API documentation brez tujih referenc
+## ✅ Testing
+- [ ] Unit tests (80%+ coverage)
+- [ ] Integration tests
+- [ ] Performance tests
+- [ ] E2E tests
+- [ ] Coverage reporting
 
-### ✅ Koda in komentarji
-- [ ] Vsi XML dokumentacijski komentarji posodobljeni
-- [ ] Vsi error messages brez tujih imen
-- [ ] Vsi log messages z novimi imeni
-- [ ] Vsi configuration keys z novimi imeni
+## ✅ Dokumentacija
+- [ ] Architecture documentation
+- [ ] API reference (Swagger)
+- [ ] Deployment guide
+- [ ] Contributing guidelines
+- [ ] Changelog
 
-### ✅ Konfiguracija
-- [ ] `config.json` z novimi imeni modelov
-- [ ] Vsi environment variables z novimi imeni
-- [ ] Docker compose datoteke z novimi imeni
+## ✅ Konfiguracije
+- [ ] Environment-specific configs
+- [ ] Docker Compose za development
+- [ ] Kubernetes manifests za production
+- [ ] Secret management
+- [ ] Configuration validation
 
 ---
 
-# 8. FINAL CHECK - Ali je vse skrito?
+# 11. IMPLEMENTACIJSKI VRSTNI RED
 
-Pred release preveri:
+**Teden 1: Reorganizacija in branding**
+1. Konsolidacija v eno strukturo (AuraFlow)
+2. Popolna zamenja imen (StabilityMatrix → AuraFlow, itd.)
+3. Posodobitev solution in project files
+4. Odstranitev starih projektov
 
-1. **Iskanje v kodi**: `grep -r "StabilityMatrix\|Lykos\|ComfyUI"` → Naj bo 0 rezultatov
-2. **Iskanje v dokumentaciji**: Preveri README, docs, API reference
-3. **Iskanje v UI**: Preveri vse uporabniške vmesnike
-4. **Iskanje v logih**: Preveri error messages in logs
-5. **Iskanje v konfiguracijah**: Preveri config datoteke
+**Teden 2: Enterprise komponente**
+1. Implementacija CI/CD pipeline
+2. Database layer z EF Core
+3. Caching layer (Redis)
+4. Message queue (RabbitMQ)
+5. Background jobs (Hangfire)
 
-Če so še kakšne tuje reference, jih moraš skriti pod lastna imena!
+**Teden 3: Robustnost in monitoring**
+1. Retry mechanism in circuit breaker
+2. Monitoring & logging (Sentry)
+3. Health check endpoints
+4. Rate limiting
+5. Authentication & authorization
 
+**Teden 4: Testing in dokumentacija**
+1. Unit tests (80%+ coverage)
+2. Integration tests
+3. Performance tests
+4. API documentation
+5. Deployment guide
+
+---
+
+# 12. MERILA ZA POPOLNO STABILNOST
+
+## Kvantitativna merila:
+- ✅ **Test Coverage**: > 80%
+- ✅ **API Response Time**: < 2 sekunde (p95)
+- ✅ **Uptime**: 99.9% SLA
+- ✅ **Error Rate**: < 0.1%
+- ✅ **Database Query Time**: < 100ms (p95)
+
+## Kvalitativna merila:
+- ✅ **Scalability**: Podpora za 100+ hkratnih uporabnikov
+- ✅ **Maintainability**: Jasna arhitektura z dokumentacijo
+- ✅ **Reliability**: Fault-tolerance mechanismi delujejo
+- ✅ **Observability**: Complete logging in monitoring
+- ✅ **Deployability**: Automated CI/CD pipeline
+
+---
+
+# 13. RISK MANAGEMENT
+
+## Glavni tveganja in rešitve:
+
+| Tveganje | Verjetnost | Vpliv | Rešitev |
+|----------|------------|-------|---------|
+| Breaking changes v API-ju | Visoka | Visok | API versioning (v1, v2) |
+| Performance degradation | Srednja | Visok | Load testing + caching |
+| Database bottlenecks | Srednja | Visok | Indexing + query optimization |
+| External service failures | Visoka | Srednji | Circuit breaker + retry |
+| Memory leaks | Nizka | Visok | Monitoring + profiling |
+
+---
+
+# 14. POST-DEPLOYMENT MONITORING
+
+## Ključni metrike za spremljanje:
+
+### Application Metrics:
+- Request count in rate
+- Response time (p50, p95, p99)
+- Error rate by type
+- Active connections
+- Memory usage
+
+### Business Metrics:
+- Generations per hour
+- Average generation time
+- Success rate
+- User engagement
+- Model usage distribution
+
+### Infrastructure Metrics:
+- CPU utilization
+- Memory utilization
+- Disk I/O
+- Network throughput
+- Database connection pool
+
+---
+
+# 15. MAINTENANCE SCHEDULE
+
+## Redno vzdrževanje:
+
+**Dnevno:**
+- Preverjanje error logs
+- Monitoring uptime
+- Check disk space
+
+**Tedensko:**
+- Review performance metrics
+- Update dependencies
+- Backup verification
+
+**Mesečno:**
+- Security scan
+- Database optimization
+- Documentation update
+- Capacity planning
+
+---
 
 

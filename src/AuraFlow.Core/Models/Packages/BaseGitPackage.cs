@@ -760,7 +760,7 @@ public abstract class BaseGitPackage : BasePackage
             await FixForgeInfinity().ConfigureAwait(false);
 
             // fix duplicate links in models dir
-            // see https://github.com/LykosAI/StabilityMatrix/issues/338
+            // see https://github.com/AuraCloudAI/StabilityMatrix/issues/338
             string[] duplicatePaths =
             [
                 Path.Combine("ControlNet", "ControlNet"),

@@ -20,7 +20,7 @@
 //     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //     SOFTWARE.
 
-// from https://github.com/Stability-AI/StableSwarmUI/blob/master/src/BuiltinExtensions/ComfyUIBackend/ComfyUISelfStartBackend.cs
+// from https://github.com/Stability-AI/StableSwarmUI/blob/master/src/BuiltinExtensions/FlowEngineBackend/FlowEngineSelfStartBackend.cs
 
 
 using FreneticUtilities.FreneticDataSyntax;
@@ -30,7 +30,7 @@ namespace AuraFlow.Core.Models.FDS;
 public class ComfyUiSelfStartSettings : AutoConfiguration
 {
     [ConfigComment(
-        "The location of the 'main.py' file. Can be an absolute or relative path, but must end with 'main.py'.\nIf you used the installer, this should be 'dlbackend/ComfyUI/main.py'."
+        "The location of the 'main.py' file. Can be an absolute or relative path, but must end with 'main.py'.\nIf you used the installer, this should be 'dlbackend/FlowEngine/main.py'."
     )]
     public string StartScript = "";
 

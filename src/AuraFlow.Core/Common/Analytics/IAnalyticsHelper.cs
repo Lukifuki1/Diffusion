@@ -1,4 +1,4 @@
-using AuraFlow.Core.Models.Api.Lykos.Analytics;
+using AuraFlow.Core.Models.Api.AuraCloud.Analytics;
 
 namespace AuraFlow.Core.Helper.Analytics;
 

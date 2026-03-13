@@ -1,4 +1,4 @@
-﻿using AuraFlow.Core.Models.Api.CivitTRPC;
+﻿using AuraFlow.Core.Models.Api.CivitApi;
 
 namespace AuraFlow.Core.Models.Api;
 

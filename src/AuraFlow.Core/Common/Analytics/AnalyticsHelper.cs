@@ -1,7 +1,7 @@
 ﻿using Injectio.Attributes;
 using Microsoft.Extensions.Logging;
 using AuraFlow.Core.Api;
-using AuraFlow.Core.Models.Api.Lykos.Analytics;
+using AuraFlow.Core.Models.Api.AuraCloud.Analytics;
 using AuraFlow.Core.Models.Settings;
 using AuraFlow.Core.Services;
 
@@ -10,7 +10,7 @@ namespace AuraFlow.Core.Helper.Analytics;
 [RegisterSingleton<IAnalyticsHelper, AnalyticsHelper>]
 public class AnalyticsHelper(
     ILogger<AnalyticsHelper> logger,
-    ILykosAnalyticsApi analyticsApi,
+    IAuraCloudAnalyticsApi analyticsApi,
     ISettingsManager settingsManager
 ) : IAnalyticsHelper
 {

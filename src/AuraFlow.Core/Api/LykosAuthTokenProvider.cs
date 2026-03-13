@@ -1,20 +1,20 @@
 using Injectio.Attributes;
 using OpenIddict.Client;
-using AuraFlow.Core.Api.LykosAuthApi;
+using AuraFlow.Core.Api.AuraCloudAuthApi;
 using AuraFlow.Core.Attributes;
-using AuraFlow.Core.Models.Api.Lykos;
+using AuraFlow.Core.Models.Api.AuraCloud;
 using AuraFlow.Core.Services;
 
 namespace AuraFlow.Core.Api;
 
-[RegisterSingleton<LykosAuthTokenProvider>]
-public class LykosAuthTokenProvider(
-    Lazy<ILykosAuthApiV2> lazyLykosAuthApi,
+[RegisterSingleton<AuraCloudAuthTokenProvider>]
+public class AuraCloudAuthTokenProvider(
+    Lazy<IAuraCloudAuthApiV2> lazyAuraCloudAuthApi,
     ISecretsManager secretsManager,
     OpenIddictClientService openIdClient
 ) : ITokenProvider
 {
-    private readonly Lazy<ILykosAuthApiV2> lazyLykosAuthApi = lazyLykosAuthApi;
+    private readonly Lazy<IAuraCloudAuthApiV2> lazyAuraCloudAuthApi = lazyAuraCloudAuthApi;
 
     // Lazy as instantiating requires the current class to be instantiated.
 
@@ -23,7 +23,7 @@ public class LykosAuthTokenProvider(
     {
         var secrets = await secretsManager.SafeLoadAsync().ConfigureAwait(false);
 
-        return secrets.LykosAccountV2?.AccessToken ?? "";
+        return secrets.AuraCloudAccountV2?.AccessToken ?? "";
     }
 
     /// <inheritdoc />
@@ -31,7 +31,7 @@ public class LykosAuthTokenProvider(
     {
         var secrets = await secretsManager.SafeLoadAsync().ConfigureAwait(false);
 
-        if (string.IsNullOrWhiteSpace(secrets.LykosAccountV2?.RefreshToken))
+        if (string.IsNullOrWhiteSpace(secrets.AuraCloudAccountV2?.RefreshToken))
         {
             throw new InvalidOperationException("No refresh token found");
         }
@@ -40,8 +40,8 @@ public class LykosAuthTokenProvider(
             .AuthenticateWithRefreshTokenAsync(
                 new OpenIddictClientModels.RefreshTokenAuthenticationRequest
                 {
-                    ProviderName = OpenIdClientConstants.LykosAccount.ProviderName,
-                    RefreshToken = secrets.LykosAccountV2.RefreshToken
+                    ProviderName = OpenIdClientConstants.AuraCloudAccount.ProviderName,
+                    RefreshToken = secrets.AuraCloudAccountV2.RefreshToken
                 }
             )
             .ConfigureAwait(false);
@@ -53,7 +53,7 @@ public class LykosAuthTokenProvider(
 
         secrets = secrets with
         {
-            LykosAccountV2 = new LykosAccountV2Tokens(
+            AuraCloudAccountV2 = new AuraCloudAccountV2Tokens(
                 result.AccessToken,
                 result.RefreshToken,
                 result.IdentityToken

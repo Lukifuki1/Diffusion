@@ -5,8 +5,8 @@
 /// </summary>
 public static class OpenIdClientConstants
 {
-    public static class LykosAccount
+    public static class AuraCloudAccount
     {
-        public const string ProviderName = "Lykos Account";
+        public const string ProviderName = "AuraCloud Account";
     }
 }

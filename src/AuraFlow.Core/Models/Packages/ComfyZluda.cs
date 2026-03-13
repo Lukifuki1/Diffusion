@@ -24,7 +24,7 @@ public class ComfyZluda(
     IPyInstallationManager pyInstallationManager,
     IPipWheelService pipWheelService
 )
-    : ComfyUI(
+    : FlowEngine(
         githubApi,
         settingsManager,
         downloadService,
@@ -41,12 +41,12 @@ public class ComfyZluda(
 
     private Process? zludaProcess;
 
-    public override string Name => "ComfyUI-Zluda";
-    public override string DisplayName => "ComfyUI-Zluda";
+    public override string Name => "FlowEngine-Zluda";
+    public override string DisplayName => "FlowEngine-Zluda";
     public override string Author => "patientx";
-    public override string LicenseUrl => "https://github.com/patientx/ComfyUI-Zluda/blob/master/LICENSE";
+    public override string LicenseUrl => "https://github.com/patientx/FlowEngine-Zluda/blob/master/LICENSE";
     public override string Blurb =>
-        "Windows-only version of ComfyUI which uses ZLUDA to get better performance with AMD GPUs.";
+        "Windows-only version of FlowEngine which uses ZLUDA to get better performance with AMD GPUs.";
     public override string Disclaimer =>
         "Prerequisite install may require admin privileges and a reboot. "
         + "Visual Studio Build Tools for C++ Desktop Development will be installed automatically. "

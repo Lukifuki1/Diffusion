@@ -2,14 +2,14 @@
 using System.Net;
 using Refit;
 using AuraFlow.Core.Models.Api;
-using AuraFlow.Core.Models.Api.Lykos;
+using AuraFlow.Core.Models.Api.AuraCloud;
 
 namespace AuraFlow.Core.Api;
 
 [Localizable(false)]
 [Headers("User-Agent: StabilityMatrix")]
-[Obsolete("Use ILykosAuthApiV2")]
-public interface ILykosAuthApiV1
+[Obsolete("Use IAuraCloudAuthApiV2")]
+public interface IAuraCloudAuthApiV1
 {
     [Headers("Authorization: Bearer")]
     [Get("/api/Users/{email}")]
@@ -20,26 +20,26 @@ public interface ILykosAuthApiV1
     Task<GetUserResponse> GetUserSelf(CancellationToken cancellationToken = default);
 
     [Post("/api/Accounts")]
-    Task<LykosAccountV1Tokens> PostAccount(
+    Task<AuraCloudAccountV1Tokens> PostAccount(
         [Body] PostAccountRequest request,
         CancellationToken cancellationToken = default
     );
 
     [Post("/api/Login")]
-    Task<LykosAccountV1Tokens> PostLogin(
+    Task<AuraCloudAccountV1Tokens> PostLogin(
         [Body] PostLoginRequest request,
         CancellationToken cancellationToken = default
     );
 
     [Headers("Authorization: Bearer")]
     [Post("/api/Login/Refresh")]
-    Task<LykosAccountV1Tokens> PostLoginRefresh(
+    Task<AuraCloudAccountV1Tokens> PostLoginRefresh(
         [Body] PostLoginRefreshRequest request,
         CancellationToken cancellationToken = default
     );
 
     [Get("/api/oauth/google/callback")]
-    Task<LykosAccountV1Tokens> GetOAuthGoogleCallback(
+    Task<AuraCloudAccountV1Tokens> GetOAuthGoogleCallback(
         [Query] string code,
         [Query] string state,
         [Query] string codeVerifier,

@@ -3,7 +3,7 @@ using AuraFlow.Core.Models.Api;
 
 namespace AuraFlow.Core.Api;
 
-public interface ILykosModelDiscoveryApi
+public interface IAuraCloudModelDiscoveryApi
 {
     [Get("/civit/models")]
     Task<CivitModelsResponse> GetModels(
