@@ -1,26 +1,26 @@
-﻿using AuraFlow.Core.Models.Api.CivitTRPC;
-using AuraFlow.Core.Models.Api.Lykos;
+﻿using AuraFlow.Core.Models.Api.CivitApi;
+using AuraFlow.Core.Models.Api.AuraCloud;
 
 namespace AuraFlow.Core.Models;
 
 public readonly record struct Secrets
 {
-    [Obsolete("Use LykosAccountV2 instead")]
-    public LykosAccountV1Tokens? LykosAccount { get; init; }
+    [Obsolete("Use AuraCloudAccountV2 instead")]
+    public AuraCloudAccountV1Tokens? AuraCloudAccount { get; init; }
 
     public CivitApiTokens? CivitApi { get; init; }
 
-    public LykosAccountV2Tokens? LykosAccountV2 { get; init; }
+    public AuraCloudAccountV2Tokens? AuraCloudAccountV2 { get; init; }
 
     public string? HuggingFaceToken { get; init; }
 }
 
 public static class SecretsExtensions
 {
-    public static bool HasLegacyLykosAccount(this Secrets secrets)
+    public static bool HasLegacyAuraCloudAccount(this Secrets secrets)
     {
 #pragma warning disable CS0618 // Type or member is obsolete
-        return secrets.LykosAccount is not null;
+        return secrets.AuraCloudAccount is not null;
 #pragma warning restore CS0618 // Type or member is obsolete
     }
 }

@@ -19,8 +19,8 @@ using AuraFlow.Core.Services;
 
 namespace AuraFlow.Core.Models.Packages;
 
-[RegisterSingleton<BasePackage, ComfyUI>(Duplicate = DuplicateStrategy.Append)]
-public class ComfyUI(
+[RegisterSingleton<BasePackage, FlowEngine>(Duplicate = DuplicateStrategy.Append)]
+public class FlowEngine(
     IGithubApiCache githubApi,
     ISettingsManager settingsManager,
     IDownloadService downloadService,
@@ -38,11 +38,11 @@ public class ComfyUI(
     )
 {
     private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-    public override string Name => "ComfyUI";
-    public override string DisplayName { get; set; } = "ComfyUI";
+    public override string Name => "FlowEngine";
+    public override string DisplayName { get; set; } = "FlowEngine";
     public override string Author => "comfyanonymous";
     public override string LicenseType => "GPL-3.0";
-    public override string LicenseUrl => "https://github.com/comfyanonymous/ComfyUI/blob/master/LICENSE";
+    public override string LicenseUrl => "https://github.com/comfyanonymous/FlowEngine/blob/master/LICENSE";
     public override string Blurb => "A powerful and modular stable diffusion GUI and backend";
     public override string LaunchCommand => "main.py";
 
@@ -54,7 +54,7 @@ public class ComfyUI(
     public override SharedFolderMethod RecommendedSharedFolderMethod => SharedFolderMethod.Configuration;
     public override PyVersion RecommendedPythonVersion => Python.PyInstallationManager.Python_3_12_10;
 
-    // https://github.com/comfyanonymous/ComfyUI/blob/master/folder_paths.py#L11
+    // https://github.com/comfyanonymous/FlowEngine/blob/master/folder_paths.py#L11
     public override SharedFolderLayout SharedFolderLayout =>
         new()
         {
@@ -491,7 +491,7 @@ public class ComfyUI(
             Logger.Error(e, "Failed to verify/update SageAttention after installation");
         }
 
-        // Install Comfy Manager (built-in to ComfyUI)
+        // Install Comfy Manager (built-in to FlowEngine)
         try
         {
             var managerRequirementsFile = Path.Combine(installLocation, "manager_requirements.txt");
@@ -561,7 +561,7 @@ public class ComfyUI(
                             Your NVIDIA driver version ({driverVersion}) is older than
                             the minimum required version (580.x) for CUDA 13.0 (cu130).
 
-                            This may cause ComfyUI to fail to start or experience issues.
+                            This may cause FlowEngine to fail to start or experience issues.
 
                             Recommended actions:
                               1. Update your NVIDIA driver to version 580 or newer
@@ -632,15 +632,15 @@ public class ComfyUI(
     public override IPackageExtensionManager ExtensionManager =>
         new ComfyExtensionManager(this, settingsManager);
 
-    private class ComfyExtensionManager(ComfyUI package, ISettingsManager settingsManager)
+    private class ComfyExtensionManager(FlowEngine package, ISettingsManager settingsManager)
         : GitPackageExtensionManager(package.PrerequisiteHelper)
     {
         public override string RelativeInstallDirectory => "custom_nodes";
 
         public override IEnumerable<ExtensionManifest> DefaultManifests =>
             [
-                "https://cdn.jsdelivr.net/gh/ltdrdata/ComfyUI-Manager/custom-node-list.json",
-                "https://cdn.jsdelivr.net/gh/LykosAI/ComfyUI-Extensions-Index/custom-node-list.json",
+                "https://cdn.jsdelivr.net/gh/ltdrdata/FlowEngine-Manager/custom-node-list.json",
+                "https://cdn.jsdelivr.net/gh/AuraCloudAI/FlowEngine-Extensions-Index/custom-node-list.json",
             ];
 
         public override async Task<IEnumerable<PackageExtension>> GetManifestExtensionsAsync(
@@ -994,6 +994,6 @@ public class ComfyUI(
             .SetItem("MIOPEN_FIND_MODE", "2")
             .SetItem("TORCH_ROCM_AOTRITON_ENABLE_EXPERIMENTAL", "1")
             .SetItem("PYTORCH_ALLOC_CONF", "max_split_size_mb:6144,garbage_collection_threshold:0.8") // greatly helps prevent GPU OOM and instability/driver timeouts/OS hard locks and decreases dependency on Tiled VAE at standard res's
-            .SetItem("COMFYUI_ENABLE_MIOPEN", "1"); // re-enables "cudnn" in ComfyUI as it's needed for MiOpen to function properly
+            .SetItem("COMFYUI_ENABLE_MIOPEN", "1"); // re-enables "cudnn" in FlowEngine as it's needed for MiOpen to function properly
     }
 }

@@ -598,7 +598,7 @@ public class ComfyNodeBuilder
 
     [TypedNodeOptions(
         Name = "CheckpointLoaderNF4",
-        RequiredExtensions = ["https://github.com/comfyanonymous/ComfyUI_bitsandbytes_NF4"]
+        RequiredExtensions = ["https://github.com/comfyanonymous/FlowEngine_bitsandbytes_NF4"]
     )]
     public record CheckpointLoaderNF4
         : ComfyTypedNodeBase<ModelNodeConnection, ClipNodeConnection, VAENodeConnection>
@@ -608,7 +608,7 @@ public class ComfyNodeBuilder
 
     [TypedNodeOptions(
         Name = "UnetLoaderGGUF",
-        RequiredExtensions = ["https://github.com/city96/ComfyUI-GGUF"]
+        RequiredExtensions = ["https://github.com/city96/FlowEngine-GGUF"]
     )]
     public record UnetLoaderGGUF : ComfyTypedNodeBase<ModelNodeConnection>
     {
@@ -617,7 +617,7 @@ public class ComfyNodeBuilder
 
     [TypedNodeOptions(
         Name = "Inference_Core_PromptExpansion",
-        RequiredExtensions = ["https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes >= 0.2.0"]
+        RequiredExtensions = ["https://github.com/AuraCloudAI/FlowEngine-Inference-Core-Nodes >= 0.2.0"]
     )]
     public record PromptExpansion : ComfyTypedNodeBase<StringNodeConnection>
     {
@@ -629,7 +629,7 @@ public class ComfyNodeBuilder
 
     [TypedNodeOptions(
         Name = "Inference_Core_AIO_Preprocessor",
-        RequiredExtensions = ["https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes >= 0.2.0"]
+        RequiredExtensions = ["https://github.com/AuraCloudAI/FlowEngine-Inference-Core-Nodes >= 0.2.0"]
     )]
     public record AIOPreprocessor : ComfyTypedNodeBase<ImageNodeConnection>
     {
@@ -643,7 +643,7 @@ public class ComfyNodeBuilder
 
     [TypedNodeOptions(
         Name = "Inference_Core_ReferenceOnlySimple",
-        RequiredExtensions = ["https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes >= 0.3.0"]
+        RequiredExtensions = ["https://github.com/AuraCloudAI/FlowEngine-Inference-Core-Nodes >= 0.3.0"]
     )]
     public record ReferenceOnlySimple : ComfyTypedNodeBase<ModelNodeConnection, LatentNodeConnection>
     {
@@ -657,7 +657,7 @@ public class ComfyNodeBuilder
 
     [TypedNodeOptions(
         Name = "Inference_Core_LayeredDiffusionApply",
-        RequiredExtensions = ["https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes >= 0.4.0"]
+        RequiredExtensions = ["https://github.com/AuraCloudAI/FlowEngine-Inference-Core-Nodes >= 0.4.0"]
     )]
     public record LayeredDiffusionApply : ComfyTypedNodeBase<ModelNodeConnection>
     {
@@ -677,7 +677,7 @@ public class ComfyNodeBuilder
 
     [TypedNodeOptions(
         Name = "Inference_Core_LayeredDiffusionDecodeRGBA",
-        RequiredExtensions = ["https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes >= 0.4.0"]
+        RequiredExtensions = ["https://github.com/AuraCloudAI/FlowEngine-Inference-Core-Nodes >= 0.4.0"]
     )]
     public record LayeredDiffusionDecodeRgba : ComfyTypedNodeBase<ImageNodeConnection>
     {
@@ -697,8 +697,8 @@ public class ComfyNodeBuilder
     [TypedNodeOptions(
         Name = "UltralyticsDetectorProvider",
         RequiredExtensions = [
-            "https://github.com/ltdrdata/ComfyUI-Impact-Pack",
-            "https://github.com/ltdrdata/ComfyUI-Impact-Subpack",
+            "https://github.com/ltdrdata/FlowEngine-Impact-Pack",
+            "https://github.com/ltdrdata/FlowEngine-Impact-Subpack",
         ]
     )]
     public record UltralyticsDetectorProvider
@@ -710,8 +710,8 @@ public class ComfyNodeBuilder
     [TypedNodeOptions(
         Name = "SAMLoader",
         RequiredExtensions = [
-            "https://github.com/ltdrdata/ComfyUI-Impact-Pack",
-            "https://github.com/ltdrdata/ComfyUI-Impact-Subpack",
+            "https://github.com/ltdrdata/FlowEngine-Impact-Pack",
+            "https://github.com/ltdrdata/FlowEngine-Impact-Subpack",
         ]
     )]
     public record SamLoader : ComfyTypedNodeBase<SamModelNodeConnection>
@@ -727,8 +727,8 @@ public class ComfyNodeBuilder
     [TypedNodeOptions(
         Name = "FaceDetailer",
         RequiredExtensions = [
-            "https://github.com/ltdrdata/ComfyUI-Impact-Pack",
-            "https://github.com/ltdrdata/ComfyUI-Impact-Subpack",
+            "https://github.com/ltdrdata/FlowEngine-Impact-Pack",
+            "https://github.com/ltdrdata/FlowEngine-Impact-Subpack",
         ]
     )]
     public record FaceDetailer : ComfyTypedNodeBase<ImageNodeConnection>
@@ -804,11 +804,11 @@ public class ComfyNodeBuilder
     }
 
     /// <summary>
-    /// Plasma Noise generation node (Lykos_JDC_Plasma)
+    /// Plasma Noise generation node (AuraCloud_JDC_Plasma)
     /// </summary>
     [TypedNodeOptions(
-        Name = "Lykos_JDC_Plasma",
-        RequiredExtensions = ["https://github.com/LykosAI/inference-comfy-plasma"]
+        Name = "AuraCloud_JDC_Plasma",
+        RequiredExtensions = ["https://github.com/AuraCloudAI/inference-comfy-plasma"]
     )] // Name corrected, Extensions added
     public record PlasmaNoise : ComfyTypedNodeBase<ImageNodeConnection>
     {
@@ -850,11 +850,11 @@ public class ComfyNodeBuilder
     }
 
     /// <summary>
-    /// Random Noise generation node (Lykos_JDC_RandNoise)
+    /// Random Noise generation node (AuraCloud_JDC_RandNoise)
     /// </summary>
     [TypedNodeOptions(
-        Name = "Lykos_JDC_RandNoise",
-        RequiredExtensions = ["https://github.com/LykosAI/inference-comfy-plasma"]
+        Name = "AuraCloud_JDC_RandNoise",
+        RequiredExtensions = ["https://github.com/AuraCloudAI/inference-comfy-plasma"]
     )] // Name corrected, Extensions added
     public record RandNoise : ComfyTypedNodeBase<ImageNodeConnection>
     {
@@ -893,11 +893,11 @@ public class ComfyNodeBuilder
     }
 
     /// <summary>
-    /// Greyscale Noise generation node (Lykos_JDC_GreyNoise)
+    /// Greyscale Noise generation node (AuraCloud_JDC_GreyNoise)
     /// </summary>
     [TypedNodeOptions(
-        Name = "Lykos_JDC_GreyNoise",
-        RequiredExtensions = ["https://github.com/LykosAI/inference-comfy-plasma"]
+        Name = "AuraCloud_JDC_GreyNoise",
+        RequiredExtensions = ["https://github.com/AuraCloudAI/inference-comfy-plasma"]
     )] // Name corrected, Extensions added
     public record GreyNoise : ComfyTypedNodeBase<ImageNodeConnection>
     {
@@ -936,11 +936,11 @@ public class ComfyNodeBuilder
     }
 
     /// <summary>
-    /// Pink Noise generation node (Lykos_JDC_PinkNoise)
+    /// Pink Noise generation node (AuraCloud_JDC_PinkNoise)
     /// </summary>
     [TypedNodeOptions(
-        Name = "Lykos_JDC_PinkNoise",
-        RequiredExtensions = ["https://github.com/LykosAI/inference-comfy-plasma"]
+        Name = "AuraCloud_JDC_PinkNoise",
+        RequiredExtensions = ["https://github.com/AuraCloudAI/inference-comfy-plasma"]
     )] // Name corrected, Extensions added
     public record PinkNoise : ComfyTypedNodeBase<ImageNodeConnection>
     {
@@ -979,11 +979,11 @@ public class ComfyNodeBuilder
     }
 
     /// <summary>
-    /// Brown Noise generation node (Lykos_JDC_BrownNoise)
+    /// Brown Noise generation node (AuraCloud_JDC_BrownNoise)
     /// </summary>
     [TypedNodeOptions(
-        Name = "Lykos_JDC_BrownNoise",
-        RequiredExtensions = new[] { "https://github.com/LykosAI/inference-comfy-plasma" }
+        Name = "AuraCloud_JDC_BrownNoise",
+        RequiredExtensions = new[] { "https://github.com/AuraCloudAI/inference-comfy-plasma" }
     )] // Name corrected, Extensions added
     public record BrownNoise : ComfyTypedNodeBase<ImageNodeConnection>
     {
@@ -1036,11 +1036,11 @@ public class ComfyNodeBuilder
     }
 
     /// <summary>
-    /// Custom KSampler node using alternative noise distribution (Lykos_JDC_PlasmaSampler)
+    /// Custom KSampler node using alternative noise distribution (AuraCloud_JDC_PlasmaSampler)
     /// </summary>
     [TypedNodeOptions(
-        Name = "Lykos_JDC_PlasmaSampler",
-        RequiredExtensions = ["https://github.com/LykosAI/inference-comfy-plasma"]
+        Name = "AuraCloud_JDC_PlasmaSampler",
+        RequiredExtensions = ["https://github.com/AuraCloudAI/inference-comfy-plasma"]
     )] // Name corrected, Extensions added
     public record PlasmaSampler : ComfyTypedNodeBase<LatentNodeConnection>
     {

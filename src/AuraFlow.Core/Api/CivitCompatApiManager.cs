@@ -14,7 +14,7 @@ namespace AuraFlow.Core.Api;
 public class CivitCompatApiManager(
     ILogger<CivitCompatApiManager> logger,
     ICivitApi civitApi,
-    ILykosModelDiscoveryApi discoveryApi,
+    IAuraCloudModelDiscoveryApi discoveryApi,
     ISettingsManager settingsManager
 ) : ICivitApi
 {

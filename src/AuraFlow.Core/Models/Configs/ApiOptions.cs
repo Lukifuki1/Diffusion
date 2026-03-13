@@ -6,22 +6,22 @@
 public record ApiOptions
 {
     /// <summary>
-    /// Base URL for Lykos Authentication API
+    /// Base URL for AuraCloud Authentication API
     /// </summary>
-    public Uri LykosAuthApiBaseUrl { get; init; } = new("https://auth.lykos.ai");
+    public Uri AuraCloudAuthApiBaseUrl { get; init; } = new("https://auth.lykos.ai");
 
     /// <summary>
-    /// Base URL for Lykos Analytics API
+    /// Base URL for AuraCloud Analytics API
     /// </summary>
-    public Uri LykosAnalyticsApiBaseUrl { get; init; } = new("https://analytics.lykos.ai");
+    public Uri AuraCloudAnalyticsApiBaseUrl { get; init; } = new("https://analytics.lykos.ai");
 
     /// <summary>
-    /// Base URL for Lykos Account API
+    /// Base URL for AuraCloud Account API
     /// </summary>
-    public Uri LykosAccountApiBaseUrl { get; init; } = new("https://account.lykos.ai/");
+    public Uri AuraCloudAccountApiBaseUrl { get; init; } = new("https://account.lykos.ai/");
 
     /// <summary>
     /// Base URL for PromptGen API
     /// </summary>
-    public Uri LykosPromptGenApiBaseUrl { get; init; } = new("https://promptgen.lykos.ai/api");
+    public Uri AuraCloudPromptGenApiBaseUrl { get; init; } = new("https://promptgen.lykos.ai/api");
 }

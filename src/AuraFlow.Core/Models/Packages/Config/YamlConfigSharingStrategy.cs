@@ -76,7 +76,7 @@ public class YamlConfigSharingStrategy : IConfigSharingStrategy
         {
             // Configure serializer for better readability if desired
             var serializer = new SerializerBuilder()
-                .WithNamingConvention(UnderscoredNamingConvention.Instance) // Common for ComfyUI paths
+                .WithNamingConvention(UnderscoredNamingConvention.Instance) // Common for FlowEngine paths
                 .WithDefaultScalarStyle(ScalarStyle.Literal)
                 .ConfigureDefaultValuesHandling(DefaultValuesHandling.OmitDefaults) // Optional: omit nulls/defaults
                 .Build();
@@ -133,7 +133,7 @@ public class YamlConfigSharingStrategy : IConfigSharingStrategy
                 /*valueNode = new YamlSequenceNode(
                     normalizedPaths.Select(p => new YamlScalarNode(p)).Cast<YamlNode>()
                 );*/
-                // --- Multi-line literal scalar (ComfyUI default) ---
+                // --- Multi-line literal scalar (FlowEngine default) ---
                 var multiLinePath = string.Join("\n", normalizedPaths);
                 valueNode = new YamlScalarNode(multiLinePath) { Style = ScalarStyle.Literal };
             }
@@ -194,7 +194,7 @@ public class YamlConfigSharingStrategy : IConfigSharingStrategy
                     .ToList();
                 smPathsMapping.Children[keyNode] = new YamlSequenceNode(normalizedPaths);
 
-                // --- Alternatively, represent as multi-line literal scalar (like ComfyUI default) ---
+                // --- Alternatively, represent as multi-line literal scalar (like FlowEngine default) ---
                 // var multiLinePath = string.Join("\n", paths.Select(p => p.Replace('\\', '/')));
                 // var valueNode = new YamlScalarNode(multiLinePath) { Style = ScalarStyle.Literal };
                 // smPathsMapping.Children[keyNode] = valueNode;

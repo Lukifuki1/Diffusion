@@ -216,12 +216,12 @@ public class StableSwarm(
         progress?.Report(new ProgressReport(-1f, "Installing SwarmUI...", isIndeterminate: true));
 
         var comfy = settingsManager.Settings.InstalledPackages.FirstOrDefault(x =>
-            x.PackageName is nameof(ComfyUI) or "ComfyUI-Zluda"
+            x.PackageName is nameof(FlowEngine) or "FlowEngine-Zluda"
         );
 
         if (comfy == null)
         {
-            throw new InvalidOperationException("ComfyUI must be installed to use SwarmUI");
+            throw new InvalidOperationException("FlowEngine must be installed to use SwarmUI");
         }
 
         try
@@ -303,7 +303,7 @@ public class StableSwarm(
             var backendsFile = new FDSSection();
             var dataSection = new FDSSection();
             dataSection.Set("type", "comfyui_selfstart");
-            dataSection.Set("title", "StabilityMatrix ComfyUI Self-Start");
+            dataSection.Set("title", "StabilityMatrix FlowEngine Self-Start");
             dataSection.Set("enabled", true);
 
             var launchArgs = comfy.LaunchArgs ?? [];
@@ -314,7 +314,7 @@ public class StableSwarm(
                     .Where(arg => !string.IsNullOrWhiteSpace(arg))
             );
 
-            if (comfy.PackageName == "ComfyUI-Zluda")
+            if (comfy.PackageName == "FlowEngine-Zluda")
             {
                 var fullComfyZludaPath = Path.Combine(SettingsManager.LibraryDir, comfy.LibraryPath);
                 var zludaPath = Path.Combine(fullComfyZludaPath, "zluda", "zluda.exe");

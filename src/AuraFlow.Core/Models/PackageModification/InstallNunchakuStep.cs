@@ -87,7 +87,7 @@ public class InstallNunchakuStep(IPyInstallationManager pyInstallationManager) :
             .GetManifestExtensionsAsync(ComfyExtensionManager.DefaultManifests)
             .ConfigureAwait(false);
         var nunchakuExtension = extensions.FirstOrDefault(e =>
-            e.Title.Equals("ComfyUI-nunchaku", StringComparison.OrdinalIgnoreCase)
+            e.Title.Equals("FlowEngine-nunchaku", StringComparison.OrdinalIgnoreCase)
         );
 
         if (nunchakuExtension is null)
@@ -97,7 +97,7 @@ public class InstallNunchakuStep(IPyInstallationManager pyInstallationManager) :
             .GetInstalledExtensionsLiteAsync(InstalledPackage)
             .ConfigureAwait(false);
         var installedNunchakuExtension = installedExtensions.FirstOrDefault(e =>
-            e.Title.Equals("ComfyUI-nunchaku", StringComparison.OrdinalIgnoreCase)
+            e.Title.Equals("FlowEngine-nunchaku", StringComparison.OrdinalIgnoreCase)
         );
 
         if (installedNunchakuExtension is not null)

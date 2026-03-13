@@ -15,7 +15,7 @@ public record TeachingTip(string Value) : StringValue(Value)
     public static TeachingTip DownloadsTip => new("DownloadsTip");
     public static TeachingTip WebUiButtonMovedTip => new("WebUiButtonMovedTip");
     public static TeachingTip InferencePromptHelpButtonTip => new("InferencePromptHelpButtonTip");
-    public static TeachingTip LykosAccountMigrateTip => new("LykosAccountMigrateTip");
+    public static TeachingTip AuraCloudAccountMigrateTip => new("AuraCloudAccountMigrateTip");
     public static TeachingTip SharedFolderMigrationTip => new("SharedFolderMigrationTip");
     public static TeachingTip FolderMapTip => new("FolderMapTip");
     public static TeachingTip InferencePromptAmplifyTip => new("InferencePromptAmplifyTip");

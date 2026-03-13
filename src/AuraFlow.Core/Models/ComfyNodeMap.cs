@@ -49,7 +49,7 @@ public class ComfyNodeMap
                                         "title_aux": "Color Enhance"
                                     }
                                 ],
-                                "https://github.com/0xbitches/ComfyUI-LCM": [
+                                "https://github.com/0xbitches/FlowEngine-LCM": [
                                     [
                                         "LCM_Sampler",
                                         "LCM_Sampler_Advanced",
@@ -57,7 +57,7 @@ public class ComfyNodeMap
                                         "LCM_img2img_Sampler_Advanced"
                                     ],
                                     {
-                                        "title_aux": "Latent Consistency Model for ComfyUI"
+                                        "title_aux": "Latent Consistency Model for FlowEngine"
                                     }
                                 ],
                                 "https://github.com/1shadow1/hayo_comfyui_nodes/raw/main/LZCNodes.py": [
@@ -72,15 +72,15 @@ public class ComfyNodeMap
                                         "title_aux": "Hayo comfyui nodes"
                                     }
                                 ],
-                                "https://github.com/42lux/ComfyUI-safety-checker": [
+                                "https://github.com/42lux/FlowEngine-safety-checker": [
                                     [
                                         "Safety Checker"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-safety-checker"
+                                        "title_aux": "FlowEngine-safety-checker"
                                     }
                                 ],
-                                "https://github.com/54rt1n/ComfyUI-DareMerge": [
+                                "https://github.com/54rt1n/FlowEngine-DareMerge": [
                                     [
                                         "DM_AdvancedDareModelMerger",
                                         "DM_AdvancedModelMerger",
@@ -109,10 +109,10 @@ public class ComfyNodeMap
                                         "DM_SimpleMasker"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-DareMerge"
+                                        "title_aux": "FlowEngine-DareMerge"
                                     }
                                 ],
-                                "https://github.com/80sVectorz/ComfyUI-Static-Primitives": [
+                                "https://github.com/80sVectorz/FlowEngine-Static-Primitives": [
                                     [
                                         "FloatStaticPrimitive",
                                         "IntStaticPrimitive",
@@ -120,10 +120,10 @@ public class ComfyNodeMap
                                         "StringStaticPrimitive"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Static-Primitives"
+                                        "title_aux": "FlowEngine-Static-Primitives"
                                     }
                                 ],
-                                "https://github.com/AInseven/ComfyUI-fastblend": [
+                                "https://github.com/AInseven/FlowEngine-fastblend": [
                                     [
                                         "FillDarkMask",
                                         "InterpolateKeyFrame",
@@ -133,7 +133,7 @@ public class ComfyNodeMap
                                         "reBatchImage"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-fastblend"
+                                        "title_aux": "FlowEngine-fastblend"
                                     }
                                 ],
                                 "https://github.com/AIrjen/OneButtonPrompt": [
@@ -166,7 +166,7 @@ public class ComfyNodeMap
                                         "title_aux": "Comfy-Photoshop-SD"
                                     }
                                 ],
-                                "https://github.com/AbyssYuan0/ComfyUI_BadgerTools": [
+                                "https://github.com/AbyssYuan0/FlowEngine_BadgerTools": [
                                     [
                                         "ApplyMaskToImage-badger",
                                         "CropImageByMask-badger",
@@ -198,7 +198,7 @@ public class ComfyNodeMap
                                         "mkdir-badger"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_BadgerTools"
+                                        "title_aux": "FlowEngine_BadgerTools"
                                     }
                                 ],
                                 "https://github.com/Acly/comfyui-inpaint-nodes": [
@@ -212,7 +212,7 @@ public class ComfyNodeMap
                                         "INPAINT_VAEEncodeInpaintConditioning"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Inpaint Nodes"
+                                        "title_aux": "FlowEngine Inpaint Nodes"
                                     }
                                 ],
                                 "https://github.com/Acly/comfyui-tooling-nodes": [
@@ -224,7 +224,7 @@ public class ComfyNodeMap
                                         "ETN_SendImageWebSocket"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Nodes for External Tooling"
+                                        "title_aux": "FlowEngine Nodes for External Tooling"
                                     }
                                 ],
                                 "https://github.com/Amorano/Jovimetrix": [
@@ -269,7 +269,7 @@ public class ComfyNodeMap
                                         "title_aux": "AnimateDiff"
                                     }
                                 ],
-                                "https://github.com/AustinMroz/ComfyUI-SpliceTools": [
+                                "https://github.com/AustinMroz/FlowEngine-SpliceTools": [
                                     [
                                         "LogSigmas",
                                         "RerangeSigmas",
@@ -338,23 +338,23 @@ public class ComfyNodeMap
                                 ],
                                 "https://github.com/BennyKok/comfyui-deploy": [
                                     [
-                                        "ComfyUIDeployExternalCheckpoint",
-                                        "ComfyUIDeployExternalImage",
-                                        "ComfyUIDeployExternalImageAlpha",
-                                        "ComfyUIDeployExternalLora",
-                                        "ComfyUIDeployExternalNumber",
-                                        "ComfyUIDeployExternalNumberInt",
-                                        "ComfyUIDeployExternalText"
+                                        "FlowEngineDeployExternalCheckpoint",
+                                        "FlowEngineDeployExternalImage",
+                                        "FlowEngineDeployExternalImageAlpha",
+                                        "FlowEngineDeployExternalLora",
+                                        "FlowEngineDeployExternalNumber",
+                                        "FlowEngineDeployExternalNumberInt",
+                                        "FlowEngineDeployExternalText"
                                     ],
                                     {
                                         "author": "BennyKok",
                                         "description": "",
                                         "nickname": "Comfy Deploy",
                                         "title": "comfyui-deploy",
-                                        "title_aux": "ComfyUI Deploy"
+                                        "title_aux": "FlowEngine Deploy"
                                     }
                                 ],
-                                "https://github.com/Bikecicle/ComfyUI-Waveform-Extensions/raw/main/EXT_AudioManipulation.py": [
+                                "https://github.com/Bikecicle/FlowEngine-Waveform-Extensions/raw/main/EXT_AudioManipulation.py": [
                                     [
                                         "BatchJoinAudio",
                                         "CutAudio",
@@ -368,7 +368,7 @@ public class ComfyNodeMap
                                         "title_aux": "Waveform Extensions"
                                     }
                                 ],
-                                "https://github.com/Billius-AI/ComfyUI-Path-Helper": [
+                                "https://github.com/Billius-AI/FlowEngine-Path-Helper": [
                                     [
                                         "Add File Name Prefix",
                                         "Add File Name Prefix Advanced",
@@ -380,10 +380,10 @@ public class ComfyNodeMap
                                         "Show String"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Path-Helper"
+                                        "title_aux": "FlowEngine-Path-Helper"
                                     }
                                 ],
-                                "https://github.com/BlenderNeko/ComfyUI_ADV_CLIP_emb": [
+                                "https://github.com/BlenderNeko/FlowEngine_ADV_CLIP_emb": [
                                     [
                                         "BNK_AddCLIPSDXLParams",
                                         "BNK_AddCLIPSDXLRParams",
@@ -394,7 +394,7 @@ public class ComfyNodeMap
                                         "title_aux": "Advanced CLIP Text Encode"
                                     }
                                 ],
-                                "https://github.com/BlenderNeko/ComfyUI_Cutoff": [
+                                "https://github.com/BlenderNeko/FlowEngine_Cutoff": [
                                     [
                                         "BNK_CutoffBasePrompt",
                                         "BNK_CutoffRegionsToConditioning",
@@ -402,10 +402,10 @@ public class ComfyNodeMap
                                         "BNK_CutoffSetRegions"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Cutoff"
+                                        "title_aux": "FlowEngine Cutoff"
                                     }
                                 ],
-                                "https://github.com/BlenderNeko/ComfyUI_Noise": [
+                                "https://github.com/BlenderNeko/FlowEngine_Noise": [
                                     [
                                         "BNK_DuplicateBatchIndex",
                                         "BNK_GetSigma",
@@ -415,10 +415,10 @@ public class ComfyNodeMap
                                         "BNK_Unsampler"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Noise"
+                                        "title_aux": "FlowEngine Noise"
                                     }
                                 ],
-                                "https://github.com/BlenderNeko/ComfyUI_SeeCoder": [
+                                "https://github.com/BlenderNeko/FlowEngine_SeeCoder": [
                                     [
                                         "ConcatConditioning",
                                         "SEECoderImageEncode"
@@ -427,16 +427,16 @@ public class ComfyNodeMap
                                         "title_aux": "SeeCoder [WIP]"
                                     }
                                 ],
-                                "https://github.com/BlenderNeko/ComfyUI_TiledKSampler": [
+                                "https://github.com/BlenderNeko/FlowEngine_TiledKSampler": [
                                     [
                                         "BNK_TiledKSampler",
                                         "BNK_TiledKSamplerAdvanced"
                                     ],
                                     {
-                                        "title_aux": "Tiled sampling for ComfyUI"
+                                        "title_aux": "Tiled sampling for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/CYBERLOOM-INC/ComfyUI-nodes-hnmr": [
+                                "https://github.com/CYBERLOOM-INC/FlowEngine-nodes-hnmr": [
                                     [
                                         "CLIPIter",
                                         "Dict2Model",
@@ -460,27 +460,27 @@ public class ComfyNodeMap
                                         "VAEIter"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-nodes-hnmr"
+                                        "title_aux": "FlowEngine-nodes-hnmr"
                                     }
                                 ],
-                                "https://github.com/CaptainGrock/ComfyUIInvisibleWatermark/raw/main/Invisible%20Watermark.py": [
+                                "https://github.com/CaptainGrock/FlowEngineInvisibleWatermark/raw/main/Invisible%20Watermark.py": [
                                     [
                                         "Apply Invisible Watermark",
                                         "Extract Watermark"
                                     ],
                                     {
-                                        "title_aux": "ComfyUIInvisibleWatermark"
+                                        "title_aux": "FlowEngineInvisibleWatermark"
                                     }
                                 ],
-                                "https://github.com/Chan-0312/ComfyUI-IPAnimate": [
+                                "https://github.com/Chan-0312/FlowEngine-IPAnimate": [
                                     [
                                         "IPAdapterAnimate"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-IPAnimate"
+                                        "title_aux": "FlowEngine-IPAnimate"
                                     }
                                 ],
-                                "https://github.com/Chaoses-Ib/ComfyUI_Ib_CustomNodes": [
+                                "https://github.com/Chaoses-Ib/FlowEngine_Ib_CustomNodes": [
                                     [
                                         "ImageToPIL",
                                         "LoadImageFromPath",
@@ -488,10 +488,10 @@ public class ComfyNodeMap
                                         "PILToMask"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_Ib_CustomNodes"
+                                        "title_aux": "FlowEngine_Ib_CustomNodes"
                                     }
                                 ],
-                                "https://github.com/Clybius/ComfyUI-Extra-Samplers": [
+                                "https://github.com/Clybius/FlowEngine-Extra-Samplers": [
                                     [
                                         "SamplerCLYB_4M_SDE_Momentumized",
                                         "SamplerCustomModelMixtureDuo",
@@ -504,18 +504,18 @@ public class ComfyNodeMap
                                         "SamplerTTM"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Extra Samplers"
+                                        "title_aux": "FlowEngine Extra Samplers"
                                     }
                                 ],
-                                "https://github.com/Clybius/ComfyUI-Latent-Modifiers": [
+                                "https://github.com/Clybius/FlowEngine-Latent-Modifiers": [
                                     [
                                         "Latent Diffusion Mega Modifier"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Latent-Modifiers"
+                                        "title_aux": "FlowEngine-Latent-Modifiers"
                                     }
                                 ],
-                                "https://github.com/CosmicLaca/ComfyUI_Primere_Nodes": [
+                                "https://github.com/CosmicLaca/FlowEngine_Primere_Nodes": [
                                     [
                                         "PrimereAnyDetailer",
                                         "PrimereAnyOutput",
@@ -569,10 +569,10 @@ public class ComfyNodeMap
                                         "PrimereVisualStyle"
                                     ],
                                     {
-                                        "title_aux": "Primere nodes for ComfyUI"
+                                        "title_aux": "Primere nodes for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/Danand/ComfyUI-ComfyCouple": [
+                                "https://github.com/Danand/FlowEngine-ComfyCouple": [
                                     [
                                         "Attention couple",
                                         "Comfy Couple"
@@ -582,10 +582,10 @@ public class ComfyNodeMap
                                         "description": "If you want to draw two different characters together without blending their features, so you could try to check out this custom node.",
                                         "nickname": "Danand",
                                         "title": "Comfy Couple",
-                                        "title_aux": "ComfyUI-ComfyCouple"
+                                        "title_aux": "FlowEngine-ComfyCouple"
                                     }
                                 ],
-                                "https://github.com/Davemane42/ComfyUI_Dave_CustomNode": [
+                                "https://github.com/Davemane42/FlowEngine_Dave_CustomNode": [
                                     [
                                         "ABGRemover",
                                         "ConditioningStretch",
@@ -597,7 +597,7 @@ public class ComfyNodeMap
                                         "title_aux": "Visual Area Conditioning / Latent composition"
                                     }
                                 ],
-                                "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes": [
+                                "https://github.com/Derfuu/Derfuu_FlowEngine_ModdedNodes": [
                                     [
                                         "ABSNode_DF",
                                         "Absolute value",
@@ -671,10 +671,10 @@ public class ComfyNodeMap
                                         "TupleNode_DF"
                                     ],
                                     {
-                                        "title_aux": "Derfuu_ComfyUI_ModdedNodes"
+                                        "title_aux": "Derfuu_FlowEngine_ModdedNodes"
                                     }
                                 ],
-                                "https://github.com/DonBaronFactory/ComfyUI-Cre8it-Nodes": [
+                                "https://github.com/DonBaronFactory/FlowEngine-Cre8it-Nodes": [
                                     [
                                         "ApplySerialPrompter",
                                         "ImageSizer",
@@ -685,10 +685,10 @@ public class ComfyNodeMap
                                         "description": "This extension offers various nodes.",
                                         "nickname": "cre8Nodes",
                                         "title": "cr8SerialPrompter",
-                                        "title_aux": "ComfyUI-Cre8it-Nodes"
+                                        "title_aux": "FlowEngine-Cre8it-Nodes"
                                     }
                                 ],
-                                "https://github.com/Electrofried/ComfyUI-OpenAINode": [
+                                "https://github.com/Electrofried/FlowEngine-OpenAINode": [
                                     [
                                         "OpenAINode"
                                     ],
@@ -696,7 +696,7 @@ public class ComfyNodeMap
                                         "title_aux": "OpenAINode"
                                     }
                                 ],
-                                "https://github.com/EllangoK/ComfyUI-post-processing-nodes": [
+                                "https://github.com/EllangoK/FlowEngine-post-processing-nodes": [
                                     [
                                         "ArithmeticBlend",
                                         "AsciiArt",
@@ -725,16 +725,16 @@ public class ComfyNodeMap
                                         "Vignette"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-post-processing-nodes"
+                                        "title_aux": "FlowEngine-post-processing-nodes"
                                     }
                                 ],
-                                "https://github.com/Extraltodeus/ComfyUI-AutomaticCFG": [
+                                "https://github.com/Extraltodeus/FlowEngine-AutomaticCFG": [
                                     [
                                         "Automatic CFG",
                                         "Automatic CFG channels multipliers"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-AutomaticCFG"
+                                        "title_aux": "FlowEngine-AutomaticCFG"
                                     }
                                 ],
                                 "https://github.com/Extraltodeus/LoadLoraWithTags": [
@@ -768,7 +768,7 @@ public class ComfyNodeMap
                                         "title_aux": "sigmas_tools_and_the_golden_scheduler"
                                     }
                                 ],
-                                "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation": [
+                                "https://github.com/Fannovel16/FlowEngine-Frame-Interpolation": [
                                     [
                                         "AMT VFI",
                                         "CAIN VFI",
@@ -786,10 +786,10 @@ public class ComfyNodeMap
                                         "Sepconv VFI"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Frame Interpolation"
+                                        "title_aux": "FlowEngine Frame Interpolation"
                                     }
                                 ],
-                                "https://github.com/Fannovel16/ComfyUI-Loopchain": [
+                                "https://github.com/Fannovel16/FlowEngine-Loopchain": [
                                     [
                                         "EmptyLatentImageLoop",
                                         "FolderToImageStorage",
@@ -801,10 +801,10 @@ public class ComfyNodeMap
                                         "LatentStorageReset"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Loopchain"
+                                        "title_aux": "FlowEngine Loopchain"
                                     }
                                 ],
-                                "https://github.com/Fannovel16/ComfyUI-MotionDiff": [
+                                "https://github.com/Fannovel16/FlowEngine-MotionDiff": [
                                     [
                                         "EmptyMotionData",
                                         "ExportSMPLTo3DSoftware",
@@ -818,16 +818,16 @@ public class ComfyNodeMap
                                         "SmplifyMotionData"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI MotionDiff"
+                                        "title_aux": "FlowEngine MotionDiff"
                                     }
                                 ],
-                                "https://github.com/Fannovel16/ComfyUI-Video-Matting": [
+                                "https://github.com/Fannovel16/FlowEngine-Video-Matting": [
                                     [
                                         "BRIAAI Matting",
                                         "Robust Video Matting"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Video-Matting"
+                                        "title_aux": "FlowEngine-Video-Matting"
                                     }
                                 ],
                                 "https://github.com/Fannovel16/comfyui_controlnet_aux": [
@@ -883,7 +883,7 @@ public class ComfyNodeMap
                                     ],
                                     {
                                         "author": "tstandley",
-                                        "title_aux": "ComfyUI's ControlNet Auxiliary Preprocessors"
+                                        "title_aux": "FlowEngine's ControlNet Auxiliary Preprocessors"
                                     }
                                 ],
                                 "https://github.com/Feidorian/feidorian-ComfyNodes": [
@@ -893,7 +893,7 @@ public class ComfyNodeMap
                                         "title_aux": "feidorian-ComfyNodes"
                                     }
                                 ],
-                                "https://github.com/Fictiverse/ComfyUI_Fictiverse": [
+                                "https://github.com/Fictiverse/FlowEngine_Fictiverse": [
                                     [
                                         "Add Noise to Image with Mask",
                                         "Color correction",
@@ -902,19 +902,19 @@ public class ComfyNodeMap
                                         "Zoom Image with Depth"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Fictiverse Nodes"
+                                        "title_aux": "FlowEngine Fictiverse Nodes"
                                     }
                                 ],
-                                "https://github.com/FizzleDorf/ComfyUI-AIT": [
+                                "https://github.com/FizzleDorf/FlowEngine-AIT": [
                                     [
                                         "AIT_Unet_Loader",
                                         "AIT_VAE_Encode_Loader"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-AIT"
+                                        "title_aux": "FlowEngine-AIT"
                                     }
                                 ],
-                                "https://github.com/FizzleDorf/ComfyUI_FizzNodes": [
+                                "https://github.com/FizzleDorf/FlowEngine_FizzNodes": [
                                     [
                                         "AbsCosWave",
                                         "AbsSinWave",
@@ -972,7 +972,7 @@ public class ComfyNodeMap
                                         "title_aux": "NX_PromptStyler"
                                     }
                                 ],
-                                "https://github.com/GMapeSplat/ComfyUI_ezXY": [
+                                "https://github.com/GMapeSplat/FlowEngine_ezXY": [
                                     [
                                         "ConcatenateString",
                                         "ItemFromDropdown",
@@ -993,7 +993,7 @@ public class ComfyNodeMap
                                         "title_aux": "ezXY scripts and nodes"
                                     }
                                 ],
-                                "https://github.com/GTSuya-Studio/ComfyUI-Gtsuya-Nodes": [
+                                "https://github.com/GTSuya-Studio/FlowEngine-Gtsuya-Nodes": [
                                     [
                                         "Danbooru (ID)",
                                         "Danbooru (Random)",
@@ -1004,7 +1004,7 @@ public class ComfyNodeMap
                                         "Wildcards Nodes"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-GTSuya-Nodes"
+                                        "title_aux": "FlowEngine-GTSuya-Nodes"
                                     }
                                 ],
                                 "https://github.com/Gourieff/comfyui-reactor-node": [
@@ -1015,26 +1015,26 @@ public class ComfyNodeMap
                                         "ReActorSaveFaceModel"
                                     ],
                                     {
-                                        "title_aux": "ReActor Node for ComfyUI"
+                                        "title_aux": "ReActor Node for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/HAL41/ComfyUI-aichemy-nodes": [
+                                "https://github.com/HAL41/FlowEngine-aichemy-nodes": [
                                     [
                                         "aichemyYOLOv8Segmentation"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI aichemy nodes"
+                                        "title_aux": "FlowEngine aichemy nodes"
                                     }
                                 ],
-                                "https://github.com/Hangover3832/ComfyUI-Hangover-Moondream": [
+                                "https://github.com/Hangover3832/FlowEngine-Hangover-Moondream": [
                                     [
                                         "Moondream Interrogator (NO COMMERCIAL USE)"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Hangover-Moondream"
+                                        "title_aux": "FlowEngine-Hangover-Moondream"
                                     }
                                 ],
-                                "https://github.com/Hangover3832/ComfyUI-Hangover-Nodes": [
+                                "https://github.com/Hangover3832/FlowEngine-Hangover-Nodes": [
                                     [
                                         "Image Scale Bounding Box",
                                         "MS kosmos-2 Interrogator",
@@ -1042,7 +1042,7 @@ public class ComfyNodeMap
                                         "Save Image w/o Metadata"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Hangover-Nodes"
+                                        "title_aux": "FlowEngine-Hangover-Nodes"
                                     }
                                 ],
                                 "https://github.com/Haoming02/comfyui-diffusion-cg": [
@@ -1053,7 +1053,7 @@ public class ComfyNodeMap
                                         "Recenter XL"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Diffusion Color Grading"
+                                        "title_aux": "FlowEngine Diffusion Color Grading"
                                     }
                                 ],
                                 "https://github.com/Haoming02/comfyui-floodgate": [
@@ -1061,15 +1061,15 @@ public class ComfyNodeMap
                                         "FloodGate"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Floodgate"
+                                        "title_aux": "FlowEngine Floodgate"
                                     }
                                 ],
-                                "https://github.com/HaydenReeve/ComfyUI-Better-Strings": [
+                                "https://github.com/HaydenReeve/FlowEngine-Better-Strings": [
                                     [
                                         "BetterString"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Better Strings"
+                                        "title_aux": "FlowEngine Better Strings"
                                     }
                                 ],
                                 "https://github.com/HebelHuber/comfyui-enhanced-save-node": [
@@ -1080,7 +1080,7 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui-enhanced-save-node"
                                     }
                                 ],
-                                "https://github.com/Hiero207/ComfyUI-Hiero-Nodes": [
+                                "https://github.com/Hiero207/FlowEngine-Hiero-Nodes": [
                                     [
                                         "Post to Discord w/ Webhook"
                                     ],
@@ -1089,10 +1089,10 @@ public class ComfyNodeMap
                                         "description": "Just some nodes that I wanted/needed, so I made them.",
                                         "nickname": "HNodes",
                                         "title": "Hiero-Nodes",
-                                        "title_aux": "ComfyUI-Hiero-Nodes"
+                                        "title_aux": "FlowEngine-Hiero-Nodes"
                                     }
                                 ],
-                                "https://github.com/IDGallagher/ComfyUI-IG-Nodes": [
+                                "https://github.com/IDGallagher/FlowEngine-IG-Nodes": [
                                     [
                                         "IG Analyze SSIM",
                                         "IG Cross Fade Images",
@@ -1127,10 +1127,10 @@ public class ComfyNodeMap
                                         "RandomPicturePath"
                                     ],
                                     {
-                                        "title_aux": "Ranbooru for ComfyUI"
+                                        "title_aux": "Ranbooru for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/JPS-GER/ComfyUI_JPS-Nodes": [
+                                "https://github.com/JPS-GER/FlowEngine_JPS-Nodes": [
                                     [
                                         "Conditioning Switch (JPS)",
                                         "ControlNet Switch (JPS)",
@@ -1191,11 +1191,11 @@ public class ComfyNodeMap
                                         "author": "JPS",
                                         "description": "Various nodes to handle SDXL Resolutions, SDXL Basic Settings, IP Adapter Settings, Revision Settings, SDXL Prompt Styler, Crop Image to Square, Crop Image to Target Size, Get Date-Time String, Resolution Multiply, Largest Integer, 5-to-1 Switches for Integer, Images, Latents, Conditioning, Model, VAE, ControlNet",
                                         "nickname": "JPS Custom Nodes",
-                                        "title": "JPS Custom Nodes for ComfyUI",
-                                        "title_aux": "JPS Custom Nodes for ComfyUI"
+                                        "title": "JPS Custom Nodes for FlowEngine",
+                                        "title_aux": "JPS Custom Nodes for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/JaredTherriault/ComfyUI-JNodes": [
+                                "https://github.com/JaredTherriault/FlowEngine-JNodes": [
                                     [
                                         "JNodes_AddOrSetMetaDataKey",
                                         "JNodes_AnyToString",
@@ -1236,17 +1236,17 @@ public class ComfyNodeMap
                                         "JNodes_VaeSelectorWithString"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-JNodes"
+                                        "title_aux": "FlowEngine-JNodes"
                                     }
                                 ],
-                                "https://github.com/JcandZero/ComfyUI_GLM4Node": [
+                                "https://github.com/JcandZero/FlowEngine_GLM4Node": [
                                     [
                                         "GLM3_turbo_CHAT",
                                         "GLM4_CHAT",
                                         "GLM4_Vsion_IMGURL"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_GLM4Node"
+                                        "title_aux": "FlowEngine_GLM4Node"
                                     }
                                 ],
                                 "https://github.com/Jcd1230/rembg-comfyui-node": [
@@ -1254,19 +1254,19 @@ public class ComfyNodeMap
                                         "Image Remove Background (rembg)"
                                     ],
                                     {
-                                        "title_aux": "Rembg Background Removal Node for ComfyUI"
+                                        "title_aux": "Rembg Background Removal Node for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/JerryOrbachJr/ComfyUI-RandomSize": [
+                                "https://github.com/JerryOrbachJr/FlowEngine-RandomSize": [
                                     [
                                         "JOJR_RandomSize"
                                     ],
                                     {
                                         "author": "JerryOrbachJr",
-                                        "description": "A ComfyUI custom node that randomly selects a height and width pair from a list in a config file",
+                                        "description": "A FlowEngine custom node that randomly selects a height and width pair from a list in a config file",
                                         "nickname": "Random Size",
                                         "title": "Random Size",
-                                        "title_aux": "ComfyUI-RandomSize"
+                                        "title_aux": "FlowEngine-RandomSize"
                                     }
                                 ],
                                 "https://github.com/Jordach/comfy-plasma": [
@@ -1292,24 +1292,24 @@ public class ComfyNodeMap
                                         "title_aux": "comfy-plasma"
                                     }
                                 ],
-                                "https://github.com/Kaharos94/ComfyUI-Saveaswebp": [
+                                "https://github.com/Kaharos94/FlowEngine-Saveaswebp": [
                                     [
                                         "Save_as_webp"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Saveaswebp"
+                                        "title_aux": "FlowEngine-Saveaswebp"
                                     }
                                 ],
-                                "https://github.com/Kangkang625/ComfyUI-paint-by-example": [
+                                "https://github.com/Kangkang625/FlowEngine-paint-by-example": [
                                     [
                                         "PaintbyExamplePipeLoader",
                                         "PaintbyExampleSampler"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Paint-by-Example"
+                                        "title_aux": "FlowEngine-Paint-by-Example"
                                     }
                                 ],
-                                "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet": [
+                                "https://github.com/Kosinkadink/FlowEngine-Advanced-ControlNet": [
                                     [
                                         "ACN_AdvancedControlNetApply",
                                         "ACN_ControlNetLoaderWithLoraAdvanced",
@@ -1335,10 +1335,10 @@ public class ComfyNodeMap
                                         "TimestepKeyframe"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Advanced-ControlNet"
+                                        "title_aux": "FlowEngine-Advanced-ControlNet"
                                     }
                                 ],
-                                "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved": [
+                                "https://github.com/Kosinkadink/FlowEngine-AnimateDiff-Evolved": [
                                     [
                                         "ADE_AdjustPEFullStretch",
                                         "ADE_AdjustPEManual",
@@ -1392,7 +1392,7 @@ public class ComfyNodeMap
                                         "title_aux": "AnimateDiff Evolved"
                                     }
                                 ],
-                                "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite": [
+                                "https://github.com/Kosinkadink/FlowEngine-VideoHelperSuite": [
                                     [
                                         "VHS_BatchManager",
                                         "VHS_DuplicateImages",
@@ -1421,7 +1421,7 @@ public class ComfyNodeMap
                                         "VHS_VideoCombine"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-VideoHelperSuite"
+                                        "title_aux": "FlowEngine-VideoHelperSuite"
                                     }
                                 ],
                                 "https://github.com/LEv145/images-grid-comfy-plugin": [
@@ -1436,19 +1436,19 @@ public class ComfyNodeMap
                                         "title_aux": "ImagesGrid"
                                     }
                                 ],
-                                "https://github.com/LarryJane491/Image-Captioning-in-ComfyUI": [
+                                "https://github.com/LarryJane491/Image-Captioning-in-FlowEngine": [
                                     [
                                         "LoRA Caption Load",
                                         "LoRA Caption Save"
                                     ],
                                     {
-                                        "title_aux": "Image-Captioning-in-ComfyUI"
+                                        "title_aux": "Image-Captioning-in-FlowEngine"
                                     }
                                 ],
                                 "https://github.com/LarryJane491/Lora-Training-in-Comfy": [
                                     [
                                         "Lora Training in Comfy (Advanced)",
-                                        "Lora Training in ComfyUI",
+                                        "Lora Training in FlowEngine",
                                         "Tensorboard Access"
                                     ],
                                     {
@@ -1477,16 +1477,16 @@ public class ComfyNodeMap
                                         "title_aux": "Canvas Tab"
                                     }
                                 ],
-                                "https://github.com/Limitex/ComfyUI-Calculation": [
+                                "https://github.com/Limitex/FlowEngine-Calculation": [
                                     [
                                         "CenterCalculation",
                                         "CreateQRCode"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Calculation"
+                                        "title_aux": "FlowEngine-Calculation"
                                     }
                                 ],
-                                "https://github.com/Limitex/ComfyUI-Diffusers": [
+                                "https://github.com/Limitex/FlowEngine-Diffusers": [
                                     [
                                         "CreateIntListNode",
                                         "DiffusersClipTextEncode",
@@ -1502,7 +1502,7 @@ public class ComfyNodeMap
                                         "StreamDiffusionWarmup"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Diffusers"
+                                        "title_aux": "FlowEngine-Diffusers"
                                     }
                                 ],
                                 "https://github.com/Loewen-Hob/rembg-comfyui-node-better": [
@@ -1510,10 +1510,10 @@ public class ComfyNodeMap
                                         "Image Remove Background (rembg)"
                                     ],
                                     {
-                                        "title_aux": "Rembg Background Removal Node for ComfyUI"
+                                        "title_aux": "Rembg Background Removal Node for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/LonicaMewinsky/ComfyUI-MakeFrame": [
+                                "https://github.com/LonicaMewinsky/FlowEngine-MakeFrame": [
                                     [
                                         "BreakFrames",
                                         "BreakGrid",
@@ -1525,12 +1525,12 @@ public class ComfyNodeMap
                                         "title_aux": "ComfyBreakAnim"
                                     }
                                 ],
-                                "https://github.com/LonicaMewinsky/ComfyUI-RawSaver": [
+                                "https://github.com/LonicaMewinsky/FlowEngine-RawSaver": [
                                     [
                                         "SaveTifImage"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-RawSaver"
+                                        "title_aux": "FlowEngine-RawSaver"
                                     }
                                 ],
                                 "https://github.com/LyazS/comfyui-anime-seg": [
@@ -1555,20 +1555,20 @@ public class ComfyNodeMap
                                         "title_aux": "ComfyLiterals"
                                     }
                                 ],
-                                "https://github.com/M1kep/ComfyUI-KepOpenAI": [
+                                "https://github.com/M1kep/FlowEngine-KepOpenAI": [
                                     [
                                         "KepOpenAI_ImageWithPrompt"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-KepOpenAI"
+                                        "title_aux": "FlowEngine-KepOpenAI"
                                     }
                                 ],
-                                "https://github.com/M1kep/ComfyUI-OtherVAEs": [
+                                "https://github.com/M1kep/FlowEngine-OtherVAEs": [
                                     [
                                         "OtherVAE_Taesd"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-OtherVAEs"
+                                        "title_aux": "FlowEngine-OtherVAEs"
                                     }
                                 ],
                                 "https://github.com/M1kep/Comfy_KepKitchenSink": [
@@ -1629,20 +1629,20 @@ public class ComfyNodeMap
                                         "title_aux": "KepPromptLang"
                                     }
                                 ],
-                                "https://github.com/MNeMoNiCuZ/ComfyUI-mnemic-nodes": [
+                                "https://github.com/MNeMoNiCuZ/FlowEngine-mnemic-nodes": [
                                     [
                                         "Save Text File_mne"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-mnemic-nodes"
+                                        "title_aux": "FlowEngine-mnemic-nodes"
                                     }
                                 ],
-                                "https://github.com/Mamaaaamooooo/batchImg-rembg-ComfyUI-nodes": [
+                                "https://github.com/Mamaaaamooooo/batchImg-rembg-FlowEngine-nodes": [
                                     [
                                         "Image Remove Background (rembg)"
                                     ],
                                     {
-                                        "title_aux": "Batch Rembg for ComfyUI"
+                                        "title_aux": "Batch Rembg for FlowEngine"
                                     }
                                 ],
                                 "https://github.com/ManglerFTW/ComfyI2I": [
@@ -1658,20 +1658,20 @@ public class ComfyNodeMap
                                         "title_aux": "ComfyI2I"
                                     }
                                 ],
-                                "https://github.com/MarkoCa1/ComfyUI_Segment_Mask": [
+                                "https://github.com/MarkoCa1/FlowEngine_Segment_Mask": [
                                     [
                                         "AutomaticMask(segment anything)"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_Segment_Mask"
+                                        "title_aux": "FlowEngine_Segment_Mask"
                                     }
                                 ],
-                                "https://github.com/Miosp/ComfyUI-FBCNN": [
+                                "https://github.com/Miosp/FlowEngine-FBCNN": [
                                     [
                                         "JPEG artifacts removal FBCNN"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-FBCNN"
+                                        "title_aux": "FlowEngine-FBCNN"
                                     }
                                 ],
                                 "https://github.com/MitoshiroPJ/comfyui_slothful_attention": [
@@ -1682,34 +1682,34 @@ public class ComfyNodeMap
                                         "SlothfulAttention"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Slothful Attention"
+                                        "title_aux": "FlowEngine Slothful Attention"
                                     }
                                 ],
-                                "https://github.com/MrForExample/ComfyUI-3D-Pack": [
+                                "https://github.com/MrForExample/FlowEngine-3D-Pack": [
                                     [],
                                     {
                                         "nodename_pattern": "^\\[Comfy3D\\]",
-                                        "title_aux": "ComfyUI-3D-Pack"
+                                        "title_aux": "FlowEngine-3D-Pack"
                                     }
                                 ],
-                                "https://github.com/MrForExample/ComfyUI-AnimateAnyone-Evolved": [
+                                "https://github.com/MrForExample/FlowEngine-AnimateAnyone-Evolved": [
                                     [],
                                     {
                                         "nodename_pattern": "^\\[AnimateAnyone\\]",
-                                        "title_aux": "ComfyUI-AnimateAnyone-Evolved"
+                                        "title_aux": "FlowEngine-AnimateAnyone-Evolved"
                                     }
                                 ],
-                                "https://github.com/NicholasMcCarthy/ComfyUI_TravelSuite": [
+                                "https://github.com/NicholasMcCarthy/FlowEngine_TravelSuite": [
                                     [
                                         "LatentTravel"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_TravelSuite"
+                                        "title_aux": "FlowEngine_TravelSuite"
                                     }
                                 ],
                                 "https://github.com/NimaNzrii/comfyui-photoshop": [
                                     [
-                                        "PhotoshopToComfyUI"
+                                        "PhotoshopToFlowEngine"
                                     ],
                                     {
                                         "title_aux": "comfyui-photoshop"
@@ -1731,7 +1731,7 @@ public class ComfyNodeMap
                                         "title_aux": "ComfyUi-NoodleWebcam"
                                     }
                                 ],
-                                "https://github.com/Nlar/ComfyUI_CartoonSegmentation": [
+                                "https://github.com/Nlar/FlowEngine_CartoonSegmentation": [
                                     [
                                         "AnimeSegmentation",
                                         "KenBurnsConfigLoader",
@@ -1742,8 +1742,8 @@ public class ComfyNodeMap
                                         "author": "Nels Larsen",
                                         "description": "This extension offers a front end to the Cartoon Segmentation Project (https://github.com/CartoonSegmentation/CartoonSegmentation)",
                                         "nickname": "CfyCS",
-                                        "title": "ComfyUI_CartoonSegmentation",
-                                        "title_aux": "ComfyUI_CartoonSegmentation"
+                                        "title": "FlowEngine_CartoonSegmentation",
+                                        "title_aux": "FlowEngine_CartoonSegmentation"
                                     }
                                 ],
                                 "https://github.com/NotHarroweD/Harronode": [
@@ -1752,14 +1752,14 @@ public class ComfyNodeMap
                                     ],
                                     {
                                         "author": "HarroweD and quadmoon (https://github.com/traugdor)",
-                                        "description": "This extension to ComfyUI will build a prompt for the Harrlogos LoRA for SDXL.",
+                                        "description": "This extension to FlowEngine will build a prompt for the Harrlogos LoRA for SDXL.",
                                         "nickname": "Harronode",
                                         "nodename_pattern": "Harronode",
                                         "title": "Harrlogos Prompt Builder Node",
                                         "title_aux": "Harronode"
                                     }
                                 ],
-                                "https://github.com/Nourepide/ComfyUI-Allor": [
+                                "https://github.com/Nourepide/FlowEngine-Allor": [
                                     [
                                         "AlphaChanelAdd",
                                         "AlphaChanelAddByMask",
@@ -1864,7 +1864,7 @@ public class ComfyNodeMap
                                         "title_aux": "Allor Plugin"
                                     }
                                 ],
-                                "https://github.com/Nuked88/ComfyUI-N-Nodes": [
+                                "https://github.com/Nuked88/FlowEngine-N-Nodes": [
                                     [
                                         "CLIPTextEncodeAdvancedNSuite [n-suite]",
                                         "DynamicPrompt [n-suite]",
@@ -1882,10 +1882,10 @@ public class ComfyNodeMap
                                         "String Variable [n-suite]"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-N-Nodes"
+                                        "title_aux": "FlowEngine-N-Nodes"
                                     }
                                 ],
-                                "https://github.com/Off-Live/ComfyUI-off-suite": [
+                                "https://github.com/Off-Live/FlowEngine-off-suite": [
                                     [
                                         "Apply CLAHE",
                                         "Cached Image Load From URL",
@@ -1904,18 +1904,18 @@ public class ComfyNodeMap
                                         "Watermarking"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-off-suite"
+                                        "title_aux": "FlowEngine-off-suite"
                                     }
                                 ],
-                                "https://github.com/Onierous/QRNG_Node_ComfyUI/raw/main/qrng_node.py": [
+                                "https://github.com/Onierous/QRNG_Node_FlowEngine/raw/main/qrng_node.py": [
                                     [
                                         "QRNG_Node_CSV"
                                     ],
                                     {
-                                        "title_aux": "QRNG_Node_ComfyUI"
+                                        "title_aux": "QRNG_Node_FlowEngine"
                                     }
                                 ],
-                                "https://github.com/PCMonsterx/ComfyUI-CSV-Loader": [
+                                "https://github.com/PCMonsterx/FlowEngine-CSV-Loader": [
                                     [
                                         "Load Artists CSV",
                                         "Load Artmovements CSV",
@@ -1929,10 +1929,10 @@ public class ComfyNodeMap
                                         "Load Styles CSV"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-CSV-Loader"
+                                        "title_aux": "FlowEngine-CSV-Loader"
                                     }
                                 ],
-                                "https://github.com/ParmanBabra/ComfyUI-Malefish-Custom-Scripts": [
+                                "https://github.com/ParmanBabra/FlowEngine-Malefish-Custom-Scripts": [
                                     [
                                         "CSVPromptsLoader",
                                         "CombinePrompt",
@@ -1940,7 +1940,7 @@ public class ComfyNodeMap
                                         "RandomPrompt"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Malefish-Custom-Scripts"
+                                        "title_aux": "FlowEngine-Malefish-Custom-Scripts"
                                     }
                                 ],
                                 "https://github.com/Pfaeff/pfaeff-comfyui": [
@@ -1955,7 +1955,7 @@ public class ComfyNodeMap
                                         "title_aux": "pfaeff-comfyui"
                                     }
                                 ],
-                                "https://github.com/QaisMalkawi/ComfyUI-QaisHelper": [
+                                "https://github.com/QaisMalkawi/FlowEngine-QaisHelper": [
                                     [
                                         "Bool Binary Operation",
                                         "Bool Unary Operation",
@@ -1966,10 +1966,10 @@ public class ComfyNodeMap
                                         "Size Swapper"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Qais-Helper"
+                                        "title_aux": "FlowEngine-Qais-Helper"
                                     }
                                 ],
-                                "https://github.com/RenderRift/ComfyUI-RenderRiftNodes": [
+                                "https://github.com/RenderRift/FlowEngine-RenderRiftNodes": [
                                     [
                                         "AnalyseMetadata",
                                         "DateIntegerNode",
@@ -1979,7 +1979,7 @@ public class ComfyNodeMap
                                         "VideoPathMetaExtraction"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-RenderRiftNodes"
+                                        "title_aux": "FlowEngine-RenderRiftNodes"
                                     }
                                 ],
                                 "https://github.com/Ryuukeisyou/comfyui_face_parsing": [
@@ -2026,7 +2026,7 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui_image_io_helpers"
                                     }
                                 ],
-                                "https://github.com/SLAPaper/ComfyUI-Image-Selector": [
+                                "https://github.com/SLAPaper/FlowEngine-Image-Selector": [
                                     [
                                         "ImageDuplicator",
                                         "ImageSelector",
@@ -2034,10 +2034,10 @@ public class ComfyNodeMap
                                         "LatentSelector"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Image-Selector"
+                                        "title_aux": "FlowEngine-Image-Selector"
                                     }
                                 ],
-                                "https://github.com/SOELexicon/ComfyUI-LexMSDBNodes": [
+                                "https://github.com/SOELexicon/FlowEngine-LexMSDBNodes": [
                                     [
                                         "MSSqlSelectNode",
                                         "MSSqlTableNode"
@@ -2046,7 +2046,7 @@ public class ComfyNodeMap
                                         "title_aux": "LexMSDBNodes"
                                     }
                                 ],
-                                "https://github.com/SOELexicon/ComfyUI-LexTools": [
+                                "https://github.com/SOELexicon/FlowEngine-LexTools": [
                                     [
                                         "AgeClassifierNode",
                                         "ArtOrHumanClassifierNode",
@@ -2069,26 +2069,26 @@ public class ComfyNodeMap
                                         "StepCfgIncrementNode"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-LexTools"
+                                        "title_aux": "FlowEngine-LexTools"
                                     }
                                 ],
-                                "https://github.com/SadaleNet/CLIPTextEncodeA1111-ComfyUI/raw/master/custom_nodes/clip_text_encoder_a1111.py": [
+                                "https://github.com/SadaleNet/CLIPTextEncodeA1111-FlowEngine/raw/master/custom_nodes/clip_text_encoder_a1111.py": [
                                     [
                                         "CLIPTextEncodeA1111",
                                         "RerouteTextForCLIPTextEncodeA1111"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI A1111-like Prompt Custom Node Solution"
+                                        "title_aux": "FlowEngine A1111-like Prompt Custom Node Solution"
                                     }
                                 ],
-                                "https://github.com/Scholar01/ComfyUI-Keyframe": [
+                                "https://github.com/Scholar01/FlowEngine-Keyframe": [
                                     [
                                         "KeyframeApply",
                                         "KeyframeInterpolationPart",
                                         "KeyframePart"
                                     ],
                                     {
-                                        "title_aux": "SComfyUI-Keyframe"
+                                        "title_aux": "SFlowEngine-Keyframe"
                                     }
                                 ],
                                 "https://github.com/SeargeDP/SeargeSDXL": [
@@ -2183,20 +2183,20 @@ public class ComfyNodeMap
                                         "title_aux": "SDXL_sizing"
                                     }
                                 ],
-                                "https://github.com/ShmuelRonen/ComfyUI-SVDResizer": [
+                                "https://github.com/ShmuelRonen/FlowEngine-SVDResizer": [
                                     [
                                         "SVDRsizer"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-SVDResizer"
+                                        "title_aux": "FlowEngine-SVDResizer"
                                     }
                                 ],
-                                "https://github.com/Shraknard/ComfyUI-Remover": [
+                                "https://github.com/Shraknard/FlowEngine-Remover": [
                                     [
                                         "Remover"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Remover"
+                                        "title_aux": "FlowEngine-Remover"
                                     }
                                 ],
                                 "https://github.com/Siberpone/lazy-pony-prompter": [
@@ -2217,45 +2217,45 @@ public class ComfyNodeMap
                                         "Chatbox Overlay"
                                     ],
                                     {
-                                        "title_aux": "Chatbox Overlay node for ComfyUI"
+                                        "title_aux": "Chatbox Overlay node for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/SoftMeng/ComfyUI_Mexx_Poster": [
+                                "https://github.com/SoftMeng/FlowEngine_Mexx_Poster": [
                                     [
-                                        "ComfyUI_Mexx_Poster"
+                                        "FlowEngine_Mexx_Poster"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_Mexx_Poster"
+                                        "title_aux": "FlowEngine_Mexx_Poster"
                                     }
                                 ],
-                                "https://github.com/SoftMeng/ComfyUI_Mexx_Styler": [
+                                "https://github.com/SoftMeng/FlowEngine_Mexx_Styler": [
                                     [
                                         "MexxSDXLPromptStyler",
                                         "MexxSDXLPromptStylerAdvanced"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_Mexx_Styler"
+                                        "title_aux": "FlowEngine_Mexx_Styler"
                                     }
                                 ],
-                                "https://github.com/SpaceKendo/ComfyUI-svd_txt2vid": [
+                                "https://github.com/SpaceKendo/FlowEngine-svd_txt2vid": [
                                     [
                                         "SVD_txt2vid_ConditioningwithLatent"
                                     ],
                                     {
-                                        "title_aux": "Text to video for Stable Video Diffusion in ComfyUI"
+                                        "title_aux": "Text to video for Stable Video Diffusion in FlowEngine"
                                     }
                                 ],
-                                "https://github.com/Stability-AI/stability-ComfyUI-nodes": [
+                                "https://github.com/Stability-AI/stability-FlowEngine-nodes": [
                                     [
                                         "ColorBlend",
                                         "ControlLoraSave",
                                         "GetImageSize"
                                     ],
                                     {
-                                        "title_aux": "stability-ComfyUI-nodes"
+                                        "title_aux": "stability-FlowEngine-nodes"
                                     }
                                 ],
-                                "https://github.com/StartHua/ComfyUI_Seg_VITON": [
+                                "https://github.com/StartHua/FlowEngine_Seg_VITON": [
                                     [
                                         "segformer_agnostic",
                                         "segformer_clothes",
@@ -2263,7 +2263,7 @@ public class ComfyNodeMap
                                         "stabel_vition"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_Seg_VITON"
+                                        "title_aux": "FlowEngine_Seg_VITON"
                                     }
                                 ],
                                 "https://github.com/StartHua/Comfyui_joytag": [
@@ -2274,7 +2274,7 @@ public class ComfyNodeMap
                                         "title_aux": "Comfyui_joytag"
                                     }
                                 ],
-                                "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes": [
+                                "https://github.com/Suzie1/FlowEngine_Comfyroll_CustomNodes": [
                                     [
                                         "CR 8 Channel In",
                                         "CR 8 Channel Out",
@@ -2490,7 +2490,7 @@ public class ComfyNodeMap
                                         "description": "175 custom nodes for artists, designers and animators.",
                                         "nickname": "Comfyroll Studio",
                                         "title": "Comfyroll Studio",
-                                        "title_aux": "ComfyUI_Comfyroll_CustomNodes"
+                                        "title_aux": "FlowEngine_Comfyroll_CustomNodes"
                                     }
                                 ],
                                 "https://github.com/Sxela/ComfyWarp": [
@@ -2512,7 +2512,7 @@ public class ComfyNodeMap
                                         "title_aux": "ComfyWarp"
                                     }
                                 ],
-                                "https://github.com/TGu-97/ComfyUI-TGu-utils": [
+                                "https://github.com/TGu-97/FlowEngine-TGu-utils": [
                                     [
                                         "MPNReroute",
                                         "MPNSwitch",
@@ -2522,7 +2522,7 @@ public class ComfyNodeMap
                                         "title_aux": "TGu Utilities"
                                     }
                                 ],
-                                "https://github.com/THtianhao/ComfyUI-FaceChain": [
+                                "https://github.com/THtianhao/FlowEngine-FaceChain": [
                                     [
                                         "FC CropAndPaste",
                                         "FC CropBottom",
@@ -2537,10 +2537,10 @@ public class ComfyNodeMap
                                         "FC StyleLoraLoad"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-FaceChain"
+                                        "title_aux": "FlowEngine-FaceChain"
                                     }
                                 ],
-                                "https://github.com/THtianhao/ComfyUI-Portrait-Maker": [
+                                "https://github.com/THtianhao/FlowEngine-Portrait-Maker": [
                                     [
                                         "PM_BoxCropImage",
                                         "PM_ColorTransfer",
@@ -2564,7 +2564,7 @@ public class ComfyNodeMap
                                         "PM_SuperMakeUpTransfer"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Portrait-Maker"
+                                        "title_aux": "FlowEngine-Portrait-Maker"
                                     }
                                 ],
                                 "https://github.com/TRI3D-LC/tri3d-comfyui-nodes": [
@@ -2605,7 +2605,7 @@ public class ComfyNodeMap
                                         "PromptExtraNetworks"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Prompt ExtraNetworks"
+                                        "title_aux": "FlowEngine Prompt ExtraNetworks"
                                     }
                                 ],
                                 "https://github.com/Taremin/comfyui-string-tools": [
@@ -2617,10 +2617,10 @@ public class ComfyNodeMap
                                         "StringToolsText"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI String Tools"
+                                        "title_aux": "FlowEngine String Tools"
                                     }
                                 ],
-                                "https://github.com/TeaCrab/ComfyUI-TeaNodes": [
+                                "https://github.com/TeaCrab/FlowEngine-TeaNodes": [
                                     [
                                         "TC_ColorFill",
                                         "TC_EqualizeCLAHE",
@@ -2630,7 +2630,7 @@ public class ComfyNodeMap
                                         "TC_SizeApproximation"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-TeaNodes"
+                                        "title_aux": "FlowEngine-TeaNodes"
                                     }
                                 ],
                                 "https://github.com/TemryL/ComfyS3": [
@@ -2655,7 +2655,7 @@ public class ComfyNodeMap
                                         "title_aux": "ZSuite"
                                     }
                                 ],
-                                "https://github.com/TinyTerra/ComfyUI_tinyterraNodes": [
+                                "https://github.com/TinyTerra/FlowEngine_tinyterraNodes": [
                                     [
                                         "ttN busIN",
                                         "ttN busOUT",
@@ -2697,15 +2697,15 @@ public class ComfyNodeMap
                                         "title_aux": "tinyterraNodes"
                                     }
                                 ],
-                                "https://github.com/TripleHeadedMonkey/ComfyUI_MileHighStyler": [
+                                "https://github.com/TripleHeadedMonkey/FlowEngine_MileHighStyler": [
                                     [
                                         "menus"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_MileHighStyler"
+                                        "title_aux": "FlowEngine_MileHighStyler"
                                     }
                                 ],
-                                "https://github.com/Tropfchen/ComfyUI-Embedding_Picker": [
+                                "https://github.com/Tropfchen/FlowEngine-Embedding_Picker": [
                                     [
                                         "EmbeddingPicker"
                                     ],
@@ -2713,7 +2713,7 @@ public class ComfyNodeMap
                                         "title_aux": "Embedding Picker"
                                     }
                                 ],
-                                "https://github.com/Tropfchen/ComfyUI-yaResolutionSelector": [
+                                "https://github.com/Tropfchen/FlowEngine-yaResolutionSelector": [
                                     [
                                         "YARS",
                                         "YARSAdv"
@@ -2722,7 +2722,7 @@ public class ComfyNodeMap
                                         "title_aux": "YARS: Yet Another Resolution Selector"
                                     }
                                 ],
-                                "https://github.com/Trung0246/ComfyUI-0246": [
+                                "https://github.com/Trung0246/FlowEngine-0246": [
                                     [
                                         "0246.Beautify",
                                         "0246.BoxRange",
@@ -2750,10 +2750,10 @@ public class ComfyNodeMap
                                     ],
                                     {
                                         "author": "Trung0246",
-                                        "description": "Random nodes for ComfyUI I made to solve my struggle with ComfyUI (ex: pipe, process). Have varying quality.",
-                                        "nickname": "ComfyUI-0246",
-                                        "title": "ComfyUI-0246",
-                                        "title_aux": "ComfyUI-0246"
+                                        "description": "Random nodes for FlowEngine I made to solve my struggle with FlowEngine (ex: pipe, process). Have varying quality.",
+                                        "nickname": "FlowEngine-0246",
+                                        "title": "FlowEngine-0246",
+                                        "title_aux": "FlowEngine-0246"
                                     }
                                 ],
                                 "https://github.com/Ttl/ComfyUi_NNLatentUpscale": [
@@ -2761,7 +2761,7 @@ public class ComfyNodeMap
                                         "NNLatentUpscale"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Neural network latent upscale custom node"
+                                        "title_aux": "FlowEngine Neural network latent upscale custom node"
                                     }
                                 ],
                                 "https://github.com/Umikaze-job/select_folder_path_easy": [
@@ -2781,12 +2781,12 @@ public class ComfyNodeMap
                                         "title_aux": "ASTERR"
                                     }
                                 ],
-                                "https://github.com/WASasquatch/ComfyUI_Preset_Merger": [
+                                "https://github.com/WASasquatch/FlowEngine_Preset_Merger": [
                                     [
                                         "Preset_Model_Merge"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Preset Merger"
+                                        "title_aux": "FlowEngine Preset Merger"
                                     }
                                 ],
                                 "https://github.com/WASasquatch/FreeU_Advanced": [
@@ -2798,7 +2798,7 @@ public class ComfyNodeMap
                                         "title_aux": "FreeU_Advanced"
                                     }
                                 ],
-                                "https://github.com/WASasquatch/PPF_Noise_ComfyUI": [
+                                "https://github.com/WASasquatch/PPF_Noise_FlowEngine": [
                                     [
                                         "Blend Latents (PPF Noise)",
                                         "Cross-Hatch Power Fractal (PPF Noise)",
@@ -2806,7 +2806,7 @@ public class ComfyNodeMap
                                         "Perlin Power Fractal Latent (PPF Noise)"
                                     ],
                                     {
-                                        "title_aux": "PPF_Noise_ComfyUI"
+                                        "title_aux": "PPF_Noise_FlowEngine"
                                     }
                                 ],
                                 "https://github.com/WASasquatch/PowerNoiseSuite": [
@@ -2824,7 +2824,7 @@ public class ComfyNodeMap
                                         "Power-Law Noise (PPF Noise)"
                                     ],
                                     {
-                                        "title_aux": "Power Noise Suite for ComfyUI"
+                                        "title_aux": "Power Noise Suite for FlowEngine"
                                     }
                                 ],
                                 "https://github.com/WASasquatch/WAS_Extras": [
@@ -3113,7 +3113,7 @@ public class ComfyNodeMap
                                         "title_aux": "ymc-node-suite-comfyui"
                                     }
                                 ],
-                                "https://github.com/YOUR-WORST-TACO/ComfyUI-TacoNodes": [
+                                "https://github.com/YOUR-WORST-TACO/FlowEngine-TacoNodes": [
                                     [
                                         "Example",
                                         "TacoAnimatedLoader",
@@ -3123,18 +3123,18 @@ public class ComfyNodeMap
                                         "TacoLatent"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-TacoNodes"
+                                        "title_aux": "FlowEngine-TacoNodes"
                                     }
                                 ],
-                                "https://github.com/YinBailiang/MergeBlockWeighted_fo_ComfyUI": [
+                                "https://github.com/YinBailiang/MergeBlockWeighted_fo_FlowEngine": [
                                     [
                                         "MergeBlockWeighted"
                                     ],
                                     {
-                                        "title_aux": "MergeBlockWeighted_fo_ComfyUI"
+                                        "title_aux": "MergeBlockWeighted_fo_FlowEngine"
                                     }
                                 ],
-                                "https://github.com/ZHO-ZHO-ZHO/ComfyUI-ArtGallery": [
+                                "https://github.com/ZHO-ZHO-ZHO/FlowEngine-ArtGallery": [
                                     [
                                         "ArtGallery_Zho",
                                         "ArtistsImage_Zho",
@@ -3144,10 +3144,10 @@ public class ComfyNodeMap
                                         "StylesImage_Zho"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-ArtGallery"
+                                        "title_aux": "FlowEngine-ArtGallery"
                                     }
                                 ],
-                                "https://github.com/ZHO-ZHO-ZHO/ComfyUI-Gemini": [
+                                "https://github.com/ZHO-ZHO-ZHO/FlowEngine-Gemini": [
                                     [
                                         "ConcatText_Zho",
                                         "DisplayText_Zho",
@@ -3159,10 +3159,10 @@ public class ComfyNodeMap
                                         "Gemini_API_Zho"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Gemini"
+                                        "title_aux": "FlowEngine-Gemini"
                                     }
                                 ],
-                                "https://github.com/ZHO-ZHO-ZHO/ComfyUI-InstantID": [
+                                "https://github.com/ZHO-ZHO-ZHO/FlowEngine-InstantID": [
                                     [
                                         "IDBaseModelLoader_fromhub",
                                         "IDBaseModelLoader_local",
@@ -3173,10 +3173,10 @@ public class ComfyNodeMap
                                         "Ipadapter_instantidLoader"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-InstantID"
+                                        "title_aux": "FlowEngine-InstantID"
                                     }
                                 ],
-                                "https://github.com/ZHO-ZHO-ZHO/ComfyUI-PhotoMaker-ZHO": [
+                                "https://github.com/ZHO-ZHO-ZHO/FlowEngine-PhotoMaker-ZHO": [
                                     [
                                         "BaseModel_Loader_fromhub",
                                         "BaseModel_Loader_local",
@@ -3189,46 +3189,46 @@ public class ComfyNodeMap
                                         "Ref_Image_Preprocessing"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI PhotoMaker (ZHO)"
+                                        "title_aux": "FlowEngine PhotoMaker (ZHO)"
                                     }
                                 ],
-                                "https://github.com/ZHO-ZHO-ZHO/ComfyUI-Q-Align": [
+                                "https://github.com/ZHO-ZHO-ZHO/FlowEngine-Q-Align": [
                                     [
                                         "QAlign_Zho"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Q-Align"
+                                        "title_aux": "FlowEngine-Q-Align"
                                     }
                                 ],
-                                "https://github.com/ZHO-ZHO-ZHO/ComfyUI-Qwen-VL-API": [
+                                "https://github.com/ZHO-ZHO-ZHO/FlowEngine-Qwen-VL-API": [
                                     [
                                         "QWenVL_API_S_Multi_Zho",
                                         "QWenVL_API_S_Zho"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Qwen-VL-API"
+                                        "title_aux": "FlowEngine-Qwen-VL-API"
                                     }
                                 ],
-                                "https://github.com/ZHO-ZHO-ZHO/ComfyUI-SVD-ZHO": [
+                                "https://github.com/ZHO-ZHO-ZHO/FlowEngine-SVD-ZHO": [
                                     [
                                         "SVD_Aspect_Ratio_Zho",
                                         "SVD_Steps_MotionStrength_Seed_Zho",
                                         "SVD_Styler_Zho"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-SVD-ZHO (WIP)"
+                                        "title_aux": "FlowEngine-SVD-ZHO (WIP)"
                                     }
                                 ],
-                                "https://github.com/ZHO-ZHO-ZHO/ComfyUI-SegMoE": [
+                                "https://github.com/ZHO-ZHO-ZHO/FlowEngine-SegMoE": [
                                     [
                                         "SMoE_Generation_Zho",
                                         "SMoE_ModelLoader_Zho"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI SegMoE"
+                                        "title_aux": "FlowEngine SegMoE"
                                     }
                                 ],
-                                "https://github.com/ZHO-ZHO-ZHO/ComfyUI-Text_Image-Composite": [
+                                "https://github.com/ZHO-ZHO-ZHO/FlowEngine-Text_Image-Composite": [
                                     [
                                         "AlphaChanelAddByMask",
                                         "ImageCompositeBy_BG_Zho",
@@ -3241,7 +3241,7 @@ public class ComfyNodeMap
                                         "Text_Image_Zho"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Text_Image-Composite [WIP]"
+                                        "title_aux": "FlowEngine-Text_Image-Composite [WIP]"
                                     }
                                 ],
                                 "https://github.com/ZHO-ZHO-ZHO/comfyui-portrait-master-zh-cn": [
@@ -3252,7 +3252,7 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui-portrait-master-zh-cn"
                                     }
                                 ],
-                                "https://github.com/ZaneA/ComfyUI-ImageReward": [
+                                "https://github.com/ZaneA/FlowEngine-ImageReward": [
                                     [
                                         "ImageRewardLoader",
                                         "ImageRewardScore"
@@ -3261,7 +3261,7 @@ public class ComfyNodeMap
                                         "title_aux": "ImageReward"
                                     }
                                 ],
-                                "https://github.com/Zuellni/ComfyUI-ExLlama": [
+                                "https://github.com/Zuellni/FlowEngine-ExLlama": [
                                     [
                                         "ZuellniExLlamaGenerator",
                                         "ZuellniExLlamaLoader",
@@ -3269,10 +3269,10 @@ public class ComfyNodeMap
                                         "ZuellniTextReplace"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-ExLlama"
+                                        "title_aux": "FlowEngine-ExLlama"
                                     }
                                 ],
-                                "https://github.com/Zuellni/ComfyUI-PickScore-Nodes": [
+                                "https://github.com/Zuellni/FlowEngine-PickScore-Nodes": [
                                     [
                                         "ZuellniPickScoreImageProcessor",
                                         "ZuellniPickScoreLoader",
@@ -3280,10 +3280,10 @@ public class ComfyNodeMap
                                         "ZuellniPickScoreTextProcessor"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI PickScore Nodes"
+                                        "title_aux": "FlowEngine PickScore Nodes"
                                     }
                                 ],
-                                "https://github.com/a1lazydog/ComfyUI-AudioScheduler": [
+                                "https://github.com/a1lazydog/FlowEngine-AudioScheduler": [
                                     [
                                         "AmplitudeToGraph",
                                         "AmplitudeToNumber",
@@ -3300,17 +3300,17 @@ public class ComfyNodeMap
                                         "TransientAmplitudeBasic"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-AudioScheduler"
+                                        "title_aux": "FlowEngine-AudioScheduler"
                                     }
                                 ],
-                                "https://github.com/abdozmantar/ComfyUI-InstaSwap": [
+                                "https://github.com/abdozmantar/FlowEngine-InstaSwap": [
                                     [
                                         "InstaSwapFaceSwap",
                                         "InstaSwapLoadFaceModel",
                                         "InstaSwapSaveFaceModel"
                                     ],
                                     {
-                                        "title_aux": "InstaSwap Face Swap Node for ComfyUI"
+                                        "title_aux": "InstaSwap Face Swap Node for FlowEngine"
                                     }
                                 ],
                                 "https://github.com/abyz22/image_control": [
@@ -3342,13 +3342,13 @@ public class ComfyNodeMap
                                         "title_aux": "image_control"
                                     }
                                 ],
-                                "https://github.com/adbrasi/ComfyUI-TrashNodes-DownloadHuggingface": [
+                                "https://github.com/adbrasi/FlowEngine-TrashNodes-DownloadHuggingface": [
                                     [
                                         "DownloadLinkChecker",
                                         "ShowFileNames"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-TrashNodes-DownloadHuggingface"
+                                        "title_aux": "FlowEngine-TrashNodes-DownloadHuggingface"
                                     }
                                 ],
                                 "https://github.com/adieyal/comfyui-dynamicprompts": [
@@ -3364,13 +3364,13 @@ public class ComfyNodeMap
                                         "title_aux": "DynamicPrompts Custom Nodes"
                                     }
                                 ],
-                                "https://github.com/adriflex/ComfyUI_Blender_Texdiff": [
+                                "https://github.com/adriflex/FlowEngine_Blender_Texdiff": [
                                     [
                                         "ViewportColor",
                                         "ViewportDepth"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_Blender_Texdiff"
+                                        "title_aux": "FlowEngine_Blender_Texdiff"
                                     }
                                 ],
                                 "https://github.com/aegis72/aegisflow_utility_nodes": [
@@ -3411,7 +3411,7 @@ public class ComfyNodeMap
                                         "menus"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-styles-all"
+                                        "title_aux": "FlowEngine-styles-all"
                                     }
                                 ],
                                 "https://github.com/ai-liam/comfyui_liam_util": [
@@ -3422,7 +3422,7 @@ public class ComfyNodeMap
                                         "title_aux": "LiamUtil"
                                     }
                                 ],
-                                "https://github.com/aianimation55/ComfyUI-FatLabels": [
+                                "https://github.com/aianimation55/FlowEngine-FatLabels": [
                                     [
                                         "FatLabels"
                                     ],
@@ -3430,7 +3430,7 @@ public class ComfyNodeMap
                                         "title_aux": "Comfy UI FatLabels"
                                     }
                                 ],
-                                "https://github.com/alexopus/ComfyUI-Image-Saver": [
+                                "https://github.com/alexopus/FlowEngine-Image-Saver": [
                                     [
                                         "Cfg Literal (Image Saver)",
                                         "Checkpoint Loader with Name (Image Saver)",
@@ -3444,7 +3444,7 @@ public class ComfyNodeMap
                                         "Width/Height Literal (Image Saver)"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Image Saver"
+                                        "title_aux": "FlowEngine Image Saver"
                                     }
                                 ],
                                 "https://github.com/alpertunga-bile/prompt-generator-comfyui": [
@@ -3567,7 +3567,7 @@ public class ComfyNodeMap
                                         "title_aux": "Dream Video Batches"
                                     }
                                 ],
-                                "https://github.com/an90ray/ComfyUI_RErouter_CustomNodes": [
+                                "https://github.com/an90ray/FlowEngine_RErouter_CustomNodes": [
                                     [
                                         "CLIPTextEncode (RE)",
                                         "CLIPTextEncodeSDXL (RE)",
@@ -3578,7 +3578,7 @@ public class ComfyNodeMap
                                         "String (RE)"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_RErouter_CustomNodes"
+                                        "title_aux": "FlowEngine_RErouter_CustomNodes"
                                     }
                                 ],
                                 "https://github.com/andersxa/comfyui-PromptAttention": [
@@ -3598,15 +3598,15 @@ public class ComfyNodeMap
                                         "scale"
                                     ],
                                     {
-                                        "title_aux": "antrobots ComfyUI Nodepack"
+                                        "title_aux": "antrobots FlowEngine Nodepack"
                                     }
                                 ],
-                                "https://github.com/asagi4/ComfyUI-CADS": [
+                                "https://github.com/asagi4/FlowEngine-CADS": [
                                     [
                                         "CADS"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-CADS"
+                                        "title_aux": "FlowEngine-CADS"
                                     }
                                 ],
                                 "https://github.com/asagi4/comfyui-prompt-control": [
@@ -3624,7 +3624,7 @@ public class ComfyNodeMap
                                         "ScheduleToModel"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI prompt control"
+                                        "title_aux": "FlowEngine prompt control"
                                     }
                                 ],
                                 "https://github.com/asagi4/comfyui-utility-nodes": [
@@ -3637,7 +3637,7 @@ public class ComfyNodeMap
                                         "title_aux": "asagi4/comfyui-utility-nodes"
                                     }
                                 ],
-                                "https://github.com/aszc-dev/ComfyUI-CoreMLSuite": [
+                                "https://github.com/aszc-dev/FlowEngine-CoreMLSuite": [
                                     [
                                         "Core ML Converter",
                                         "Core ML LCM Converter",
@@ -3648,7 +3648,7 @@ public class ComfyNodeMap
                                         "CoreMLUNetLoader"
                                     ],
                                     {
-                                        "title_aux": "Core ML Suite for ComfyUI"
+                                        "title_aux": "Core ML Suite for FlowEngine"
                                     }
                                 ],
                                 "https://github.com/avatechai/avatar-graph-comfyui": [
@@ -3678,7 +3678,7 @@ public class ComfyNodeMap
                                         "title_aux": "avatar-graph-comfyui"
                                     }
                                 ],
-                                "https://github.com/azure-dragon-ai/ComfyUI-ClipScore-Nodes": [
+                                "https://github.com/azure-dragon-ai/FlowEngine-ClipScore-Nodes": [
                                     [
                                         "HaojihuiClipScoreFakeImageProcessor",
                                         "HaojihuiClipScoreImageProcessor",
@@ -3688,7 +3688,7 @@ public class ComfyNodeMap
                                         "HaojihuiClipScoreTextProcessor"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-ClipScore-Nodes"
+                                        "title_aux": "FlowEngine-ClipScore-Nodes"
                                     }
                                 ],
                                 "https://github.com/badjeff/comfyui_lora_tag_loader": [
@@ -3696,7 +3696,7 @@ public class ComfyNodeMap
                                         "LoraTagLoader"
                                     ],
                                     {
-                                        "title_aux": "LoRA Tag Loader for ComfyUI"
+                                        "title_aux": "LoRA Tag Loader for FlowEngine"
                                     }
                                 ],
                                 "https://github.com/banodoco/steerable-motion": [
@@ -3772,7 +3772,7 @@ public class ComfyNodeMap
                                         "title_aux": "Mikey Nodes"
                                     }
                                 ],
-                                "https://github.com/bedovyy/ComfyUI_NAIDGenerator": [
+                                "https://github.com/bedovyy/FlowEngine_NAIDGenerator": [
                                     [
                                         "GenerateNAID",
                                         "Img2ImgOptionNAID",
@@ -3782,10 +3782,10 @@ public class ComfyNodeMap
                                         "PromptToNAID"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_NAIDGenerator"
+                                        "title_aux": "FlowEngine_NAIDGenerator"
                                     }
                                 ],
-                                "https://github.com/biegert/ComfyUI-CLIPSeg/raw/main/custom_nodes/clipseg.py": [
+                                "https://github.com/biegert/FlowEngine-CLIPSeg/raw/main/custom_nodes/clipseg.py": [
                                     [
                                         "CLIPSeg",
                                         "CombineSegMasks"
@@ -3794,15 +3794,15 @@ public class ComfyNodeMap
                                         "title_aux": "CLIPSeg"
                                     }
                                 ],
-                                "https://github.com/bilal-arikan/ComfyUI_TextAssets": [
+                                "https://github.com/bilal-arikan/FlowEngine_TextAssets": [
                                     [
                                         "LoadTextAsset"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_TextAssets"
+                                        "title_aux": "FlowEngine_TextAssets"
                                     }
                                 ],
-                                "https://github.com/blepping/ComfyUI-bleh": [
+                                "https://github.com/blepping/FlowEngine-bleh": [
                                     [
                                         "BlehDeepShrink",
                                         "BlehDiscardPenultimateSigma",
@@ -3811,7 +3811,7 @@ public class ComfyNodeMap
                                         "BlehModelPatchConditional"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-bleh"
+                                        "title_aux": "FlowEngine-bleh"
                                     }
                                 ],
                                 "https://github.com/bmad4ever/comfyui_ab_samplercustom": [
@@ -3963,12 +3963,12 @@ public class ComfyNodeMap
                                         "title_aux": "Lists Cartesian Product"
                                     }
                                 ],
-                                "https://github.com/bradsec/ComfyUI_ResolutionSelector": [
+                                "https://github.com/bradsec/FlowEngine_ResolutionSelector": [
                                     [
                                         "ResolutionSelector"
                                     ],
                                     {
-                                        "title_aux": "ResolutionSelector for ComfyUI"
+                                        "title_aux": "ResolutionSelector for FlowEngine"
                                     }
                                 ],
                                 "https://github.com/braintacles/braintacles-comfyui-nodes": [
@@ -3993,7 +3993,7 @@ public class ComfyNodeMap
                                         "StyleAlignedSampleReferenceLatents"
                                     ],
                                     {
-                                        "title_aux": "StyleAligned for ComfyUI"
+                                        "title_aux": "StyleAligned for FlowEngine"
                                     }
                                 ],
                                 "https://github.com/bronkula/comfyui-fitsize": [
@@ -4012,13 +4012,13 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui-fitsize"
                                     }
                                 ],
-                                "https://github.com/bruefire/ComfyUI-SeqImageLoader": [
+                                "https://github.com/bruefire/FlowEngine-SeqImageLoader": [
                                     [
                                         "VFrame Loader With Mask Editor",
                                         "Video Loader With Mask Editor"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Sequential Image Loader"
+                                        "title_aux": "FlowEngine Sequential Image Loader"
                                     }
                                 ],
                                 "https://github.com/budihartono/comfyui_otonx_nodes": [
@@ -4035,7 +4035,7 @@ public class ComfyNodeMap
                                         "title_aux": "Otonx's Custom Nodes"
                                     }
                                 ],
-                                "https://github.com/bvhari/ComfyUI_ImageProcessing": [
+                                "https://github.com/bvhari/FlowEngine_ImageProcessing": [
                                     [
                                         "BilateralFilter",
                                         "Brightness",
@@ -4049,7 +4049,7 @@ public class ComfyNodeMap
                                         "title_aux": "ImageProcessing"
                                     }
                                 ],
-                                "https://github.com/bvhari/ComfyUI_LatentToRGB": [
+                                "https://github.com/bvhari/FlowEngine_LatentToRGB": [
                                     [
                                         "LatentToRGB"
                                     ],
@@ -4057,12 +4057,12 @@ public class ComfyNodeMap
                                         "title_aux": "LatentToRGB"
                                     }
                                 ],
-                                "https://github.com/bvhari/ComfyUI_PerpWeight": [
+                                "https://github.com/bvhari/FlowEngine_PerpWeight": [
                                     [
                                         "CLIPTextEncodePerpWeight"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_PerpWeight"
+                                        "title_aux": "FlowEngine_PerpWeight"
                                     }
                                 ],
                                 "https://github.com/catscandrive/comfyui-imagesubfolders/raw/main/loadImageWithSubfolders.py": [
@@ -4073,12 +4073,12 @@ public class ComfyNodeMap
                                         "title_aux": "Image loader with subfolders"
                                     }
                                 ],
-                                "https://github.com/ccvv804/ComfyUI-DiffusersStableCascade-LowVRAM": [
+                                "https://github.com/ccvv804/FlowEngine-DiffusersStableCascade-LowVRAM": [
                                     [
                                         "DiffusersStableCascade"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI StableCascade using diffusers for Low VRAM"
+                                        "title_aux": "FlowEngine StableCascade using diffusers for Low VRAM"
                                     }
                                 ],
                                 "https://github.com/celsojr2013/comfyui_simpletools/raw/main/google_translator.py": [
@@ -4086,18 +4086,18 @@ public class ComfyNodeMap
                                         "GoogleTranslator"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI SimpleTools Suit"
+                                        "title_aux": "FlowEngine SimpleTools Suit"
                                     }
                                 ],
-                                "https://github.com/ceruleandeep/ComfyUI-LLaVA-Captioner": [
+                                "https://github.com/ceruleandeep/FlowEngine-LLaVA-Captioner": [
                                     [
                                         "LlavaCaptioner"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI LLaVA Captioner"
+                                        "title_aux": "FlowEngine LLaVA Captioner"
                                     }
                                 ],
-                                "https://github.com/chaojie/ComfyUI-DragNUWA": [
+                                "https://github.com/chaojie/FlowEngine-DragNUWA": [
                                     [
                                         "BrushMotion",
                                         "CompositeMotionBrush",
@@ -4121,38 +4121,38 @@ public class ComfyNodeMap
                                         "Split Tracking Points"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-DragNUWA"
+                                        "title_aux": "FlowEngine-DragNUWA"
                                     }
                                 ],
-                                "https://github.com/chaojie/ComfyUI-DynamiCrafter": [
+                                "https://github.com/chaojie/FlowEngine-DynamiCrafter": [
                                     [
                                         "DynamiCrafter Simple",
                                         "DynamiCrafterLoader"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-DynamiCrafter"
+                                        "title_aux": "FlowEngine-DynamiCrafter"
                                     }
                                 ],
-                                "https://github.com/chaojie/ComfyUI-I2VGEN-XL": [
+                                "https://github.com/chaojie/FlowEngine-I2VGEN-XL": [
                                     [
                                         "I2VGEN-XL Simple",
                                         "Modelscope Pipeline Loader"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-I2VGEN-XL"
+                                        "title_aux": "FlowEngine-I2VGEN-XL"
                                     }
                                 ],
-                                "https://github.com/chaojie/ComfyUI-LightGlue": [
+                                "https://github.com/chaojie/FlowEngine-LightGlue": [
                                     [
                                         "LightGlue Loader",
                                         "LightGlue Simple",
                                         "LightGlue Simple Multi"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-LightGlue"
+                                        "title_aux": "FlowEngine-LightGlue"
                                     }
                                 ],
-                                "https://github.com/chaojie/ComfyUI-Moore-AnimateAnyone": [
+                                "https://github.com/chaojie/FlowEngine-Moore-AnimateAnyone": [
                                     [
                                         "Moore-AnimateAnyone Denoising Unet",
                                         "Moore-AnimateAnyone Image Encoder",
@@ -4163,19 +4163,19 @@ public class ComfyNodeMap
                                         "Moore-AnimateAnyone VAE"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Moore-AnimateAnyone"
+                                        "title_aux": "FlowEngine-Moore-AnimateAnyone"
                                     }
                                 ],
-                                "https://github.com/chaojie/ComfyUI-Motion-Vector-Extractor": [
+                                "https://github.com/chaojie/FlowEngine-Motion-Vector-Extractor": [
                                     [
                                         "Motion Vector Extractor",
                                         "VideoCombineThenPath"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Motion-Vector-Extractor"
+                                        "title_aux": "FlowEngine-Motion-Vector-Extractor"
                                     }
                                 ],
-                                "https://github.com/chaojie/ComfyUI-MotionCtrl": [
+                                "https://github.com/chaojie/FlowEngine-MotionCtrl": [
                                     [
                                         "Load Motion Camera Preset",
                                         "Load Motion Traj Preset",
@@ -4186,20 +4186,20 @@ public class ComfyNodeMap
                                         "Select Image Indices"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-MotionCtrl"
+                                        "title_aux": "FlowEngine-MotionCtrl"
                                     }
                                 ],
-                                "https://github.com/chaojie/ComfyUI-MotionCtrl-SVD": [
+                                "https://github.com/chaojie/FlowEngine-MotionCtrl-SVD": [
                                     [
                                         "Load Motionctrl-SVD Camera Preset",
                                         "Load Motionctrl-SVD Checkpoint",
                                         "Motionctrl-SVD Sample Simple"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-MotionCtrl-SVD"
+                                        "title_aux": "FlowEngine-MotionCtrl-SVD"
                                     }
                                 ],
-                                "https://github.com/chaojie/ComfyUI-Panda3d": [
+                                "https://github.com/chaojie/FlowEngine-Panda3d": [
                                     [
                                         "Panda3dAmbientLight",
                                         "Panda3dAttachNewNode",
@@ -4213,10 +4213,10 @@ public class ComfyNodeMap
                                         "Panda3dTextureMerge"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Panda3d"
+                                        "title_aux": "FlowEngine-Panda3d"
                                     }
                                 ],
-                                "https://github.com/chaojie/ComfyUI-Pymunk": [
+                                "https://github.com/chaojie/FlowEngine-Pymunk": [
                                     [
                                         "PygameRun",
                                         "PygameSurface",
@@ -4228,10 +4228,10 @@ public class ComfyNodeMap
                                         "PymunkStaticLine"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Pymunk"
+                                        "title_aux": "FlowEngine-Pymunk"
                                     }
                                 ],
-                                "https://github.com/chaojie/ComfyUI-RAFT": [
+                                "https://github.com/chaojie/FlowEngine-RAFT": [
                                     [
                                         "Load MotionBrush",
                                         "RAFT Run",
@@ -4239,10 +4239,10 @@ public class ComfyNodeMap
                                         "VizMotionBrush"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-RAFT"
+                                        "title_aux": "FlowEngine-RAFT"
                                     }
                                 ],
-                                "https://github.com/chflame163/ComfyUI_LayerStyle": [
+                                "https://github.com/chflame163/FlowEngine_LayerStyle": [
                                     [
                                         "LayerColor: Brightness & Contrast",
                                         "LayerColor: ColorAdapter",
@@ -4305,10 +4305,10 @@ public class ComfyNodeMap
                                         "LayerUtility: XY to Percent"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Layer Style"
+                                        "title_aux": "FlowEngine Layer Style"
                                     }
                                 ],
-                                "https://github.com/chflame163/ComfyUI_MSSpeech_TTS": [
+                                "https://github.com/chflame163/FlowEngine_MSSpeech_TTS": [
                                     [
                                         "Input Trigger",
                                         "MicrosoftSpeech_TTS",
@@ -4316,20 +4316,20 @@ public class ComfyNodeMap
                                         "Play Sound (loop)"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_MSSpeech_TTS"
+                                        "title_aux": "FlowEngine_MSSpeech_TTS"
                                     }
                                 ],
-                                "https://github.com/chflame163/ComfyUI_WordCloud": [
+                                "https://github.com/chflame163/FlowEngine_WordCloud": [
                                     [
                                         "ComfyWordCloud",
                                         "LoadTextFile",
                                         "RGB_Picker"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_WordCloud"
+                                        "title_aux": "FlowEngine_WordCloud"
                                     }
                                 ],
-                                "https://github.com/chibiace/ComfyUI-Chibi-Nodes": [
+                                "https://github.com/chibiace/FlowEngine-Chibi-Nodes": [
                                     [
                                         "ConditionText",
                                         "ConditionTextMulti",
@@ -4351,7 +4351,7 @@ public class ComfyNodeMap
                                         "Wildcards"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Chibi-Nodes"
+                                        "title_aux": "FlowEngine-Chibi-Nodes"
                                     }
                                 ],
                                 "https://github.com/chrisgoringe/cg-image-picker": [
@@ -4387,7 +4387,7 @@ public class ComfyNodeMap
                                         "title_aux": "Use Everywhere (UE Nodes)"
                                     }
                                 ],
-                                "https://github.com/city96/ComfyUI_ColorMod": [
+                                "https://github.com/city96/FlowEngine_ColorMod": [
                                     [
                                         "ColorModEdges",
                                         "ColorModPivot",
@@ -4396,10 +4396,10 @@ public class ComfyNodeMap
                                         "SaveImageHighPrec"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_ColorMod"
+                                        "title_aux": "FlowEngine_ColorMod"
                                     }
                                 ],
-                                "https://github.com/city96/ComfyUI_DiT": [
+                                "https://github.com/city96/FlowEngine_DiT": [
                                     [
                                         "DiTCheckpointLoader",
                                         "DiTCheckpointLoaderSimple",
@@ -4408,10 +4408,10 @@ public class ComfyNodeMap
                                         "DiTSampler"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_DiT [WIP]"
+                                        "title_aux": "FlowEngine_DiT [WIP]"
                                     }
                                 ],
-                                "https://github.com/city96/ComfyUI_ExtraModels": [
+                                "https://github.com/city96/FlowEngine_ExtraModels": [
                                     [
                                         "DiTCondLabelEmpty",
                                         "DiTCondLabelSelect",
@@ -4426,10 +4426,10 @@ public class ComfyNodeMap
                                         "T5v11Loader"
                                     ],
                                     {
-                                        "title_aux": "Extra Models for ComfyUI"
+                                        "title_aux": "Extra Models for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/city96/ComfyUI_NetDist": [
+                                "https://github.com/city96/FlowEngine_NetDist": [
                                     [
                                         "CombineImageBatch",
                                         "FetchRemote",
@@ -4447,7 +4447,7 @@ public class ComfyNodeMap
                                         "SaveLatentNumpy"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_NetDist"
+                                        "title_aux": "FlowEngine_NetDist"
                                     }
                                 ],
                                 "https://github.com/city96/SD-Advanced-Noise": [
@@ -4484,7 +4484,7 @@ public class ComfyNodeMap
                                         "title_aux": "comfy-nodes"
                                     }
                                 ],
-                                "https://github.com/comfyanonymous/ComfyUI": [
+                                "https://github.com/comfyanonymous/FlowEngine": [
                                     [
                                         "BasicScheduler",
                                         "CLIPLoader",
@@ -4631,10 +4631,10 @@ public class ComfyNodeMap
                                         "unCLIPConditioning"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI"
+                                        "title_aux": "FlowEngine"
                                     }
                                 ],
-                                "https://github.com/comfyanonymous/ComfyUI_experiments": [
+                                "https://github.com/comfyanonymous/FlowEngine_experiments": [
                                     [
                                         "ModelMergeBlockNumber",
                                         "ModelMergeSDXL",
@@ -4646,7 +4646,7 @@ public class ComfyNodeMap
                                         "TonemapNoiseWithRescaleCFG"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_experiments"
+                                        "title_aux": "FlowEngine_experiments"
                                     }
                                 ],
                                 "https://github.com/concarne000/ConCarneNode": [
@@ -4678,7 +4678,7 @@ public class ComfyNodeMap
                                         "title_aux": "ComfyQR-scanning-nodes"
                                     }
                                 ],
-                                "https://github.com/cubiq/ComfyUI_IPAdapter_plus": [
+                                "https://github.com/cubiq/FlowEngine_IPAdapter_plus": [
                                     [
                                         "IPAdapterApply",
                                         "IPAdapterApplyEncoded",
@@ -4694,10 +4694,10 @@ public class ComfyNodeMap
                                         "PrepImageForInsightFace"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_IPAdapter_plus"
+                                        "title_aux": "FlowEngine_IPAdapter_plus"
                                     }
                                 ],
-                                "https://github.com/cubiq/ComfyUI_InstantID": [
+                                "https://github.com/cubiq/FlowEngine_InstantID": [
                                     [
                                         "ApplyInstantID",
                                         "FaceKeypointsPreprocessor",
@@ -4705,10 +4705,10 @@ public class ComfyNodeMap
                                         "InstantIDModelLoader"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI InstantID (Native Support)"
+                                        "title_aux": "FlowEngine InstantID (Native Support)"
                                     }
                                 ],
-                                "https://github.com/cubiq/ComfyUI_SimpleMath": [
+                                "https://github.com/cubiq/FlowEngine_SimpleMath": [
                                     [
                                         "SimpleMath",
                                         "SimpleMathDebug"
@@ -4717,7 +4717,7 @@ public class ComfyNodeMap
                                         "title_aux": "Simple Math"
                                     }
                                 ],
-                                "https://github.com/cubiq/ComfyUI_essentials": [
+                                "https://github.com/cubiq/FlowEngine_essentials": [
                                     [
                                         "BatchCount+",
                                         "CLIPTextEncodeSDXL+",
@@ -4755,7 +4755,7 @@ public class ComfyNodeMap
                                         "TransitionMask+"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Essentials"
+                                        "title_aux": "FlowEngine Essentials"
                                     }
                                 ],
                                 "https://github.com/dagthomas/comfyui_dagthomas": [
@@ -4768,7 +4768,7 @@ public class ComfyNodeMap
                                         "title_aux": "SDXL Auto Prompter"
                                     }
                                 ],
-                                "https://github.com/daniel-lewis-ab/ComfyUI-Llama": [
+                                "https://github.com/daniel-lewis-ab/FlowEngine-Llama": [
                                     [
                                         "Call LLM Advanced",
                                         "Call LLM Basic",
@@ -4787,16 +4787,16 @@ public class ComfyNodeMap
                                         "Load LLM Model Basic"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Llama"
+                                        "title_aux": "FlowEngine-Llama"
                                     }
                                 ],
-                                "https://github.com/daniel-lewis-ab/ComfyUI-TTS": [
+                                "https://github.com/daniel-lewis-ab/FlowEngine-TTS": [
                                     [
                                         "Load_Piper_Model",
                                         "Piper_Speak_Text"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-TTS"
+                                        "title_aux": "FlowEngine-TTS"
                                     }
                                 ],
                                 "https://github.com/darkpixel/darkprompts": [
@@ -4810,7 +4810,7 @@ public class ComfyNodeMap
                                         "title_aux": "DarkPrompts"
                                     }
                                 ],
-                                "https://github.com/davask/ComfyUI-MarasIT-Nodes": [
+                                "https://github.com/davask/FlowEngine-MarasIT-Nodes": [
                                     [
                                         "MarasitBusNode"
                                     ],
@@ -4826,7 +4826,7 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui_DSP_imagehelpers"
                                     }
                                 ],
-                                "https://github.com/dawangraoming/ComfyUI_ksampler_gpu/raw/main/ksampler_gpu.py": [
+                                "https://github.com/dawangraoming/FlowEngine_ksampler_gpu/raw/main/ksampler_gpu.py": [
                                     [
                                         "KSamplerAdvancedGPU",
                                         "KSamplerGPU"
@@ -4886,10 +4886,10 @@ public class ComfyNodeMap
                                         "ProPostVignette"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-ProPost"
+                                        "title_aux": "FlowEngine-ProPost"
                                     }
                                 ],
-                                "https://github.com/dimtoneff/ComfyUI-PixelArt-Detector": [
+                                "https://github.com/dimtoneff/FlowEngine-PixelArt-Detector": [
                                     [
                                         "PixelArtAddDitherPattern",
                                         "PixelArtDetectorConverter",
@@ -4898,10 +4898,10 @@ public class ComfyNodeMap
                                         "PixelArtLoadPalettes"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI PixelArt Detector"
+                                        "title_aux": "FlowEngine PixelArt Detector"
                                     }
                                 ],
-                                "https://github.com/diontimmer/ComfyUI-Vextra-Nodes": [
+                                "https://github.com/diontimmer/FlowEngine-Vextra-Nodes": [
                                     [
                                         "Add Text To Image",
                                         "Apply Instagram Filter",
@@ -4917,7 +4917,7 @@ public class ComfyNodeMap
                                         "Swap Color Mode"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Vextra-Nodes"
+                                        "title_aux": "FlowEngine-Vextra-Nodes"
                                     }
                                 ],
                                 "https://github.com/djbielejeski/a-person-mask-generator": [
@@ -4928,7 +4928,7 @@ public class ComfyNodeMap
                                         "title_aux": "a-person-mask-generator"
                                     }
                                 ],
-                                "https://github.com/dmarx/ComfyUI-AudioReactive": [
+                                "https://github.com/dmarx/FlowEngine-AudioReactive": [
                                     [
                                         "OpAbs",
                                         "OpBandpass",
@@ -4951,10 +4951,10 @@ public class ComfyNodeMap
                                         "OpThreshold"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-AudioReactive"
+                                        "title_aux": "FlowEngine-AudioReactive"
                                     }
                                 ],
-                                "https://github.com/dmarx/ComfyUI-Keyframed": [
+                                "https://github.com/dmarx/FlowEngine-Keyframed": [
                                     [
                                         "Example",
                                         "KfAddCurveToPGroup",
@@ -5028,10 +5028,10 @@ public class ComfyNodeMap
                                         "KfSinusoidalWithWavelength"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Keyframed"
+                                        "title_aux": "FlowEngine-Keyframed"
                                     }
                                 ],
-                                "https://github.com/drago87/ComfyUI_Dragos_Nodes": [
+                                "https://github.com/drago87/FlowEngine_Dragos_Nodes": [
                                     [
                                         "file_padding",
                                         "image_info",
@@ -5039,7 +5039,7 @@ public class ComfyNodeMap
                                         "vae_loader"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_Dragos_Nodes"
+                                        "title_aux": "FlowEngine_Dragos_Nodes"
                                     }
                                 ],
                                 "https://github.com/drustan-hawk/primitive-types": [
@@ -5058,7 +5058,7 @@ public class ComfyNodeMap
                                         "comfyui-easy-padding"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Easy Padding"
+                                        "title_aux": "FlowEngine Easy Padding"
                                     }
                                 ],
                                 "https://github.com/edenartlab/eden_comfy_pipelines": [
@@ -5142,7 +5142,7 @@ public class ComfyNodeMap
                                         "title_aux": "ComfyMath"
                                     }
                                 ],
-                                "https://github.com/fearnworks/ComfyUI_FearnworksNodes/raw/main/fw_nodes.py": [
+                                "https://github.com/fearnworks/FlowEngine_FearnworksNodes/raw/main/fw_nodes.py": [
                                     [
                                         "Count Files in Directory (FW)",
                                         "Count Tokens (FW)",
@@ -5195,13 +5195,13 @@ public class ComfyNodeMap
                                         "title_aux": "Pixelization"
                                     }
                                 ],
-                                "https://github.com/filliptm/ComfyUI_Fill-Nodes": [
+                                "https://github.com/filliptm/FlowEngine_Fill-Nodes": [
                                     [
                                         "FL_ImageCaptionSaver",
                                         "FL_ImageRandomizer"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_Fill-Nodes"
+                                        "title_aux": "FlowEngine_Fill-Nodes"
                                     }
                                 ],
                                 "https://github.com/fitCorder/fcSuite/raw/main/fcSuite.py": [
@@ -5237,17 +5237,17 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui-prompt-composer"
                                     }
                                 ],
-                                "https://github.com/flowtyone/ComfyUI-Flowty-LDSR": [
+                                "https://github.com/flowtyone/FlowEngine-Flowty-LDSR": [
                                     [
                                         "LDSRModelLoader",
                                         "LDSRUpscale",
                                         "LDSRUpscaler"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Flowty-LDSR"
+                                        "title_aux": "FlowEngine-Flowty-LDSR"
                                     }
                                 ],
-                                "https://github.com/flyingshutter/As_ComfyUI_CustomNodes": [
+                                "https://github.com/flyingshutter/As_FlowEngine_CustomNodes": [
                                     [
                                         "BatchIndex_AS",
                                         "CropImage_AS",
@@ -5272,7 +5272,7 @@ public class ComfyNodeMap
                                         "TextWildcardList_AS"
                                     ],
                                     {
-                                        "title_aux": "As_ComfyUI_CustomNodes"
+                                        "title_aux": "As_FlowEngine_CustomNodes"
                                     }
                                 ],
                                 "https://github.com/foxtrot-roger/comfyui-rf-nodes": [
@@ -5310,12 +5310,12 @@ public class ComfyNodeMap
                                         "title_aux": "RF Nodes"
                                     }
                                 ],
-                                "https://github.com/gemell1/ComfyUI_GMIC": [
+                                "https://github.com/gemell1/FlowEngine_GMIC": [
                                     [
                                         "GmicCliWrapper"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_GMIC"
+                                        "title_aux": "FlowEngine_GMIC"
                                     }
                                 ],
                                 "https://github.com/giriss/comfy-image-saver": [
@@ -5334,7 +5334,7 @@ public class ComfyNodeMap
                                         "title_aux": "Save Image with Generation Metadata"
                                     }
                                 ],
-                                "https://github.com/glibsonoran/Plush-for-ComfyUI": [
+                                "https://github.com/glibsonoran/Plush-for-FlowEngine": [
                                     [
                                         "DalleImage",
                                         "Enhancer",
@@ -5343,17 +5343,17 @@ public class ComfyNodeMap
                                         "mulTextSwitch"
                                     ],
                                     {
-                                        "title_aux": "Plush-for-ComfyUI"
+                                        "title_aux": "Plush-for-FlowEngine"
                                     }
                                 ],
-                                "https://github.com/glifxyz/ComfyUI-GlifNodes": [
+                                "https://github.com/glifxyz/FlowEngine-GlifNodes": [
                                     [
                                         "GlifConsistencyDecoder",
                                         "GlifPatchConsistencyDecoderTiled",
                                         "SDXLAspectRatio"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-GlifNodes"
+                                        "title_aux": "FlowEngine-GlifNodes"
                                     }
                                 ],
                                 "https://github.com/glowcone/comfyui-base64-to-image": [
@@ -5364,15 +5364,15 @@ public class ComfyNodeMap
                                         "title_aux": "Load Image From Base64 URI"
                                     }
                                 ],
-                                "https://github.com/godspede/ComfyUI_Substring": [
+                                "https://github.com/godspede/FlowEngine_Substring": [
                                     [
                                         "SubstringTheory"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Substring"
+                                        "title_aux": "FlowEngine Substring"
                                     }
                                 ],
-                                "https://github.com/gokayfem/ComfyUI_VLM_nodes": [
+                                "https://github.com/gokayfem/FlowEngine_VLM_nodes": [
                                     [
                                         "Joytag",
                                         "JsonToText",
@@ -5401,7 +5401,7 @@ public class ComfyNodeMap
                                         "YKMaskToImage"
                                     ],
                                     {
-                                        "title_aux": "y.k.'s ComfyUI node suite"
+                                        "title_aux": "y.k.'s FlowEngine node suite"
                                     }
                                 ],
                                 "https://github.com/hhhzzyang/Comfyui_Lama": [
@@ -5414,23 +5414,23 @@ public class ComfyNodeMap
                                         "title_aux": "Comfyui-Lama"
                                     }
                                 ],
-                                "https://github.com/hinablue/ComfyUI_3dPoseEditor": [
+                                "https://github.com/hinablue/FlowEngine_3dPoseEditor": [
                                     [
                                         "Hina.PoseEditor3D"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI 3D Pose Editor"
+                                        "title_aux": "FlowEngine 3D Pose Editor"
                                     }
                                 ],
-                                "https://github.com/hustille/ComfyUI_Fooocus_KSampler": [
+                                "https://github.com/hustille/FlowEngine_Fooocus_KSampler": [
                                     [
                                         "KSampler With Refiner (Fooocus)"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_Fooocus_KSampler"
+                                        "title_aux": "FlowEngine_Fooocus_KSampler"
                                     }
                                 ],
-                                "https://github.com/hustille/ComfyUI_hus_utils": [
+                                "https://github.com/hustille/FlowEngine_hus_utils": [
                                     [
                                         "3way Prompt Styler",
                                         "Batch State",
@@ -5440,10 +5440,10 @@ public class ComfyNodeMap
                                         "Text Hash"
                                     ],
                                     {
-                                        "title_aux": "hus' utils for ComfyUI"
+                                        "title_aux": "hus' utils for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/hylarucoder/ComfyUI-Eagle-PNGInfo": [
+                                "https://github.com/hylarucoder/FlowEngine-Eagle-PNGInfo": [
                                     [
                                         "EagleImageNode",
                                         "SDXLPromptStyler",
@@ -5454,7 +5454,7 @@ public class ComfyNodeMap
                                         "title_aux": "Eagle PNGInfo"
                                     }
                                 ],
-                                "https://github.com/idrirap/ComfyUI-Lora-Auto-Trigger-Words": [
+                                "https://github.com/idrirap/FlowEngine-Lora-Auto-Trigger-Words": [
                                     [
                                         "FusionText",
                                         "LoraListNames",
@@ -5469,10 +5469,10 @@ public class ComfyNodeMap
                                         "TextInputBasic"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Lora-Auto-Trigger-Words"
+                                        "title_aux": "FlowEngine-Lora-Auto-Trigger-Words"
                                     }
                                 ],
-                                "https://github.com/imb101/ComfyUI-FaceSwap": [
+                                "https://github.com/imb101/FlowEngine-FaceSwap": [
                                     [
                                         "FaceSwapNode"
                                     ],
@@ -5480,7 +5480,7 @@ public class ComfyNodeMap
                                         "title_aux": "FaceSwap"
                                     }
                                 ],
-                                "https://github.com/jags111/ComfyUI_Jags_Audiotools": [
+                                "https://github.com/jags111/FlowEngine_Jags_Audiotools": [
                                     [
                                         "BatchJoinAudio",
                                         "BatchToList",
@@ -5540,10 +5540,10 @@ public class ComfyNodeMap
                                         "description": "This extension offers various audio generation tools",
                                         "nickname": "Audiotools",
                                         "title": "Jags_Audiotools",
-                                        "title_aux": "ComfyUI_Jags_Audiotools"
+                                        "title_aux": "FlowEngine_Jags_Audiotools"
                                     }
                                 ],
-                                "https://github.com/jags111/ComfyUI_Jags_VectorMagic": [
+                                "https://github.com/jags111/FlowEngine_Jags_VectorMagic": [
                                     [
                                         "CircularVAEDecode",
                                         "JagsCLIPSeg",
@@ -5561,7 +5561,7 @@ public class ComfyNodeMap
                                         "description": "This extension offers various vector manipulation and  generation tools",
                                         "nickname": "Jags_VectorMagic",
                                         "title": "Jags_VectorMagic",
-                                        "title_aux": "ComfyUI_Jags_VectorMagic"
+                                        "title_aux": "FlowEngine_Jags_VectorMagic"
                                     }
                                 ],
                                 "https://github.com/jags111/efficiency-nodes-comfyui": [
@@ -5607,31 +5607,31 @@ public class ComfyNodeMap
                                         "XY Plot"
                                     ],
                                     {
-                                        "title_aux": "Efficiency Nodes for ComfyUI Version 2.0+"
+                                        "title_aux": "Efficiency Nodes for FlowEngine Version 2.0+"
                                     }
                                 ],
-                                "https://github.com/jamal-alkharrat/ComfyUI_rotate_image": [
+                                "https://github.com/jamal-alkharrat/FlowEngine_rotate_image": [
                                     [
                                         "RotateImage"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_rotate_image"
+                                        "title_aux": "FlowEngine_rotate_image"
                                     }
                                 ],
                                 "https://github.com/jamesWalker55/comfyui-various": [
                                     [],
                                     {
                                         "nodename_pattern": "^JW",
-                                        "title_aux": "Various ComfyUI Nodes by Type"
+                                        "title_aux": "Various FlowEngine Nodes by Type"
                                     }
                                 ],
-                                "https://github.com/jesenzhang/ComfyUI_StreamDiffusion": [
+                                "https://github.com/jesenzhang/FlowEngine_StreamDiffusion": [
                                     [
                                         "StreamDiffusion_Loader",
                                         "StreamDiffusion_Sampler"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_StreamDiffusion"
+                                        "title_aux": "FlowEngine_StreamDiffusion"
                                     }
                                 ],
                                 "https://github.com/jitcoder/lora-info": [
@@ -5643,7 +5643,7 @@ public class ComfyNodeMap
                                         "title_aux": "LoraInfo"
                                     }
                                 ],
-                                "https://github.com/jjkramhoeft/ComfyUI-Jjk-Nodes": [
+                                "https://github.com/jjkramhoeft/FlowEngine-Jjk-Nodes": [
                                     [
                                         "JjkConcat",
                                         "JjkShowText",
@@ -5651,36 +5651,36 @@ public class ComfyNodeMap
                                         "SDXLRecommendedImageSize"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Jjk-Nodes"
+                                        "title_aux": "FlowEngine-Jjk-Nodes"
                                     }
                                 ],
-                                "https://github.com/jojkaart/ComfyUI-sampler-lcm-alternative": [
+                                "https://github.com/jojkaart/FlowEngine-sampler-lcm-alternative": [
                                     [
                                         "LCMScheduler",
                                         "SamplerLCMAlternative",
                                         "SamplerLCMCycle"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-sampler-lcm-alternative"
+                                        "title_aux": "FlowEngine-sampler-lcm-alternative"
                                     }
                                 ],
-                                "https://github.com/jordoh/ComfyUI-Deepface": [
+                                "https://github.com/jordoh/FlowEngine-Deepface": [
                                     [
                                         "DeepfaceExtractFaces",
                                         "DeepfaceVerify"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Deepface"
+                                        "title_aux": "FlowEngine Deepface"
                                     }
                                 ],
-                                "https://github.com/jtrue/ComfyUI-JaRue": [
+                                "https://github.com/jtrue/FlowEngine-JaRue": [
                                     [
                                         "Text2Image_jru",
                                         "YouTube2Prompt_jru"
                                     ],
                                     {
                                         "nodename_pattern": "_jru$",
-                                        "title_aux": "ComfyUI-JaRue"
+                                        "title_aux": "FlowEngine-JaRue"
                                     }
                                 ],
                                 "https://github.com/ka-puna/comfyui-yanc": [
@@ -5696,7 +5696,7 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui-yanc"
                                     }
                                 ],
-                                "https://github.com/kadirnar/ComfyUI-Transformers": [
+                                "https://github.com/kadirnar/FlowEngine-Transformers": [
                                     [
                                         "DepthEstimationPipeline",
                                         "ImageClassificationPipeline",
@@ -5704,7 +5704,7 @@ public class ComfyNodeMap
                                         "ObjectDetectionPipeline"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Transformers"
+                                        "title_aux": "FlowEngine-Transformers"
                                     }
                                 ],
                                 "https://github.com/kenjiqq/qq-nodes-comfyui": [
@@ -5734,32 +5734,32 @@ public class ComfyNodeMap
                                         "title_aux": "Knodes"
                                     }
                                 ],
-                                "https://github.com/kijai/ComfyUI-CCSR": [
+                                "https://github.com/kijai/FlowEngine-CCSR": [
                                     [
                                         "CCSR_Model_Select",
                                         "CCSR_Upscale"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-CCSR"
+                                        "title_aux": "FlowEngine-CCSR"
                                     }
                                 ],
-                                "https://github.com/kijai/ComfyUI-DDColor": [
+                                "https://github.com/kijai/FlowEngine-DDColor": [
                                     [
                                         "DDColor_Colorize"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-DDColor"
+                                        "title_aux": "FlowEngine-DDColor"
                                     }
                                 ],
-                                "https://github.com/kijai/ComfyUI-DiffusersStableCascade": [
+                                "https://github.com/kijai/FlowEngine-DiffusersStableCascade": [
                                     [
                                         "DiffusersStableCascade"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI StableCascade using diffusers"
+                                        "title_aux": "FlowEngine StableCascade using diffusers"
                                     }
                                 ],
-                                "https://github.com/kijai/ComfyUI-KJNodes": [
+                                "https://github.com/kijai/FlowEngine-KJNodes": [
                                     [
                                         "AddLabel",
                                         "BatchCLIPSeg",
@@ -5828,10 +5828,10 @@ public class ComfyNodeMap
                                         "WidgetToString"
                                     ],
                                     {
-                                        "title_aux": "KJNodes for ComfyUI"
+                                        "title_aux": "KJNodes for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/kijai/ComfyUI-Marigold": [
+                                "https://github.com/kijai/FlowEngine-Marigold": [
                                     [
                                         "ColorizeDepthmap",
                                         "MarigoldDepthEstimation",
@@ -5839,35 +5839,35 @@ public class ComfyNodeMap
                                         "SaveImageOpenEXR"
                                     ],
                                     {
-                                        "title_aux": "Marigold depth estimation in ComfyUI"
+                                        "title_aux": "Marigold depth estimation in FlowEngine"
                                     }
                                 ],
-                                "https://github.com/kijai/ComfyUI-SVD": [
+                                "https://github.com/kijai/FlowEngine-SVD": [
                                     [
                                         "SVDimg2vid"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-SVD"
+                                        "title_aux": "FlowEngine-SVD"
                                     }
                                 ],
-                                "https://github.com/kinfolk0117/ComfyUI_GradientDeepShrink": [
+                                "https://github.com/kinfolk0117/FlowEngine_GradientDeepShrink": [
                                     [
                                         "GradientPatchModelAddDownscale",
                                         "GradientPatchModelAddDownscaleAdvanced"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_GradientDeepShrink"
+                                        "title_aux": "FlowEngine_GradientDeepShrink"
                                     }
                                 ],
-                                "https://github.com/kinfolk0117/ComfyUI_Pilgram": [
+                                "https://github.com/kinfolk0117/FlowEngine_Pilgram": [
                                     [
                                         "Pilgram"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_Pilgram"
+                                        "title_aux": "FlowEngine_Pilgram"
                                     }
                                 ],
-                                "https://github.com/kinfolk0117/ComfyUI_SimpleTiles": [
+                                "https://github.com/kinfolk0117/FlowEngine_SimpleTiles": [
                                     [
                                         "DynamicTileMerge",
                                         "DynamicTileSplit",
@@ -5879,7 +5879,7 @@ public class ComfyNodeMap
                                         "title_aux": "SimpleTiles"
                                     }
                                 ],
-                                "https://github.com/kinfolk0117/ComfyUI_TiledIPAdapter": [
+                                "https://github.com/kinfolk0117/FlowEngine_TiledIPAdapter": [
                                     [
                                         "TiledIPAdapter"
                                     ],
@@ -5887,7 +5887,7 @@ public class ComfyNodeMap
                                         "title_aux": "TiledIPAdapter"
                                     }
                                 ],
-                                "https://github.com/knuknX/ComfyUI-Image-Tools": [
+                                "https://github.com/knuknX/FlowEngine-Image-Tools": [
                                     [
                                         "BatchImagePathLoader",
                                         "ImageBgRemoveProcessor",
@@ -5899,18 +5899,18 @@ public class ComfyNodeMap
                                         "SingleImageUrlLoader"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Image-Tools"
+                                        "title_aux": "FlowEngine-Image-Tools"
                                     }
                                 ],
-                                "https://github.com/kohya-ss/ControlNet-LLLite-ComfyUI": [
+                                "https://github.com/kohya-ss/ControlNet-LLLite-FlowEngine": [
                                     [
                                         "LLLiteLoader"
                                     ],
                                     {
-                                        "title_aux": "ControlNet-LLLite-ComfyUI"
+                                        "title_aux": "ControlNet-LLLite-FlowEngine"
                                     }
                                 ],
-                                "https://github.com/komojini/ComfyUI_SDXL_DreamBooth_LoRA_CustomNodes": [
+                                "https://github.com/komojini/FlowEngine_SDXL_DreamBooth_LoRA_CustomNodes": [
                                     [
                                         "S3 Bucket LoRA",
                                         "S3Bucket_Load_LoRA",
@@ -5918,7 +5918,7 @@ public class ComfyNodeMap
                                         "XLDB_LoRA"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_SDXL_DreamBooth_LoRA_CustomNodes"
+                                        "title_aux": "FlowEngine_SDXL_DreamBooth_LoRA_CustomNodes"
                                     }
                                 ],
                                 "https://github.com/komojini/komojini-comfyui-nodes": [
@@ -5957,16 +5957,16 @@ public class ComfyNodeMap
                                         "title_aux": "abg-comfyui"
                                     }
                                 ],
-                                "https://github.com/laksjdjf/LCMSampler-ComfyUI": [
+                                "https://github.com/laksjdjf/LCMSampler-FlowEngine": [
                                     [
                                         "SamplerLCM",
                                         "TAESDLoader"
                                     ],
                                     {
-                                        "title_aux": "LCMSampler-ComfyUI"
+                                        "title_aux": "LCMSampler-FlowEngine"
                                     }
                                 ],
-                                "https://github.com/laksjdjf/LoRA-Merger-ComfyUI": [
+                                "https://github.com/laksjdjf/LoRA-Merger-FlowEngine": [
                                     [
                                         "LoraLoaderFromWeight",
                                         "LoraLoaderWeightOnly",
@@ -5974,36 +5974,36 @@ public class ComfyNodeMap
                                         "LoraSave"
                                     ],
                                     {
-                                        "title_aux": "LoRA-Merger-ComfyUI"
+                                        "title_aux": "LoRA-Merger-FlowEngine"
                                     }
                                 ],
-                                "https://github.com/laksjdjf/attention-couple-ComfyUI": [
+                                "https://github.com/laksjdjf/attention-couple-FlowEngine": [
                                     [
                                         "Attention couple"
                                     ],
                                     {
-                                        "title_aux": "attention-couple-ComfyUI"
+                                        "title_aux": "attention-couple-FlowEngine"
                                     }
                                 ],
-                                "https://github.com/laksjdjf/cd-tuner_negpip-ComfyUI": [
+                                "https://github.com/laksjdjf/cd-tuner_negpip-FlowEngine": [
                                     [
                                         "CDTuner",
                                         "Negapip",
                                         "Negpip"
                                     ],
                                     {
-                                        "title_aux": "cd-tuner_negpip-ComfyUI"
+                                        "title_aux": "cd-tuner_negpip-FlowEngine"
                                     }
                                 ],
-                                "https://github.com/laksjdjf/pfg-ComfyUI": [
+                                "https://github.com/laksjdjf/pfg-FlowEngine": [
                                     [
                                         "PFG"
                                     ],
                                     {
-                                        "title_aux": "pfg-ComfyUI"
+                                        "title_aux": "pfg-FlowEngine"
                                     }
                                 ],
-                                "https://github.com/lilly1987/ComfyUI_node_Lilly": [
+                                "https://github.com/lilly1987/FlowEngine_node_Lilly": [
                                     [
                                         "CheckpointLoaderSimpleText",
                                         "LoraLoaderText",
@@ -6012,7 +6012,7 @@ public class ComfyNodeMap
                                         "VAELoaderDecode"
                                     ],
                                     {
-                                        "title_aux": "simple wildcard for ComfyUI"
+                                        "title_aux": "simple wildcard for FlowEngine"
                                     }
                                 ],
                                 "https://github.com/lldacing/comfyui-easyapi-nodes": [
@@ -6043,7 +6043,7 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui-mask-util"
                                     }
                                 ],
-                                "https://github.com/lordgasmic/ComfyUI-Wildcards/raw/master/wildcards.py": [
+                                "https://github.com/lordgasmic/FlowEngine-Wildcards/raw/master/wildcards.py": [
                                     [
                                         "CLIPTextEncodeWithWildcards"
                                     ],
@@ -6051,15 +6051,15 @@ public class ComfyNodeMap
                                         "title_aux": "Wildcards"
                                     }
                                 ],
-                                "https://github.com/lrzjason/ComfyUIJasonNode/raw/main/SDXLMixSampler.py": [
+                                "https://github.com/lrzjason/FlowEngineJasonNode/raw/main/SDXLMixSampler.py": [
                                     [
                                         "SDXLMixSampler"
                                     ],
                                     {
-                                        "title_aux": "ComfyUIJasonNode"
+                                        "title_aux": "FlowEngineJasonNode"
                                     }
                                 ],
-                                "https://github.com/ltdrdata/ComfyUI-Impact-Pack": [
+                                "https://github.com/ltdrdata/FlowEngine-Impact-Pack": [
                                     [
                                         "AddMask",
                                         "BasicPipeToDetailerPipe",
@@ -6243,10 +6243,10 @@ public class ComfyNodeMap
                                         "description": "This extension offers various detector nodes and detailer nodes that allow you to configure a workflow that automatically enhances facial details. And provide iterative upscaler.",
                                         "nickname": "Impact Pack",
                                         "title": "Impact Pack",
-                                        "title_aux": "ComfyUI Impact Pack"
+                                        "title_aux": "FlowEngine Impact Pack"
                                     }
                                 ],
-                                "https://github.com/ltdrdata/ComfyUI-Inspire-Pack": [
+                                "https://github.com/ltdrdata/FlowEngine-Inspire-Pack": [
                                     [
                                         "AnimeLineArt_Preprocessor_Provider_for_SEGS //Inspire",
                                         "ApplyRegionalIPAdapters //Inspire",
@@ -6332,19 +6332,19 @@ public class ComfyNodeMap
                                         "nickname": "Inspire Pack",
                                         "nodename_pattern": "Inspire$",
                                         "title": "Inspire Pack",
-                                        "title_aux": "ComfyUI Inspire Pack"
+                                        "title_aux": "FlowEngine Inspire Pack"
                                     }
                                 ],
-                                "https://github.com/m-sokes/ComfyUI-Sokes-Nodes": [
+                                "https://github.com/m-sokes/FlowEngine-Sokes-Nodes": [
                                     [
                                         "Custom Date Format | sokes \ud83e\uddac",
                                         "Latent Switch x9 | sokes \ud83e\uddac"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Sokes Nodes"
+                                        "title_aux": "FlowEngine Sokes Nodes"
                                     }
                                 ],
-                                "https://github.com/m957ymj75urz/ComfyUI-Custom-Nodes/raw/main/clip-text-encode-split/clip_text_encode_split.py": [
+                                "https://github.com/m957ymj75urz/FlowEngine-Custom-Nodes/raw/main/clip-text-encode-split/clip_text_encode_split.py": [
                                     [
                                         "RawText",
                                         "RawTextCombine",
@@ -6352,10 +6352,10 @@ public class ComfyNodeMap
                                         "RawTextReplace"
                                     ],
                                     {
-                                        "title_aux": "m957ymj75urz/ComfyUI-Custom-Nodes"
+                                        "title_aux": "m957ymj75urz/FlowEngine-Custom-Nodes"
                                     }
                                 ],
-                                "https://github.com/mape/ComfyUI-mape-Helpers": [
+                                "https://github.com/mape/FlowEngine-mape-Helpers": [
                                     [
                                         "mape Variable"
                                     ],
@@ -6364,7 +6364,7 @@ public class ComfyNodeMap
                                         "description": "Various QoL improvements like prompt tweaking, variable assignment, image preview, fuzzy search, error reporting, organizing and node navigation.",
                                         "nickname": "\ud83d\udfe1 mape's helpers",
                                         "title": "mape's helpers",
-                                        "title_aux": "mape's ComfyUI Helpers"
+                                        "title_aux": "mape's FlowEngine Helpers"
                                     }
                                 ],
                                 "https://github.com/marhensa/sdxl-recommended-res-calc": [
@@ -6385,15 +6385,15 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui-previewlatent"
                                     }
                                 ],
-                                "https://github.com/massao000/ComfyUI_aspect_ratios": [
+                                "https://github.com/massao000/FlowEngine_aspect_ratios": [
                                     [
                                         "Aspect Ratios Node"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_aspect_ratios"
+                                        "title_aux": "FlowEngine_aspect_ratios"
                                     }
                                 ],
-                                "https://github.com/matan1905/ComfyUI-Serving-Toolkit": [
+                                "https://github.com/matan1905/FlowEngine-Serving-Toolkit": [
                                     [
                                         "DiscordServing",
                                         "ServingInputNumber",
@@ -6402,7 +6402,7 @@ public class ComfyNodeMap
                                         "WebSocketServing"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Serving toolkit"
+                                        "title_aux": "FlowEngine Serving toolkit"
                                     }
                                 ],
                                 "https://github.com/mav-rik/facerestore_cf": [
@@ -6415,12 +6415,12 @@ public class ComfyNodeMap
                                         "title_aux": "Facerestore CF (Code Former)"
                                     }
                                 ],
-                                "https://github.com/mbrostami/ComfyUI-HF": [
+                                "https://github.com/mbrostami/FlowEngine-HF": [
                                     [
                                         "GPT2Node"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-HF"
+                                        "title_aux": "FlowEngine-HF"
                                     }
                                 ],
                                 "https://github.com/mcmonkeyprojects/sd-dynamic-thresholding": [
@@ -6432,16 +6432,16 @@ public class ComfyNodeMap
                                         "title_aux": "Stable Diffusion Dynamic Thresholding (CFG Scale Fix)"
                                     }
                                 ],
-                                "https://github.com/meap158/ComfyUI-Background-Replacement": [
+                                "https://github.com/meap158/FlowEngine-Background-Replacement": [
                                     [
                                         "BackgroundReplacement",
                                         "ImageComposite"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Background-Replacement"
+                                        "title_aux": "FlowEngine-Background-Replacement"
                                     }
                                 ],
-                                "https://github.com/meap158/ComfyUI-GPU-temperature-protection": [
+                                "https://github.com/meap158/FlowEngine-GPU-temperature-protection": [
                                     [
                                         "GPUTemperatureProtection"
                                     ],
@@ -6449,12 +6449,12 @@ public class ComfyNodeMap
                                         "title_aux": "GPU temperature protection"
                                     }
                                 ],
-                                "https://github.com/meap158/ComfyUI-Prompt-Expansion": [
+                                "https://github.com/meap158/FlowEngine-Prompt-Expansion": [
                                     [
                                         "PromptExpansion"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Prompt-Expansion"
+                                        "title_aux": "FlowEngine-Prompt-Expansion"
                                     }
                                 ],
                                 "https://github.com/melMass/comfy_mtb": [
@@ -6525,7 +6525,7 @@ public class ComfyNodeMap
                                         "title_aux": "MTB Nodes"
                                     }
                                 ],
-                                "https://github.com/mihaiiancu/ComfyUI_Inpaint": [
+                                "https://github.com/mihaiiancu/FlowEngine_Inpaint": [
                                     [
                                         "InpaintMediapipe"
                                     ],
@@ -6533,12 +6533,12 @@ public class ComfyNodeMap
                                         "title_aux": "mihaiiancu/Inpaint"
                                     }
                                 ],
-                                "https://github.com/mikkel/ComfyUI-text-overlay": [
+                                "https://github.com/mikkel/FlowEngine-text-overlay": [
                                     [
                                         "Image Text Overlay"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI - Text Overlay Plugin"
+                                        "title_aux": "FlowEngine - Text Overlay Plugin"
                                     }
                                 ],
                                 "https://github.com/mikkel/comfyui-mask-boundingbox": [
@@ -6546,10 +6546,10 @@ public class ComfyNodeMap
                                         "Mask Bounding Box"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI - Mask Bounding Box"
+                                        "title_aux": "FlowEngine - Mask Bounding Box"
                                     }
                                 ],
-                                "https://github.com/mlinmg/ComfyUI-LaMA-Preprocessor": [
+                                "https://github.com/mlinmg/FlowEngine-LaMA-Preprocessor": [
                                     [
                                         "LaMaPreprocessor",
                                         "lamaPreprocessor"
@@ -6558,7 +6558,7 @@ public class ComfyNodeMap
                                         "title_aux": "LaMa Preprocessor [WIP]"
                                     }
                                 ],
-                                "https://github.com/modusCell/ComfyUI-dimension-node-modusCell": [
+                                "https://github.com/modusCell/FlowEngine-dimension-node-modusCell": [
                                     [
                                         "DimensionProviderFree modusCell",
                                         "DimensionProviderRatio modusCell",
@@ -6568,7 +6568,7 @@ public class ComfyNodeMap
                                         "title_aux": "Preset Dimensions"
                                     }
                                 ],
-                                "https://github.com/mpiquero7164/ComfyUI-SaveImgPrompt": [
+                                "https://github.com/mpiquero7164/FlowEngine-SaveImgPrompt": [
                                     [
                                         "Save IMG Prompt"
                                     ],
@@ -6576,15 +6576,15 @@ public class ComfyNodeMap
                                         "title_aux": "SaveImgPrompt"
                                     }
                                 ],
-                                "https://github.com/nagolinc/ComfyUI_FastVAEDecorder_SDXL": [
+                                "https://github.com/nagolinc/FlowEngine_FastVAEDecorder_SDXL": [
                                     [
                                         "FastLatentToImage"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_FastVAEDecorder_SDXL"
+                                        "title_aux": "FlowEngine_FastVAEDecorder_SDXL"
                                     }
                                 ],
-                                "https://github.com/natto-maki/ComfyUI-NegiTools": [
+                                "https://github.com/natto-maki/FlowEngine-NegiTools": [
                                     [
                                         "NegiTools_CompositeImages",
                                         "NegiTools_DepthEstimationByMarigold",
@@ -6605,7 +6605,7 @@ public class ComfyNodeMap
                                         "NegiTools_StringFunction"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-NegiTools"
+                                        "title_aux": "FlowEngine-NegiTools"
                                     }
                                 ],
                                 "https://github.com/nicolai256/comfyUI_Nodes_nicolai256/raw/main/yugioh-presets.py": [
@@ -6625,7 +6625,7 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui-NDI"
                                     }
                                 ],
-                                "https://github.com/nkchocoai/ComfyUI-PromptUtilities": [
+                                "https://github.com/nkchocoai/FlowEngine-PromptUtilities": [
                                     [
                                         "PromptUtilitiesConstString",
                                         "PromptUtilitiesConstStringMultiLine",
@@ -6637,10 +6637,10 @@ public class ComfyNodeMap
                                         "PromptUtilitiesRandomPresetAdvanced"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-PromptUtilities"
+                                        "title_aux": "FlowEngine-PromptUtilities"
                                     }
                                 ],
-                                "https://github.com/nkchocoai/ComfyUI-SizeFromPresets": [
+                                "https://github.com/nkchocoai/FlowEngine-SizeFromPresets": [
                                     [
                                         "EmptyLatentImageFromPresetsSD15",
                                         "EmptyLatentImageFromPresetsSDXL",
@@ -6652,10 +6652,10 @@ public class ComfyNodeMap
                                         "SizeFromPresetsSDXL"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-SizeFromPresets"
+                                        "title_aux": "FlowEngine-SizeFromPresets"
                                     }
                                 ],
-                                "https://github.com/nkchocoai/ComfyUI-TextOnSegs": [
+                                "https://github.com/nkchocoai/FlowEngine-TextOnSegs": [
                                     [
                                         "CalcMaxFontSize",
                                         "ExtractDominantColor",
@@ -6664,10 +6664,10 @@ public class ComfyNodeMap
                                         "TextOnSegsFloodFill"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-TextOnSegs"
+                                        "title_aux": "FlowEngine-TextOnSegs"
                                     }
                                 ],
-                                "https://github.com/noembryo/ComfyUI-noEmbryo": [
+                                "https://github.com/noembryo/FlowEngine-noEmbryo": [
                                     [
                                         "PromptTermList1",
                                         "PromptTermList2",
@@ -6678,9 +6678,9 @@ public class ComfyNodeMap
                                     ],
                                     {
                                         "author": "noEmbryo",
-                                        "description": "Some useful nodes for ComfyUI",
+                                        "description": "Some useful nodes for FlowEngine",
                                         "nickname": "noEmbryo",
-                                        "title": "noEmbryo nodes for ComfyUI",
+                                        "title": "noEmbryo nodes for FlowEngine",
                                         "title_aux": "noEmbryo nodes"
                                     }
                                 ],
@@ -6692,10 +6692,10 @@ public class ComfyNodeMap
                                         "LCMLora"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI InstantID Faceswapper"
+                                        "title_aux": "FlowEngine InstantID Faceswapper"
                                     }
                                 ],
-                                "https://github.com/noxinias/ComfyUI_NoxinNodes": [
+                                "https://github.com/noxinias/FlowEngine_NoxinNodes": [
                                     [
                                         "NoxinChime",
                                         "NoxinPromptLoad",
@@ -6705,17 +6705,17 @@ public class ComfyNodeMap
                                         "NoxinSplitPrompt"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_NoxinNodes"
+                                        "title_aux": "FlowEngine_NoxinNodes"
                                     }
                                 ],
-                                "https://github.com/ntc-ai/ComfyUI-DARE-LoRA-Merge": [
+                                "https://github.com/ntc-ai/FlowEngine-DARE-LoRA-Merge": [
                                     [
                                         "Apply LoRA",
                                         "DARE Merge LoRA Stack",
                                         "Save LoRA"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI - Apply LoRA Stacker with DARE"
+                                        "title_aux": "FlowEngine - Apply LoRA Stacker with DARE"
                                     }
                                 ],
                                 "https://github.com/ntdviet/comfyui-ext/raw/main/custom_nodes/gcLatentTunnel/gcLatentTunnel.py": [
@@ -6726,7 +6726,7 @@ public class ComfyNodeMap
                                         "title_aux": "ntdviet/comfyui-ext"
                                     }
                                 ],
-                                "https://github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92": [
+                                "https://github.com/omar92/FlowEngine-QualityOfLifeSuit_Omar92": [
                                     [
                                         "CLIPStringEncode _O",
                                         "Chat completion _O",
@@ -6794,18 +6794,18 @@ public class ComfyNodeMap
                                     ],
                                     {
                                         "nodename_pattern": "- Ostris$",
-                                        "title_aux": "Ostris Nodes ComfyUI"
+                                        "title_aux": "Ostris Nodes FlowEngine"
                                     }
                                 ],
-                                "https://github.com/ownimage/ComfyUI-ownimage": [
+                                "https://github.com/ownimage/FlowEngine-ownimage": [
                                     [
                                         "Caching Image Loader"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-ownimage"
+                                        "title_aux": "FlowEngine-ownimage"
                                     }
                                 ],
-                                "https://github.com/oyvindg/ComfyUI-TrollSuite": [
+                                "https://github.com/oyvindg/FlowEngine-TrollSuite": [
                                     [
                                         "BinaryImageMask",
                                         "ImagePadding",
@@ -6814,7 +6814,7 @@ public class ComfyNodeMap
                                         "TransparentImage"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-TrollSuite"
+                                        "title_aux": "FlowEngine-TrollSuite"
                                     }
                                 ],
                                 "https://github.com/palant/extended-saveimage-comfyui": [
@@ -6822,7 +6822,7 @@ public class ComfyNodeMap
                                         "SaveImageExtended"
                                     ],
                                     {
-                                        "title_aux": "Extended Save Image for ComfyUI"
+                                        "title_aux": "Extended Save Image for FlowEngine"
                                     }
                                 ],
                                 "https://github.com/palant/image-resize-comfyui": [
@@ -6830,7 +6830,7 @@ public class ComfyNodeMap
                                         "ImageResize"
                                     ],
                                     {
-                                        "title_aux": "Image Resize for ComfyUI"
+                                        "title_aux": "Image Resize for FlowEngine"
                                     }
                                 ],
                                 "https://github.com/pants007/comfy-pants": [
@@ -6869,25 +6869,25 @@ public class ComfyNodeMap
                                         "title_aux": "comfy_PoP"
                                     }
                                 ],
-                                "https://github.com/pkpkTech/ComfyUI-SaveAVIF": [
+                                "https://github.com/pkpkTech/FlowEngine-SaveAVIF": [
                                     [
                                         "SaveAvif"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-SaveAVIF"
+                                        "title_aux": "FlowEngine-SaveAVIF"
                                     }
                                 ],
-                                "https://github.com/pkpkTech/ComfyUI-TemporaryLoader": [
+                                "https://github.com/pkpkTech/FlowEngine-TemporaryLoader": [
                                     [
                                         "LoadTempCheckpoint",
                                         "LoadTempLoRA",
                                         "LoadTempMultiLoRA"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-TemporaryLoader"
+                                        "title_aux": "FlowEngine-TemporaryLoader"
                                     }
                                 ],
-                                "https://github.com/pythongosssss/ComfyUI-Custom-Scripts": [
+                                "https://github.com/pythongosssss/FlowEngine-Custom-Scripts": [
                                     [
                                         "CheckpointLoader|pysssss",
                                         "ConstrainImageforVideo|pysssss",
@@ -6904,24 +6904,24 @@ public class ComfyNodeMap
                                         "StringFunction|pysssss"
                                     ],
                                     {
-                                        "title_aux": "pythongosssss/ComfyUI-Custom-Scripts"
+                                        "title_aux": "pythongosssss/FlowEngine-Custom-Scripts"
                                     }
                                 ],
-                                "https://github.com/pythongosssss/ComfyUI-WD14-Tagger": [
+                                "https://github.com/pythongosssss/FlowEngine-WD14-Tagger": [
                                     [
                                         "WD14Tagger|pysssss"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI WD 1.4 Tagger"
+                                        "title_aux": "FlowEngine WD 1.4 Tagger"
                                     }
                                 ],
-                                "https://github.com/ramyma/A8R8_ComfyUI_nodes": [
+                                "https://github.com/ramyma/A8R8_FlowEngine_nodes": [
                                     [
                                         "Base64ImageInput",
                                         "Base64ImageOutput"
                                     ],
                                     {
-                                        "title_aux": "A8R8 ComfyUI Nodes"
+                                        "title_aux": "A8R8 FlowEngine Nodes"
                                     }
                                 ],
                                 "https://github.com/rcfcu2000/zhihuige-nodes-comfyui": [
@@ -6970,18 +6970,18 @@ public class ComfyNodeMap
                                     ],
                                     {
                                         "author": "receyuki",
-                                        "description": "ComfyUI node version of the SD Prompt Reader",
+                                        "description": "FlowEngine node version of the SD Prompt Reader",
                                         "nickname": "SD Prompt Reader",
                                         "title": "SD Prompt Reader",
                                         "title_aux": "comfyui-prompt-reader-node"
                                     }
                                 ],
-                                "https://github.com/redhottensors/ComfyUI-Prediction": [
+                                "https://github.com/redhottensors/FlowEngine-Prediction": [
                                     [
                                         "SamplerCustomPrediction"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Prediction"
+                                        "title_aux": "FlowEngine-Prediction"
                                     }
                                 ],
                                 "https://github.com/rgthree/rgthree-comfy": [
@@ -6992,7 +6992,7 @@ public class ComfyNodeMap
                                         "nickname": "rgthree",
                                         "nodename_pattern": " \\(rgthree\\)$",
                                         "title": "Comfy Nodes",
-                                        "title_aux": "rgthree's ComfyUI Nodes"
+                                        "title_aux": "rgthree's FlowEngine Nodes"
                                     }
                                 ],
                                 "https://github.com/richinsley/Comfy-LFO": [
@@ -7040,13 +7040,13 @@ public class ComfyNodeMap
                                         "title_aux": "rk-comfy-nodes"
                                     }
                                 ],
-                                "https://github.com/romeobuilderotti/ComfyUI-PNG-Metadata": [
+                                "https://github.com/romeobuilderotti/FlowEngine-PNG-Metadata": [
                                     [
                                         "SetMetadataAll",
                                         "SetMetadataString"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI PNG Metadata"
+                                        "title_aux": "FlowEngine PNG Metadata"
                                     }
                                 ],
                                 "https://github.com/rui40000/RUI-Nodes": [
@@ -7073,7 +7073,7 @@ public class ComfyNodeMap
                                         "Visualize optical flow"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Optical Flow"
+                                        "title_aux": "FlowEngine Optical Flow"
                                     }
                                 ],
                                 "https://github.com/seanlynch/srl-nodes": [
@@ -7087,13 +7087,13 @@ public class ComfyNodeMap
                                         "title_aux": "SRL's nodes"
                                     }
                                 ],
-                                "https://github.com/sergekatzmann/ComfyUI_Nimbus-Pack": [
+                                "https://github.com/sergekatzmann/FlowEngine_Nimbus-Pack": [
                                     [
                                         "ImageResizeAndCropNode",
                                         "ImageSquareAdapterNode"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_Nimbus-Pack"
+                                        "title_aux": "FlowEngine_Nimbus-Pack"
                                     }
                                 ],
                                 "https://github.com/shadowcz007/comfyui-consistency-decoder": [
@@ -7181,17 +7181,17 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui-ultralytics-yolo"
                                     }
                                 ],
-                                "https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus": [
+                                "https://github.com/shiimizu/FlowEngine-PhotoMaker-Plus": [
                                     [
                                         "PhotoMakerEncodePlus",
                                         "PhotoMakerStyles",
                                         "PrepImagesForClipVisionFromPath"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI PhotoMaker Plus"
+                                        "title_aux": "FlowEngine PhotoMaker Plus"
                                     }
                                 ],
-                                "https://github.com/shiimizu/ComfyUI-TiledDiffusion": [
+                                "https://github.com/shiimizu/FlowEngine-TiledDiffusion": [
                                     [
                                         "NoiseInversion",
                                         "TiledDiffusion",
@@ -7199,10 +7199,10 @@ public class ComfyNodeMap
                                         "VAEEncodeTiled_TiledDiffusion"
                                     ],
                                     {
-                                        "title_aux": "Tiled Diffusion & VAE for ComfyUI"
+                                        "title_aux": "Tiled Diffusion & VAE for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/shiimizu/ComfyUI_smZNodes": [
+                                "https://github.com/shiimizu/FlowEngine_smZNodes": [
                                     [
                                         "smZ CLIPTextEncode",
                                         "smZ Settings"
@@ -7211,24 +7211,24 @@ public class ComfyNodeMap
                                         "title_aux": "smZNodes"
                                     }
                                 ],
-                                "https://github.com/shingo1228/ComfyUI-SDXL-EmptyLatentImage": [
+                                "https://github.com/shingo1228/FlowEngine-SDXL-EmptyLatentImage": [
                                     [
                                         "SDXL Empty Latent Image"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-SDXL-EmptyLatentImage"
+                                        "title_aux": "FlowEngine-SDXL-EmptyLatentImage"
                                     }
                                 ],
-                                "https://github.com/shingo1228/ComfyUI-send-eagle-slim": [
+                                "https://github.com/shingo1228/FlowEngine-send-eagle-slim": [
                                     [
                                         "Send Eagle with text",
                                         "Send Webp Image to Eagle"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-send-Eagle(slim)"
+                                        "title_aux": "FlowEngine-send-Eagle(slim)"
                                     }
                                 ],
-                                "https://github.com/shockz0rz/ComfyUI_InterpolateEverything": [
+                                "https://github.com/shockz0rz/FlowEngine_InterpolateEverything": [
                                     [
                                         "OpenposePreprocessorInterpolate"
                                     ],
@@ -7346,13 +7346,13 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui-art-venture"
                                     }
                                 ],
-                                "https://github.com/skfoo/ComfyUI-Coziness": [
+                                "https://github.com/skfoo/FlowEngine-Coziness": [
                                     [
                                         "LoraTextExtractor-b1f83aa2",
                                         "MultiLoraLoader-70bf3d77"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Coziness"
+                                        "title_aux": "FlowEngine-Coziness"
                                     }
                                 ],
                                 "https://github.com/smagnetize/kb-comfyui-nodes": [
@@ -7363,7 +7363,7 @@ public class ComfyNodeMap
                                         "title_aux": "kb-comfyui-nodes"
                                     }
                                 ],
-                                "https://github.com/space-nuko/ComfyUI-Disco-Diffusion": [
+                                "https://github.com/space-nuko/FlowEngine-Disco-Diffusion": [
                                     [
                                         "DiscoDiffusion_DiscoDiffusion",
                                         "DiscoDiffusion_DiscoDiffusionExtraSettings",
@@ -7374,7 +7374,7 @@ public class ComfyNodeMap
                                         "title_aux": "Disco Diffusion"
                                     }
                                 ],
-                                "https://github.com/space-nuko/ComfyUI-OpenPose-Editor": [
+                                "https://github.com/space-nuko/FlowEngine-OpenPose-Editor": [
                                     [
                                         "Nui.OpenPoseEditor"
                                     ],
@@ -7392,7 +7392,7 @@ public class ComfyNodeMap
                                         "title_aux": "nui suite"
                                     }
                                 ],
-                                "https://github.com/spacepxl/ComfyUI-HQ-Image-Save": [
+                                "https://github.com/spacepxl/FlowEngine-HQ-Image-Save": [
                                     [
                                         "LoadEXR",
                                         "LoadLatentEXR",
@@ -7401,10 +7401,10 @@ public class ComfyNodeMap
                                         "SaveTiff"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-HQ-Image-Save"
+                                        "title_aux": "FlowEngine-HQ-Image-Save"
                                     }
                                 ],
-                                "https://github.com/spacepxl/ComfyUI-Image-Filters": [
+                                "https://github.com/spacepxl/FlowEngine-Image-Filters": [
                                     [
                                         "AdainImage",
                                         "AdainLatent",
@@ -7436,10 +7436,10 @@ public class ComfyNodeMap
                                         "UnTonemap"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Image-Filters"
+                                        "title_aux": "FlowEngine-Image-Filters"
                                     }
                                 ],
-                                "https://github.com/spacepxl/ComfyUI-RAVE": [
+                                "https://github.com/spacepxl/FlowEngine-RAVE": [
                                     [
                                         "ConditioningDebug",
                                         "ImageGridCompose",
@@ -7449,18 +7449,18 @@ public class ComfyNodeMap
                                         "LatentGridDecompose"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-RAVE"
+                                        "title_aux": "FlowEngine-RAVE"
                                     }
                                 ],
-                                "https://github.com/spinagon/ComfyUI-seam-carving": [
+                                "https://github.com/spinagon/FlowEngine-seam-carving": [
                                     [
                                         "SeamCarving"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-seam-carving"
+                                        "title_aux": "FlowEngine-seam-carving"
                                     }
                                 ],
-                                "https://github.com/spinagon/ComfyUI-seamless-tiling": [
+                                "https://github.com/spinagon/FlowEngine-seamless-tiling": [
                                     [
                                         "CircularVAEDecode",
                                         "MakeCircularVAE",
@@ -7468,7 +7468,7 @@ public class ComfyNodeMap
                                         "SeamlessTile"
                                     ],
                                     {
-                                        "title_aux": "Seamless tiling Node for ComfyUI"
+                                        "title_aux": "Seamless tiling Node for FlowEngine"
                                     }
                                 ],
                                 "https://github.com/spro/comfyui-mirror": [
@@ -7476,10 +7476,10 @@ public class ComfyNodeMap
                                         "LatentMirror"
                                     ],
                                     {
-                                        "title_aux": "Latent Mirror node for ComfyUI"
+                                        "title_aux": "Latent Mirror node for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/ssitu/ComfyUI_UltimateSDUpscale": [
+                                "https://github.com/ssitu/FlowEngine_UltimateSDUpscale": [
                                     [
                                         "UltimateSDUpscale",
                                         "UltimateSDUpscaleNoUpscale"
@@ -7488,7 +7488,7 @@ public class ComfyNodeMap
                                         "title_aux": "UltimateSDUpscale"
                                     }
                                 ],
-                                "https://github.com/ssitu/ComfyUI_fabric": [
+                                "https://github.com/ssitu/FlowEngine_fabric": [
                                     [
                                         "FABRICPatchModel",
                                         "FABRICPatchModelAdv",
@@ -7497,10 +7497,10 @@ public class ComfyNodeMap
                                         "KSamplerFABRICAdv"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI fabric"
+                                        "title_aux": "FlowEngine fabric"
                                     }
                                 ],
-                                "https://github.com/ssitu/ComfyUI_restart_sampling": [
+                                "https://github.com/ssitu/FlowEngine_restart_sampling": [
                                     [
                                         "KRestartSampler",
                                         "KRestartSamplerAdv",
@@ -7510,13 +7510,13 @@ public class ComfyNodeMap
                                         "title_aux": "Restart Sampling"
                                     }
                                 ],
-                                "https://github.com/ssitu/ComfyUI_roop": [
+                                "https://github.com/ssitu/FlowEngine_roop": [
                                     [
                                         "RoopImproved",
                                         "roop"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI roop"
+                                        "title_aux": "FlowEngine roop"
                                     }
                                 ],
                                 "https://github.com/storyicon/comfyui_segment_anything": [
@@ -7531,7 +7531,7 @@ public class ComfyNodeMap
                                         "title_aux": "segment anything"
                                     }
                                 ],
-                                "https://github.com/strimmlarn/ComfyUI_Strimmlarns_aesthetic_score": [
+                                "https://github.com/strimmlarn/FlowEngine_Strimmlarns_aesthetic_score": [
                                     [
                                         "AesthetlcScoreSorter",
                                         "CalculateAestheticScore",
@@ -7539,23 +7539,23 @@ public class ComfyNodeMap
                                         "ScoreToNumber"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_Strimmlarns_aesthetic_score"
+                                        "title_aux": "FlowEngine_Strimmlarns_aesthetic_score"
                                     }
                                 ],
-                                "https://github.com/styler00dollar/ComfyUI-deepcache": [
+                                "https://github.com/styler00dollar/FlowEngine-deepcache": [
                                     [
                                         "DeepCache"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-deepcache"
+                                        "title_aux": "FlowEngine-deepcache"
                                     }
                                 ],
-                                "https://github.com/styler00dollar/ComfyUI-sudo-latent-upscale": [
+                                "https://github.com/styler00dollar/FlowEngine-sudo-latent-upscale": [
                                     [
                                         "SudoLatentUpscale"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-sudo-latent-upscale"
+                                        "title_aux": "FlowEngine-sudo-latent-upscale"
                                     }
                                 ],
                                 "https://github.com/syllebra/bilbox-comfyui": [
@@ -7565,7 +7565,7 @@ public class ComfyNodeMap
                                         "BilboXVignette"
                                     ],
                                     {
-                                        "title_aux": "BilboX's ComfyUI Custom Nodes"
+                                        "title_aux": "BilboX's FlowEngine Custom Nodes"
                                     }
                                 ],
                                 "https://github.com/sylym/comfy_vid2vid": [
@@ -7665,10 +7665,10 @@ public class ComfyNodeMap
                                         "XyzPlot //Browser"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Browser"
+                                        "title_aux": "FlowEngine Browser"
                                     }
                                 ],
-                                "https://github.com/theUpsider/ComfyUI-Logic": [
+                                "https://github.com/theUpsider/FlowEngine-Logic": [
                                     [
                                         "Bool",
                                         "Compare",
@@ -7679,27 +7679,27 @@ public class ComfyNodeMap
                                         "String"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Logic"
+                                        "title_aux": "FlowEngine-Logic"
                                     }
                                 ],
-                                "https://github.com/theUpsider/ComfyUI-Styles_CSV_Loader": [
+                                "https://github.com/theUpsider/FlowEngine-Styles_CSV_Loader": [
                                     [
                                         "Load Styles CSV"
                                     ],
                                     {
-                                        "title_aux": "Styles CSV Loader Extension for ComfyUI"
+                                        "title_aux": "Styles CSV Loader Extension for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/thecooltechguy/ComfyUI-MagicAnimate": [
+                                "https://github.com/thecooltechguy/FlowEngine-MagicAnimate": [
                                     [
                                         "MagicAnimate",
                                         "MagicAnimateModelLoader"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-MagicAnimate"
+                                        "title_aux": "FlowEngine-MagicAnimate"
                                     }
                                 ],
-                                "https://github.com/thecooltechguy/ComfyUI-Stable-Video-Diffusion": [
+                                "https://github.com/thecooltechguy/FlowEngine-Stable-Video-Diffusion": [
                                     [
                                         "SVDDecoder",
                                         "SVDModelLoader",
@@ -7707,7 +7707,7 @@ public class ComfyNodeMap
                                         "SVDSimpleImg2Vid"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Stable Video Diffusion"
+                                        "title_aux": "FlowEngine Stable Video Diffusion"
                                     }
                                 ],
                                 "https://github.com/thedyze/save-image-extended-comfyui": [
@@ -7715,10 +7715,10 @@ public class ComfyNodeMap
                                         "SaveImageExtended"
                                     ],
                                     {
-                                        "title_aux": "Save Image Extended for ComfyUI"
+                                        "title_aux": "Save Image Extended for FlowEngine"
                                     }
                                 ],
-                                "https://github.com/tocubed/ComfyUI-AudioReactor": [
+                                "https://github.com/tocubed/FlowEngine-AudioReactor": [
                                     [
                                         "AudioFrameTransformBeats",
                                         "AudioFrameTransformShadertoy",
@@ -7726,10 +7726,10 @@ public class ComfyNodeMap
                                         "Shadertoy"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-AudioReactor"
+                                        "title_aux": "FlowEngine-AudioReactor"
                                     }
                                 ],
-                                "https://github.com/toyxyz/ComfyUI_toyxyz_test_nodes": [
+                                "https://github.com/toyxyz/FlowEngine_toyxyz_test_nodes": [
                                     [
                                         "CaptureWebcam",
                                         "LatentDelay",
@@ -7737,7 +7737,7 @@ public class ComfyNodeMap
                                         "SaveImagetoPath"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_toyxyz_test_nodes"
+                                        "title_aux": "FlowEngine_toyxyz_test_nodes"
                                     }
                                 ],
                                 "https://github.com/trojblue/trNodes": [
@@ -7752,15 +7752,15 @@ public class ComfyNodeMap
                                         "title_aux": "trNodes"
                                     }
                                 ],
-                                "https://github.com/trumanwong/ComfyUI-NSFW-Detection": [
+                                "https://github.com/trumanwong/FlowEngine-NSFW-Detection": [
                                     [
                                         "NSFWDetection"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-NSFW-Detection"
+                                        "title_aux": "FlowEngine-NSFW-Detection"
                                     }
                                 ],
-                                "https://github.com/ttulttul/ComfyUI-Iterative-Mixer": [
+                                "https://github.com/ttulttul/FlowEngine-Iterative-Mixer": [
                                     [
                                         "Batch Unsampler",
                                         "Iterative Mixing KSampler",
@@ -7773,19 +7773,19 @@ public class ComfyNodeMap
                                         "MixingMaskGenerator"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Iterative Mixing Nodes"
+                                        "title_aux": "FlowEngine Iterative Mixing Nodes"
                                     }
                                 ],
-                                "https://github.com/ttulttul/ComfyUI-Tensor-Operations": [
+                                "https://github.com/ttulttul/FlowEngine-Tensor-Operations": [
                                     [
                                         "Image Match Normalize",
                                         "Latent Match Normalize"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Tensor-Operations"
+                                        "title_aux": "FlowEngine-Tensor-Operations"
                                     }
                                 ],
-                                "https://github.com/tudal/Hakkun-ComfyUI-nodes/raw/main/hakkun_nodes.py": [
+                                "https://github.com/tudal/Hakkun-FlowEngine-nodes/raw/main/hakkun_nodes.py": [
                                     [
                                         "Any Converter",
                                         "Calculate Upscale",
@@ -7800,7 +7800,7 @@ public class ComfyNodeMap
                                         "Random Line 4"
                                     ],
                                     {
-                                        "title_aux": "Hakkun-ComfyUI-nodes"
+                                        "title_aux": "Hakkun-FlowEngine-nodes"
                                     }
                                 ],
                                 "https://github.com/tusharbhutt/Endless-Nodes": [
@@ -7857,7 +7857,7 @@ public class ComfyNodeMap
                                         "title_aux": "SDXL Prompt Styler"
                                     }
                                 ],
-                                "https://github.com/uarefans/ComfyUI-Fans": [
+                                "https://github.com/uarefans/FlowEngine-Fans": [
                                     [
                                         "Fans Prompt Styler Negative",
                                         "Fans Prompt Styler Positive",
@@ -7865,28 +7865,28 @@ public class ComfyNodeMap
                                         "Fans Text Concatenate"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Fans"
+                                        "title_aux": "FlowEngine-Fans"
                                     }
                                 ],
-                                "https://github.com/vanillacode314/SimpleWildcardsComfyUI": [
+                                "https://github.com/vanillacode314/SimpleWildcardsFlowEngine": [
                                     [
                                         "SimpleConcat",
                                         "SimpleWildcard"
                                     ],
                                     {
                                         "author": "VanillaCode314",
-                                        "description": "A simple wildcard node for ComfyUI. Can also be used a style prompt node.",
+                                        "description": "A simple wildcard node for FlowEngine. Can also be used a style prompt node.",
                                         "nickname": "Simple Wildcard",
                                         "title": "Simple Wildcard",
                                         "title_aux": "Simple Wildcard"
                                     }
                                 ],
-                                "https://github.com/vienteck/ComfyUI-Chat-GPT-Integration": [
+                                "https://github.com/vienteck/FlowEngine-Chat-GPT-Integration": [
                                     [
                                         "ChatGptPrompt"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Chat-GPT-Integration"
+                                        "title_aux": "FlowEngine-Chat-GPT-Integration"
                                     }
                                 ],
                                 "https://github.com/violet-chen/comfyui-psd2png": [
@@ -7956,12 +7956,12 @@ public class ComfyNodeMap
                                         "title_aux": "cyberdolphin"
                                     }
                                 ],
-                                "https://github.com/whmc76/ComfyUI-Openpose-Editor-Plus": [
+                                "https://github.com/whmc76/FlowEngine-Openpose-Editor-Plus": [
                                     [
                                         "CDL.OpenPoseEditorPlus"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Openpose-Editor-Plus"
+                                        "title_aux": "FlowEngine-Openpose-Editor-Plus"
                                     }
                                 ],
                                 "https://github.com/wmatson/easy-comfy-nodes": [
@@ -8039,7 +8039,7 @@ public class ComfyNodeMap
                                         "title_aux": "SDXLResolutionPresets"
                                     }
                                 ],
-                                "https://github.com/wutipong/ComfyUI-TextUtils": [
+                                "https://github.com/wutipong/FlowEngine-TextUtils": [
                                     [
                                         "Text Utils - Join N-Elements of String List",
                                         "Text Utils - Join String List",
@@ -8047,15 +8047,15 @@ public class ComfyNodeMap
                                         "Text Utils - Split String to List"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-TextUtils"
+                                        "title_aux": "FlowEngine-TextUtils"
                                     }
                                 ],
-                                "https://github.com/wwwins/ComfyUI-Simple-Aspect-Ratio": [
+                                "https://github.com/wwwins/FlowEngine-Simple-Aspect-Ratio": [
                                     [
                                         "SimpleAspectRatio"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Simple-Aspect-Ratio"
+                                        "title_aux": "FlowEngine-Simple-Aspect-Ratio"
                                     }
                                 ],
                                 "https://github.com/xXAdonesXx/NodeGPT": [
@@ -8124,7 +8124,7 @@ public class ComfyNodeMap
                                         "title_aux": "comfyui_auto_danbooru"
                                     }
                                 ],
-                                "https://github.com/yolain/ComfyUI-Easy-Use": [
+                                "https://github.com/yolain/FlowEngine-Easy-Use": [
                                     [
                                         "dynamicThresholdingFull",
                                         "easy LLLiteLoader",
@@ -8213,7 +8213,7 @@ public class ComfyNodeMap
                                         "easy zero123Loader"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Easy Use"
+                                        "title_aux": "FlowEngine Easy Use"
                                     }
                                 ],
                                 "https://github.com/yolanother/DTAIComfyImageSubmit": [
@@ -8311,15 +8311,15 @@ public class ComfyNodeMap
                                         "title_aux": "tdxh_node_comfyui"
                                     }
                                 ],
-                                "https://github.com/yuvraj108c/ComfyUI-Pronodes": [
+                                "https://github.com/yuvraj108c/FlowEngine-Pronodes": [
                                     [
                                         "LoadYoutubeVideoNode"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI-Pronodes"
+                                        "title_aux": "FlowEngine-Pronodes"
                                     }
                                 ],
-                                "https://github.com/yuvraj108c/ComfyUI-Whisper": [
+                                "https://github.com/yuvraj108c/FlowEngine-Whisper": [
                                     [
                                         "Add Subtitles To Background",
                                         "Add Subtitles To Frames",
@@ -8327,7 +8327,7 @@ public class ComfyNodeMap
                                         "Resize Cropped Subtitles"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Whisper"
+                                        "title_aux": "FlowEngine Whisper"
                                     }
                                 ],
                                 "https://github.com/zcfrank1st/Comfyui-Toolbox": [
@@ -8347,7 +8347,7 @@ public class ComfyNodeMap
                                         "Yolov8Segmentation"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI Yolov8"
+                                        "title_aux": "FlowEngine Yolov8"
                                     }
                                 ],
                                 "https://github.com/zcfrank1st/comfyui_visual_anagrams": [
@@ -8367,7 +8367,7 @@ public class ComfyNodeMap
                                         "title_aux": "Cute Comfy"
                                     }
                                 ],
-                                "https://github.com/zfkun/ComfyUI_zfkun": [
+                                "https://github.com/zfkun/FlowEngine_zfkun": [
                                     [
                                         "ZFLoadImagePath",
                                         "ZFPreviewText",
@@ -8376,16 +8376,16 @@ public class ComfyNodeMap
                                         "ZFTextTranslation"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI_zfkun"
+                                        "title_aux": "FlowEngine_zfkun"
                                     }
                                 ],
-                                "https://github.com/zhongpei/ComfyUI-InstructIR": [
+                                "https://github.com/zhongpei/FlowEngine-InstructIR": [
                                     [
                                         "InstructIRProcess",
                                         "LoadInstructIRModel"
                                     ],
                                     {
-                                        "title_aux": "ComfyUI for InstructIR"
+                                        "title_aux": "FlowEngine for InstructIR"
                                     }
                                 ],
                                 "https://github.com/zhongpei/Comfyui_image2prompt": [
@@ -8397,14 +8397,14 @@ public class ComfyNodeMap
                                         "title_aux": "Comfyui_image2prompt"
                                     }
                                 ],
-                                "https://github.com/zhuanqianfish/ComfyUI-EasyNode": [
+                                "https://github.com/zhuanqianfish/FlowEngine-EasyNode": [
                                     [
                                         "EasyCaptureNode",
                                         "EasyVideoOutputNode",
                                         "SendImageWebSocket"
                                     ],
                                     {
-                                        "title_aux": "EasyCaptureNode for ComfyUI"
+                                        "title_aux": "EasyCaptureNode for FlowEngine"
                                     }
                                 ],
                                 "https://raw.githubusercontent.com/throttlekitty/SDXLCustomAspectRatio/main/SDXLAspectRatio.py": [

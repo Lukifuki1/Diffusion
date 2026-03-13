@@ -49,7 +49,7 @@ public class PackageFactory : IPackageFactory
     {
         return installedPackage.PackageName switch
         {
-            "ComfyUI" => new ComfyUI(
+            "FlowEngine" => new FlowEngine(
                 githubApiCache,
                 settingsManager,
                 downloadService,
@@ -218,7 +218,7 @@ public class PackageFactory : IPackageFactory
                 pyInstallationManager,
                 pipWheelService
             ),
-            "ComfyUI-Zluda" => new ComfyZluda(
+            "FlowEngine-Zluda" => new ComfyZluda(
                 githubApiCache,
                 settingsManager,
                 downloadService,
