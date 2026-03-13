@@ -16,6 +16,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddScoped<IDownloadService, DownloadService>();
 builder.Services.AddSingleton<ISecretsManager>(new SecretsManager());
 builder.Services.AddSingleton<ISettingsManager>(new SettingsManager());
+builder.Services.AddScoped<IGenerationService, GenerationService>();
 
 // Register infrastructure services
 builder.Services.AddInfrastructureServices(builder.Configuration);

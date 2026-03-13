@@ -2,18 +2,26 @@ version: '3.8'
 
 services:
   openwebui:
-    image: ghcr.io/open-webui/open-webui:main
-    container_name: openwebui
+    build:
+      context: ./openwebui-custom
+      dockerfile: Dockerfile
+    container_name: auraflow-openwebui
     ports:
       - "3000:8080"
     environment:
       - OLLAMA_BASE_URL=http://auraflow-api:5000
-      - WEBUI_NAME=AuraFlow Studio Chat Interface
+      - WEBUI_NAME=AuraFlow Studio
     volumes:
       - openwebui_data:/app/backend/data
     depends_on:
       - auraflow-api
+      - comfyui
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/v1/models"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   auraflow-api:
     build:
@@ -32,9 +40,61 @@ services:
     volumes:
       - models:/app/models
       - output:/app/output
+    depends_on:
+      - redis
+      - rabbitmq
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  comfyui:
+    image: ghcr.io/comfyanonymous/comfyui:latest
+    container_name: auraflow-comfyui
+    ports:
+      - "8188:8188"
+    volumes:
+      - models:/comfyui/models
+      - output:/comfyui/output
+    environment:
+      - COMFYUI_PORT=8188
+    depends_on:
+      - redis
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8188/system_stats"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  redis:
+    image: redis:7-alpine
+    container_name: auraflow-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    restart: unless-stopped
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: auraflow-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
     restart: unless-stopped
 
 volumes:
   openwebui_data:
   models:
   output:
+  redis_data:
+  rabbitmq_data:

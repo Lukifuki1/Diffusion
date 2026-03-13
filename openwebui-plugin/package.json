@@ -1,12 +1,12 @@
 {
-  "name": "stability-matrix-openwebui-plugin",
+  "name": "auraflow-openwebui-plugin",
   "version": "1.0.0",
-  "description": "OpenWebUI plugin for Stability Matrix chat interface",
+  "description": "OpenWebUI plugin for AuraFlow Studio chat interface",
   "main": "src/plugin.js",
   "scripts": {
     "build": "echo 'Build script'"
   },
-  "keywords": ["openwebui", "plugin", "stability-matrix"],
+  "keywords": ["openwebui", "plugin", "auraflow"],
   "author": "",
   "license": "MIT"
 }
