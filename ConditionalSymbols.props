@@ -4,7 +4,7 @@
     <SM_IncludeAllConditionals>false</SM_IncludeAllConditionals>
     <!-- Mode for ServiceProvider registrations: CodeGeneration, Reflection -->
     <SM_RegisterServiceMode>CodeGeneration</SM_RegisterServiceMode>
-    <!-- true to include StabilityMatrix.Avalonia.Diagnostic for log window -->
+    <!-- true to include DiffusionHub.Avalonia.Diagnostic for log window -->
     <SM_IncludeLogWindow>false</SM_IncludeLogWindow>
   </PropertyGroup>
   

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>AuraFlow.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiteDB" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" />
+    <PackageReference Include="NLog" />
+    <PackageReference Include="Sentry" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AuraFlow.Core\AuraFlow.Core.csproj" />
+    <ProjectReference Include="..\AuraFlow.Domain\AuraFlow.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

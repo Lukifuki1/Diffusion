@@ -1,6 +1,6 @@
 # Building
 ## Running & Debug
-- If building using managed IDEs like Rider or Visual Studio, ensure that a valid `--runtime ...` argument is being passed to `dotnet`, or `RuntimeIdentifier=...` is set for calling `msbuild`. This is required for runtime-specific resources to be included in the build. Stability Matrix currently supports building for the `win-x64`, `linux-x64` and `osx-arm64` runtimes.
+- If building using managed IDEs like Rider or Visual Studio, ensure that a valid `--runtime ...` argument is being passed to `dotnet`, or `RuntimeIdentifier=...` is set for calling `msbuild`. This is required for runtime-specific resources to be included in the build. DiffusionHub Enterprise currently supports building for the `win-x64`, `linux-x64` and `osx-arm64` runtimes.
 - You can also build the `StabilityMatrix.Avalonia` project using `dotnet`:
 ```bash
 dotnet build ./StabilityMatrix.Avalonia/StabilityMatrix.Avalonia.csproj -r win-x64 -c Debug

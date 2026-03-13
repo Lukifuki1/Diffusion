@@ -11,5 +11,12 @@
   },
   "chatInterface": true,
   "backgroundGeneration": true,
-  "sharedModelDirectory": "./models"
+  "sharedModelDirectory": "./models",
+  "ChatInterface": {
+    "enabled": true,
+    "defaultModel": "Flux Dev",
+    "maxConcurrentGenerations": 3,
+    "timeoutSeconds": 120,
+    "apiBaseUrl": "http://localhost:5000"
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "stability-matrix-openwebui-plugin",
+  "version": "1.0.0",
+  "description": "OpenWebUI plugin for Stability Matrix chat interface",
+  "main": "src/plugin.js",
+  "scripts": {
+    "build": "echo 'Build script'"
+  },
+  "keywords": ["openwebui", "plugin", "stability-matrix"],
+  "author": "",
+  "license": "MIT"
+}
