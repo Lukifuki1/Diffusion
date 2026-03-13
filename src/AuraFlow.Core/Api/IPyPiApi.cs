@@ -3,7 +3,7 @@ using AuraFlow.Core.Models.Api.Pypi;
 
 namespace AuraFlow.Core.Api;
 
-[Headers("User-Agent: StabilityMatrix/2.x")]
+[Headers("User-Agent: AuraFlow/2.x")]
 public interface IPyPiApi
 {
     [Get("/pypi/{packageName}/json")]

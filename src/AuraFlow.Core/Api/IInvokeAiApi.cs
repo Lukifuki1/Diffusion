@@ -3,7 +3,7 @@ using AuraFlow.Core.Models.Api.Invoke;
 
 namespace AuraFlow.Core.Api;
 
-[Headers("User-Agent: StabilityMatrix")]
+[Headers("User-Agent: AuraFlow")]
 public interface IInvokeAiApi
 {
     [Get("/api/v2/models/scan_folder")]

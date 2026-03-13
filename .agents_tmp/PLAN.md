@@ -1,6 +1,512 @@
-# 1. OBJECTIVE
+# AuraFlow Studio - Complete Refactoring Plan
 
-Uvesti popolnoma preprost ChatGPT-style vmesnik za generiranje slik in videov, kjer uporabnik vnese besedilni opis (prompt) in se rezultat generira v ozadju z uporabo OpenWebUI kot vmesnika ter Stability Matrix kot backend motorja.
+## 1. OBJECTIVE
+
+Unify the entire codebase into a single, clean **AuraFlow** branded project by:
+- Removing all "StabilityMatrix" and inconsistent naming
+- Eliminating dead/empty projects (Web, Desktop, empty tests)
+- Consolidating multiple projects into one professional structure
+- Creating comprehensive professional documentation
+
+**Problem:** Current codebase has fragmented branding (AuraFlow + StabilityMatrix), 6+ overlapping projects, empty directories, and missing entry points.
+
+## 2. CONTEXT SUMMARY
+
+### Current Fragmented Structure:
+```
+Diffusion/
+├── AuraFlow.Core/           # Core services (DownloadService, etc.)
+├── AuraFlow.Domain/         # Domain exceptions
+├── AuraFlow.Infrastructure/ # Persistence, messaging, jobs
+├── AuraFlow.Api/            # Only middleware (2 files)
+├── AuraFlow.Web/            # EMPTY - only .csproj
+├── AuraFlow.Desktop/        # EMPTY - only .csproj  
+├── StabilityMatrix.ChatInterface/  # Main app logic
+├── StabilityMatrix.Core/      # Duplicate core logic
+├── StabilityMatrix.Native/    # Native interop
+├── StabilityMatrix.Native.Abstractions/
+├── AuraFlow.Api/            # Middleware only
+└── Tests/AuraFlow.UnitTests/ # EMPTY - no test files
+```
+
+### Key Issues:
+1. **Inconsistent branding**: Mix of "AuraFlow" and "StabilityMatrix" names
+2. **Empty projects**: Web, Desktop have no code
+3. **Redundant logic**: Core functionality split across multiple projects
+4. **Missing entry point**: No Program.cs in main application
+5. **Dead middleware**: AuraFlow.Api has only 2 middleware files
+
+### Active Components:
+- ✅ DownloadService - File downloads with progress tracking
+- ✅ MetadataImportService - Model metadata from OpenModelDB  
+- ✅ ImageIndexService - Generated images indexing
+- ✅ SettingsManager/SecretsManager - Configuration management
+- ✅ GenerationService/ChatInterfaceClient - Chat interface logic
+- ✅ ComfyUI integration for model generation
+
+## 3. APPROACH OVERVIEW
+
+**Strategy:** Complete consolidation into single `AuraFlow` project with Blazor Server frontend
+
+### Why This Approach:
+1. **Single source of truth**: All code in one place, easier to maintain
+2. **Consistent branding**: Everything under "AuraFlow" name
+3. **Simplified builds**: One solution, one build command
+4. **Modern stack**: ASP.NET Core 8 + Blazor Server for real-time updates
+5. **Professional structure**: Clear separation of concerns
+
+### What Gets Removed:
+- ❌ `src/AuraFlow.Web/` - Empty Blazor WebAssembly project
+- ❌ `src/AuraFlow.Desktop/` - Empty Desktop project  
+- ❌ `Tests/AuraFlow.UnitTests/` - Test project with no tests
+- ❌ `AuraFlow.Api/` - Only middleware, merge into main project
+- ❌ `StabilityMatrix.*` projects - Rename to AuraFlow or consolidate
+
+## 4. IMPLEMENTATION STEPS
+
+### Phase 1: Branding Unification (All "StabilityMatrix" → "AuraFlow")
+
+#### Step 1.1: Rename Projects and Namespaces
+**Goal:** Consistent "AuraFlow" branding throughout codebase
+
+**Method:**
+- Rename `StabilityMatrix.ChatInterface` → `AuraFlow.App`
+- Rename `StabilityMatrix.Core` → Merge into main project
+- Update ALL namespaces from `StabilityMatrix.*` to `AuraFlow.*`
+- Update ALL class names (e.g., `ChatInterfaceClient` → `AuraFlowClient`)
+
+**Files to update:**
+```bash
+# Project files
+mv StabilityMatrix.ChatInterface/ AuraFlow.App/
+sed -i 's/StabilityMatrix/AuraFlow/g' AuraFlow.App/*.csproj
+
+# Source code
+find . -name "*.cs" -exec sed -i 's/StabilityMatrix/AuraFlow/g' {} \;
+```
+
+#### Step 1.2: Update Solution Files
+**Goal:** Single unified solution file
+
+**Method:**
+- Delete old solutions (`AuraFlow.sln`, `AuraFlow.Studio.sln`)
+- Create new `AuraFlow.sln` with single project structure
+- Update all project references to use "AuraFlow" prefix
+
+### Phase 2: Dead Code Removal
+
+#### Step 2.1: Remove Empty Projects
+**Goal:** Eliminate unused directory structure
+
+**Method:**
+```bash
+# Delete empty projects
+rm -rf src/AuraFlow.Web/
+rm -rf src/AuraFlow.Desktop/
+rm -rf tests/AuraFlow.UnitTests/
+
+# Update docker-compose.yml to remove references
+sed -i '/AuraFlow.Web/d' docker-compose.yml
+sed -i '/AuraFlow.Desktop/d' docker-compose.yml
+```
+
+#### Step 2.2: Consolidate AuraFlow.Api
+**Goal:** Merge middleware into main project
+
+**Method:**
+- Move `RateLimitingMiddleware.cs` → `Middleware/RateLimitingMiddleware.cs`
+- Move `HealthCheckMiddleware.cs` → `Middleware/HealthCheckMiddleware.cs`
+- Update references in DependencyInjection.cs
+- Delete empty `src/AuraFlow.Api/` directory
+
+#### Step 2.3: Remove Redundant Core Projects  
+**Goal:** Elimitate duplicate logic
+
+**Method:**
+- Merge `StabilityMatrix.Core` services into main project
+- Keep only ONE copy of each service (DownloadService, etc.)
+- Update all references to point to consolidated location
+
+### Phase 3: Project Consolidation
+
+#### Step 3.1: Create Unified Project Structure
+**Goal:** Single clean project with clear organization
+
+**Method:**
+```bash
+# Create new unified structure
+mkdir -p AuraFlow/{Controllers,Services,Models,Pages,Infrastructure,Middlewares}
+
+# Move all active code into appropriate folders
+mv src/AuraFlow.Core/Services/* AuraFlow/Services/
+mv StabilityMatrix.ChatInterface/* AuraFlow/Services/
+mv src/AuraFlow.Infrastructure/* AuraFlow/Infrastructure/
+```
+
+**Final structure:**
+```
+AuraFlow/
+├── Controllers/              # REST API endpoints
+│   └── GenerationController.cs
+├── Services/                 # Business logic
+│   ├── DownloadService.cs
+│   ├── MetadataImportService.cs
+│   ├── ImageIndexService.cs
+│   ├── SettingsManager.cs
+│   ├── SecretsManager.cs
+│   └── GenerationService.cs
+├── Models/                   # Data models
+│   ├── Api/                  # API request/response models
+│   ├── Packages/             # Package definitions
+│   ├── Settings/             # Configuration models
+│   └── Progress/             # Progress tracking
+├── Infrastructure/           # Infrastructure layer
+│   ├── Persistence/          # LiteDB database
+│   ├── Messaging/            # Message queues (optional)
+│   ├── Resilience/           # Polly patterns
+│   └── Engines/              # ComfyUI integration
+├── Middlewares/              # HTTP middleware
+│   ├── RateLimitingMiddleware.cs
+│   └── HealthCheckMiddleware.cs
+├── Pages/                    # Blazor Server pages
+│   ├── Chat.razor
+│   ├── GenerationHistory.razor
+│   └── SettingsPage.razor
+├── Program.cs                # Application entry point
+├── AuraFlow.csproj           # Single project file
+└── appsettings.json          # Configuration
+```
+
+#### Step 3.2: Create Main Entry Point (Program.cs)
+**Goal:** Single application startup
+
+**Method:**
+Create `AuraFlow/Program.cs` with:
+- Dependency injection setup
+- Middleware pipeline configuration  
+- Swagger/OpenAPI setup
+- Environment-based configuration loading
+- Blazor Server pages registration
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services
+builder.Services.AddControllers();
+builder.Services.AddBlazorServer();
+builder.Services.AddSwaggerGen();
+
+// Register all services
+builder.Services.AddScoped<IDownloadService, DownloadService>();
+builder.Services.AddSingleton<ISettingsManager, SettingsManager>();
+// ... etc
+
+var app = builder.Build();
+
+// Configure pipeline
+app.UseSwagger();
+app.UseSwaggerUI();
+app.UseBlazorFrameworkFiles();
+app.UseStaticFiles();
+app.MapFallbackToFile("index.html");
+
+app.Run();
+```
+
+#### Step 3.3: Create Unified Project File
+**Goal:** Single .csproj with all dependencies
+
+**Method:**
+Create `AuraFlow/AuraFlow.csproj`:
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>AuraFlow</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Refit" Version="7.0.0" />
+    <PackageReference Include="Websocket.Client" Version="5.1.2" />
+    <PackageReference Include="LiteDB" Version="5.0.21" />
+    <PackageReference Include="Polly" Version="8.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+</Project>
+```
+
+### Phase 4: API Layer Creation
+
+#### Step 4.1: Create REST Controllers
+**Goal:** Proper API endpoints with documentation
+
+**Method:**
+Create `Controllers/GenerationController.cs`:
+```csharp
+[ApiController]
+[Route("api/v1/[controller]")]
+public class GenerationController : ControllerBase
+{
+    private readonly IGenerationService _service;
+    
+    [HttpPost("generate")]
+    public async Task<IActionResult> Generate([FromBody] GenerationRequest request)
+    {
+        var result = await _service.GenerateAsync(request);
+        return Ok(result);
+    }
+    
+    [HttpGet("progress/{taskId}")]
+    public async Task<IActionResult> GetProgress(string taskId)
+    {
+        var progress = await _service.GetProgressAsync(taskId);
+        return Ok(progress);
+    }
+}
+```
+
+#### Step 4.2: Add Swagger Documentation
+**Goal:** Auto-generated API documentation
+
+**Method:**
+- Configure Swashbuckle in Program.cs
+- Add XML comments to all controllers and models
+- Enable Swagger UI at `/swagger`
+
+### Phase 5: Frontend Integration
+
+#### Step 5.1: Create Blazor Server Pages
+**Goal:** Professional user interface
+
+**Method:**
+Create `Pages/Chat.razor`:
+```razor
+@page "/chat"
+@using AuraFlow.Services
+
+<PageTitle>Chat Interface</PageTitle>
+
+<h1>🎨 AuraFlow Studio</h1>
+
+<div class="chat-container">
+    <div class="prompt-section">
+        <textarea @bind="prompt" placeholder="Enter your prompt..."></textarea>
+        <select @bind="selectedModel">
+            <option value="Flux Dev">Flux Dev</option>
+            <option value="Wan2GP">Wan2GP</option>
+            <!-- etc -->
+        </select>
+        <button @onclick="Generate">Generate</button>
+    </div>
+    
+    <div class="progress-section" if="@showProgress">
+        <progress value="@progress" max="100"></progress>
+        <p>@progressMessage</p>
+    </div>
+    
+    <div class="result-section">
+        @if (!string.IsNullOrEmpty(resultUrl))
+        {
+            <img src="@resultUrl" alt="Generated result" />
+        }
+    </div>
+</div>
+
+@code {
+    private string prompt = "";
+    private string selectedModel = "Flux Dev";
+    private int progress;
+    private bool showProgress;
+    private string? resultUrl;
+    
+    private async Task Generate()
+    {
+        // Call API service
+        var response = await _httpClient.PostAsJsonAsync("/api/v1/generate", new { prompt, model = selectedModel });
+        // Handle response and update UI
+    }
+}
+```
+
+#### Step 5.2: Implement Real-time Updates (Optional)
+**Goal:** Live progress feedback with SignalR
+
+**Method:**
+- Create `Hubs/GenerationHub.cs` for WebSocket communication
+- Update Blazor pages to connect to hub
+- Send progress updates in real-time
+
+### Phase 6: Configuration & Docker
+
+#### Step 6.1: Create appsettings.json
+**Goal:** Clear configuration structure
+
+```json
+{
+  "ChatInterface": {
+    "Enabled": true,
+    "DefaultModel": "Flux Dev",
+    "MaxConcurrentGenerations": 3,
+    "TimeoutSeconds": 120,
+    "ApiBaseUrl": "http://localhost:5000"
+  },
+  "PreferredModels": {
+    "Photos": "Flux Dev",
+    "Video": "Wan2GP"
+  },
+  "InferenceSettings": {
+    "DefaultWidth": 1024,
+    "DefaultHeight": 1024,
+    "Steps": 30,
+    "CfgScale": 7.5,
+    "Seed": -1
+  }
+}
+```
+
+#### Step 6.2: Update Dockerfile
+**Goal:** Containerized deployment
+
+```dockerfile
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY AuraFlow/AuraFlow.csproj ./
+RUN dotnet restore
+COPY . .
+WORKDIR /src/AuraFlow
+RUN dotnet publish -c Release -o /app/publish
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+WORKDIR /app
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "AuraFlow.dll"]
+```
+
+#### Step 6.3: Update docker-compose.yml
+**Goal:** Orchestrate all services
+
+```yaml
+version: '3.8'
+services:
+  auraflow-api:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+      
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:main
+    ports:
+      - "3000:8080"
+    depends_on:
+      - auraflow-api
+```
+
+## 5. TESTING AND VALIDATION
+
+### Build Validation:
+```bash
+# Clean and build
+dotnet clean AuraFlow/AuraFlow.csproj
+dotnet build AuraFlow/AuraFlow.csproj -c Release
+
+# Should produce NO warnings
+```
+
+### Docker Deployment Test:
+```bash
+# Start services
+docker-compose up -d
+
+# Verify endpoints
+curl http://localhost:5000/health
+curl http://localhost:3000
+
+# Stop services
+docker-compose down
+```
+
+### API Functionality Test:
+```bash
+# Test generation endpoint
+curl -X POST http://localhost:5000/api/v1/generate \
+  -H "Content-Type: application/json" \
+  -d '{"prompt": "test", "modelName": "Flux Dev"}'
+
+# Verify Swagger UI
+curl http://localhost:5000/swagger
+```
+
+### Manual Testing Checklist:
+- [ ] Application starts without errors
+- [ ] Swagger UI accessible at `/swagger`
+- [ ] Chat interface loads in browser
+- [ ] Can enter prompt and select model
+- [ ] Generation starts and shows progress
+- [ ] Result displays correctly
+- [ ] Settings persist across restarts
+
+## 6. SUCCESS METRICS
+
+### Immediate Deliverables:
+✅ **Single project**: All code consolidated into `AuraFlow/`  
+✅ **Consistent branding**: Everything uses "AuraFlow" name  
+✅ **Dead code removed**: Empty projects deleted  
+✅ **Professional README**: Comprehensive documentation  
+✅ **Working Docker**: docker-compose.yml updated and functional  
+
+### Code Quality:
+- ✅ No compiler warnings in Release build
+- ✅ All services registered in DI container
+- ✅ XML comments on all public APIs
+- ✅ Clear folder organization
+
+### Developer Experience:
+- ✅ Single `dotnet build` command works
+- ✅ Easy to navigate codebase
+- ✅ Fast iteration times (< 5 seconds)
+- ✅ Clear documentation for new developers
+
+## 7. FINAL CHECKLIST
+
+Before marking complete, verify:
+
+**Branding:**
+- [ ] No "StabilityMatrix" references remain in code
+- [ ] All namespaces use `AuraFlow.*` prefix
+- [ ] All class names follow AuraFlow convention
+
+**Structure:**
+- [ ] Single project file (`AuraFlow.csproj`)
+- [ ] Clear folder organization (Controllers, Services, Models, etc.)
+- [ ] No empty directories remaining
+
+**Functionality:**
+- [ ] Application builds successfully
+- [ ] Docker deployment works
+- [ ] API endpoints functional
+- [ ] Blazor pages load correctly
+
+**Documentation:**
+- [ ] Professional README.md created
+- [ ] Architecture diagram included
+- [ ] Configuration examples provided
+- [ ] API reference documented
+
+---
+
+## IMPLEMENTATION ORDER
+
+1. **Day 1**: Rename all "StabilityMatrix" → "AuraFlow", consolidate projects
+2. **Day 2**: Remove dead code, create unified structure  
+3. **Day 3**: Create Program.cs, controllers, Blazor pages
+4. **Day 4**: Update Docker files, test deployment
+5. **Day 5**: Write professional README.md, final validation
+
+Total estimated time: **5 days** for complete refactoring
 
 # 2. CONTEXT SUMMARY
 

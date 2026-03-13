@@ -6,7 +6,7 @@ using AuraFlow.Core.Models.Api.AuraCloud.Analytics;
 namespace AuraFlow.Core.Api;
 
 [Localizable(false)]
-[Headers("User-Agent: StabilityMatrix")]
+[Headers("User-Agent: AuraFlow")]
 public interface IAuraCloudAnalyticsApi
 {
     [Post("/api/analytics")]

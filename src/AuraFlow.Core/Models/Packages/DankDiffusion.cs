@@ -31,7 +31,7 @@ public class DankDiffusion : BaseGitPackage
     public override string DisplayName { get; set; } = "Dank Diffusion";
     public override string Author => "mohnjiles";
     public override string LicenseType => "AGPL-3.0";
-    public override string LicenseUrl => "https://github.com/AuraCloudAI/StabilityMatrix/blob/main/LICENSE";
+    public override string LicenseUrl => "https://github.com/AuraCloudAI/AuraFlow/blob/main/LICENSE";
     public override string Blurb => "A dank interface for diffusion";
     public override string LaunchCommand => "test";
     public override SharedFolderMethod RecommendedSharedFolderMethod => SharedFolderMethod.Symlink;

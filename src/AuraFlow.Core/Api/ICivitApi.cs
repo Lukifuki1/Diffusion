@@ -4,7 +4,7 @@ using AuraFlow.Core.Models.Api;
 
 namespace AuraFlow.Core.Api;
 
-[Headers("User-Agent: StabilityMatrix/1.0")]
+[Headers("User-Agent: AuraFlow/1.0")]
 public interface ICivitApi
 {
     [Get("/api/v1/models")]

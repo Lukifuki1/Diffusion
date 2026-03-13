@@ -3,7 +3,7 @@ using AuraFlow.Core.Models.Api;
 
 namespace AuraFlow.Core.Api;
 
-[Headers("User-Agent: StabilityMatrix")]
+[Headers("User-Agent: AuraFlow")]
 public interface IA3WebApi
 {
     [Get("/internal/ping")]

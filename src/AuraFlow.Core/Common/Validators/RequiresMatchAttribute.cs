@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace StabilityMatrix.Core.Validators;
+namespace AuraFlow.Core.Validators;
 
 /// <summary>
 /// Validator that requires equality to another property

@@ -7,7 +7,7 @@ using AuraFlow.Core.Models.Api.AuraCloud;
 namespace AuraFlow.Core.Api;
 
 [Localizable(false)]
-[Headers("User-Agent: StabilityMatrix")]
+[Headers("User-Agent: AuraFlow")]
 [Obsolete("Use IAuraCloudAuthApiV2")]
 public interface IAuraCloudAuthApiV1
 {

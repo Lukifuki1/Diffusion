@@ -16,7 +16,7 @@ public class UnknownPackage(ISettingsManager settingsManager) : BasePackage(sett
 
     public override string GithubUrl => "";
     public override string LicenseType => "AGPL-3.0";
-    public override string LicenseUrl => "https://github.com/AuraCloudAI/StabilityMatrix/blob/main/LICENSE";
+    public override string LicenseUrl => "https://github.com/AuraCloudAI/AuraFlow/blob/main/LICENSE";
     public override string Blurb => "A dank interface for diffusion";
     public override string LaunchCommand => "test";
 
