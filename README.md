@@ -1,15 +1,29 @@
 # AuraFlow Studio - ChatGPT Style Generator
 
-Preprost, močan sistem za generiranje slik in videov z vmesnikom kot ChatGPT.
+**Popolnoma preprost vmesnik za generiranje slik in videov**
 
 ## 🎯 Kaj to dela?
 
-- **Text → Photos**: Generiraj slike iz opisov (Flux, SDXL)
-- **Text → Video**: Generiraj video iz opisov (Wan2GP, CogVideo)
+- **Besedilo → Fotografije**: Generiraj slike iz opisov (Flux, SDXL)
+- **Besedilo → Video**: Generiraj video iz opisov (Wan2GP, CogVideo)  
 - **Chat vmesnik**: Preprosto kot ChatGPT - napiši prompt, počakaj, dobiš rezultat
-- **Model po želji**: Izbereš katerikoli LLM ali diffusion model
+- **Model po želji**: Izbereš katerikoli model za slike ali video
 
-## 📦 Minimalna struktura
+## 🏗️ Arhitektura
+
+```
+┌─────────────────────┐     ┌──────────────────────────┐     ┌─────────────────┐
+│   OpenWebUI         │◄───►│  StabilityMatrix         │◄───►│  ComfyUI        │
+│   (Frontend)        │     │  ChatInterface           │     │  (Backend)      │
+│   Port: 3000        │     │  (.NET Service)          │     │  Port: 5000     │
+└─────────────────────┘     └──────────────────────────┘     └─────────────────┘
+         │                           │                              │
+         ▼                           ▼                              ▼
+   Chat-style UI              REST API + WebSocket           Model Generation
+   Prompt Input               Progress Tracking              Image/Video Output
+```
+
+## 📦 Struktura projekta
 
 ```
 Diffusion/
@@ -20,7 +34,7 @@ Diffusion/
 └── README.md           # Ta datoteka
 ```
 
-## 🚀 Namestitev paketov
+## 🚀 Hitri začetek
 
 1. **Za fotografije**: Install → Stable Diffusion WebUI Forge ali FlowEngine
 2. **Za video**: Install → Wan2GP ali CogVideo
@@ -39,6 +53,13 @@ Diffusion/
     "defaultHeight": 1024,
     "steps": 30,
     "cfgScale": 7.5
+  },
+  "ChatInterface": {
+    "enabled": true,              // Ali je chat vmesnik vklopljen
+    "defaultModel": "Flux Dev",   // Privzeti model
+    "maxConcurrentGenerations": 3,// Max hkratnih generacij
+    "timeoutSeconds": 120,        // Časovna omejitev
+    "apiBaseUrl": "http://localhost:5000"  // Backend URL
   }
 }
 ```
@@ -47,14 +68,12 @@ Diffusion/
 
 ### Preprost način (ChatGPT style):
 
-```
 1. Odpreš AuraFlow Studio Inference UI
 2. Vpišeš prompt: "kocje na sončni plaži, 4K"
 3. Izbereš model: Flux Dev
 4. Klikneš Generate
-5. Počakaš - generiranje v ozadju
+5. Počakaš - generiranje v ozadju z napredkom
 6. Rezultat se prikaže v istem oknu
-```
 
 ### Napreden način (FlowEngine):
 
@@ -68,17 +87,17 @@ Diffusion/
 ## 🎨 Podprti modeli
 
 ### Fotografije:
-- Flux Dev (najbolj kakovosten)
-- SDXL Turbo (najhitrejši)
-- Realistic Vision (za fotorealizem)
-- Pony Diffusion
+- **Flux Dev** - Najbolj kakovosten (priporočeno)
+- **SDXL Turbo** - Najhitrejši
+- **Realistic Vision** - Za fotorealizem
+- **Pony Diffusion** - Anime/illustration stil
 
 ### Video:
-- Wan2GP (Wan 2.1 video modeli)
-- CogVideo
-- SVD (Stable Video Diffusion)
+- **Wan2GP** - Wan 2.1 video modeli (priporočeno)
+- **CogVideo** - Generiranje videa iz besedila
+- **SVD** - Stable Video Diffusion
 
-## 🔧 Build
+# Build in testiranje
 
 ```bash
 # Restore dependencies
@@ -91,15 +110,26 @@ dotnet build AuraFlow.Core/AuraFlow.Core.csproj
 dotnet test AuraFlow.UnitTests
 ```
 
-## 📊 Prednosti
+## 🧪 API Endpoints
 
-✅ **Enostavno** - ChatGPT style vmesnik  
-✅ **Močno** - Flux, SDXL, Wan2GP podpora  
-✅ **Fleksibilno** - izbereš katerikoli model  
-✅ **Deljeno** - ena mapa za vse modele  
-✅ **Batch** - več generacij hkrati  
+### POST /api/v1/generate
+Generiraj sliko ali video iz prompta.
 
-## 🌐 Več informacij
+**Request:**
+```json
+{
+  "prompt": "kocje na sončni plaži",
+  "modelName": "Flux Dev",
+  "type": "Image",
+  "options": {
+    "width": 1024,
+    "height": 1024,
+    "steps": 30,
+    "guidanceScale": 7.5,
+    "seed": -1
+  }
+}
+```
 
 - [AuraFlow Studio GitHub](https://github.com/LykosAI/AuraFlow)
 - [FlowEngine](https://github.com/comfyanonymous/ComfyUI)
