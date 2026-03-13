@@ -1,4 +1,4 @@
-# Stability Matrix - ChatGPT Style Generator
+# AuraFlow Studio - ChatGPT Style Generator
 
 Preprost, močan sistem za generiranje slik in videov z vmesnikom kot ChatGPT.
 
@@ -13,16 +13,16 @@ Preprost, močan sistem za generiranje slik in videov z vmesnikom kot ChatGPT.
 
 ```
 Diffusion/
-├── StabilityMatrix.Core/      # Glavna logika (Inference, ComfyClient)
-├── StabilityMatrix.Native/    # Native interop
-├── StabilityMatrix.Native.Abstractions/  # Abstrakcije
-├── config.json               # Konfiguracija modelov in nastavitev
-└── README.md                 # Ta datoteka
+├── AuraFlow.Core/      # Glavna logika (Inference, FlowEngine)
+├── AuraFlow.Native/    # Native interop
+├── AuraFlow.Native.Abstractions/  # Abstrakcije
+├── config.json         # Konfiguracija modelov in nastavitev
+└── README.md           # Ta datoteka
 ```
 
 ## 🚀 Namestitev paketov
 
-1. **Za fotografije**: Install → Stable Diffusion WebUI Forge ali ComfyUI
+1. **Za fotografije**: Install → Stable Diffusion WebUI Forge ali FlowEngine
 2. **Za video**: Install → Wan2GP ali CogVideo
 3. **Skupni modeli**: Vsi paketi delijo isto mapo `./models`
 
@@ -48,7 +48,7 @@ Diffusion/
 ### Preprost način (ChatGPT style):
 
 ```
-1. Odpreš Stability Matrix Inference UI
+1. Odpreš AuraFlow Studio Inference UI
 2. Vpišeš prompt: "kocje na sončni plaži, 4K"
 3. Izbereš model: Flux Dev
 4. Klikneš Generate
@@ -56,10 +56,10 @@ Diffusion/
 6. Rezultat se prikaže v istem oknu
 ```
 
-### Napreden način (ComfyUI):
+### Napreden način (FlowEngine):
 
 ```
-1. Odpreš ComfyUI
+1. Odpreš FlowEngine
 2. Naloži workflow za SDXL/Flux/Wan2GP
 3. Vpiši prompt in nastavitve
 4. Generate z napredkom v realnem času
@@ -85,10 +85,10 @@ Diffusion/
 dotnet restore
 
 # Build
-dotnet build StabilityMatrix.Core/StabilityMatrix.Core.csproj
+dotnet build AuraFlow.Core/AuraFlow.Core.csproj
 
 # Test
-dotnet test StabilityMatrix.Tests
+dotnet test AuraFlow.UnitTests
 ```
 
 ## 📊 Prednosti
@@ -101,6 +101,6 @@ dotnet test StabilityMatrix.Tests
 
 ## 🌐 Več informacij
 
-- [Stability Matrix GitHub](https://github.com/LykosAI/StabilityMatrix)
-- [ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+- [AuraFlow Studio GitHub](https://github.com/LykosAI/AuraFlow)
+- [FlowEngine](https://github.com/comfyanonymous/ComfyUI)
 - [Wan2GP](https://github.com/deepbeepmeep/Wan2GP)
