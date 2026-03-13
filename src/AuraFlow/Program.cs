@@ -27,6 +27,7 @@ builder.Services.AddScoped<IGenerationService, GenerationService>();
 // Register ComfyUI integration services
 builder.Services.AddScoped<IComfyApi, Core.Api.ComfyApi>();
 builder.Services.AddScoped<IComfyWorkflowGenerator, ComfyWorkflowGenerator>();
+builder.Services.AddScoped<IComfyWebSocketService, ComfyWebSocketService>();
 
 // Register infrastructure services
 builder.Services.AddInfrastructureServices(builder.Configuration);

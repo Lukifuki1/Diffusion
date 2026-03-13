@@ -45,6 +45,12 @@
             <h5>Napredek generiranja:</h5>
             <progress id="progressBar" value="@currentProgress" max="100"></progress>
             <p>@currentStatus</p>
+            @if (!string.IsNullOrEmpty(currentNode))
+            {
+                <div class="alert alert-info mt-2">
+                    <strong>Trenutno aktivni node:</strong> @currentNode
+                </div>
+            }
         </div>
     </div>
 }
@@ -79,6 +85,7 @@
     private bool isGenerating;
     private int currentProgress = 0;
     private string currentStatus = "";
+    private string currentNode = "";
     private string resultUrl = "";
     private string errorMessage = "";
 
@@ -91,6 +98,7 @@
             resultUrl = "";
             currentProgress = 0;
             currentStatus = "Začeto...";
+            currentNode = "";
 
             var request = new GenerationRequest
             {
