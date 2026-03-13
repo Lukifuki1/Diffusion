@@ -303,7 +303,7 @@ public class StableSwarm(
             var backendsFile = new FDSSection();
             var dataSection = new FDSSection();
             dataSection.Set("type", "comfyui_selfstart");
-            dataSection.Set("title", "StabilityMatrix FlowEngine Self-Start");
+            dataSection.Set("title", "AuraFlow FlowEngine Self-Start");
             dataSection.Set("enabled", true);
 
             var launchArgs = comfy.LaunchArgs ?? [];

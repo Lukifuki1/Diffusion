@@ -88,7 +88,7 @@ public class Wan2GP(
 
     /// <summary>
     /// Python wrapper script that patches logging to also print to stdout/stderr, so
-    /// StabilityMatrix can capture the output. Wan2GP logs through Gradio UI notifications
+    /// AuraFlow can capture the output. Wan2GP logs through Gradio UI notifications
     /// (gr.Info/Warning/Error) and callback-driven UI updates that never reach the console.
     /// This script:
     /// 1. Configures Python's logging module to output to stderr (captures library logging)
@@ -97,7 +97,7 @@ public class Wan2GP(
     /// 4. Runs the target script (wgp.py) via runpy
     /// </summary>
     private const string GradioLogPatchScript = """
-        # StabilityMatrix: Patch logging to print to console for capture.
+        # AuraFlow: Patch logging to print to console for capture.
         import sys
         import logging
 
@@ -123,7 +123,7 @@ public class Wan2GP(
                 tf_logging.set_verbosity_warning = lambda: None
                 tf_logging.set_verbosity(logging.INFO)
             except Exception as e:
-                print(f"[StabilityMatrix] Failed to patch transformers logging: {e}", file=sys.stderr, flush=True)
+                print(f"[AuraFlow] Failed to patch transformers logging: {e}", file=sys.stderr, flush=True)
 
             # Monkey-patch Gradio's UI notification functions to also print to console.
             # These only fire for validation/error messages, not generation progress.
@@ -148,7 +148,7 @@ public class Wan2GP(
                         return _orig_error(message, *args, **kwargs)
                     gr.Error = patched_error
             except Exception as e:
-                print(f"[StabilityMatrix] Failed to patch Gradio logging: {e}", file=sys.stderr, flush=True)
+                print(f"[AuraFlow] Failed to patch Gradio logging: {e}", file=sys.stderr, flush=True)
 
         if __name__ == "__main__":
             _apply_logging_patch()

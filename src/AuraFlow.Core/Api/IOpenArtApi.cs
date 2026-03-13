@@ -3,7 +3,7 @@ using AuraFlow.Core.Models.Api.OpenArt;
 
 namespace AuraFlow.Core.Api;
 
-[Headers("User-Agent: StabilityMatrix")]
+[Headers("User-Agent: AuraFlow")]
 public interface IOpenArtApi
 {
     [Get("/feed")]

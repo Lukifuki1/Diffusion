@@ -214,7 +214,7 @@ public static class GlobalEncryptedSerializer
         keySource ??= Environment.UserName;
 
         // XOR with fixed constant
-        const string keyPhrase = "StabilityMatrix";
+        const string keyPhrase = "AuraFlow";
         var result = new SecureString();
 
         for (var i = 0; i < keySource.Length; i++)

@@ -15,7 +15,7 @@ namespace AuraFlow.Core.Helper;
 [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
 public static class Compat
 {
-    private const string AppName = "StabilityMatrix";
+    private const string AppName = "AuraFlow";
 
     public static SemVersion AppVersion { get; set; }
 
@@ -45,7 +45,7 @@ public static class Compat
     public static DirectoryPath AppData { get; }
 
     /// <summary>
-    /// AppData + AppName (e.g. %AppData%\StabilityMatrix)
+    /// AppData + AppName (e.g. %AppData%\AuraFlow)
     /// </summary>
     public static DirectoryPath AppDataHome { get; private set; }
 

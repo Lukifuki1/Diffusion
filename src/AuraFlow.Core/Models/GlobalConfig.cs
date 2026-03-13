@@ -38,9 +38,9 @@ public static class GlobalConfig
 
     /// <summary>
     /// Full path to the fixed home directory.
-    /// Currently %APPDATA%\StabilityMatrix
+    /// Currently %APPDATA%\AuraFlow
     ///</summary>
-    public static DirectoryPath HomeDir { get; set; } = AppDataDir.JoinDir("StabilityMatrix");
+    public static DirectoryPath HomeDir { get; set; } = AppDataDir.JoinDir("AuraFlow");
 
     public static DirectoryPath ModelsDir
     {

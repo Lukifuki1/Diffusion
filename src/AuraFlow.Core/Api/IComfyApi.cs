@@ -3,7 +3,7 @@ using AuraFlow.Core.Models.Api.Comfy;
 
 namespace AuraFlow.Core.Api;
 
-[Headers("User-Agent: StabilityMatrix")]
+[Headers("User-Agent: AuraFlow")]
 public interface IComfyApi
 {
     [Post("/prompt")]

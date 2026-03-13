@@ -7,19 +7,19 @@ services:
     ports:
       - "3000:8080"
     environment:
-      - OLLAMA_BASE_URL=http://stabilitymatrix-backend:5000
-      - WEBUI_NAME=Stability Matrix Chat Interface
+      - OLLAMA_BASE_URL=http://auraflow-api:5000
+      - WEBUI_NAME=AuraFlow Studio Chat Interface
     volumes:
       - openwebui_data:/app/backend/data
     depends_on:
-      - stabilitymatrix-backend
+      - auraflow-api
     restart: unless-stopped
 
-  stabilitymatrix-backend:
+  auraflow-api:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: stabilitymatrix-backend
+    container_name: auraflow-api
     ports:
       - "5000:5000"
     environment:
@@ -28,7 +28,7 @@ services:
       - ChatInterface__DefaultModel=Flux Dev
       - ChatInterface__MaxConcurrentGenerations=3
       - ChatInterface__TimeoutSeconds=120
-      - ChatInterface__ApiBaseUrl=http://stabilitymatrix-backend:5000
+      - ChatInterface__ApiBaseUrl=http://auraflow-api:5000
     volumes:
       - models:/app/models
       - output:/app/output
