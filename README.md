@@ -36,7 +36,7 @@ A professional-grade AI image and video generation platform with a clean, unifie
 ```
 ┌─────────────────────┐     ┌──────────────────────────┐     ┌─────────────────┐
 │   AuraFlow Studio   │◄───►│  AuraFlow API            │◄───►│  ComfyUI        │
-│   (Blazor Server)   │     │  (.NET 8 ASP.NET Core)   │     │  (AI Engine)    │
+│   (Blazor Server)   │     │  (.NET 9.0 ASP.NET Core)   │     │  (AI Engine)    │
 │   Port: 5000        │     │  Port: 5000              │     │  Port: 8188     │
 └─────────────────────┘     └──────────────────────────┘     └─────────────────┘
          │                           │                              │
