@@ -31,10 +31,10 @@ builder.Services.AddScoped<IComfyWorkflowGenerator, ComfyWorkflowGenerator>();
 // Register infrastructure services
 builder.Services.AddInfrastructureServices(builder.Configuration);
 
-// Configure CORS for OpenWebUI integration
+// Configure CORS for AuraFlow Studio integration
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowOpenWebUI",
+    options.AddPolicy("AllowAuraFlowStudio",
         builder => builder
             .WithOrigins("http://localhost:3000")
             .AllowAnyMethod()
@@ -53,7 +53,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseCors("AllowOpenWebUI");
+app.UseCors("AllowAuraFlowStudio");
 app.UseMiddleware<HealthCheckMiddleware>();
 app.UseMiddleware<RateLimitingMiddleware>();
 app.UseStaticFiles();

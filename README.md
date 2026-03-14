@@ -19,9 +19,9 @@ AuraFlow Studio provides a simple, ChatGPT-style interface for generating high-q
 
 ```
 ┌─────────────────────┐     ┌──────────────────────────┐     ┌─────────────────┐
-│   OpenWebUI         │◄───►│  AuraFlow API            │◄───►│  ComfyUI        │
+│   AuraFlow Studio   │◄───►│  AuraFlow API            │◄───►│  ComfyUI        │
 │   (Frontend)        │     │  (.NET 8 Service)        │     │  (Backend)      │
-│   Port: 3000        │     │  Port: 5000              │     │  Port: 5001     │
+│   Port: 3000        │     │  Port: 5000              │     │  Port: 8188     │
 └─────────────────────┘     └──────────────────────────┘     └─────────────────┘
          │                           │                              │
          ▼                           ▼                              ▼
