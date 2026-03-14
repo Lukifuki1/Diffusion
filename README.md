@@ -1,48 +1,61 @@
 # AuraFlow Studio
 
 <p align="center">
-  <a href="https://github.com/LukyTech/AuraFlow-Studio">
-    <img src="https://img.shields.io/github/v/release/LukyTech/AuraFlow-Studio?include_prereleases&label=latest" alt="Latest Release">
+  <a href="https://github.com/Lukifuki1/AuraFlow-Studio/releases">
+    <img src="https://img.shields.io/github/v/release/Lukifuki1/AuraFlow-Studio?include_prereleases&label=latest" alt="Latest Release">
   </a>
-  <a href="https://github.com/LukyTech/AuraFlow-Studio/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/LukyTech/AuraFlow-Studio" alt="License">
+  <a href="https://github.com/Lukifuki1/AuraFlow-Studio/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Lukifuki1/AuraFlow-Studio" alt="License">
   </a>
-  <a href="https://github.com/LukyTech/AuraFlow-Studio/actions">
-    <img src="https://img.shields.io/github/actions/workflow/status/LukyTech/AuraFlow-Studio/ci.yml" alt="CI Status">
+  <a href="https://github.com/Lukifuki1/AuraFlow-Studio/actions">
+    <img src="https://img.shields.io/github/actions/workflow/status/Lukifuki1/AuraFlow-Studio/ci.yml" alt="CI Status">
   </a>
   <img src="https://img.shields.io/badge/.NET-9.0-blue" alt=".NET 9.0">
+  <img src="https://img.shields.io/badge/Blazor-Server-blue" alt="Blazor Server">
 </p>
 
-A professional-grade AI image and video generation platform with a clean, unified chat-style interface. Built on .NET 9 with ASP.NET Core and Blazor Server.
+A professional-grade AI-powered image and video generation platform with a unified chat-style interface. Built with .NET 9, ASP.NET Core, and Blazor Server, featuring enterprise-grade architecture with ComfyUI integration.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
 | Feature | Description |
 |---------|-------------|
+| **Chat Interface** | Intuitive prompt-based UI similar to ChatGPT for seamless AI generation |
 | **Text-to-Image** | Generate stunning images using Flux, SDXL, Realistic Vision models |
-| **Text-to-Video** | Create videos from text descriptions using Wan2GP or CogVideo |
-| **Chat Interface** | Simple, intuitive prompt-based UI similar to ChatGPT |
-| **Real-time Progress** | Live generation progress tracking with WebSocket updates |
-| **Model Management** | Easy model selection and configuration |
-| **Generation History** | Browse and manage all previous generations |
-| **REST API** | Full-featured API for programmatic access |
+| **Text-to-Video** | Create videos from text descriptions using Wan2GP and CogVideo |
+| **Real-time Progress** | Live generation tracking with WebSocket and SignalR updates |
+| **Model Management** | Easy model selection, configuration, and management |
+| **Generation History** | Browse, search, and manage all previous generations |
+| **REST API** | Full-featured API for programmatic access and integrations |
+| **Batch Processing** | Handle multiple concurrent generation tasks |
 
 ---
 
 ## 🏗️ Architecture
 
 ```
-┌─────────────────────┐     ┌──────────────────────────┐     ┌─────────────────┐
-│   AuraFlow Studio   │◄───►│  AuraFlow API            │◄───►│  ComfyUI        │
-│   (Blazor Server)   │     │  (.NET 9.0 ASP.NET Core)   │     │  (AI Engine)    │
-│   Port: 5000        │     │  Port: 5000              │     │  Port: 8188     │
-└─────────────────────┘     └──────────────────────────┘     └─────────────────┘
-         │                           │                              │
-         ▼                           ▼                              ▼
-   Interactive UI              REST + WebSocket              Model Execution
-   SignalR Hub                 JSON API                      Image/Video Output
+┌─────────────────────────────────────────────────────────────────┐
+│                     AuraFlow Studio                              │
+│                    (Blazor Server)                              │
+│                      Port: 5000                                 │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                   AuraFlow API                                  │
+│              (.NET 9.0 ASP.NET Core)                            │
+│                      Port: 5000                                  │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+           ┌───────────────┼───────────────┐
+           ▼               ▼               ▼
+    ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
+    │  ComfyUI    │  │   LiteDB    │  │   Redis     │
+    │ (AI Engine) │  │  (NoSQL)    │  │  (Cache)    │
+    │  Port: 8188 │  │              │  │             │
+    └─────────────┘  └─────────────┘  └─────────────┘
 ```
 
 ### Technology Stack
@@ -51,10 +64,15 @@ A professional-grade AI image and video generation platform with a clean, unifie
 |-------|------------|
 | **Frontend** | Blazor Server, Bootstrap 5, SignalR |
 | **Backend** | .NET 9.0, ASP.NET Core, Entity Framework Core |
+| **API Client** | Refit for REST, WebSocket.Client for real-time |
 | **AI Engine** | ComfyUI (Flux, SDXL, Wan2GP, CogVideo) |
-| **Database** | LiteDB (embedded NoSQL) |
-| **Caching** | In-memory distributed cache |
-| **Logging** | NLog with structured logging |
+| **Database** | LiteDB (embedded NoSQL), SQL Server (enterprise) |
+| **Caching** | Redis, In-memory distributed cache |
+| **Messaging** | RabbitMQ (optional) |
+| **Background Jobs** | Hangfire |
+| **Resilience** | Polly for retry/circuit breaker patterns |
+| **Monitoring** | NLog with structured logging, Sentry |
+| **Authentication** | JWT Bearer tokens |
 
 ---
 
@@ -63,38 +81,50 @@ A professional-grade AI image and video generation platform with a clean, unifie
 ```
 AuraFlow-Studio/
 ├── src/
-│   ├── AuraFlow/                      # Main web application
-│   │   ├── Controllers/              # REST API endpoints
+│   ├── AuraFlow/                          # Main web application
+│   │   ├── Controllers/                   # REST API endpoints
 │   │   │   └── GenerationController.cs
-│   │   ├── Services/                 # Business logic layer
+│   │   ├── Services/                      # Business logic
 │   │   │   ├── GenerationService.cs
 │   │   │   ├── DownloadService.cs
+│   │   │   ├── ImageIndexService.cs
 │   │   │   └── SettingsManager.cs
-│   │   ├── Infrastructure/           # Infrastructure layer
-│   │   │   ├── Engines/             # ComfyUI integration
-│   │   │   ├── Persistence/         # LiteDB storage
-│   │   │   └── Messaging/           # Queue services
-│   │   ├── Middlewares/              # HTTP middleware
+│   │   ├── Infrastructure/                # Infrastructure layer
+│   │   │   ├── Engines/Comfy/             # ComfyUI integration
+│   │   │   ├── Engines/Inference/         # Inference client
+│   │   │   ├── Persistence/               # LiteDB & EF Core
+│   │   │   ├── Messaging/                 # RabbitMQ service
+│   │   │   ├── Jobs/                      # Hangfire jobs
+│   │   │   └── Resilience/                # Polly pipelines
+│   │   ├── Middlewares/                   # HTTP middleware
 │   │   │   ├── HealthCheckMiddleware.cs
 │   │   │   └── RateLimitingMiddleware.cs
-│   │   ├── Pages/                    # Blazor pages
+│   │   ├── Pages/                         # Blazor pages
 │   │   │   ├── Chat.razor
 │   │   │   ├── Index.razor
-│   │   │   └── SettingsPage.razor
-│   │   ├── Program.cs               # Application entry point
-│   │   └── AuraFlow.csproj
+│   │   │   ├── SettingsPage.razor
+│   │   │   └── GenerationHistory.razor
+│   │   └── Program.cs                     # Application entry
 │   │
-│   └── AuraFlow.Core/                # Core domain library
-│       ├── Api/                      # ComfyUI REST client
-│       ├── Services/                 # Domain services
-│       ├── Models/                   # Domain models
-│       └── Common/                   # Shared utilities
+│   ├── AuraFlow.Core/                     # Core domain library
+│   │   ├── Api/                           # Refit interfaces
+│   │   ├── Models/                        # Domain models
+│   │   ├── Services/                      # Domain services
+│   │   └── Common/                        # Shared utilities
+│   │
+│   └── AuraFlow.Infrastructure/            # Enterprise infrastructure
+│       ├── Persistence/                    # Database contexts
+│       ├── Caching/                       # Redis integration
+│       └── Resilience/                     # Retry policies
 │
-├── AuraFlow.sln                     # Solution file
-├── Dockerfile                       # Multi-stage Docker build
-├── docker-compose.yml               # Service orchestration
-├── config.json                      # Application configuration
-└── README.md                        # This file
+├── AuraFlow.App/                          # Desktop app (Avalonia)
+├── AuraFlow.Native/                       # Native integrations
+│
+├── AuraFlow.sln                           # Solution file
+├── Dockerfile                             # Multi-stage Docker build
+├── docker-compose.yml                     # Service orchestration
+├── config.json                            # Application configuration
+└── README.md                              # This file
 ```
 
 ---
@@ -111,7 +141,7 @@ AuraFlow-Studio/
 
 ```bash
 # Clone the repository
-git clone https://github.com/LukyTech/AuraFlow-Studio.git
+git clone https://github.com/Lukifuki1/AuraFlow-Studio.git
 cd AuraFlow-Studio
 
 # Restore dependencies
@@ -160,6 +190,9 @@ docker-compose down
     "steps": 30,
     "cfgScale": 7.5
   },
+  "chatInterface": true,
+  "backgroundGeneration": true,
+  "sharedModelDirectory": "./models",
   "ChatInterface": {
     "enabled": true,
     "defaultModel": "Flux Dev",
@@ -180,6 +213,25 @@ docker-compose down
 | `ChatInterface__MaxConcurrentGenerations` | Max parallel tasks | `3` |
 | `ChatInterface__TimeoutSeconds` | Generation timeout | `120` |
 
+### Enterprise Configuration (appsettings.enterprise.json)
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=sqlserver;Database=AuraFlow;...",
+    "Redis": "redis:6379",
+    "Hangfire": "Server=sqlserver;Database=AuraFlowJobs;..."
+  },
+  "RabbitMQ": {
+    "Url": "rabbitmq:5672"
+  },
+  "Resilience": {
+    "RetryCount": 3,
+    "CircuitBreakerThreshold": 5
+  }
+}
+```
+
 ---
 
 ## 🔌 API Reference
@@ -192,7 +244,7 @@ docker-compose down
 | `/api/v1/generation/progress/{taskId}` | GET | Get generation progress |
 | `/api/v1/generation/models` | GET | List available models |
 | `/api/v1/generation/history` | GET | Get generation history |
-| `/health` | GET | Health check (always returns 200) |
+| `/health` | GET | Health check |
 | `/ready` | GET | Readiness check |
 
 ### Generate Content
@@ -200,6 +252,7 @@ docker-compose down
 ```bash
 curl -X POST http://localhost:5000/api/v1/generation/generate \
   -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <token>" \
   -d '{
     "prompt": "A serene mountain landscape at sunset, 4K, photorealistic",
     "modelName": "Flux Dev",
@@ -234,7 +287,7 @@ curl -X POST http://localhost:5000/api/v1/generation/generate \
 | **Flux Dev** | State-of-the-art diffusion model | High-quality photorealistic images |
 | **SDXL Turbo** | Fast generation (4-8 steps) | Quick iterations |
 | **Realistic Vision** | Photorealistic portraits | Portraits, landscapes |
-| **Pony AuraFlow-Studio** | Anime/illustration style | Art, illustrations |
+| **Pony Diffusion** | Anime/illustration style | Art, illustrations |
 
 ### Video Generation
 
@@ -242,7 +295,7 @@ curl -X POST http://localhost:5000/api/v1/generation/generate \
 |-------|-------------|----------|
 | **Wan2GP** | Wan 2.1 video generation | High-quality videos |
 | **CogVideo** | Text-to-video | Creative projects |
-| **SVD** | Stable Video AuraFlow-Studio | Short clips |
+| **SVD** | Stable Video Diffusion | Short clips |
 
 ---
 
@@ -258,24 +311,26 @@ dotnet build AuraFlow.sln
 dotnet build AuraFlow.sln -c Release
 ```
 
-### Testing
+### Code Style
+
+This project follows:
+- C# 12/13 coding conventions
+- XML documentation for public APIs
+- Async/await best practices
+- Dependency injection throughout
+- File-scoped namespaces
+- Implicit typing where appropriate
+
+### Running Tests
 
 ```bash
 # Run unit tests
 dotnet test tests/AuraFlow.UnitTests/
 ```
 
-### Code Style
-
-This project follows:
-- C# 13 coding conventions
-- XML documentation for public APIs
-- Async/await best practices
-- Dependency injection throughout
-
 ---
 
-## 📊 Performance
+## 📊 Performance Targets
 
 | Metric | Target |
 |--------|--------|
@@ -313,3 +368,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Built with ❤️ using .NET 9, ASP.NET Core, and Blazor Server**
+
+**Version**: 1.0.0
