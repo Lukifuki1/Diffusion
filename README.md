@@ -10,10 +10,10 @@
   <a href="https://github.com/Lukifuki1/Diffusion/actions">
     <img src="https://img.shields.io/github/actions/workflow/status/Lukifuki1/Diffusion/ci.yml" alt="CI Status">
   </a>
-  <img src="https://img.shields.io/badge/.NET-8.0-blue" alt=".NET 8.0">
+  <img src="https://img.shields.io/badge/.NET-9.0-blue" alt=".NET 9.0">
 </p>
 
-A professional-grade AI image and video generation platform with a clean, unified chat-style interface. Built on .NET 8 with ASP.NET Core and Blazor Server.
+A professional-grade AI image and video generation platform with a clean, unified chat-style interface. Built on .NET 9 with ASP.NET Core and Blazor Server.
 
 ---
 
@@ -50,7 +50,7 @@ A professional-grade AI image and video generation platform with a clean, unifie
 | Layer | Technology |
 |-------|------------|
 | **Frontend** | Blazor Server, Bootstrap 5, SignalR |
-| **Backend** | .NET 8.0, ASP.NET Core, Entity Framework Core |
+| **Backend** | .NET 9.0, ASP.NET Core, Entity Framework Core |
 | **AI Engine** | ComfyUI (Flux, SDXL, Wan2GP, CogVideo) |
 | **Database** | LiteDB (embedded NoSQL) |
 | **Caching** | In-memory distributed cache |
@@ -103,7 +103,7 @@ Diffusion/
 
 ### Prerequisites
 
-- .NET 8.0 SDK or later
+- .NET 9.0 SDK or later
 - Docker & Docker Compose (optional)
 - ComfyUI with Flux/Wan2GP workflows installed
 
@@ -268,7 +268,7 @@ dotnet test tests/AuraFlow.UnitTests/
 ### Code Style
 
 This project follows:
-- C# 12 coding conventions
+- C# 13 coding conventions
 - XML documentation for public APIs
 - Async/await best practices
 - Dependency injection throughout
@@ -312,4 +312,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ using .NET 8, ASP.NET Core, and Blazor Server**
+**Built with ❤️ using .NET 9, ASP.NET Core, and Blazor Server**
