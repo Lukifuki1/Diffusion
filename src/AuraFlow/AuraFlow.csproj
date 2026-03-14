@@ -45,7 +45,6 @@
   <ItemGroup>
     <!-- Project References -->
     <ProjectReference Include="..\AuraFlow.Core\AuraFlow.Core.csproj" />
-    <ProjectReference Include="..\AuraFlow.Native\AuraFlow.Native.csproj" />
   </ItemGroup>
 
 </Project>

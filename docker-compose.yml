@@ -1,9 +1,7 @@
 version: '3.8'
 
 services:
-  # AuraFlow Studio Frontend - Served by .NET API on port 5000
-  # Blazor Server UI is integrated in auraflow-api service
-
+  # AuraFlow Studio - Blazor Server UI integrated in API
   auraflow-api:
     build:
       context: .
@@ -21,9 +19,6 @@ services:
     volumes:
       - models:/app/models
       - output:/app/output
-    depends_on:
-      - redis
-      - rabbitmq
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
@@ -41,8 +36,6 @@ services:
       - output:/comfyui/output
     environment:
       - COMFYUI_PORT=8188
-    depends_on:
-      - redis
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8188/system_stats"]
@@ -50,31 +43,6 @@ services:
       timeout: 10s
       retries: 3
 
-  redis:
-    image: redis:7-alpine
-    container_name: auraflow-redis
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-    command: redis-server --appendonly yes
-    restart: unless-stopped
-
-  rabbitmq:
-    image: rabbitmq:3-management-alpine
-    container_name: auraflow-rabbitmq
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    environment:
-      RABBITMQ_DEFAULT_USER: admin
-      RABBITMQ_DEFAULT_PASS: admin
-    volumes:
-      - rabbitmq_data:/var/lib/rabbitmq
-    restart: unless-stopped
-
 volumes:
   models:
   output:
-  redis_data:
-  rabbitmq_data:
