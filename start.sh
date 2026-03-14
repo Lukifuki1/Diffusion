@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # AuraFlow Studio - Startup Script
-# This script starts OpenWebUI and the backend service
+# This script starts AuraFlow Studio and the backend service
 
 set -e
 
@@ -36,11 +36,11 @@ sleep 5
 echo ""
 echo "✅ Services started!"
 echo ""
-echo "📍 OpenWebUI Interface: http://localhost:3000"
+echo "📍 AuraFlow Studio: http://localhost:3000"
 echo "📍 AuraFlow API: http://localhost:5000"
 echo ""
 echo "To view logs:"
-echo "  docker-compose logs -f openwebui"
+echo "  docker-compose logs -f auraflow-studio"
 echo "  docker-compose logs -f auraflow-api"
 echo ""
 echo "To stop services:"

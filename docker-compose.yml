@@ -1,18 +1,18 @@
 version: '3.8'
 
 services:
-  openwebui:
+  auraflow-studio:
     build:
       context: ./openwebui-custom
       dockerfile: Dockerfile
-    container_name: auraflow-openwebui
+    container_name: auraflow-studio
     ports:
       - "3000:8080"
     environment:
       - OLLAMA_BASE_URL=http://auraflow-api:5000
       - WEBUI_NAME=AuraFlow Studio
     volumes:
-      - openwebui_data:/app/backend/data
+      - auraflow-studio_data:/app/backend/data
     depends_on:
       - auraflow-api
       - comfyui
@@ -93,7 +93,7 @@ services:
     restart: unless-stopped
 
 volumes:
-  openwebui_data:
+  auraflow-studio_data:
   models:
   output:
   redis_data:
