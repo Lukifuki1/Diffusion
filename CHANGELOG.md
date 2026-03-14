@@ -5,7 +5,34 @@ All notable changes to AuraFlow Studio will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning 2.0](https://semver.org/spec/v2.0.0.html).
 
-## v2.15.6
+## v1.0.0
+### Added
+- Initial release of AuraFlow Studio by Luky Tech
+- Professional-grade AI image and video generation platform
+- Built on .NET 9 with ASP.NET Core and Blazor Server
+- Text-to-Image generation using Flux, SDXL, Realistic Vision models
+- Text-to-Video generation using Wan2GP and CogVideo
+- Chat-style interface similar to ChatGPT
+- Real-time generation progress tracking with WebSocket updates
+- Model management and configuration
+- Generation history browsing and management
+- Full REST API for programmatic access
+- ComfyUI integration for AI inference
+
+### Technology Stack
+- Frontend: Blazor Server, Bootstrap 5, SignalR
+- Backend: .NET 9.0, ASP.NET Core, Entity Framework Core
+- AI Engine: ComfyUI (Flux, SDXL, Wan2GP, CogVideo)
+- Database: LiteDB (embedded NoSQL)
+- Caching: In-memory distributed cache
+- Logging: NLog with structured logging
+
+---
+
+## v1.0.0 (Original Release History)
+> This section contains the original release history from the project fork.
+
+### v2.15.6
 ### Added
 - Added NVIDIA driver version warning when launching ComfyUI with CUDA 13.0 (cu130) and driver versions below 580.x
 - Added legacy Python warning when launching InvokeAI installations using Python 3.10.11
@@ -23,16 +50,16 @@ and this project adheres to [Semantic Versioning 2.0](https://semver.org/spec/v2
 - Backslashes can now be escaped in Inference prompts via `\\`
 ### Fixed
 - Fixed parsing of escape sequences in Inference such as `\\`
-- Fixed [#1546](https://github.com/LykosAI/AuraFlow/issues/1546), [#1541](https://github.com/LykosAI/AuraFlow/issues/1541) - "No module named 'pkg_resources'" error when installing Automatic1111/Forge/reForge packages
-- Fixed [#1545](https://github.com/LykosAI/AuraFlow/issues/1545), [#1518](https://github.com/LykosAI/AuraFlow/issues/1518), [#1513](https://github.com/LykosAI/AuraFlow/issues/1513), [#1488](https://github.com/LykosAI/AuraFlow/issues/1488) - Forge Neo update breaking things
-- Fixed [#1529](https://github.com/LykosAI/AuraFlow/issues/1529) - "Selected commit is null" error when installing packages and rate limited by GitHub
-- Fixed [#1525](https://github.com/LykosAI/AuraFlow/issues/1525) - Crash after downloading a model
-- Fixed [#1523](https://github.com/LykosAI/AuraFlow/issues/1523), [#1499](https://github.com/LykosAI/AuraFlow/issues/1499), [#1494](https://github.com/LykosAI/AuraFlow/issues/1494) - Automatic1111 using old stable diffusion repo
-- Fixed [#1505](https://github.com/LykosAI/AuraFlow/issues/1505) - incorrect port argument for Wan2GP
-- Possibly fix [#1502](https://github.com/LykosAI/AuraFlow/issues/1502) - English fonts not displaying correctly on Linux in Chinese environments
-- Fixed [#1476](https://github.com/LykosAI/AuraFlow/issues/1476) - Incorrect shared output folder for Forge Classic/Neo
-- Fixed [#1466](https://github.com/LykosAI/AuraFlow/issues/1466) - crash after moving portable install
-- Fixed [#1445](https://github.com/LykosAI/AuraFlow/issues/1445) - Linux app updates not actually updating - thanks to @NeuralFault!
+- Fixed [#1546](https://github.com/Luky Tech/AuraFlow/issues/1546), [#1541](https://github.com/Luky Tech/AuraFlow/issues/1541) - "No module named 'pkg_resources'" error when installing Automatic1111/Forge/reForge packages
+- Fixed [#1545](https://github.com/Luky Tech/AuraFlow/issues/1545), [#1518](https://github.com/Luky Tech/AuraFlow/issues/1518), [#1513](https://github.com/Luky Tech/AuraFlow/issues/1513), [#1488](https://github.com/Luky Tech/AuraFlow/issues/1488) - Forge Neo update breaking things
+- Fixed [#1529](https://github.com/Luky Tech/AuraFlow/issues/1529) - "Selected commit is null" error when installing packages and rate limited by GitHub
+- Fixed [#1525](https://github.com/Luky Tech/AuraFlow/issues/1525) - Crash after downloading a model
+- Fixed [#1523](https://github.com/Luky Tech/AuraFlow/issues/1523), [#1499](https://github.com/Luky Tech/AuraFlow/issues/1499), [#1494](https://github.com/Luky Tech/AuraFlow/issues/1494) - Automatic1111 using old stable diffusion repo
+- Fixed [#1505](https://github.com/Luky Tech/AuraFlow/issues/1505) - incorrect port argument for Wan2GP
+- Possibly fix [#1502](https://github.com/Luky Tech/AuraFlow/issues/1502) - English fonts not displaying correctly on Linux in Chinese environments
+- Fixed [#1476](https://github.com/Luky Tech/AuraFlow/issues/1476) - Incorrect shared output folder for Forge Classic/Neo
+- Fixed [#1466](https://github.com/Luky Tech/AuraFlow/issues/1466) - crash after moving portable install
+- Fixed [#1445](https://github.com/Luky Tech/AuraFlow/issues/1445) - Linux app updates not actually updating - thanks to @NeuralFault!
 ### Supporters
 #### 🌟 Visionaries
 To our stellar Visionaries: **Waterclouds**, **JungleDragon**, **bluepopsicle**, **Bob S**, and **whudunit**! Your generosity keeps this project thriving and gives us the confidence to tackle the big challenges. Thank you for being the foundation that makes it all possible!
@@ -42,17 +69,17 @@ Shoutout to our incredible Pioneer crew for keeping the momentum going! Thank yo
 ## v2.15.5
 ### Added
 - Added new package - [Wan2GP](https://github.com/deepbeepmeep/Wan2GP)
-- Added [Stable Diffusion WebUI Forge - Neo](https://github.com/Haoming02/sd-webui-forge-classic/tree/neo) as a separate package for convenience
+- Added [Stable AuraFlow Studio WebUI Forge - Neo](https://github.com/Haoming02/sd-webui-forge-classic/tree/neo) as a separate package for convenience
 - Added Tiled VAE decoding as an Inference addon thanks to @NeuralFault!
 - Added togglable `--uv` argument to the SD.Next launch options
 ### Changed
-- Moved the original Stable Diffusion WebUI Forge to the "Legacy" packages tab due to inactivity
+- Moved the original Stable AuraFlow Studio WebUI Forge to the "Legacy" packages tab due to inactivity
 - Updated to cu130 torch index for ComfyUI installs with Nvidia GPUs
 - Consolidated and fixed AMD GPU architecture detection
 - Updated SageAttention installer to latest v2.2.0-windows.post4 version
 - Updated torch index for Forge-based UIs to rocm6.4 / cu128 depending on GPU - thanks to @NeuralFault!
 ### Fixed
-- Fixed [#1450](https://github.com/LykosAI/AuraFlow/issues/1450) - Older SD.Next not launching due to forced `--uv` argument
+- Fixed [#1450](https://github.com/Luky Tech/AuraFlow/issues/1450) - Older SD.Next not launching due to forced `--uv` argument
 - Fixed duplicate custom node installations when installing workflows from the Workflow Browser - thanks again to @NeuralFault!
 #### 🌟 Visionaries
 To our incredible Visionaries: **Waterclouds**, **JungleDragon**, **bluepopsicle**, **Bob S**, and **whudunit**! Your generosity drives this project forward and helps us turn ideas into reality. Thank you for being such a vital part of AuraFlow Studio!
@@ -66,7 +93,7 @@ A massive thank you to our Pioneer crew! Your support keeps the lights on and th
 - Updated nunchaku installer to 1.0.2
 - Updated Package Import dialog to have Python version selector
 ### Fixed
-- Fixed [#1435](https://github.com/LykosAI/AuraFlow/issues/1435) - SwarmUI not launching due to missing dotnet
+- Fixed [#1435](https://github.com/Luky Tech/AuraFlow/issues/1435) - SwarmUI not launching due to missing dotnet
 - Fixed various install and Inference issues with ComfyUI-Zluda - big thanks to @neural_fault for the PRs!
 - Fixed sageattention version getting out of sync after torch updates in ComfyUI
 - Potentially fixed issue where uv-managed Python versions would not appear in the version selector
@@ -82,10 +109,10 @@ A huge shoutout to our amazing Pioneers, who keep the momentum going strong! Tha
 - Updated SwarmUI to launch via the launch script for better compatibility
 ### Fixed
 - Fixed cuDNN frontend error on ComfyUI-Zluda startup (thanks @neural_fault!)
-- Maybe finally actually fixed threading issue with the Python Packages dialog search box for real this time? (may fix [#1392](https://github.com/LykosAI/AuraFlow/issues/1392))
-- Fixed potential install failures when moving duplicate files into shared model folders (may fix [#1393](https://github.com/LykosAI/AuraFlow/issues/1393))
-- Fixed potential threading issues with the Inference image gallery (may fix [#1408](https://github.com/LykosAI/AuraFlow/issues/1408))
-- Fixed [#1424](https://github.com/LykosAI/AuraFlow/issues/1424) - Civitai account 401 error when connecting accounts, updated for new API changes
+- Maybe finally actually fixed threading issue with the Python Packages dialog search box for real this time? (may fix [#1392](https://github.com/Luky Tech/AuraFlow/issues/1392))
+- Fixed potential install failures when moving duplicate files into shared model folders (may fix [#1393](https://github.com/Luky Tech/AuraFlow/issues/1393))
+- Fixed potential threading issues with the Inference image gallery (may fix [#1408](https://github.com/Luky Tech/AuraFlow/issues/1408))
+- Fixed [#1424](https://github.com/Luky Tech/AuraFlow/issues/1424) - Civitai account 401 error when connecting accounts, updated for new API changes
 ### Supporters
 #### 🌟 Visionaries
 Our deepest gratitude to our Visionaries for their foundational support: **Waterclouds**, **JungleDragon**, **bluepopsicle**, **Bob S**, and **whudunit**! Your commitment allows us to focus on the essential work of squashing bugs and improving stability, ensuring a rock-solid experience for everyone.
@@ -96,40 +123,40 @@ A huge thank you to our incredible Pioneers for keeping the project on track! Yo
 ### Changed
 - Updated Avalonia to 11.3.7
 ### Fixed
-- Fixed [#1409](https://github.com/LykosAI/AuraFlow/issues/1409) - incorrect triton version installed during FramePack install on non-Windows systems
-- Fixed [#1410](https://github.com/LykosAI/AuraFlow/issues/1410) - crash when resizing Civitai model details page
-- Fixed [#1417](https://github.com/LykosAI/AuraFlow/issues/1417), [#1419](https://github.com/LykosAI/AuraFlow/issues/1419) - unable to connect Inference to ComfyUI after updating to latest ComfyUI
+- Fixed [#1409](https://github.com/Luky Tech/AuraFlow/issues/1409) - incorrect triton version installed during FramePack install on non-Windows systems
+- Fixed [#1410](https://github.com/Luky Tech/AuraFlow/issues/1410) - crash when resizing Civitai model details page
+- Fixed [#1417](https://github.com/Luky Tech/AuraFlow/issues/1417), [#1419](https://github.com/Luky Tech/AuraFlow/issues/1419) - unable to connect Inference to ComfyUI after updating to latest ComfyUI
 - Fixed missing dependencies for ComfyUI API nodes
 ### Supporters
 #### 🌟 Visionaries
 <<<<<<< HEAD
 Huge thanks to our incredible Visionaries: **Waterclouds**, **JungleDragon**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit**! You’re the reason AuraFlow Studio keeps pushing forward. Your support lights the path and keeps the dream alive.
 =======
-Huge thanks to our incredible Visionaries: **Waterclouds**, **JungleDragon**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit**! You’re the reason DiffusionHub Enterprise keeps pushing forward. Your support lights the path and keeps the dream alive.
+Huge thanks to our incredible Visionaries: **Waterclouds**, **JungleDragon**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit**! You’re the reason AuraFlow StudioHub Enterprise keeps pushing forward. Your support lights the path and keeps the dream alive.
 >>>>>>> origin/main
 #### 🚀 Pioneers
 Shoutout to our amazing Pioneer crew: **Szir777**, **Tigon**, **Noah M**, **USATechDude**, **Thom**, **SeraphOfSalem**, **Desert Viber**, **Tundra Everquill**, **Adam**, **Droolguy**, **Philip R.**, **ACTUALLY_the_Real_Willem_Dafoe**, and **takyamtom**! You help keep the gears turning and the magic flowing.
 
 ## v2.15.1
 ### Changed
-- Upgraded ComfyUI-Zluda and Stable Diffusion WebUI AMDGPU Forge packages to install and use HIP SDK 6.4.2
+- Upgraded ComfyUI-Zluda and Stable AuraFlow Studio WebUI AMDGPU Forge packages to install and use HIP SDK 6.4.2
 - Changed ComfyUI torch index from `cu129` back to `cu128` for better compatibility with custom nodes
 - Updated SageAttention installer to install v2.2.0-windows.post3
 - Updated Nunchaku installer to install v1.0.1
 - Updated Windows ROCm ComfyUI installs to use recommended environment variables by default
 ### Fixed
 <<<<<<< HEAD
-- Fixed [#1372](https://github.com/LykosAI/AuraFlow/issues/1372), [#1399](https://github.com/LykosAI/AuraFlow/issues/1399) - LiteAsyncException upon starting AuraFlow Studio v2.15.0
-- Fixed [#1391](https://github.com/LykosAI/AuraFlow/issues/1391) - "Failed to parse" error when upgrading pip packages with extra index url
-- Fixed [#1401](https://github.com/LykosAI/AuraFlow/issues/1401) - "Python <version> was not found and/or failed to install" errors when path contains special characters
-- Fixed [#1403](https://github.com/LykosAI/AuraFlow/issues/1403) - Checkpoint Manager filters not being saved correctly
-- Fixed [#1411](https://github.com/LykosAI/AuraFlow/issues/1411) - SD.Next installs not using correct torch version
+- Fixed [#1372](https://github.com/Luky Tech/AuraFlow/issues/1372), [#1399](https://github.com/Luky Tech/AuraFlow/issues/1399) - LiteAsyncException upon starting AuraFlow Studio v2.15.0
+- Fixed [#1391](https://github.com/Luky Tech/AuraFlow/issues/1391) - "Failed to parse" error when upgrading pip packages with extra index url
+- Fixed [#1401](https://github.com/Luky Tech/AuraFlow/issues/1401) - "Python <version> was not found and/or failed to install" errors when path contains special characters
+- Fixed [#1403](https://github.com/Luky Tech/AuraFlow/issues/1403) - Checkpoint Manager filters not being saved correctly
+- Fixed [#1411](https://github.com/Luky Tech/AuraFlow/issues/1411) - SD.Next installs not using correct torch version
 =======
-- Fixed [#1372](https://github.com/LykosAI/StabilityMatrix/issues/1372), [#1399](https://github.com/LykosAI/StabilityMatrix/issues/1399) - LiteAsyncException upon starting DiffusionHub Enterprise v2.15.0
-- Fixed [#1391](https://github.com/LykosAI/StabilityMatrix/issues/1391) - "Failed to parse" error when upgrading pip packages with extra index url
-- Fixed [#1401](https://github.com/LykosAI/StabilityMatrix/issues/1401) - "Python <version> was not found and/or failed to install" errors when path contains special characters
-- Fixed [#1403](https://github.com/LykosAI/StabilityMatrix/issues/1403) - Checkpoint Manager filters not being saved correctly
-- Fixed [#1411](https://github.com/LykosAI/StabilityMatrix/issues/1411) - SD.Next installs not using correct torch version
+- Fixed [#1372](https://github.com/Luky Tech/AuraFlow Studio/issues/1372), [#1399](https://github.com/Luky Tech/AuraFlow Studio/issues/1399) - LiteAsyncException upon starting AuraFlow StudioHub Enterprise v2.15.0
+- Fixed [#1391](https://github.com/Luky Tech/AuraFlow Studio/issues/1391) - "Failed to parse" error when upgrading pip packages with extra index url
+- Fixed [#1401](https://github.com/Luky Tech/AuraFlow Studio/issues/1401) - "Python <version> was not found and/or failed to install" errors when path contains special characters
+- Fixed [#1403](https://github.com/Luky Tech/AuraFlow Studio/issues/1403) - Checkpoint Manager filters not being saved correctly
+- Fixed [#1411](https://github.com/Luky Tech/AuraFlow Studio/issues/1411) - SD.Next installs not using correct torch version
 >>>>>>> origin/main
 - Fixed "cannot access local variable 'job' where it is not associated with a value" error when running jobs in AI Toolkit
 - Fixed Civitai browser not always returning at least 30 results when possible on initial search
@@ -179,9 +206,9 @@ A huge round of applause for our fantastic Pioneers! Your steady support helps u
 - Updated all Python version management, virtual environment creation, and pip installs to use `uv` for improved reliability, compatibility, and speed
 - You can now select release versions when installing ComfyUI
 - You can no longer select branches when installing InvokeAI
-- Updated InvokeAI install to use the intended install method (resolves [#1329](https://github.com/LykosAI/AuraFlow/issues/1329))
+- Updated InvokeAI install to use the intended install method (resolves [#1329](https://github.com/Luky Tech/AuraFlow/issues/1329))
 - Updated ComfyUI installs for AMD users on Linux to use the latest rocm6.3 torch index
-- Updated ComfyUI-Zluda installs to use the newer install-n method (fixes [#1347](https://github.com/LykosAI/AuraFlow/issues/1347))
+- Updated ComfyUI-Zluda installs to use the newer install-n method (fixes [#1347](https://github.com/Luky Tech/AuraFlow/issues/1347))
 - Removed disclaimer from reForge since the author is now active again
 - Updated git operations to better avoid conflicts
 - Updated Japanese translation
@@ -195,21 +222,21 @@ A huge round of applause for our fantastic Pioneers! Your steady support helps u
 ### Fixed
 - Fixed an error when packages and other processes exit before process tracking on windows can initialize
 - Fixed "none" appearing in wildcard field when using Face Detailer in Inference
-- Fixed [#1254](https://github.com/LykosAI/AuraFlow/issues/1254) - Unable to scroll samplers in Inference
-- Fixed [#1294](https://github.com/LykosAI/AuraFlow/issues/1294) - Improper sorting of output folders in Output Browser
-- Fixed [#1300](https://github.com/LykosAI/AuraFlow/issues/1300) - Git errors when installing Extension Packs
-- Fixed [#1317](https://github.com/LykosAI/AuraFlow/issues/1317) - Inference missing GGUF text encoders
-- Fixed [#1324](https://github.com/LykosAI/AuraFlow/issues/1324) - Window height slightly increasing every launch
-- Fixed [#1357](https://github.com/LykosAI/AuraFlow/issues/1357) - Case insensitivity causing duplicate key exceptions on non-Windows systems
-- Fixed [#1360](https://github.com/LykosAI/AuraFlow/issues/1360) - A1111 install not using correct torch for 5000-series GPUs
-- Fixed [#1361](https://github.com/LykosAI/AuraFlow/issues/1361) - numpy and other Forge startup
-- Fixed [#1365](https://github.com/LykosAI/AuraFlow/issues/1365) - Output folder list not updating when Refresh button clicked
+- Fixed [#1254](https://github.com/Luky Tech/AuraFlow/issues/1254) - Unable to scroll samplers in Inference
+- Fixed [#1294](https://github.com/Luky Tech/AuraFlow/issues/1294) - Improper sorting of output folders in Output Browser
+- Fixed [#1300](https://github.com/Luky Tech/AuraFlow/issues/1300) - Git errors when installing Extension Packs
+- Fixed [#1317](https://github.com/Luky Tech/AuraFlow/issues/1317) - Inference missing GGUF text encoders
+- Fixed [#1324](https://github.com/Luky Tech/AuraFlow/issues/1324) - Window height slightly increasing every launch
+- Fixed [#1357](https://github.com/Luky Tech/AuraFlow/issues/1357) - Case insensitivity causing duplicate key exceptions on non-Windows systems
+- Fixed [#1360](https://github.com/Luky Tech/AuraFlow/issues/1360) - A1111 install not using correct torch for 5000-series GPUs
+- Fixed [#1361](https://github.com/Luky Tech/AuraFlow/issues/1361) - numpy and other Forge startup
+- Fixed [#1365](https://github.com/Luky Tech/AuraFlow/issues/1365) - Output folder list not updating when Refresh button clicked
 ### Supporters
 #### 🌟 Visionaries
 <<<<<<< HEAD
 To our incredible Visionaries, the architects of our ambition: Your profound support is the powerhouse behind this massive v2.15.0 release. You don't just light the path; you fuel the entire journey, allowing us to build bigger, move faster, and turn bold ideas into reality. Our deepest gratitude to: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, **whudunit**, and **TheTekknician**! We are immensely grateful for your trust and partnership in shaping the future of AuraFlow Studio. Thank you for everything!
 =======
-To our incredible Visionaries, the architects of our ambition: Your profound support is the powerhouse behind this massive v2.15.0 release. You don't just light the path; you fuel the entire journey, allowing us to build bigger, move faster, and turn bold ideas into reality. Our deepest gratitude to: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, **whudunit**, and **TheTekknician**! We are immensely grateful for your trust and partnership in shaping the future of DiffusionHub Enterprise. Thank you for everything!
+To our incredible Visionaries, the architects of our ambition: Your profound support is the powerhouse behind this massive v2.15.0 release. You don't just light the path; you fuel the entire journey, allowing us to build bigger, move faster, and turn bold ideas into reality. Our deepest gratitude to: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, **whudunit**, and **TheTekknician**! We are immensely grateful for your trust and partnership in shaping the future of AuraFlow StudioHub Enterprise. Thank you for everything!
 >>>>>>> origin/main
 #### 🚀 Pioneers
 A heartfelt salute to our trailblazing Pioneers! Your consistent support helps us navigate the development landscape, ensuring we stay on the right track and can explore new frontiers. A huge thanks to: **tankfox**, **Mr. Unknown**, **Szir777**, **Tigon**, **Noah M**, **USATechDude**, **Thom**, **SeraphOfSalem**, and a special welcome to our newest Pioneers - **Desert Viber**, **Tundra Everquill**, **Adam**, and **Droolguy**! Thank you for being the vanguard of our community!
@@ -233,19 +260,19 @@ A heartfelt salute to our trailblazing Pioneers! Your consistent support helps u
 - Fixed duplicate Python versions appearing in the Advanced Options when installing a package
 - Fixed an error when packages and other processes exit before process tracking on windows can initialize
 - Fixed "none" appearing in wildcard field when using Face Detailer in Inference
-- Fixed [#1254](https://github.com/LykosAI/AuraFlow/issues/1254) - Unable to scroll samplers in Inference
-- Fixed [#1294](https://github.com/LykosAI/AuraFlow/issues/1294) - Improper sorting of output folders in Output Browser
-- Fixed [#1300](https://github.com/LykosAI/AuraFlow/issues/1300) - Git errors when installing Extension Packs
-- Fixed [#1317](https://github.com/LykosAI/AuraFlow/issues/1317) - Inference missing GGUF text encoders
-- Fixed [#1324](https://github.com/LykosAI/AuraFlow/issues/1324) - Window height slightly increasing every launch
-- Fixed [#1360](https://github.com/LykosAI/AuraFlow/issues/1360) - A1111 install not using correct torch for 5000-series GPUs
-- Fixed [#1361](https://github.com/LykosAI/AuraFlow/issues/1361) - numpy and other Forge startup
+- Fixed [#1254](https://github.com/Luky Tech/AuraFlow/issues/1254) - Unable to scroll samplers in Inference
+- Fixed [#1294](https://github.com/Luky Tech/AuraFlow/issues/1294) - Improper sorting of output folders in Output Browser
+- Fixed [#1300](https://github.com/Luky Tech/AuraFlow/issues/1300) - Git errors when installing Extension Packs
+- Fixed [#1317](https://github.com/Luky Tech/AuraFlow/issues/1317) - Inference missing GGUF text encoders
+- Fixed [#1324](https://github.com/Luky Tech/AuraFlow/issues/1324) - Window height slightly increasing every launch
+- Fixed [#1360](https://github.com/Luky Tech/AuraFlow/issues/1360) - A1111 install not using correct torch for 5000-series GPUs
+- Fixed [#1361](https://github.com/Luky Tech/AuraFlow/issues/1361) - numpy and other Forge startup
 ### Supporters
 #### 🌟 Visionaries
 <<<<<<< HEAD
 A huge thank-you to our incredible Visionary-tier supporters: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, **whudunit**, and **Akiro_Senkai**! Your continued support lights the way for AuraFlow Studio and helps us keep building features like these. We couldn’t do it without you.
 =======
-A huge thank-you to our incredible Visionary-tier supporters: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, **whudunit**, and **Akiro_Senkai**! Your continued support lights the way for DiffusionHub Enterprise and helps us keep building features like these. We couldn’t do it without you.
+A huge thank-you to our incredible Visionary-tier supporters: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, **whudunit**, and **Akiro_Senkai**! Your continued support lights the way for AuraFlow StudioHub Enterprise and helps us keep building features like these. We couldn’t do it without you.
 >>>>>>> origin/main
 
 ## v2.15.0-pre.1
@@ -272,7 +299,7 @@ A huge thank-you to our incredible Visionary-tier supporters: **Waterclouds**, *
 - You can no longer select branches when installing InvokeAI
 - Updated InvokeAI install to use pinned torch index from release tag
 - Updated ComfyUI installs for AMD users on Linux to use the latest rocm6.3 torch index
-- Updated ComfyUI-Zluda installs to use the newer install-n method (fixes [#1347](https://github.com/LykosAI/AuraFlow/issues/1347))
+- Updated ComfyUI-Zluda installs to use the newer install-n method (fixes [#1347](https://github.com/Luky Tech/AuraFlow/issues/1347))
 - Updated uv to 0.8.4
 - Removed disclaimer from reForge since the author is now active again
 - Updated git operations to better avoid conflicts
@@ -284,13 +311,13 @@ A huge thank-you to our incredible Visionary-tier supporters: **Waterclouds**, *
 - Fixed some first-time setup crashes from missing prerequisites
 - Fixed one-click installer not using default preferred Python version
 - Fixed updating from old installs of InvokeAI using old frontend
-- Fixed [#1357](https://github.com/LykosAI/AuraFlow/issues/1357) - Case insensitivity causing duplicate key exceptions on non-Windows systems
+- Fixed [#1357](https://github.com/Luky Tech/AuraFlow/issues/1357) - Case insensitivity causing duplicate key exceptions on non-Windows systems
 ### Supporters
 #### 🌟 Visionaries
 <<<<<<< HEAD
 To our brilliant Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit** — your support is the spark that keeps AuraFlow Studio blazing forward. Thanks to you, we can explore bolder features, tackle complex challenges, and keep making the impossible feel effortless. Thank you all so very much! 🚀
 =======
-To our brilliant Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit** — your support is the spark that keeps DiffusionHub Enterprise blazing forward. Thanks to you, we can explore bolder features, tackle complex challenges, and keep making the impossible feel effortless. Thank you all so very much! 🚀
+To our brilliant Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit** — your support is the spark that keeps AuraFlow StudioHub Enterprise blazing forward. Thanks to you, we can explore bolder features, tackle complex challenges, and keep making the impossible feel effortless. Thank you all so very much! 🚀
 >>>>>>> origin/main
 
 ## v2.15.0-dev.2
@@ -310,10 +337,10 @@ To our brilliant Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepop
 - Changed InvokeAI update process to no longer clone the repo
 ### Fixed
 - Fixed missing .NET 8 dependency for SwarmUI installs in certain cases
-- Fixed [#1291](https://github.com/LykosAI/AuraFlow/issues/1291) - Certain GPUs not being detected on Linux
-- Fixed [#1284](https://github.com/LykosAI/AuraFlow/issues/1284) - Output browser not ignoring InvokeAI thumbnails folders
-- Fixed [#1305](https://github.com/LykosAI/AuraFlow/issues/1305) - FluxGym installing incorrect packages for Blackwell GPUs
-- Fixed [#1316](https://github.com/LykosAI/AuraFlow/issues/1316) - Errors when installing Triton & SageAttention
+- Fixed [#1291](https://github.com/Luky Tech/AuraFlow/issues/1291) - Certain GPUs not being detected on Linux
+- Fixed [#1284](https://github.com/Luky Tech/AuraFlow/issues/1284) - Output browser not ignoring InvokeAI thumbnails folders
+- Fixed [#1305](https://github.com/Luky Tech/AuraFlow/issues/1305) - FluxGym installing incorrect packages for Blackwell GPUs
+- Fixed [#1316](https://github.com/Luky Tech/AuraFlow/issues/1316) - Errors when installing Triton & SageAttention
 - Fixed "directory is not empty" error when updating packages with symlinks
 - Fixed missing base model types in the Checkpoint Manager & Civitai Model Browser
 ### Supporters
@@ -321,7 +348,7 @@ To our brilliant Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepop
 <<<<<<< HEAD
 A huge thank you to our amazing Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and our newest Visionary, **whudunit**! 🚀 Your generous support enables AuraFlow Studio to grow faster and tackle ambitious new ideas. You're truly making all the magic happen!
 =======
-A huge thank you to our amazing Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and our newest Visionary, **whudunit**! 🚀 Your generous support enables DiffusionHub Enterprise to grow faster and tackle ambitious new ideas. You're truly making all the magic happen!
+A huge thank you to our amazing Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and our newest Visionary, **whudunit**! 🚀 Your generous support enables AuraFlow StudioHub Enterprise to grow faster and tackle ambitious new ideas. You're truly making all the magic happen!
 >>>>>>> origin/main
 
 ## v2.15.0-dev.1
@@ -338,7 +365,7 @@ A huge thank you to our amazing Visionary-tier Patrons: **Waterclouds**, **Corey
 <<<<<<< HEAD
 A massive thank you to our esteemed Visionary-tier Patrons: **Waterclouds**, **bluepopsicle**, **Bob S**, **Ibixat**, and **Corey T**! Your exceptional commitment propels AuraFlow Studio to new heights and allows us to push the boundaries of innovation. We're incredibly grateful for your foundational support! 🚀
 =======
-A massive thank you to our esteemed Visionary-tier Patrons: **Waterclouds**, **bluepopsicle**, **Bob S**, **Ibixat**, and **Corey T**! Your exceptional commitment propels DiffusionHub Enterprise to new heights and allows us to push the boundaries of innovation. We're incredibly grateful for your foundational support! 🚀
+A massive thank you to our esteemed Visionary-tier Patrons: **Waterclouds**, **bluepopsicle**, **Bob S**, **Ibixat**, and **Corey T**! Your exceptional commitment propels AuraFlow StudioHub Enterprise to new heights and allows us to push the boundaries of innovation. We're incredibly grateful for your foundational support! 🚀
 >>>>>>> origin/main
 
 ## v2.14.3
@@ -353,11 +380,11 @@ A massive thank you to our esteemed Visionary-tier Patrons: **Waterclouds**, **b
 ### Fixed
 - Fixed missing .NET 8 dependency for SwarmUI installs in certain cases
 - Fixed ComfyUI-Zluda not being recognized as a valid Comfy install for the workflow browser
-- Fixed [#1291](https://github.com/LykosAI/AuraFlow/issues/1291) - Certain GPUs not being detected on Linux
-- Fixed [#1284](https://github.com/LykosAI/AuraFlow/issues/1284) - Output browser not ignoring InvokeAI thumbnails folders
-- Fixed [#1301](https://github.com/LykosAI/AuraFlow/issues/1301) - Error when installing kohya_ss
-- Fixed [#1305](https://github.com/LykosAI/AuraFlow/issues/1305) - FluxGym installing incorrect packages for Blackwell GPUs
-- Fixed [#1316](https://github.com/LykosAI/AuraFlow/issues/1316) - Errors when installing Triton & SageAttention
+- Fixed [#1291](https://github.com/Luky Tech/AuraFlow/issues/1291) - Certain GPUs not being detected on Linux
+- Fixed [#1284](https://github.com/Luky Tech/AuraFlow/issues/1284) - Output browser not ignoring InvokeAI thumbnails folders
+- Fixed [#1301](https://github.com/Luky Tech/AuraFlow/issues/1301) - Error when installing kohya_ss
+- Fixed [#1305](https://github.com/Luky Tech/AuraFlow/issues/1305) - FluxGym installing incorrect packages for Blackwell GPUs
+- Fixed [#1316](https://github.com/Luky Tech/AuraFlow/issues/1316) - Errors when installing Triton & SageAttention
 - Fixed "directory is not empty" error when updating packages with symlinks
 - Fixed missing base model types in the Checkpoint Manager & Civitai Model Browser
 ### Supporters
@@ -365,7 +392,7 @@ A massive thank you to our esteemed Visionary-tier Patrons: **Waterclouds**, **b
 <<<<<<< HEAD
 Big heartfelt thanks to our stellar Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit**! 🌟 Your extraordinary generosity continues to fuel AuraFlow Studio’s journey toward innovation and excellence. We appreciate you immensely!
 =======
-Big heartfelt thanks to our stellar Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit**! 🌟 Your extraordinary generosity continues to fuel DiffusionHub Enterprise’s journey toward innovation and excellence. We appreciate you immensely!
+Big heartfelt thanks to our stellar Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Ibixat**, and **whudunit**! 🌟 Your extraordinary generosity continues to fuel AuraFlow StudioHub Enterprise’s journey toward innovation and excellence. We appreciate you immensely!
 >>>>>>> origin/main
 #### 🚀 Pioneers
 Massive thanks to our fantastic Pioneer-tier Patrons: **tankfox**, **Mr. Unknown**, **Szir777**, **Tigon**, **Noah M**, **USATechDude**, **Thom**, and **SeraphOfSalem**! Your unwavering support keeps our community thriving and inspires us to push even further. You’re all awesome!
@@ -374,17 +401,17 @@ Massive thanks to our fantastic Pioneer-tier Patrons: **tankfox**, **Mr. Unknown
 ### Changed
 - Changed Nvidia GPU detection to use compute capability level instead of the GPU name for certain feature gates / torch indexes
 ### Fixed
-- Fixed [#1266](https://github.com/LykosAI/AuraFlow/issues/1266) - crash when moving or deleting Lora models in the Checkpoint Manager
-- Fixed [#1268](https://github.com/LykosAI/AuraFlow/issues/1268) - wrong torch index used for Nvidia 1000-series GPUs and older
-- Fixed [#1269](https://github.com/LykosAI/AuraFlow/issues/1269), [#1257](https://github.com/LykosAI/AuraFlow/issues/1257), [#1234](https://github.com/LykosAI/AuraFlow/issues/1234) - "no such file or directory" errors when updating certain packages after folder migration
-- Fixed [#1274](https://github.com/LykosAI/AuraFlow/issues/1274), [#1276](https://github.com/LykosAI/AuraFlow/issues/1276) - incorrect torch installed when updating to InvokeAI v5.12+
+- Fixed [#1266](https://github.com/Luky Tech/AuraFlow/issues/1266) - crash when moving or deleting Lora models in the Checkpoint Manager
+- Fixed [#1268](https://github.com/Luky Tech/AuraFlow/issues/1268) - wrong torch index used for Nvidia 1000-series GPUs and older
+- Fixed [#1269](https://github.com/Luky Tech/AuraFlow/issues/1269), [#1257](https://github.com/Luky Tech/AuraFlow/issues/1257), [#1234](https://github.com/Luky Tech/AuraFlow/issues/1234) - "no such file or directory" errors when updating certain packages after folder migration
+- Fixed [#1274](https://github.com/Luky Tech/AuraFlow/issues/1274), [#1276](https://github.com/Luky Tech/AuraFlow/issues/1276) - incorrect torch installed when updating to InvokeAI v5.12+
 - Fixed missing shared folder links for SwarmUI's diffusion_models and clip folders
 ### Supporters
 #### 🌟 Visionaries
 <<<<<<< HEAD
 Our deepest gratitude to the brilliant Visionary-tier Patrons: **Waterclouds**, **bluepopsicle**, **Bob S**, **Ibixat**, and **Corey T**! Your incredible backing is instrumental in shaping the future of AuraFlow Studio and empowering us to deliver cutting-edge features. Thank you for believing in our vision! 🙏
 =======
-Our deepest gratitude to the brilliant Visionary-tier Patrons: **Waterclouds**, **bluepopsicle**, **Bob S**, **Ibixat**, and **Corey T**! Your incredible backing is instrumental in shaping the future of DiffusionHub Enterprise and empowering us to deliver cutting-edge features. Thank you for believing in our vision! 🙏
+Our deepest gratitude to the brilliant Visionary-tier Patrons: **Waterclouds**, **bluepopsicle**, **Bob S**, **Ibixat**, and **Corey T**! Your incredible backing is instrumental in shaping the future of AuraFlow StudioHub Enterprise and empowering us to deliver cutting-edge features. Thank you for believing in our vision! 🙏
 >>>>>>> origin/main
 #### 🚀 Pioneers
 A huge shout-out to our fantastic Pioneer-tier Patrons: **Mr. Unknown**, **tankfox**, **Szir777**, **Noah M**, **USATechDude**, **Thom**, **TheTekknician**, and **SeraphOfSalem**! Your consistent support and active engagement are vital to our community's growth and our ongoing development efforts. You truly make a difference! ✨
@@ -407,7 +434,7 @@ A huge shout-out to our fantastic Pioneer-tier Patrons: **Mr. Unknown**, **tankf
 <<<<<<< HEAD
 Big cheers to our incredible Visionary-tier Patrons: **bluepopsicle**, **Bob S**, **Ibixat**, **Waterclouds**, and **Corey T**! 🚀 Your amazing support lets us dream bigger and reach further every single month. Thanks for being the driving force behind AuraFlow Studio - we genuinely couldn't do it without you!
 =======
-Big cheers to our incredible Visionary-tier Patrons: **bluepopsicle**, **Bob S**, **Ibixat**, **Waterclouds**, and **Corey T**! 🚀 Your amazing support lets us dream bigger and reach further every single month. Thanks for being the driving force behind DiffusionHub Enterprise - we genuinely couldn't do it without you!
+Big cheers to our incredible Visionary-tier Patrons: **bluepopsicle**, **Bob S**, **Ibixat**, **Waterclouds**, and **Corey T**! 🚀 Your amazing support lets us dream bigger and reach further every single month. Thanks for being the driving force behind AuraFlow StudioHub Enterprise - we genuinely couldn't do it without you!
 >>>>>>> origin/main
 #### 🚀 Pioneers
 Huge thanks to our fantastic Pioneer-tier Patrons: **tankfox**, **Mr. Unknown**, **Szir777**, **Tigon**, and **Noah M**! Special shoutout and welcome back to **TheTekknician**, and a warm welcome aboard to our newest Pioneers: **USATechDude**, **SeraphOfSalem**, and **Thom**! ✨ Your continued support keeps our community vibrant and pushes us to keep creating. You all rock!
@@ -415,8 +442,8 @@ Huge thanks to our fantastic Pioneer-tier Patrons: **tankfox**, **Mr. Unknown**,
 ## v2.14.0
 ### Added
 #### New Packages & Integrations
-- Added new package - [Stable Diffusion WebUI AMDGPU Forge](https://github.com/lshqqytiger/stable-diffusion-webui-amdgpu-forge)
-- Added new package - [Stable Diffusion WebUI Forge - Classic](https://github.com/Haoming02/sd-webui-forge-classic)
+- Added new package - [Stable AuraFlow Studio WebUI AMDGPU Forge](https://github.com/lshqqytiger/stable-diffusion-webui-amdgpu-forge)
+- Added new package - [Stable AuraFlow Studio WebUI Forge - Classic](https://github.com/Haoming02/sd-webui-forge-classic)
 - Added new Package Command (in the 3-dots menu) for installing Triton & SageAttention in ComfyUI
 #### Inference Features
 - Added Prompt Amplifier to Inference - click the magic wand 🪄 in the prompt editor to expand and enrich your ideas. Tailor the vibe with the ‘Feel’ selector and watch as your generations come to life with extra detail, coherence, and flair!
@@ -498,14 +525,14 @@ Huge thanks to our fantastic Pioneer-tier Patrons: **tankfox**, **Mr. Unknown**,
 <<<<<<< HEAD
 Our heartfelt gratitude goes out to our amazing Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Akiro_Senkai**, and **Ibixat**! Your exceptional support is fundamental to the ongoing development and success of AuraFlow Studio. We are immensely grateful for your partnership and belief in the project! 🙏
 =======
-Our heartfelt gratitude goes out to our amazing Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Akiro_Senkai**, and **Ibixat**! Your exceptional support is fundamental to the ongoing development and success of DiffusionHub Enterprise. We are immensely grateful for your partnership and belief in the project! 🙏
+Our heartfelt gratitude goes out to our amazing Visionary-tier Patrons: **Waterclouds**, **Corey T**, **bluepopsicle**, **Bob S**, **Akiro_Senkai**, and **Ibixat**! Your exceptional support is fundamental to the ongoing development and success of AuraFlow StudioHub Enterprise. We are immensely grateful for your partnership and belief in the project! 🙏
 >>>>>>> origin/main
 #### Pioneers
 We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **tankfox**, **Mr. Unknown**, **Szir777**, **Tigon**, **NowFallenAngel**, **Al Gorithm**, and welcome to our newest Pioneer, **Noah M.**! Your consistent support and enthusiasm keep the momentum going. Thank you all for being such an important part of our community! ✨
 
 ## v2.14.0-pre.2
 ### Added
-- Added new package - [Stable Diffusion WebUI Forge - Classic](https://github.com/Haoming02/sd-webui-forge-classic)
+- Added new package - [Stable AuraFlow Studio WebUI Forge - Classic](https://github.com/Haoming02/sd-webui-forge-classic)
 - Added Accelerated Model Discovery (Beta) (⚡ icon in Civitai Browser) for Insider+ supporters. Utilizes an optimized connection for dramatically faster, more responsive browsing of online model repositories.
 - Added Undo/Redo commands to text editor context menus
 - Added Prompt Amplifier to Inference - click the magic wand 🪄 in the prompt editor to expand and enrich your ideas. Tailor the vibe with the ‘Feel’ selector and watch as your generations come to life with extra detail, coherence, and flair!
@@ -529,7 +556,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 <<<<<<< HEAD
 - Big shout-out to our Visionary-tier patrons: Waterclouds, Corey T, bluepopsicle, and Bob S! Your steadfast support keeps AuraFlow Studio moving forward, and we couldn’t do it without you. 🚀 Thank you!
 =======
-- Big shout-out to our Visionary-tier patrons: Waterclouds, Corey T, bluepopsicle, and Bob S! Your steadfast support keeps DiffusionHub Enterprise moving forward, and we couldn’t do it without you. 🚀 Thank you!
+- Big shout-out to our Visionary-tier patrons: Waterclouds, Corey T, bluepopsicle, and Bob S! Your steadfast support keeps AuraFlow StudioHub Enterprise moving forward, and we couldn’t do it without you. 🚀 Thank you!
 >>>>>>> origin/main
 
 ## v2.14.0-pre.1
@@ -570,14 +597,14 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 <<<<<<< HEAD
 - A special shout-out to our fantastic Visionary-tier Patreon supporters: Waterclouds, Corey T, and our newest Visionaries, bluepopsicle and Bob S! Your continued generosity powers the future of AuraFlow Studio—thank you so much!
 =======
-- A special shout-out to our fantastic Visionary-tier Patreon supporters: Waterclouds, Corey T, and our newest Visionaries, bluepopsicle and Bob S! Your continued generosity powers the future of DiffusionHub Enterprise—thank you so much!
+- A special shout-out to our fantastic Visionary-tier Patreon supporters: Waterclouds, Corey T, and our newest Visionaries, bluepopsicle and Bob S! Your continued generosity powers the future of AuraFlow StudioHub Enterprise—thank you so much!
 >>>>>>> origin/main
 
 ## v2.14.0-dev.3
 ### Added
 - Added Wan 2.1 Text to Video and Text to Image project types for Inference
 - Added Wan 2.1 files to the HuggingFace model browser
-- Added new package - [Stable Diffusion WebUI AMDGPU Forge](https://github.com/lshqqytiger/stable-diffusion-webui-amdgpu-forge)
+- Added new package - [Stable AuraFlow Studio WebUI AMDGPU Forge](https://github.com/lshqqytiger/stable-diffusion-webui-amdgpu-forge)
 - Added support for RTX 5000-series GPUs in ComfyUI, Forge, and reForge
 - Added "Rebuild .NET Project" command to SwarmUI installs - available via the 3-dots menu -> Package Commands -> Rebuild .NET Project
 - Added new autocomplete tag source to Inference - [Danbooru/e621 merged tags](https://civitai.com/models/950325?modelVersionId=1419692)
@@ -586,12 +613,12 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Upgraded Lykos account connection to use OAuth 2.0 device flow
 - (Internal) Updated Avalonia to 11.2.5
 ### Fixed
-- Fixed [#1128](https://github.com/LykosAI/AuraFlow/issues/1128) - overwriting models when downloading multiple with the same name
+- Fixed [#1128](https://github.com/Luky Tech/AuraFlow/issues/1128) - overwriting models when downloading multiple with the same name
 - Fixed ROCm torch indexes for ComfyUI & Forge
-- Fixed model browser sometimes downloading to `ModelsLora` or `ModelsStableDiffusion` folders instead of the correct folder
+- Fixed model browser sometimes downloading to `ModelsLora` or `ModelsStableAuraFlow Studio` folders instead of the correct folder
 - Fixed incorrect Unet folder path for ComfyUI users on Linux/macOS
-- Fixed [#1157](https://github.com/LykosAI/AuraFlow/issues/1157) - crash when broken symlinks exist in model directories
-- Fixed [#1154](https://github.com/LykosAI/AuraFlow/issues/1154) - increased width for package name on the package cards
+- Fixed [#1157](https://github.com/Luky Tech/AuraFlow/issues/1157) - crash when broken symlinks exist in model directories
+- Fixed [#1154](https://github.com/Luky Tech/AuraFlow/issues/1154) - increased width for package name on the package cards
 - Fixed ComfyUI-Zluda not being recognized as an option for Inference or SwarmUI
 - Fixed SwarmUI showing Python options in the 3-dots menu
 - Fixed SD.Next install failures in certain cases when using Zluda
@@ -616,14 +643,14 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed HiresFix Inference addon not inheriting sampler/scheduler properly
 - Fixed some plus (+) buttons getting cut off in the Inference UI
 - Fixed CFG Rescale addon interfering with refiner model in Inference
-- Fixed [#1083](https://github.com/LykosAI/AuraFlow/issues/1083) - "Show Nested Models" incorrectly displaying models from some non-nested folders
+- Fixed [#1083](https://github.com/Luky Tech/AuraFlow/issues/1083) - "Show Nested Models" incorrectly displaying models from some non-nested folders
 - Fixed issue with InvokeAI model sharing when the host address is set to 0.0.0.0
 - Fixed issue when parsing index URLs in Python Dependencies Override menu
 - Fixed ComfyUI-Zluda not respecting pip user overrides
 - Fixed issue with Checkpoint Manager not displaying any models
 - (dev.2 re-release) Fixed autocomplete not showing in certain cases when using wildcards
 - (dev.2 re-release) Fixed package restart button not working 
-- (dev.2 re-release) Fixed [#1120](https://github.com/LykosAI/AuraFlow/issues/1120) - crash when right clicking in the console after restarting a package
+- (dev.2 re-release) Fixed [#1120](https://github.com/Luky Tech/AuraFlow/issues/1120) - crash when right clicking in the console after restarting a package
 ### Supporters
 #### Visionaries
 - A huge thank you to our incredible Visionary-tier Patreon supporters, **Waterclouds**, **TheTekknician**, and our newest Visionary, **Corey**! Your generous support is greatly appreciated!
@@ -644,14 +671,14 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed Inference mask editor failing to paint to the right-most edge on large images
 - Fixed Inference mask editor not showing the entire image in certain circumstances
 - Fixed an issue where certain sampler/scheduler combos would not get saved in image metadata - thanks to @yansigit!
-- Fixed [#1078](https://github.com/LykosAI/AuraFlow/issues/1078) - "Call from invalid thread" error after one-click install finishes
-- Fixed [#1080](https://github.com/LykosAI/AuraFlow/issues/1080) - Some models not displayed in Checkpoint Manager
+- Fixed [#1078](https://github.com/Luky Tech/AuraFlow/issues/1078) - "Call from invalid thread" error after one-click install finishes
+- Fixed [#1080](https://github.com/Luky Tech/AuraFlow/issues/1080) - Some models not displayed in Checkpoint Manager
 ### Supporters
 #### Visionaries
 <<<<<<< HEAD
 - Many thanks to our incredible Visionary-tier Patreon supporters, **Waterclouds** and **TheTekknician**! Your support helps us continue to improve AuraFlow Studio!
 =======
-- Many thanks to our incredible Visionary-tier Patreon supporters, **Waterclouds** and **TheTekknician**! Your support helps us continue to improve DiffusionHub Enterprise!
+- Many thanks to our incredible Visionary-tier Patreon supporters, **Waterclouds** and **TheTekknician**! Your support helps us continue to improve AuraFlow StudioHub Enterprise!
 >>>>>>> origin/main
 
 ## v2.13.4
@@ -663,12 +690,12 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Upgraded Lykos account connection to use OAuth 2.0 device flow
 - (Internal) Updated Avalonia to 11.2.5
 ### Fixed
-- Fixed [#1128](https://github.com/LykosAI/AuraFlow/issues/1128) - overwriting models when downloading multiple with the same name
+- Fixed [#1128](https://github.com/Luky Tech/AuraFlow/issues/1128) - overwriting models when downloading multiple with the same name
 - Fixed ROCm torch indexes for ComfyUI & Forge
-- Fixed model browser sometimes downloading to `ModelsLora` or `ModelsStableDiffusion` folders instead of the correct folder
+- Fixed model browser sometimes downloading to `ModelsLora` or `ModelsStableAuraFlow Studio` folders instead of the correct folder
 - Fixed incorrect Unet folder path for ComfyUI users on Linux/macOS
-- Fixed [#1157](https://github.com/LykosAI/AuraFlow/issues/1157) - crash when broken symlinks exist in model directories
-- Fixed [#1154](https://github.com/LykosAI/AuraFlow/issues/1154) - increased width for package name on the package cards
+- Fixed [#1157](https://github.com/Luky Tech/AuraFlow/issues/1157) - crash when broken symlinks exist in model directories
+- Fixed [#1154](https://github.com/Luky Tech/AuraFlow/issues/1154) - increased width for package name on the package cards
 - Fixed ComfyUI-Zluda not being recognized as an option for Inference or SwarmUI
 - Fixed SwarmUI showing Python options in the 3-dots menu
 - Fixed SD.Next install failures in certain cases when using Zluda
@@ -682,8 +709,8 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ### Changed
 - "Remove symbolic links on shutdown" option now also removes links from Output Sharing
 ### Fixed
-- Fixed [#1083](https://github.com/LykosAI/AuraFlow/issues/1083) - "Show Nested Models" incorrectly displaying models from some non-nested folders
-- Fixed [#1120](https://github.com/LykosAI/AuraFlow/issues/1120) - crash when right clicking in the console after restarting a package
+- Fixed [#1083](https://github.com/Luky Tech/AuraFlow/issues/1083) - "Show Nested Models" incorrectly displaying models from some non-nested folders
+- Fixed [#1120](https://github.com/Luky Tech/AuraFlow/issues/1120) - crash when right clicking in the console after restarting a package
 - Fixed issue with InvokeAI model sharing when the host address is set to 0.0.0.0
 - Fixed issue when parsing index URLs in Python Dependencies Override menu
 - Fixed issue where models were filtered incorrectly in the Checkpoint Manager
@@ -696,7 +723,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 
 ## v2.13.2
 ### Changed
-- Removed SimpleSDXL due to security concerns - thanks to @iwr-redmond for the detailed report. For more information please visit https://github.com/LykosAI/AuraFlow/security/advisories.
+- Removed SimpleSDXL due to security concerns - thanks to @iwr-redmond for the detailed report. For more information please visit https://github.com/Luky Tech/AuraFlow/security/advisories.
 ### Supporters
 #### Visionaries
 - Many thanks to our amazing Visionary-tier Patrons, **Waterclouds** and **TheTekknician**! Your support is greatly appreciated!
@@ -709,8 +736,8 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - "Clear All" button will now remain at the top of the Downloads list regardless of scroll position - thanks to @Genteure!
 - Improved image metadata parsing - thanks to @Genteure!
 ### Fixed
-- Fixed [#1078](https://github.com/LykosAI/AuraFlow/issues/1078) - "Call from invalid thread" error after one-click install finishes
-- Fixed [#1080](https://github.com/LykosAI/AuraFlow/issues/1080) - Some models not displayed in Checkpoint Manager
+- Fixed [#1078](https://github.com/Luky Tech/AuraFlow/issues/1078) - "Call from invalid thread" error after one-click install finishes
+- Fixed [#1080](https://github.com/Luky Tech/AuraFlow/issues/1080) - Some models not displayed in Checkpoint Manager
 - Fixed Inference image selector card buttons taking up the whole height of the card
 - Fixed Inference mask editor failing to paint to the right-most edge on large images
 - Fixed Inference mask editor not showing the entire image in certain circumstances
@@ -729,7 +756,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Added the Discrete Model Sampling addon for Inference samplers, allows selecting different sampling methods, such as v_prediction, lcm, or x0, and optionally adjusts the model’s noise reduction strategy with the zero-shot noise ratio (ZSNR) toggle.
 - Added Default GPU override in Settings -> System Settings -> Default GPU
 - Added new "Copy" menu to the Inference gallery context menu, allowing you to copy generation parameters as well as the image
-- Added "StableDiffusion" folder as an option when downloading Flux models in the CivitAI model browser
+- Added "StableAuraFlow Studio" folder as an option when downloading Flux models in the CivitAI model browser
 - Added support for SD3.5 in Inference
 - Added CLIP_G to HuggingFace model browser
 - Added search bar to the Installed Workflows tab
@@ -765,7 +792,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ## v2.13.0-pre.2
 ### Added
 - Added new package - [ComfyUI-Zluda](https://github.com/patientx/ComfyUI-Zluda) - for AMD GPU users on Windows
-- Added "StableDiffusion" folder as an option when downloading Flux models in the CivitAI model browser
+- Added "StableAuraFlow Studio" folder as an option when downloading Flux models in the CivitAI model browser
 ### Changed
 - Updated pytorch index to `rocm6.2` for AMD users of ComfyUI on Linux
 ### Supporters
@@ -834,8 +861,8 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Updated the Dock library used for Inference - fixes some weirdness with resizing / rearranging panels
 ### Fixed
 - Fixed ComfyUI NF4 extension not installing properly when prompted in Inference
-- Fixed [#932](https://github.com/LykosAI/AuraFlow/issues/932), [#935](https://github.com/LykosAI/AuraFlow/issues/935), [#939](https://github.com/LykosAI/AuraFlow/issues/939) - InvokeAI failing to update
-- Fixed repeated nested folders being created in `Models/StableDiffusion` when using Forge in Symlink mode in certain conditions. Existing folders will be repaired to their original structure on launch.
+- Fixed [#932](https://github.com/Luky Tech/AuraFlow/issues/932), [#935](https://github.com/Luky Tech/AuraFlow/issues/935), [#939](https://github.com/Luky Tech/AuraFlow/issues/939) - InvokeAI failing to update
+- Fixed repeated nested folders being created in `Models/StableAuraFlow Studio` when using Forge in Symlink mode in certain conditions. Existing folders will be repaired to their original structure on launch.
 - Fixed minimize button not working on macOS
 - Fixed InvokeAI model sharing spamming the console with "This may take awhile" in certain conditions
 - Fixed text alignment issues in the Downloads tab for certain long names / progress infos
@@ -898,8 +925,8 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - (Internal) Updated to Avalonia 11.1.4
 ### Fixed
 - Fixed ComfyUI NF4 extension not installing properly when prompted in Inference
-- Fixed [#932](https://github.com/LykosAI/AuraFlow/issues/932), [#935](https://github.com/LykosAI/AuraFlow/issues/935), [#939](https://github.com/LykosAI/AuraFlow/issues/939) - InvokeAI failing to update
-- Fixed repeated nested folders being created in `Models/StableDiffusion` when using Forge in Symlink mode in certain conditions. Existing folders will be repaired to their original structure on launch.
+- Fixed [#932](https://github.com/Luky Tech/AuraFlow/issues/932), [#935](https://github.com/Luky Tech/AuraFlow/issues/935), [#939](https://github.com/Luky Tech/AuraFlow/issues/939) - InvokeAI failing to update
+- Fixed repeated nested folders being created in `Models/StableAuraFlow Studio` when using Forge in Symlink mode in certain conditions. Existing folders will be repaired to their original structure on launch.
 - Fixed minimize button not working on macOS
 
 ### Supporters
@@ -910,11 +937,11 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 
 ## v2.12.1
 ### Fixed
-- Fixed [#916](https://github.com/LykosAI/AuraFlow/issues/916) - InvokeAI failing to install/update on macOS
-- Fixed [#914](https://github.com/LykosAI/AuraFlow/issues/914) - Unable to use escaped colon `:` character in Inference prompts
-- Fixed [#908](https://github.com/LykosAI/AuraFlow/issues/908) - Forge unable to use models from "unet" shared folder
-- Fixed [#902](https://github.com/LykosAI/AuraFlow/issues/902) - Images from shared outputs folder not displaying properly in Stable Diffusion WebUI-UX
-- Fixed [#898](https://github.com/LykosAI/AuraFlow/issues/898) - Incorrect launch options for RuinedFooocus
+- Fixed [#916](https://github.com/Luky Tech/AuraFlow/issues/916) - InvokeAI failing to install/update on macOS
+- Fixed [#914](https://github.com/Luky Tech/AuraFlow/issues/914) - Unable to use escaped colon `:` character in Inference prompts
+- Fixed [#908](https://github.com/Luky Tech/AuraFlow/issues/908) - Forge unable to use models from "unet" shared folder
+- Fixed [#902](https://github.com/Luky Tech/AuraFlow/issues/902) - Images from shared outputs folder not displaying properly in Stable AuraFlow Studio WebUI-UX
+- Fixed [#898](https://github.com/Luky Tech/AuraFlow/issues/898) - Incorrect launch options for RuinedFooocus
 - Fixed index url parsing in Python Packages window causing some packages to not have versions available
 - Fixed a crash when switching between Model Sharing options for certain packages
 ### Supporters
@@ -927,7 +954,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ### Added
 #### New Packages
 - [Fooocus - mashb1t's 1-Up Edition](https://github.com/mashb1t/Fooocus) by mashb1t
-- [Stable Diffusion WebUI reForge](https://github.com/Panchovix/stable-diffusion-webui-reForge/) by Panchovix
+- [Stable AuraFlow Studio WebUI reForge](https://github.com/Panchovix/stable-diffusion-webui-reForge/) by Panchovix
 #### Inference
 - Added type-to-search for the Inference model selectors. Start typing while the dropdown is open to navigate the list.
 - Added "Model Loader" option to Inference, for loading UNet/GGUF/NF4 models (e.g. Flux)
@@ -937,9 +964,9 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Added Face Detailer module to Inference
 #### Package Manager
 - Added Python dependencies override table to package installation options, where the default pip packages may be overriden for a package's install and updates. This can be changed later or added to existing packages through `Package Menu > Python Dependencies Override`
-- Added "Change Version" option to the package card overflow menu, allowing you to downgrade or upgrade a package to a specific version or commit ([#701](https://github.com/LykosAI/AuraFlow/issues/701), [#857](https://github.com/LykosAI/AuraFlow/issues/857))
+- Added "Change Version" option to the package card overflow menu, allowing you to downgrade or upgrade a package to a specific version or commit ([#701](https://github.com/Luky Tech/AuraFlow/issues/701), [#857](https://github.com/Luky Tech/AuraFlow/issues/857))
 - Added "Disable Update Check" option to the package card overflow menu, allowing you to disable update checks for a specific package
-- Added Custom commit option in the Advanced Options for package installs ([#670](https://github.com/LykosAI/AuraFlow/issues/670), [#839](https://github.com/LykosAI/AuraFlow/issues/839), [#842](https://github.com/LykosAI/AuraFlow/issues/842))
+- Added Custom commit option in the Advanced Options for package installs ([#670](https://github.com/Luky Tech/AuraFlow/issues/670), [#839](https://github.com/Luky Tech/AuraFlow/issues/839), [#842](https://github.com/Luky Tech/AuraFlow/issues/842))
 - Added macOS support for Fooocus & related forks
 - Added Intel OneAPI XPU backend (IPEX) option for SD.Next
 #### Checkpoint Manager
@@ -968,7 +995,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Optimized image loading across the app, with loading speed now up to 4x faster for local images, and up to 17x faster for remote images
 - Image loading in the Outputs page now uses native memory management for ~2x less peak memory usage, and will release memory more quickly when switching away from the Outputs page or scrolling images out of view
 - Improved animation fluidity of image rendering while scrolling quickly across large collections (e.g. Outputs, Model Browser)
-- ComfyUI will no longer be pinned to torch 2.1.2 for nvidia users on Windows ([#861](https://github.com/LykosAI/AuraFlow/issues/861))
+- ComfyUI will no longer be pinned to torch 2.1.2 for nvidia users on Windows ([#861](https://github.com/Luky Tech/AuraFlow/issues/861))
 - Model browser download progress no longer covers the entire card for the entire duration of the download
 - Updated torch index to `rocm6.1` for AMD users of ComfyUI
 - Show better error message for early access model downloads
@@ -982,16 +1009,16 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - (Internal) Updated SkiaSharp (Rendering Backend) to 3.0.0-preview.4.1, potentially fixes issues with window rendering artifacts on some machines.
 - (Internal) Updated other dependencies for security and bug fixes.
 ### Fixed
-- Fixed [#888](https://github.com/LykosAI/AuraFlow/issues/888) - error updating kohya_ss due to long paths
+- Fixed [#888](https://github.com/Luky Tech/AuraFlow/issues/888) - error updating kohya_ss due to long paths
 - Fixed some ScrollViewers changing scroll position when focus changes
 - Fixed CivitAI Model Browser sometimes incorrectly showing "No models found" before toggling "Show NSFW" or "Hide Installed" filters
 - Fixed SwarmUI settings being overwritten on launch
 - Fixed issue where some Inference-generated images would be saved with the bottom missing
-- Fixed [#851](https://github.com/LykosAI/AuraFlow/issues/851) - missing fbgemm.dll errors when using latest torch with certain packages
+- Fixed [#851](https://github.com/Luky Tech/AuraFlow/issues/851) - missing fbgemm.dll errors when using latest torch with certain packages
 - Fixed issue where ApproxVAE models would show up in the VAE folder
-- Fixed [#878](https://github.com/LykosAI/AuraFlow/issues/878) - Checkpoints tab will no longer try to browse directories it can't access
+- Fixed [#878](https://github.com/Luky Tech/AuraFlow/issues/878) - Checkpoints tab will no longer try to browse directories it can't access
 - Fixed crash when opening Settings page when refreshing CivitAI account status results in an error
-- Fixed [#814](https://github.com/LykosAI/AuraFlow/issues/814), [#875](https://github.com/LykosAI/AuraFlow/issues/875) - Error when installing RuinedFooocus
+- Fixed [#814](https://github.com/Luky Tech/AuraFlow/issues/814), [#875](https://github.com/Luky Tech/AuraFlow/issues/875) - Error when installing RuinedFooocus
 - LORAs are now sorted by model name properly in the Extra Networks dropdown
 - (macOS) Fixed OAuth connection prompts in Account Settings not automatically updating status after connection. Custom URL schemes are now also supported on macOS builds.
 ### Supporters
@@ -1015,7 +1042,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed CivitAI Browser page scroll refresh not ordering models correctly
 - Fixed missing fbgemm.dll errors when using latest torch with certain packages
 - Fixed issue where ApproxVAE models would show up in the VAE folder
-- Fixed [#878](https://github.com/LykosAI/AuraFlow/issues/878) - Checkpoints tab will no longer try to browse directories it can't access
+- Fixed [#878](https://github.com/Luky Tech/AuraFlow/issues/878) - Checkpoints tab will no longer try to browse directories it can't access
 - Fixed crash when opening Settings page when refreshing CivitAI account status results in an error
 ### Supporters
 #### Visionaries
@@ -1096,7 +1123,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - (Internal) Updated other dependencies for security and bug fixes.
 ### Fixed
 - Fixed some ScrollViewers changing scroll position when focus changes
-- Fixed [#782](https://github.com/LykosAI/AuraFlow/issues/782) - conflict error when launching new versions of Forge
+- Fixed [#782](https://github.com/Luky Tech/AuraFlow/issues/782) - conflict error when launching new versions of Forge
 - Fixed incorrect torch versions being installed for InvokeAI
 ### Supporters
 #### Visionaries
@@ -1105,7 +1132,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ## v2.12.0-dev.1
 ### Added
 - Added new package: [Fooocus - mashb1t's 1-Up Edition](https://github.com/mashb1t/Fooocus) by mashb1t
-- Added new package: [Stable Diffusion WebUI reForge](https://github.com/Panchovix/stable-diffusion-webui-reForge/) by Panchovix
+- Added new package: [Stable AuraFlow Studio WebUI reForge](https://github.com/Panchovix/stable-diffusion-webui-reForge/) by Panchovix
 - Image viewer context menus now have 2 options: `Copy (Ctrl+C)` which now always copies the image as a file, and `Copy as Bitmap (Shift+Ctrl+C)` (Available on Windows) which copies to the clipboard as native bitmap. This changes the previous single `Copy` button behavior that would first attempt a native bitmap copy on Windows when available, and fall back to a file copy if not.
 - Added "Change Version" option to the package card overflow menu, allowing you to downgrade or upgrade a package to a specific version or commit
 - Added "Disable Update Check" option to the package card overflow menu, allowing you to disable update checks for a specific package
@@ -1123,9 +1150,9 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ### Changed
 - Updated Brazilian Portuguese translations thanks to thiagojramos
 ### Fixed
-- Fixed [#840](https://github.com/LykosAI/AuraFlow/issues/840) - CivitAI model browser not loading search results
+- Fixed [#840](https://github.com/Luky Tech/AuraFlow/issues/840) - CivitAI model browser not loading search results
 - Fixed SwarmUI settings being overwritten on launch
-- Fixed [#832](https://github.com/LykosAI/AuraFlow/issues/832) [#847](https://github.com/LykosAI/AuraFlow/issues/847) - Forge output folder links pointing to the incorrect folder
+- Fixed [#832](https://github.com/Luky Tech/AuraFlow/issues/832) [#847](https://github.com/Luky Tech/AuraFlow/issues/847) - Forge output folder links pointing to the incorrect folder
 - Fixed errors when downloading models with invalid characters in the file name
 - Fixed error when installing RuinedFooocus on nvidia GPUs
 ### Supporters
@@ -1147,8 +1174,8 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed incorrect IPAdapter download links in the HuggingFace model browser
 - Fixed potential memory leak of transient controls (Inference Prompt and Output Image Viewer) not being garbage collected due to event subscriptions
 - Fixed Batch Count seeds not being recorded properly in Inference projects and image metadata
-- Fixed [#795](https://github.com/LykosAI/AuraFlow/issues/795) - SwarmUI launch args not working properly
-- Fixed [#745](https://github.com/LykosAI/AuraFlow/issues/745) - not passing Environment Variables to SwarmUI
+- Fixed [#795](https://github.com/Luky Tech/AuraFlow/issues/795) - SwarmUI launch args not working properly
+- Fixed [#745](https://github.com/Luky Tech/AuraFlow/issues/745) - not passing Environment Variables to SwarmUI
 ### Supporters
 #### Visionaries
 - Shoutout to our Visionary-tier Patreon supporter, **Scopp Mcdee**! Huge thanks for your continued support!
@@ -1160,7 +1187,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Added DoRA category to CivitAI model browser
 ### Fixed
 - Fixed `TaskCanceledException` when adding CivitAI Api key or searching for models when the API takes too long to respond. Retry and timeout behavior has been improved.
-- Fixed [#782](https://github.com/LykosAI/AuraFlow/issues/782) - conflict error when launching new versions of Forge
+- Fixed [#782](https://github.com/Luky Tech/AuraFlow/issues/782) - conflict error when launching new versions of Forge
 - Fixed incorrect torch versions being installed for InvokeAI
 - Fixed `ArgumentOutOfRangeException` with the Python Packages dialog ItemSourceView when interacting too quickly after loading.
 ### Supporters
@@ -1176,14 +1203,14 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - (Debug) Logging verbosity for classes can now be configured with environment variables (`Logging__LogLevel__<TypeFullName>`).  
 ### Fixed
 - Fixed ComfyUI slower generation speed with new torch versions not including flash attention for windows, pinned `torch==2.1.2` for ComfyUI on Windows CUDA
-- Fixed [#719](https://github.com/LykosAI/AuraFlow/issues/719) - Fix comments in Inference prompt not being ignored
+- Fixed [#719](https://github.com/Luky Tech/AuraFlow/issues/719) - Fix comments in Inference prompt not being ignored
 - Fixed TaskCanceledException when Inference prompts finish before the delayed progress handler (250ms)
 ### Supporters
 #### Visionaries
 <<<<<<< HEAD
 - Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve AuraFlow Studio!
 =======
-- Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve DiffusionHub Enterprise!
+- Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve AuraFlow StudioHub Enterprise!
 >>>>>>> origin/main
 #### Pioneers
 - Thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support is greatly appreciated!
@@ -1197,13 +1224,13 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fooocus Package - Added `pip>=23.3.2,<24.1` specifier before install, fixes potential install errors due to deprecated requirement spec used by `torchsde`.
 - Fixed error when launching SwarmUI when installed to a path with spaces
 - Fixed issue where model folders were being created too late in certain cases
-- Fixed [#683](https://github.com/LykosAI/AuraFlow/issues/683) - Model indexing causing LiteDB errors after upgrading from older versions due to updated enum values
+- Fixed [#683](https://github.com/Luky Tech/AuraFlow/issues/683) - Model indexing causing LiteDB errors after upgrading from older versions due to updated enum values
 ### Supporters
 #### Visionaries
 <<<<<<< HEAD
 - Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve AuraFlow Studio!
 =======
-- Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve DiffusionHub Enterprise!
+- Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve AuraFlow StudioHub Enterprise!
 >>>>>>> origin/main
 #### Pioneers
 - Thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support is greatly appreciated!
@@ -1213,13 +1240,13 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - StableSwarmUI installs will be migrated to SwarmUI by mcmonkeyprojects the next time the package is updated
   - Note: As of 2024/06/21 StableSwarmUI will no longer be maintained under Stability AI. The original developer will be maintaining an independent version of this project
 ### Fixed
-- Fixed [#700](https://github.com/LykosAI/AuraFlow/issues/700) - `cannot import 'packaging'` error for Forge
+- Fixed [#700](https://github.com/Luky Tech/AuraFlow/issues/700) - `cannot import 'packaging'` error for Forge
 ### Supporters
 #### Visionaries
 <<<<<<< HEAD
 - Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve AuraFlow Studio!
 =======
-- Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve DiffusionHub Enterprise!
+- Huge thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your support helps us continue to improve AuraFlow StudioHub Enterprise!
 >>>>>>> origin/main
 #### Pioneers
 - Thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support is greatly appreciated!
@@ -1229,9 +1256,9 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Added Rename option back to the Checkpoints page
 ### Changed
 - Unobserved Task Exceptions across the app will now show a toast notification to aid in debugging
-- Updated SD.Next Package details and thumbnail - [#697](https://github.com/LykosAI/AuraFlow/pull/697)
+- Updated SD.Next Package details and thumbnail - [#697](https://github.com/Luky Tech/AuraFlow/pull/697)
 ### Fixed
-- Fixed [#689](https://github.com/LykosAI/AuraFlow/issues/689) - New ComfyUI installs encountering launch error due to torch 2.0.0 update, added pinned `numpy==1.26.4` to install and update.
+- Fixed [#689](https://github.com/Luky Tech/AuraFlow/issues/689) - New ComfyUI installs encountering launch error due to torch 2.0.0 update, added pinned `numpy==1.26.4` to install and update.
 - Fixed Inference image mask editor's 'Load Mask' not able to load image files
 - Fixed Fooocus ControlNet default config shared folder mode not taking effect
 - Fixed tkinter python libraries not working on macOS with 'Can't find a usable init.tcl' error
@@ -1242,9 +1269,9 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 #### Pioneers
 - A big thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support helps us continue to improve AuraFlow Studio!
 =======
-- Shoutout to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support is appreciated and helps us continue to make DiffusionHub Enterprise better for everyone!
+- Shoutout to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support is appreciated and helps us continue to make AuraFlow StudioHub Enterprise better for everyone!
 #### Pioneers
-- A big thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support helps us continue to improve DiffusionHub Enterprise!
+- A big thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support helps us continue to improve AuraFlow StudioHub Enterprise!
 >>>>>>> origin/main
 
 ## v2.11.0
@@ -1252,7 +1279,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 #### Packages
 - Added new package: [SDFX](https://github.com/sdfxai/sdfx/) by sdfxai
 - Added ZLUDA option for SD.Next
-- Added more launch options for Forge - [#618](https://github.com/LykosAI/AuraFlow/issues/618)
+- Added more launch options for Forge - [#618](https://github.com/Luky Tech/AuraFlow/issues/618)
 - Added search bar to the Python Packages dialog
 #### Inference
 - Added Inpainting support for Image To Image projects using the new image mask canvas editor
@@ -1295,8 +1322,8 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed error when deleting Inference browser images in a nested project path with recycle bin mode
 - Fixed extra text in positive prompt when loading image parameters in Inference with empty negative prompt value
 - Fixed NullReferenceException that sometimes occurred when closing Inference tabs with images due to Avalonia.Bitmap.Size accessor issue
-- Fixed [#598](https://github.com/LykosAI/AuraFlow/issues/598) - program not exiting after printing help or version text
-- Fixed [#630](https://github.com/LykosAI/AuraFlow/issues/630) - InvokeAI update hangs forever waiting for input
+- Fixed [#598](https://github.com/Luky Tech/AuraFlow/issues/598) - program not exiting after printing help or version text
+- Fixed [#630](https://github.com/Luky Tech/AuraFlow/issues/630) - InvokeAI update hangs forever waiting for input
 - Fixed issue where the "installed" state on HuggingFace model browser was not always correct
 - Fixed model folders not being created on startup
 
@@ -1307,9 +1334,9 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 #### Pioneers
 - A big thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support helps us continue to improve AuraFlow Studio!
 =======
-- Shoutout to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support is appreciated and helps us continue to make DiffusionHub Enterprise better for everyone!
+- Shoutout to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support is appreciated and helps us continue to make AuraFlow StudioHub Enterprise better for everyone!
 #### Pioneers
-- A big thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support helps us continue to improve DiffusionHub Enterprise!
+- A big thank you to our Pioneer-tier supporters on Patreon, **tankfox** and **tanangular**! Your support helps us continue to improve AuraFlow StudioHub Enterprise!
 >>>>>>> origin/main
 
 ## v2.11.0-pre.2
@@ -1338,7 +1365,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 <<<<<<< HEAD
 - A heartfelt thank you to our Visionary-tier Patreon supporters, **Scopp Mcdee** and **Waterclouds**! Your generous contributions enable us to keep enhancing AuraFlow Studio!
 =======
-- A heartfelt thank you to our Visionary-tier Patreon supporters, **Scopp Mcdee** and **Waterclouds**! Your generous contributions enable us to keep enhancing DiffusionHub Enterprise!
+- A heartfelt thank you to our Visionary-tier Patreon supporters, **Scopp Mcdee** and **Waterclouds**! Your generous contributions enable us to keep enhancing AuraFlow StudioHub Enterprise!
 >>>>>>> origin/main
 
 ## v2.11.0-pre.1
@@ -1349,7 +1376,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Added PixArt & SDXL Hyper options to the Civitai model browser
 - Added release date to model update notification card on the Checkpoints page
 - Added option in Settings to choose whether to Copy or Move files when dragging and dropping files into the Checkpoint Manager
-- Added more launch options for Forge - [#618](https://github.com/LykosAI/AuraFlow/issues/618)
+- Added more launch options for Forge - [#618](https://github.com/Luky Tech/AuraFlow/issues/618)
 #### Inference
 - Added Inpainting support for Image To Image projects using the new image mask canvas editor
 ### Changed
@@ -1362,14 +1389,14 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed NullReferenceException that sometimes occured when closing Inference tabs with images due to Avalonia.Bitmap.Size accessor issue
 - Fixed package installs not showing any progress messages
 - Fixed crash when viewing model details for Unknown model types in the Checkpoint Manager
-- Fixed [#598](https://github.com/LykosAI/AuraFlow/issues/598) - program not exiting after printing help or version text
-- Fixed [#630](https://github.com/LykosAI/AuraFlow/issues/630) - InvokeAI update hangs forever waiting for input
+- Fixed [#598](https://github.com/Luky Tech/AuraFlow/issues/598) - program not exiting after printing help or version text
+- Fixed [#630](https://github.com/Luky Tech/AuraFlow/issues/630) - InvokeAI update hangs forever waiting for input
 ### Supporters
 #### Visionaries
 <<<<<<< HEAD
 - Many thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support helps us continue to improve AuraFlow Studio!
 =======
-- Many thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support helps us continue to improve DiffusionHub Enterprise!
+- Many thanks to our Visionary-tier supporters on Patreon, **Scopp Mcdee** and **Waterclouds**! Your generous support helps us continue to improve AuraFlow StudioHub Enterprise!
 >>>>>>> origin/main
 
 ## v2.11.0-dev.3
@@ -1432,14 +1459,14 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed pip installs not parsing comments properly
 - Fixed crash when sending input to a process that isn't running
 - Fixed breadcrumb on console page showing incorrect running package name
-- Fixed [#576](https://github.com/LykosAI/AuraFlow/issues/576) - drag & drop crashes on macOS & Linux
-- Fixed [#594](https://github.com/LykosAI/AuraFlow/issues/594) - missing thumbnails in Inference model selector
-- Fixed [#600](https://github.com/LykosAI/AuraFlow/issues/600) - kohya_ss v24+ not launching
-- Downgraded Avalonia back to 11.0.9 to fix [#589](https://github.com/LykosAI/AuraFlow/issues/589) and possibly other rendering issues
+- Fixed [#576](https://github.com/Luky Tech/AuraFlow/issues/576) - drag & drop crashes on macOS & Linux
+- Fixed [#594](https://github.com/Luky Tech/AuraFlow/issues/594) - missing thumbnails in Inference model selector
+- Fixed [#600](https://github.com/Luky Tech/AuraFlow/issues/600) - kohya_ss v24+ not launching
+- Downgraded Avalonia back to 11.0.9 to fix [#589](https://github.com/Luky Tech/AuraFlow/issues/589) and possibly other rendering issues
 
 ## v2.10.1
 ### Added
-- Added SVD Shared Model & Output Folders for Forge (fixes [#580](https://github.com/LykosAI/AuraFlow/issues/580))
+- Added SVD Shared Model & Output Folders for Forge (fixes [#580](https://github.com/Luky Tech/AuraFlow/issues/580))
 ### Changed
 - Improved error message when logging in with a Lykos account fails due to incorrect email or password
 - Model Browser & Workflow Browser now auto-load when first navigating to those pages
@@ -1449,11 +1476,11 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed "No refresh token found" error when failing to login with Lykos account in some cases
 - Fixed blank entries appearing in the Categories dropdown on the Checkpoints page
 - Fixed crash when loading invalid connected model info files
-- Fixed [#585](https://github.com/LykosAI/AuraFlow/issues/585) - Crash when drag & drop source and destination are the same
-- Fixed [#584](https://github.com/LykosAI/AuraFlow/issues/584) - `--launch-package` argument not working
-- Fixed [#581](https://github.com/LykosAI/AuraFlow/issues/581) - Inference teaching tip showing more often than it should
-- Fixed [#578](https://github.com/LykosAI/AuraFlow/issues/578) - "python setup.py egg_info did not run successfully" failure when installing Auto1111 or SDWebUI Forge
-- Fixed [#574](https://github.com/LykosAI/AuraFlow/issues/574) - local images not showing on macOS or Linux
+- Fixed [#585](https://github.com/Luky Tech/AuraFlow/issues/585) - Crash when drag & drop source and destination are the same
+- Fixed [#584](https://github.com/Luky Tech/AuraFlow/issues/584) - `--launch-package` argument not working
+- Fixed [#581](https://github.com/Luky Tech/AuraFlow/issues/581) - Inference teaching tip showing more often than it should
+- Fixed [#578](https://github.com/Luky Tech/AuraFlow/issues/578) - "python setup.py egg_info did not run successfully" failure when installing Auto1111 or SDWebUI Forge
+- Fixed [#574](https://github.com/Luky Tech/AuraFlow/issues/574) - local images not showing on macOS or Linux
 
 ## v2.10.0
 ### Added
@@ -1464,7 +1491,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 <<<<<<< HEAD
 - Added support for deep links from the new AuraFlow Studio Chrome extension
 =======
-- Added support for deep links from the new DiffusionHub Enterprise Chrome extension
+- Added support for deep links from the new AuraFlow StudioHub Enterprise Chrome extension
 >>>>>>> origin/main
 - Added OpenArt.AI workflow browser for ComfyUI workflows
 - Added more metadata to the image dialog info flyout
@@ -1479,9 +1506,9 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Changed to a new image control for pages with many images
 - (Internal) Updated to Avalonia 11.0.10
 ### Fixed
-- Fixed [#559](https://github.com/LykosAI/AuraFlow/issues/559) - "Unable to load bitmap from provided data" error in Checkpoints page
-- Fixed [#522](https://github.com/LykosAI/AuraFlow/issues/522) - Incorrect output directory path for latest Auto1111
-- Fixed [#529](https://github.com/LykosAI/AuraFlow/issues/529) - OneTrainer requesting input during update
+- Fixed [#559](https://github.com/Luky Tech/AuraFlow/issues/559) - "Unable to load bitmap from provided data" error in Checkpoints page
+- Fixed [#522](https://github.com/Luky Tech/AuraFlow/issues/522) - Incorrect output directory path for latest Auto1111
+- Fixed [#529](https://github.com/Luky Tech/AuraFlow/issues/529) - OneTrainer requesting input during update
 - Fixed Civitai model browser error when sorting by Installed with more than 100 installed models
 - Fixed CLIP Install errors due to setuptools distutils conflict, added default environment variable setting `SETUPTOOLS_USE_DISTUTILS=stdlib`
 - Fixed progress bars not displaying properly during package installs & updates
@@ -1517,7 +1544,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ### Fixed
 - Improved performance when deleting many images from the Outputs page
 - Fixed ComfyUI torch downgrading to 2.1.2 when updating
-- Fixed [#529](https://github.com/LykosAI/AuraFlow/issues/529) - OneTrainer requesting input during update
+- Fixed [#529](https://github.com/Luky Tech/AuraFlow/issues/529) - OneTrainer requesting input during update
 - Fixed "Could not find entry point for InvokeAI" error on InvokeAI v4.0+
 
 ## v2.10.0-dev.3
@@ -1525,7 +1552,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 <<<<<<< HEAD
 - Added support for deep links from the new AuraFlow Studio Chrome extension
 =======
-- Added support for deep links from the new DiffusionHub Enterprise Chrome extension
+- Added support for deep links from the new AuraFlow StudioHub Enterprise Chrome extension
 >>>>>>> origin/main
 ### Changed
 - Due to changes on the CivitAI API, you can no longer select a specific page in the CivitAI Model Browser
@@ -1568,7 +1595,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Removed Symlink option for InvokeAI to prevent InvokeAI from moving models into its own directories (will be replaced with a Config option in a future update)
 ### Fixed
 - Fixed images not appearing in Civitai Model Browser when "Show NSFW" was disabled
-- Fixed [#556](https://github.com/LykosAI/AuraFlow/issues/556) - "Could not find entry point for InvokeAI" error
+- Fixed [#556](https://github.com/Luky Tech/AuraFlow/issues/556) - "Could not find entry point for InvokeAI" error
 
 ## v2.9.2
 ### Changed
@@ -1583,13 +1610,13 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 
 ## v2.9.1
 ### Added
-- Fixed [#498](https://github.com/LykosAI/AuraFlow/issues/498) Added "Pony" category to CivitAI Model Browser
+- Fixed [#498](https://github.com/Luky Tech/AuraFlow/issues/498) Added "Pony" category to CivitAI Model Browser
 ### Changed
 - Changed package deletion warning dialog to require additional confirmation
 ### Fixed
-- Fixed [#502](https://github.com/LykosAI/AuraFlow/issues/502) - missing launch options for Forge
-- Fixed [#500](https://github.com/LykosAI/AuraFlow/issues/500) - missing output images in Forge when using output sharing
-- Fixed [#490](https://github.com/LykosAI/AuraFlow/issues/490) - `mpmath has no attribute 'rational'` error on macOS
+- Fixed [#502](https://github.com/Luky Tech/AuraFlow/issues/502) - missing launch options for Forge
+- Fixed [#500](https://github.com/Luky Tech/AuraFlow/issues/500) - missing output images in Forge when using output sharing
+- Fixed [#490](https://github.com/Luky Tech/AuraFlow/issues/490) - `mpmath has no attribute 'rational'` error on macOS
 - Fixed [#510](https://github.com/ionite34/AuraFlow/pull/564/files) - kohya_ss packages with v23.0.x failing to install due to missing 'packaging' dependency
 - Fixed incorrect progress text when deleting a checkpoint from the Checkpoints page
 - Fixed incorrect icon colors on macOS
@@ -1597,10 +1624,10 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ## v2.9.0
 ### Added
 - Added new package: [StableSwarmUI](https://github.com/Stability-AI/StableSwarmUI) by Stability AI
-- Added new package: [Stable Diffusion WebUI Forge](https://github.com/lllyasviel/stable-diffusion-webui-forge) by lllyasviel
-- Added extension management for SD.Next and Stable Diffusion WebUI-UX
+- Added new package: [Stable AuraFlow Studio WebUI Forge](https://github.com/lllyasviel/stable-diffusion-webui-forge) by lllyasviel
+- Added extension management for SD.Next and Stable AuraFlow Studio WebUI-UX
 - Added the ability to choose where CivitAI model downloads are saved
-- Added `--launch-package` argument to launch a specific package on startup, using display name or package ID (i.e. `--launch-package "Stable Diffusion WebUI Forge"` or `--launch-package c0b3ecc5-9664-4be9-952d-a10b3dcaee14`)
+- Added `--launch-package` argument to launch a specific package on startup, using display name or package ID (i.e. `--launch-package "Stable AuraFlow Studio WebUI Forge"` or `--launch-package c0b3ecc5-9664-4be9-952d-a10b3dcaee14`)
 - Added more Base Model search options to the CivitAI Model Browser
 - Added Stable Cascade to the HuggingFace Model Browser
 #### Inference
@@ -1612,8 +1639,8 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - (Internal) Updated to Avalonia 11.0.9
 ### Fixed
 - Fixed StableSwarmUI not installing properly on macOS
-- Fixed [#464](https://github.com/LykosAI/AuraFlow/issues/464) - error when installing InvokeAI on macOS
-- Fixed [#335](https://github.com/LykosAI/AuraFlow/issues/335) Update hanging indefinitely after git step for Auto1111 and SDWebUI Forge
+- Fixed [#464](https://github.com/Luky Tech/AuraFlow/issues/464) - error when installing InvokeAI on macOS
+- Fixed [#335](https://github.com/Luky Tech/AuraFlow/issues/335) Update hanging indefinitely after git step for Auto1111 and SDWebUI Forge
 - Fixed Inference output viewer menu "Copy" not copying image
 - Fixed image viewer dialog arrow key navigation not working
 - Fixed CivitAI login prompt not showing when downloading models that require CivitAI logins
@@ -1622,7 +1649,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 
 ## v2.9.0-pre.2
 ### Added
-- Added `--launch-package` argument to launch a specific package on startup, using display name or package ID (i.e. `--launch-package "Stable Diffusion WebUI Forge"` or `--launch-package c0b3ecc5-9664-4be9-952d-a10b3dcaee14`)
+- Added `--launch-package` argument to launch a specific package on startup, using display name or package ID (i.e. `--launch-package "Stable AuraFlow Studio WebUI Forge"` or `--launch-package c0b3ecc5-9664-4be9-952d-a10b3dcaee14`)
 - Added more Base Model search options to the CivitAI Model Browser
 - Added Stable Cascade to the HuggingFace Model Browser
 ### Changed
@@ -1637,8 +1664,8 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Added copy image support on linux and macOS for Inference outputs viewer menu
 ### Fixed
 - Fixed StableSwarmUI not installing properly on macOS
-- Fixed output sharing for Stable Diffusion WebUI Forge
-- Hopefully actually fixed [#464](https://github.com/LykosAI/AuraFlow/issues/464) - error when installing InvokeAI on macOS
+- Fixed output sharing for Stable AuraFlow Studio WebUI Forge
+- Hopefully actually fixed [#464](https://github.com/Luky Tech/AuraFlow/issues/464) - error when installing InvokeAI on macOS
 - Fixed default command line args for SDWebUI Forge on macOS
 - Fixed output paths and output sharing for SDWebUI Forge
 - Maybe fixed update hanging for Auto1111 and SDWebUI Forge
@@ -1654,20 +1681,20 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ## v2.9.0-dev.1
 ### Added
 - Added new package: [StableSwarmUI](https://github.com/Stability-AI/StableSwarmUI) by Stability AI
-- Added new package: [Stable Diffusion WebUI Forge](https://github.com/lllyasviel/stable-diffusion-webui-forge) by lllyasviel
-- Added extension management for SD.Next and Stable Diffusion WebUI-UX
+- Added new package: [Stable AuraFlow Studio WebUI Forge](https://github.com/lllyasviel/stable-diffusion-webui-forge) by lllyasviel
+- Added extension management for SD.Next and Stable AuraFlow Studio WebUI-UX
 - Added the ability to choose where CivitAI model downloads are saved
 
 ## v2.8.4
 ### Fixed
-- Hopefully actually fixed [#464](https://github.com/LykosAI/AuraFlow/issues/464) - error when installing InvokeAI on macOS
+- Hopefully actually fixed [#464](https://github.com/Luky Tech/AuraFlow/issues/464) - error when installing InvokeAI on macOS
 
 ## v2.8.3
 ### Fixed
 - Fixed user tokens read error causing failed downloads
 - Failed downloads will now log error messages
-- Fixed [#458](https://github.com/LykosAI/AuraFlow/issues/458) - Save Intermediate Image not working
-- Fixed [#453](https://github.com/LykosAI/AuraFlow/issues/453) - Update Fooocus `--output-directory` argument to `--output-path`
+- Fixed [#458](https://github.com/Luky Tech/AuraFlow/issues/458) - Save Intermediate Image not working
+- Fixed [#453](https://github.com/Luky Tech/AuraFlow/issues/453) - Update Fooocus `--output-directory` argument to `--output-path`
 
 ## v2.8.2
 ### Added
@@ -1688,7 +1715,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Improved error messages with process output for 7z extraction errors
 - Fixed missing tkinter dependency for OneTrainer on Windows
 - Fixed auto-update on macOS not starting new version from an issue in starting .app bundles with arguments
-- Fixed [#436](https://github.com/LykosAI/AuraFlow/issues/436) - Crash on invalid json files during checkpoint indexing
+- Fixed [#436](https://github.com/Luky Tech/AuraFlow/issues/436) - Crash on invalid json files during checkpoint indexing
 
 ## v2.8.0
 ### Added
@@ -1760,13 +1787,13 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
   - Currently available on Windows and Linux, macOS support is pending
 - Added settings options for notifications
 - Added new launch argument options for Fooocus
-- Added Automatic1111 & Stable Diffusion WebUI-UX to the compatible macOS packages
+- Added Automatic1111 & Stable AuraFlow Studio WebUI-UX to the compatible macOS packages
 ### Changed
 - Changed one-click installer to match the new package installation style
 - Automatic1111 packages will now use PyTorch v2.1.2. Upgrade will occur during the next package update or upon fresh installation.
 - Updated French translation with the latest changes
 ### Fixed
-- Fixed [#413](https://github.com/LykosAI/AuraFlow/issues/413) - Environment Variables are editable again
+- Fixed [#413](https://github.com/Luky Tech/AuraFlow/issues/413) - Environment Variables are editable again
 - Fixed potential SD.Next update issues by moving to shared update process
 - Fixed Invoke install trying to use system nodejs
 - Fixed crash on startup when Outputs page failed to load categories properly
@@ -1863,7 +1890,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ### Changed
 - Python Packages install dialog now allows entering multiple arguments or option flags
 ### Fixed
-- Fixed InvokeAI Package dependency versions ([#395](https://github.com/LykosAI/AuraFlow/pull/395))
+- Fixed InvokeAI Package dependency versions ([#395](https://github.com/Luky Tech/AuraFlow/pull/395))
 
 ## v2.7.7
 ### Added
@@ -1878,7 +1905,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 
 ## v2.7.6
 ### Added
-- Added SDXL Turbo and Stable Video Diffusion to the Hugging Face tab
+- Added SDXL Turbo and Stable Video AuraFlow Studio to the Hugging Face tab
 ### Changed
 - ControlNet model selector will now show the parent directory of a model when relevant
 ### Fixed
@@ -1909,7 +1936,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ### Fixed
 - Fixed UnicodeDecodeError when using extra_model_paths.yaml in ComfyUI on certain locales
 - Fixed SDXL CLIP Vision model directory name conflict
-- Fixed [#334](https://github.com/LykosAI/AuraFlow/issues/334) - Win32Exception if Settings are opened
+- Fixed [#334](https://github.com/Luky Tech/AuraFlow/issues/334) - Win32Exception if Settings are opened
 
 ## v2.7.2
 ### Changed
@@ -1981,7 +2008,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 <<<<<<< HEAD
 - Project files (.smproj) have been updated to v3, existing projects will be upgraded on load and will no longer be compatible with older versions of AuraFlow Studio
 =======
-- Project files (.smproj) have been updated to v3, existing projects will be upgraded on load and will no longer be compatible with older versions of DiffusionHub Enterprise
+- Project files (.smproj) have been updated to v3, existing projects will be upgraded on load and will no longer be compatible with older versions of AuraFlow StudioHub Enterprise
 >>>>>>> origin/main
 ### Fixed
 - Fixed Outputs page reverting back to Shared Output Folder every time the page is reloaded
@@ -1991,8 +2018,8 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed Python `rich` package's progress bars not showing in console
 - Optimized ProgressRing animation bindings to reduce CPU usage
 - Improved safety checks in custom control rendering to reduce potential graphical artifacts
-- Improved console rendering safety with cursor line increment clamping, as potential fix for [#111](https://github.com/LykosAI/AuraFlow/issues/111)
-- Fixed [#290](https://github.com/LykosAI/AuraFlow/issues/290) - Model browser crash due to text trimming certain unicode characters
+- Improved console rendering safety with cursor line increment clamping, as potential fix for [#111](https://github.com/Luky Tech/AuraFlow/issues/111)
+- Fixed [#290](https://github.com/Luky Tech/AuraFlow/issues/290) - Model browser crash due to text trimming certain unicode characters
 - Fixed crash when loading an empty settings file
 - Improve Settings save and load performance with .NET 8 Source Generating Serialization
 - Fixed ApplicationException during database shutdown
@@ -2019,7 +2046,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 <<<<<<< HEAD
 - Project files (.smproj) have been updated to v3, existing projects will be upgraded on load and will no longer be compatible with older versions of AuraFlow Studio
 =======
-- Project files (.smproj) have been updated to v3, existing projects will be upgraded on load and will no longer be compatible with older versions of DiffusionHub Enterprise
+- Project files (.smproj) have been updated to v3, existing projects will be upgraded on load and will no longer be compatible with older versions of AuraFlow StudioHub Enterprise
 >>>>>>> origin/main
 ### Fixed
 - Fixed Refiner model enabled state not saving to Inference project files
@@ -2053,11 +2080,11 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed Python `rich` package's progress bars not showing in console
 - Optimized ProgressRing animation bindings to reduce CPU usage
 - Improved safety checks in custom control rendering to reduce potential graphical artifacts
-- Improved console rendering safety with cursor line increment clamping, as potential fix for [#111](https://github.com/LykosAI/AuraFlow/issues/111)
+- Improved console rendering safety with cursor line increment clamping, as potential fix for [#111](https://github.com/Luky Tech/AuraFlow/issues/111)
 
 ## v2.7.0-dev.4
 ### Fixed
-- Fixed [#290](https://github.com/LykosAI/AuraFlow/issues/290) - Model browser crash due to text trimming certain unicode characters 
+- Fixed [#290](https://github.com/Luky Tech/AuraFlow/issues/290) - Model browser crash due to text trimming certain unicode characters 
 
 ## v2.7.0-dev.3
 ### Added
@@ -2111,11 +2138,11 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ## v2.6.7
 ### Fixed
 - Fixed prerequisite install not unpacking due to improperly formatted 7z argument (Caused the "python310._pth FileNotFoundException")
-- Fixed [#301](https://github.com/LykosAI/AuraFlow/issues/301) - Package updates failing silently because of a PortableGit error
+- Fixed [#301](https://github.com/Luky Tech/AuraFlow/issues/301) - Package updates failing silently because of a PortableGit error
 
 ## v2.6.6
 ### Fixed
-- Fixed [#297](https://github.com/LykosAI/AuraFlow/issues/297) - Model browser LiteAsyncException occuring when fetching entries with unrecognized values from enum name changes
+- Fixed [#297](https://github.com/Luky Tech/AuraFlow/issues/297) - Model browser LiteAsyncException occuring when fetching entries with unrecognized values from enum name changes
 
 ## v2.6.5
 ### Fixed
@@ -2154,8 +2181,8 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
   - This will link the package's output folders to the relevant subfolders in the "Outputs" directory
     - When a package only has a generic "outputs" folder, all generated images from that package will be linked to the "Outputs\Text2Img" folder when this option is enabled
 - Added **Outputs page** for viewing generated images from any package, or the shared output folder
-- Added [Stable Diffusion WebUI/UX](https://github.com/anapnoe/stable-diffusion-webui-ux) package
-- Added [Stable Diffusion WebUI-DirectML](https://github.com/lshqqytiger/stable-diffusion-webui-directml) package
+- Added [Stable AuraFlow Studio WebUI/UX](https://github.com/anapnoe/stable-diffusion-webui-ux) package
+- Added [Stable AuraFlow Studio WebUI-DirectML](https://github.com/lshqqytiger/stable-diffusion-webui-directml) package
 - Added [kohya_ss](https://github.com/bmaltais/kohya_ss) package
 - Added [Fooocus-ControlNet-SDXL](https://github.com/fenneishi/Fooocus-ControlNet-SDXL) package
 - Added GPU compatibility badges to the installers
@@ -2184,7 +2211,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 
 ## v2.5.7
 ### Fixed
-- Fixed error `got an unexpected keyword argument 'socket_options'` on fresh installs of Automatic1111 Stable Diffusion WebUI due to missing httpx dependency specification from gradio
+- Fixed error `got an unexpected keyword argument 'socket_options'` on fresh installs of Automatic1111 Stable AuraFlow Studio WebUI due to missing httpx dependency specification from gradio
 
 ## v2.5.6
 ### Added
@@ -2200,7 +2227,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 
 ## v2.5.4
 ### Fixed
-- Fixed [#208](https://github.com/LykosAI/AuraFlow/issues/208) - error when installing xformers
+- Fixed [#208](https://github.com/Luky Tech/AuraFlow/issues/208) - error when installing xformers
 
 ## v2.5.3
 ### Added
@@ -2228,7 +2255,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 
 ## v2.5.0
 ### Added
-- Added Inference, a built-in native Stable Diffusion interface, powered by ComfyUI
+- Added Inference, a built-in native Stable AuraFlow Studio interface, powered by ComfyUI
 - Added option to change the Shared Folder method for packages using the three-dots menu on the Packages page
 - Added the ability to Favorite models in the Model Browser
 - Added "Favorites" sort option to the Model Browser
@@ -2238,7 +2265,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Model Browser page size is now 20 instead of 14  
 - Update changelog now only shows the difference between the current version and the latest version
 ### Fixed
-- Fixed [#141](https://github.com/LykosAI/AuraFlow/issues/141) - Search not working when sorting by Installed on Model Browser
+- Fixed [#141](https://github.com/Luky Tech/AuraFlow/issues/141) - Search not working when sorting by Installed on Model Browser
 - Fixed SD.Next not showing "Open Web UI" button when finished loading
 - Fixed model index startup errors when `./Models` contains unknown custom folder names
 - Fixed ストップ button being cut off in Japanese translation 
@@ -2260,13 +2287,13 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 ### Added
 - Added button to toggle automatic scrolling of console output
 ### Fixed
-- Fixed [#130](https://github.com/LykosAI/AuraFlow/issues/130) ComfyUI extra_model_paths.yaml file being overwritten on each launch
+- Fixed [#130](https://github.com/Luky Tech/AuraFlow/issues/130) ComfyUI extra_model_paths.yaml file being overwritten on each launch
 - Fixed some package updates not showing any console output
 - Fixed auto-close of update dialog when package update is complete 
 
 ## v2.4.3
 ### Added
-- Added "--no-download-sd-model" launch argument option for Stable Diffusion Web UI
+- Added "--no-download-sd-model" launch argument option for Stable AuraFlow Studio Web UI
 - Added Chinese (Simplified) and Chinese (Traditional) UI language options, thanks to jimlovewine for the translations
 ### Changed
 - Package updates now use the new progress dialog with console output
@@ -2295,15 +2322,15 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
   - Shows progress in the Downloads tab
 - Even more performance improvements for loading and searching the Checkpoints page
 ### Fixed
-- Fixed [#97](https://github.com/LykosAI/AuraFlow/issues/97) - Codeformer folder should now get linked correctly
-- Fixed [#106](https://github.com/LykosAI/AuraFlow/issues/106) - ComfyUI should now install correctly on Windows machines with an AMD GPU using DirectML
-- Fixed [#107](https://github.com/LykosAI/AuraFlow/issues/107) - Added `--autolaunch` option to SD.Next
-- Fixed [#110](https://github.com/LykosAI/AuraFlow/issues/110) - Model Browser should properly navigate to the next page of Installed models
+- Fixed [#97](https://github.com/Luky Tech/AuraFlow/issues/97) - Codeformer folder should now get linked correctly
+- Fixed [#106](https://github.com/Luky Tech/AuraFlow/issues/106) - ComfyUI should now install correctly on Windows machines with an AMD GPU using DirectML
+- Fixed [#107](https://github.com/Luky Tech/AuraFlow/issues/107) - Added `--autolaunch` option to SD.Next
+- Fixed [#110](https://github.com/Luky Tech/AuraFlow/issues/110) - Model Browser should properly navigate to the next page of Installed models
 - Installed tag on model browser should now show for connected models imported via drag & drop
 
 ## v2.3.4
 ### Fixed
-- Fixed [#108](https://github.com/LykosAI/AuraFlow/issues/108) - (Linux) Fixed permission error on updates [#103](https://github.com/LykosAI/AuraFlow/pull/103)
+- Fixed [#108](https://github.com/Luky Tech/AuraFlow/issues/108) - (Linux) Fixed permission error on updates [#103](https://github.com/Luky Tech/AuraFlow/pull/103)
 
 ## v2.3.3
 ### Fixed
@@ -2311,8 +2338,8 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Fixed checkpoint file index extension identification with some path names
 - Fixed issue where config file may be overwritten during Automatic1111 package updates
 - Fixed "Directory Not Found" error on startup when previously selected Data directory does not exist
-- Fixed [#83](https://github.com/LykosAI/AuraFlow/issues/83) - Display of packages with long names in the Package Manager
-- Fixed [#64](https://github.com/LykosAI/AuraFlow/issues/64) - Package install error if venv already exists
+- Fixed [#83](https://github.com/Luky Tech/AuraFlow/issues/83) - Display of packages with long names in the Package Manager
+- Fixed [#64](https://github.com/Luky Tech/AuraFlow/issues/64) - Package install error if venv already exists
 
 ## v2.3.2
 ### Added
@@ -2365,7 +2392,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Animated page transitions
 
 ### Fixed
-- Fixed [#59](https://github.com/LykosAI/AuraFlow/issues/61) - `GIT` environment variable is now set for the embedded portable git on Windows as A1111 uses it instead of default `PATH` resolution
+- Fixed [#59](https://github.com/Luky Tech/AuraFlow/issues/61) - `GIT` environment variable is now set for the embedded portable git on Windows as A1111 uses it instead of default `PATH` resolution
 - Fixed embedded Python install check on Linux when an incompatible windows DLL is in the Python install directory
 - Fixed "ObjectDisposed" database errors that sometimes appeared when closing the app
 
@@ -2392,22 +2419,22 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - New installable Package - [VoltaML](https://github.com/VoltaML/voltaML-fast-stable-diffusion)
 - New installable Package - [InvokeAI](https://github.com/invoke-ai/InvokeAI)
 - Launch button can now support alternate commands / modes - currently only for InvokeAI
-  > ![](https://github.com/LykosAI/AuraFlow/assets/13956642/16a8ffdd-a3cb-4f4f-acc5-c062d3ade363)
+  > ![](https://github.com/Luky Tech/AuraFlow/assets/13956642/16a8ffdd-a3cb-4f4f-acc5-c062d3ade363)
 - Settings option to set global environment variables for Packages
-  > ![](https://github.com/LykosAI/AuraFlow/assets/13956642/d577918e-82bb-46d4-9a3a-9b5318d3d4d8)
+  > ![](https://github.com/Luky Tech/AuraFlow/assets/13956642/d577918e-82bb-46d4-9a3a-9b5318d3d4d8)
 
 ### Changed
 - Compatible packages (ComfyUI, Vlad/SD.Next) now use config files / launch args instead of symbolic links for shared model folder redirect
 
 ### Fixed
-- Fixed [#48](https://github.com/LykosAI/AuraFlow/issues/48) - model folders not showing in UI when they were empty
+- Fixed [#48](https://github.com/Luky Tech/AuraFlow/issues/48) - model folders not showing in UI when they were empty
 - Updater now shows correct current version without trailing `.0`
 - Fixed program sometimes starting off-screen on multi-monitor setups 
 - Fixed console input box transparency
-- Fixed [#52](https://github.com/LykosAI/AuraFlow/issues/52) - A1111 default approx-vae model download errors by switching default preview method to TAESD
-- Fixes [#50](https://github.com/LykosAI/AuraFlow/issues/50) - model browser crash when no model versions exist
-- Fixed [#31](https://github.com/LykosAI/AuraFlow/issues/31) - missing ControlNet link to Shared Models Folder for SD.Next
-- Fixed [#49](https://github.com/LykosAI/AuraFlow/issues/49) - download progress disappearing when changing pages in Model Browser
+- Fixed [#52](https://github.com/Luky Tech/AuraFlow/issues/52) - A1111 default approx-vae model download errors by switching default preview method to TAESD
+- Fixes [#50](https://github.com/Luky Tech/AuraFlow/issues/50) - model browser crash when no model versions exist
+- Fixed [#31](https://github.com/Luky Tech/AuraFlow/issues/31) - missing ControlNet link to Shared Models Folder for SD.Next
+- Fixed [#49](https://github.com/Luky Tech/AuraFlow/issues/49) - download progress disappearing when changing pages in Model Browser
 
 ## v2.0.4
 
@@ -2425,7 +2452,7 @@ We also want to give a huge thank you to our dedicated Pioneer-tier Patrons: **t
 - Improved model download hash verification performance
 - Fixed some text wrapping visuals on expanded model version dialog on model browser
 - Added cancel button for create folder dialog
-- One click first time installer now defaults to using the "Package" name instead of the display name ("stable-diffusion-webui" instead of "Stable Diffusion WebUI") for the install folder name - probably safer against upstream issues on folder names with spaces.
+- One click first time installer now defaults to using the "Package" name instead of the display name ("stable-diffusion-webui" instead of "Stable AuraFlow Studio WebUI") for the install folder name - probably safer against upstream issues on folder names with spaces.
 
 ## v2.0.2
 

@@ -26,7 +26,7 @@
 ## 📦 Struktura projekta
 
 ```
-Diffusion/
+AuraFlow Studio/
 ├── AuraFlow.Core/      # Glavna logika (Inference, FlowEngine)
 ├── AuraFlow.Native/    # Native interop
 ├── AuraFlow.Native.Abstractions/  # Abstrakcije
@@ -36,7 +36,7 @@ Diffusion/
 
 ## 🚀 Hitri začetek
 
-1. **Za fotografije**: Install → Stable Diffusion WebUI Forge ali FlowEngine
+1. **Za fotografije**: Install → Stable AuraFlow Studio WebUI Forge ali FlowEngine
 2. **Za video**: Install → Wan2GP ali CogVideo
 3. **Skupni modeli**: Vsi paketi delijo isto mapo `./models`
 
@@ -90,12 +90,12 @@ Diffusion/
 - **Flux Dev** - Najbolj kakovosten (priporočeno)
 - **SDXL Turbo** - Najhitrejši
 - **Realistic Vision** - Za fotorealizem
-- **Pony Diffusion** - Anime/illustration stil
+- **Pony AuraFlow Studio** - Anime/illustration stil
 
 ### Video:
 - **Wan2GP** - Wan 2.1 video modeli (priporočeno)
 - **CogVideo** - Generiranje videa iz besedila
-- **SVD** - Stable Video Diffusion
+- **SVD** - Stable Video AuraFlow Studio
 
 # Build in testiranje
 
@@ -131,6 +131,6 @@ Generiraj sliko ali video iz prompta.
 }
 ```
 
-- [AuraFlow Studio GitHub](https://github.com/LykosAI/AuraFlow)
+- [AuraFlow Studio GitHub](https://github.com/Luky Tech/AuraFlow)
 - [FlowEngine](https://github.com/comfyanonymous/ComfyUI)
 - [Wan2GP](https://github.com/deepbeepmeep/Wan2GP)

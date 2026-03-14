@@ -1,14 +1,14 @@
 # AuraFlow Studio
 
 <p align="center">
-  <a href="https://github.com/Lukifuki1/Diffusion">
-    <img src="https://img.shields.io/github/v/release/Lukifuki1/Diffusion?include_prereleases&label=latest" alt="Latest Release">
+  <a href="https://github.com/LukyTech/AuraFlow-Studio">
+    <img src="https://img.shields.io/github/v/release/LukyTech/AuraFlow-Studio?include_prereleases&label=latest" alt="Latest Release">
   </a>
-  <a href="https://github.com/Lukifuki1/Diffusion/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/Lukifuki1/Diffusion" alt="License">
+  <a href="https://github.com/LukyTech/AuraFlow-Studio/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/LukyTech/AuraFlow-Studio" alt="License">
   </a>
-  <a href="https://github.com/Lukifuki1/Diffusion/actions">
-    <img src="https://img.shields.io/github/actions/workflow/status/Lukifuki1/Diffusion/ci.yml" alt="CI Status">
+  <a href="https://github.com/LukyTech/AuraFlow-Studio/actions">
+    <img src="https://img.shields.io/github/actions/workflow/status/LukyTech/AuraFlow-Studio/ci.yml" alt="CI Status">
   </a>
   <img src="https://img.shields.io/badge/.NET-9.0-blue" alt=".NET 9.0">
 </p>
@@ -61,7 +61,7 @@ A professional-grade AI image and video generation platform with a clean, unifie
 ## 📦 Project Structure
 
 ```
-Diffusion/
+AuraFlow-Studio/
 ├── src/
 │   ├── AuraFlow/                      # Main web application
 │   │   ├── Controllers/              # REST API endpoints
@@ -111,8 +111,8 @@ Diffusion/
 
 ```bash
 # Clone the repository
-git clone https://github.com/Lukifuki1/Diffusion.git
-cd Diffusion
+git clone https://github.com/LukyTech/AuraFlow-Studio.git
+cd AuraFlow-Studio
 
 # Restore dependencies
 dotnet restore AuraFlow.sln
@@ -234,7 +234,7 @@ curl -X POST http://localhost:5000/api/v1/generation/generate \
 | **Flux Dev** | State-of-the-art diffusion model | High-quality photorealistic images |
 | **SDXL Turbo** | Fast generation (4-8 steps) | Quick iterations |
 | **Realistic Vision** | Photorealistic portraits | Portraits, landscapes |
-| **Pony Diffusion** | Anime/illustration style | Art, illustrations |
+| **Pony AuraFlow-Studio** | Anime/illustration style | Art, illustrations |
 
 ### Video Generation
 
@@ -242,7 +242,7 @@ curl -X POST http://localhost:5000/api/v1/generation/generate \
 |-------|-------------|----------|
 | **Wan2GP** | Wan 2.1 video generation | High-quality videos |
 | **CogVideo** | Text-to-video | Creative projects |
-| **SVD** | Stable Video Diffusion | Short clips |
+| **SVD** | Stable Video AuraFlow-Studio | Short clips |
 
 ---
 

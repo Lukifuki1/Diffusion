@@ -6,7 +6,7 @@ body:
     attributes:
       value: |
         This template is for reporting crashes of Stability Matrix, likely with the "An unexpected error occurred" dialog. 
-        If you are experiencing a different issue, please use the [Bug Report or Package Issue templates](https://github.com/LykosAI/StabilityMatrix/issues/new/choose).
+        If you are experiencing a different issue, please use the [Bug Report or Package Issue templates](https://github.com/Luky Tech/AuraFlow Studio/issues/new/choose).
   - type: textarea
     id: what-happened
     attributes:
@@ -33,7 +33,7 @@ body:
         ```
         ### Stack Trace
         ```
-           at StabilityMatrix.Avalonia.ViewModels.Settings.MainSettingsViewModel.DebugThrowException() in MainSettingsViewModel.cs:line 716
+           at AuraFlow Studio.Avalonia.ViewModels.Settings.MainSettingsViewModel.DebugThrowException() in MainSettingsViewModel.cs:line 716
            at CommunityToolkit.Mvvm.Input.RelayCommand.Execute(Object parameter)
            ...
         ```

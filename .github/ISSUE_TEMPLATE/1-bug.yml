@@ -8,12 +8,12 @@ body:
         **New to Stability Matrix?**
         For help or advice on using Stability Matrix, try one of the following options instead of opening a GitHub issue:
         - Asking on our [Discord server](https://link.lykos.ai/discord?ref=github-issue-template)
-        - Creating a post on [Discussions](https://github.com/LykosAI/StabilityMatrix/discussions)
+        - Creating a post on [Discussions](https://github.com/Luky Tech/AuraFlow Studio/discussions)
         
         This template is for reporting bugs experienced within the Stability Matrix app. 
-        If your issue is regarding Package behavior when running it, or when installing or updating a specific Package, please use the [Package issue template](https://github.com/LykosAI/StabilityMatrix/issues/new/choose) instead.
+        If your issue is regarding Package behavior when running it, or when installing or updating a specific Package, please use the [Package issue template](https://github.com/Luky Tech/AuraFlow Studio/issues/new/choose) instead.
         
-        Make sure to also search the [existing issues](https://github.com/LykosAI/StabilityMatrix/issues) to see if your issue has already been reported.
+        Make sure to also search the [existing issues](https://github.com/Luky Tech/AuraFlow Studio/issues) to see if your issue has already been reported.
   - type: textarea
     id: what-happened
     attributes:
