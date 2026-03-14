@@ -9,7 +9,8 @@
   --auraflow-text-light: #F8FAFC;   /* Light text */
 }
 
-/* Override OpenWebUI default colors with AuraFlow branding */
+/* AuraFlow Studio - Custom Theme Styles */
+/* This file provides AuraFlow branding customization */
 body, .app-container {
   background-color: var(--auraflow-bg-dark) !important;
   color: var(--auraflow-text-light) !important;

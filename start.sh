@@ -15,10 +15,6 @@ if ! docker info > /dev/null 2>&1; then
     sleep 3
 fi
 
-# Pull OpenWebUI image if not present
-echo "📦 Checking for OpenWebUI image..."
-docker pull ghcr.io/open-webui/open-webui:main 2>/dev/null || echo "   Image already exists or pull failed"
-
 # Build the backend service
 echo "🔨 Building AuraFlow API..."
 cd /workspace/project/Diffusion
@@ -36,11 +32,9 @@ sleep 5
 echo ""
 echo "✅ Services started!"
 echo ""
-echo "📍 AuraFlow Studio: http://localhost:3000"
-echo "📍 AuraFlow API: http://localhost:5000"
+echo "📍 AuraFlow Studio: http://localhost:5000"
 echo ""
 echo "To view logs:"
-echo "  docker-compose logs -f auraflow-studio"
 echo "  docker-compose logs -f auraflow-api"
 echo ""
 echo "To stop services:"

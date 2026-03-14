@@ -1,5 +1,5 @@
 // AuraFlow Studio Theme Configuration
-// This file configures the OpenWebUI theme to use AuraFlow branding colors
+// This file provides the AuraFlow branding theme for the application
 
 export const auraflowTheme = {
   name: 'AuraFlow Studio',
@@ -24,7 +24,7 @@ export const auraflowTheme = {
   }
 };
 
-// Apply theme to OpenWebUI
+// Apply AuraFlow theme to the application
 export function applyAuraflowTheme() {
   // Set CSS variables for theme colors
   const root = document.documentElement;
