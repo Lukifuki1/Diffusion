@@ -1,4 +1,4 @@
-# DiffusionHub Enterprise - Brand Guidelines
+# AuraFlow StudioHub Enterprise - Brand Guidelines
 
 ## 🎨 Vizualna Identiteta
 
@@ -40,7 +40,7 @@ background: linear-gradient(135deg, #1E40AF 0%, #7C3AED 100%);
 
 ```
 ----------------------------------------
-[Logo] DiffusionHub Enterprise
+[Logo] AuraFlow StudioHub Enterprise
 
 Jane Doe | Senior Solutions Architect
 🌐 diffusionhub.enterprise.com

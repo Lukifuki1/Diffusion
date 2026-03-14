@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   build:
-    if: github.repository == 'LykosAI/StabilityMatrix' || github.event_name == 'workflow_dispatch'
+    if: github.repository == 'Luky Tech/AuraFlow Studio' || github.event_name == 'workflow_dispatch'
     runs-on: windows-latest
 
     steps:
@@ -24,4 +24,4 @@ jobs:
         run: dotnet restore
 
       - name: Test
-        run: dotnet test StabilityMatrix.UITests
+        run: dotnet test AuraFlow Studio.UITests

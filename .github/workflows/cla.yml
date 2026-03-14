@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   CLAAssistant:
-    if: github.repository == 'LykosAI/StabilityMatrix'
+    if: github.repository == 'Luky Tech/AuraFlow Studio'
     runs-on: ubuntu-latest
     steps:
       - name: "CLA Assistant"
@@ -33,6 +33,6 @@ jobs:
           branch: 'main'
           allowlist: ionite34,mohnjiles,bot*
           # the followings are the optional inputs - If the optional inputs are not given, then default values will be taken
-          remote-organization-name: LykosAI
+          remote-organization-name: Luky Tech
           remote-repository-name: clabot-config
           custom-allsigned-prcomment: '**CLA Assistant bot** All Contributors have signed the CLA.'
