@@ -13,9 +13,9 @@
 
 ```
 ┌─────────────────────┐     ┌──────────────────────────┐     ┌─────────────────┐
-│   OpenWebUI         │◄───►│  StabilityMatrix         │◄───►│  ComfyUI        │
-│   (Frontend)        │     │  ChatInterface           │     │  (Backend)      │
-│   Port: 3000        │     │  (.NET Service)          │     │  Port: 5000     │
+│   Blazor Server     │◄───►│  AuraFlow API            │◄───►│  ComfyUI        │
+│   (Frontend)        │     │  (.NET 8 Service)       │     │  (Backend)      │
+│   Port: 5000        │     │  Port: 5000             │     │  Port: 8188     │
 └─────────────────────┘     └──────────────────────────┘     └─────────────────┘
          │                           │                              │
          ▼                           ▼                              ▼

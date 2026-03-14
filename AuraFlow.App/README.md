@@ -1,6 +1,6 @@
 # AuraFlow Studio Chat Interface
 
-A simple chat-style interface for generating images and videos using OpenWebUI as the frontend and AuraFlow Studio as the backend.
+A simple chat-style interface for generating images and videos using Blazor Server as the frontend and AuraFlow Studio as the backend.
 
 ## Features
 
@@ -22,7 +22,7 @@ A simple chat-style interface for generating images and videos using OpenWebUI a
    docker-compose up -d
    ```
 
-3. Access AuraFlow Studio at http://localhost:3000
+3. Access AuraFlow Studio at http://localhost:5000
 
 ## Configuration
 
