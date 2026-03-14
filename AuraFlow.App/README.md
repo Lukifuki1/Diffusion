@@ -1,6 +1,6 @@
-# Stability Matrix Chat Interface
+# AuraFlow Studio Chat Interface
 
-A simple chat-style interface for generating images and videos using OpenWebUI as the frontend and Stability Matrix as the backend.
+A simple chat-style interface for generating images and videos using OpenWebUI as the frontend and AuraFlow Studio as the backend.
 
 ## Features
 
@@ -14,7 +14,7 @@ A simple chat-style interface for generating images and videos using OpenWebUI a
 
 1. Build the project:
    ```bash
-   dotnet build StabilityMatrix.ChatInterface/StabilityMatrix.ChatInterface.csproj
+   dotnet build AuraFlow.App/AuraFlow.App.csproj
    ```
 
 2. Run with Docker:
@@ -22,7 +22,7 @@ A simple chat-style interface for generating images and videos using OpenWebUI a
    docker-compose up -d
    ```
 
-3. Access OpenWebUI at http://localhost:3000
+3. Access AuraFlow Studio at http://localhost:3000
 
 ## Configuration
 

@@ -18,13 +18,13 @@
          "name": "Run refitter for LykosAuthApi",
          "group": "generate-openapi",
          "command": "dotnet",
-         "args": ["refitter", "--settings-file", "./StabilityMatrix.Core/Api/LykosAuthApi/.refitter"]
+         "args": ["refitter", "--settings-file", "./src/AuraFlow.Core/Api/LykosAuthApi/.refitter"]
       },
       {
          "name": "Run refitter for PromptGenApi",
          "group": "generate-promptgen-openapi",
          "command": "dotnet",
-         "args": ["refitter", "--settings-file", "./StabilityMatrix.Core/Api/PromptGen/.refitter"]
+         "args": ["refitter", "--settings-file", "./src/AuraFlow.Core/Api/PromptGen/.refitter"]
       }
    ]
 }

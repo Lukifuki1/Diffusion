@@ -306,14 +306,13 @@ docker run -p 5000:5000 auraflow:latest
 
 ---
 
-## 🔄 Migration from StabilityMatrix
+## 🔄 Migration from AuraFlow Core
 
-If you're migrating from the old StabilityMatrix setup:
+If you're migrating from the old AuraFlow Core setup:
 
 1. **Project Renames**:
-   - `StabilityMatrix.ChatInterface` → `AuraFlow.App`
-   - `StabilityMatrix.Core` → `AuraFlow.Core` (top-level)
-   - All `StabilityMatrix.*` namespaces → `AuraFlow.*`
+   - `AuraFlow.Core` → `AuraFlow.Core` (top-level)
+   - All namespaces now use `AuraFlow.*`
 
 2. **Configuration Updates**:
    - Update `config.json` with new model names
