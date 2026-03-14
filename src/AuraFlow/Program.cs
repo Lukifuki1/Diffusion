@@ -1,6 +1,7 @@
 using AuraFlow.Middlewares;
 using AuraFlow.Services;
 using AuraFlow.Infrastructure.Engines.Comfy;
+using AuraFlow.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,9 +20,8 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddScoped<IDownloadService, DownloadService>();
 builder.Services.AddSingleton<ISecretsManager>(new SecretsManager());
 builder.Services.AddSingleton<ISettingsManager>(new SettingsManager());
-feature/blazor-chat-interface-v2
+
 builder.Services.AddScoped<IImageIndexService, ImageIndexService>();
- main
 builder.Services.AddScoped<IGenerationService, GenerationService>();
 
 // Register ComfyUI integration services

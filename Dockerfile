@@ -5,8 +5,11 @@ EXPOSE 5000
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY ["src/AuraFlow/AuraFlow.csproj", "src/AuraFlow/"]
+COPY ["src/AuraFlow.Core/AuraFlow.Core.csproj", "src/AuraFlow.Core/"]
 RUN dotnet restore "src/AuraFlow/AuraFlow.csproj"
-COPY . .
+COPY src/AuraFlow.Core/ ./src/AuraFlow.Core/
+COPY src/AuraFlow/ ./src/AuraFlow/
+COPY src/AuraFlow.Api/ ./src/AuraFlow.Api/
 WORKDIR "/src/src/AuraFlow"
 RUN dotnet build "AuraFlow.csproj" -c Release -o /app/build
 

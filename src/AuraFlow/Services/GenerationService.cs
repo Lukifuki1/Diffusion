@@ -1,105 +1,7 @@
-feature/blazor-chat-interface-v2
-namespace AuraFlow.Services;
-
 using AuraFlow.Core.Api;
 using AuraFlow.Core.Inference;
-using AuraFlow.Models.Api;
-using AuraFlow.Infrastructure.Engines.Comfy;
-
-public class GenerationService : IGenerationService, IDisposable
-{
-    private readonly ILogger<GenerationService> _logger;
-    private readonly IComfyApi _comfyApi;
-    private readonly IComfyWorkflowGenerator _workflowGenerator;
-    private readonly Dictionary<string, CancellationTokenSource> _activeGenerations = new();
-    private bool _disposed;
-
-    public GenerationService(
-        ILogger<GenerationService> logger,
-        IComfyApi comfyApi,
-        IComfyWorkflowGenerator workflowGenerator)
-    {
-        _logger = logger;
-        _comfyApi = comfyApi;
-        _workflowGenerator = workflowGenerator;
-    }
-
-    public async Task<GenerationResponse> GenerateAsync(GenerationRequest request, CancellationToken cancellationToken = default)
-    {
-        try
-        {
-            var response = new GenerationResponse
-            {
-                TaskId = Guid.NewGuid().ToString(),
-                Success = true,
-                IsComplete = false,
-                Progress = 0
-            };
-
-            // Generate ComfyUI workflow
-            var workflowJson = await _workflowGenerator.GenerateWorkflowAsync(request, cancellationToken);
-            
-            // Submit prompt to ComfyUI
-            var promptRequest = new Core.Models.Api.Comfy.ComfyPromptRequest
-            {
-                ClientId = Guid.NewGuid().ToString(),
-                Prompt = JsonSerializer.Deserialize<Dictionary<string, ComfyNode>>(workflowJson, new JsonSerializerOptions 
-                { 
-                    PropertyNamingPolicy = JsonNamingPolicies.SnakeCaseLower 
-                })!
-            };
-
-            var promptResponse = await _comfyApi.PostPrompt(promptRequest, cancellationToken);
-            
-            // Start monitoring progress via WebSocket (placeholder)
-            response.TaskId = promptResponse.PromptId;
-            
-            return response;
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error generating {Type} with model {Model}", request.Type, request.Model);
-            throw;
-        }
-    }
-
-    public async Task<bool> CancelAsync(string taskId, CancellationToken cancellationToken = default)
-    {
-        if (_activeGenerations.TryGetValue(taskId, out var cts))
-        {
-            cts.Cancel();
-            _activeGenerations.Remove(taskId);
-            
-            // Also interrupt via ComfyUI API
-            try
-            {
-                await _comfyApi.PostInterrupt(cancellationToken);
-            }
-            catch
-            {
-                // Ignore interruption errors
-            }
-            
-            return true;
-        }
-        return false;
-    }
-
-    public void Dispose()
-    {
-        if (!_disposed)
-        {
-            foreach (var cts in _activeGenerations.Values)
-            {
-                cts.Cancel();
-                cts.Dispose();
-            }
-            _disposed = true;
-        }
-    }
-
-using AuraFlow.Core.Inference;
 using AuraFlow.Core.Services;
+using AuraFlow.Infrastructure.Engines.Comfy;
 using Microsoft.Extensions.Logging;
 
 namespace AuraFlow.Services;
@@ -110,14 +12,22 @@ namespace AuraFlow.Services;
 public class GenerationService : IGenerationService, IDisposable
 {
     private readonly ILogger<GenerationService> _logger;
+    private readonly IComfyApi _comfyApi;
+    private readonly IComfyWorkflowGenerator _workflowGenerator;
     private readonly ComfyClient _comfyClient;
-    private readonly Dictionary<string, CancellationTokenSource> _activeTasks = new();
-    private bool _isDisposed;
+    private readonly Dictionary<string, CancellationTokenSource> _activeGenerations = new();
+    private bool _disposed;
 
-    public GenerationService(ILogger<GenerationService> logger, ComfyClient comfyClient)
+    public GenerationService(
+        ILogger<GenerationService> logger,
+        IComfyApi comfyApi,
+        IComfyWorkflowGenerator workflowGenerator,
+        ComfyClient? comfyClient = null)
     {
         _logger = logger;
-        _comfyClient = comfyClient;
+        _comfyApi = comfyApi;
+        _workflowGenerator = workflowGenerator;
+        _comfyClient = comfyClient ?? new ComfyClient("http://comfyui:8188");
     }
 
     /// <summary>
@@ -134,22 +44,28 @@ public class GenerationService : IGenerationService, IDisposable
 
             // Create cancellation token source for this task
             var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
-            _activeTasks[request.Prompt] = cts;
+            _activeGenerations[request.Prompt] = cts;
 
-            // Build ComfyUI workflow based on model and type
-            var workflow = await BuildWorkflowAsync(request, cancellationToken);
+            // Generate ComfyUI workflow
+            var workflowJson = await _workflowGenerator.GenerateWorkflowAsync(request, cancellationToken);
             
-            // Queue the prompt to ComfyUI
-            var task = await _comfyClient.QueuePromptAsync(workflow, cts.Token);
-            
-            // Wait for completion with progress updates
-            await WaitForCompletionAsync(task, request, stopwatch, cts.Token);
+            // Submit prompt to ComfyUI
+            var promptRequest = new Core.Models.Api.Comfy.ComfyPromptRequest
+            {
+                ClientId = Guid.NewGuid().ToString(),
+                Prompt = JsonSerializer.Deserialize<Dictionary<string, ComfyNode>>(workflowJson, new JsonSerializerOptions 
+                { 
+                    PropertyNamingPolicy = JsonNamingPolicies.SnakeCaseLower 
+                })!
+            };
 
+            var promptResponse = await _comfyApi.PostPrompt(promptRequest, cancellationToken);
+            
             return new GenerationResult
             {
-                TaskId = task.Id,
+                TaskId = promptResponse.PromptId,
                 Success = true,
-                OutputFiles = GetOutputFiles(task),
+                OutputFiles = Enumerable.Empty<string>(),
                 DurationMs = stopwatch.ElapsedMilliseconds,
                 ModelName = request.ModelName,
                 Type = request.Type,
@@ -189,22 +105,27 @@ public class GenerationService : IGenerationService, IDisposable
     /// </summary>
     public async Task<GenerationProgress?> GetProgressAsync(string taskId, CancellationToken cancellationToken = default)
     {
-        if (!_comfyClient.PromptTasks.TryGetValue(taskId, out var task))
+        if (_comfyClient != null && _comfyClient.PromptTasks.TryGetValue(taskId, out var task))
         {
-            return null;
+            return new GenerationProgress
+            {
+                TaskId = taskId,
+                Status = task.IsCompleted 
+                    ? GenerationStatus.Completed 
+                    : GenerationStatus.Running,
+                ProgressPercent = task.ProgressPercentage,
+                CurrentStep = task.CurrentStep,
+                TotalSteps = task.TotalSteps,
+                CurrentNode = task.RunningNode?.NodeId,
+                StartedAt = task.CreatedAt
+            };
         }
 
         return new GenerationProgress
         {
             TaskId = taskId,
-            Status = task.IsCompleted 
-                ? GenerationStatus.Completed 
-                : GenerationStatus.Running,
-            ProgressPercent = task.ProgressPercentage,
-            CurrentStep = task.CurrentStep,
-            TotalSteps = task.TotalSteps,
-            CurrentNode = task.RunningNode?.NodeId,
-            StartedAt = task.CreatedAt
+            Status = GenerationStatus.Pending,
+            ProgressPercent = 0
         };
     }
 
@@ -215,11 +136,12 @@ public class GenerationService : IGenerationService, IDisposable
     {
         try
         {
-            await _comfyClient.InterruptPromptAsync(cancellationToken);
+            await _comfyApi.PostInterrupt(cancellationToken);
             
-            if (_activeTasks.TryGetValue(taskId, out var cts))
+            if (_activeGenerations.TryGetValue(taskId, out var cts))
             {
                 cts.Cancel();
+                _activeGenerations.Remove(taskId);
                 return true;
             }
 
@@ -237,8 +159,6 @@ public class GenerationService : IGenerationService, IDisposable
     /// </summary>
     public async Task<IEnumerable<GenerationModel>> GetAvailableModelsAsync(CancellationToken cancellationToken = default)
     {
-        var modelNames = await _comfyClient.GetModelNamesAsync(cancellationToken);
-        
         return new[]
         {
             new GenerationModel 
@@ -265,88 +185,17 @@ public class GenerationService : IGenerationService, IDisposable
         };
     }
 
-    private async Task<Dictionary<string, ComfyNode>> BuildWorkflowAsync(
-        GenerationRequest request, CancellationToken cancellationToken)
-    {
-        // TODO: Implement workflow building based on model type and parameters
-        // This will create the appropriate ComfyUI node graph for the requested generation
-        
-        var nodes = new Dictionary<string, ComfyNode>();
-        
-        // Add checkpoint loader node
-        var checkpointLoader = new CheckpointLoaderSimpleNode
-        {
-            CkptName = request.ModelName,
-            LoadDevice = "auto"
-        };
-        nodes["checkpoint_loader"] = checkpointLoader;
-
-        // Add KSampler node for image generation
-        if (request.Type == GenerationType.Image)
-        {
-            var kSampler = new KSamplerNode
-            {
-                Seed = request.Options.Seed,
-                Steps = request.Options.Steps,
-                CFG = (float)request.Options.GuidanceScale,
-                SamplerName = "euler",
-                Scheduler = "normal",
-                Denoise = 1.0
-            };
-            nodes["k_sampler"] = kSampler;
-        }
-
-        // Add CLIP Text Encode nodes for positive/negative prompts
-        var clipTextEncodePositive = new ClipTextEncodeNode
-        {
-            Clip = "clip_loader_output",
-            Text = request.Prompt
-        };
-        nodes["clip_text_encode_positive"] = clipTextEncodePositive;
-
-        return nodes;
-    }
-
-    private async Task WaitForCompletionAsync(
-        ComfyTask task, 
-        GenerationRequest request,
-        System.Diagnostics.Stopwatch stopwatch,
-        CancellationToken cancellationToken)
-    {
-        // Wait for the task to complete with timeout
-        var timeout = TimeSpan.FromSeconds(request.Options.Steps * 10);
-        
-        try
-        {
-            await task.Task.WaitAsync(timeout, cancellationToken);
-        }
-        catch (TimeoutException)
-        {
-            _logger.LogWarning("Generation timed out after {Timeout}s", timeout.TotalSeconds);
-            throw;
-        }
-    }
-
-    private IEnumerable<string> GetOutputFiles(ComfyTask task)
-    {
-        // TODO: Extract output file paths from the completed task
-        // This will depend on how ComfyUI stores generated images/videos
-        
-        return new List<string>();
-    }
-
     public void Dispose()
     {
-        if (_isDisposed) return;
-
-        foreach (var cts in _activeTasks.Values)
+        if (!_disposed)
         {
-            cts.Cancel();
-            cts.Dispose();
+            foreach (var cts in _activeGenerations.Values)
+            {
+                cts.Cancel();
+                cts.Dispose();
+            }
+            _comfyClient?.Dispose();
+            _disposed = true;
         }
-
-        _comfyClient?.Dispose();
-        _isDisposed = true;
     }
-main
 }
